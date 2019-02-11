@@ -1,6 +1,6 @@
 #lang scribble/manual
 
-@title{Apertium++, or Apertium 4.0}
+@title[#:version ""]{Apertium++, or Apertium 4.0}
 
 This is a project with an aim of:
 
