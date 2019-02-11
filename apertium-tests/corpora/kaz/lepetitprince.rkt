@@ -13,16 +13,15 @@
 ;; Constants
 
 
-(define A-KAZ-TAT '../../apertium-all/apertium-trunk/apertium-kaz-tat)
-(define A-KAZ-RUS '../../apertium-all/apertium-trunk/apertium-kaz-rus)
-(define A-ENG-KAZ '../../apertium-all/apertium-trunk/apertium-eng-kaz)
-(define A-TAT-RUS '../../apertium-all/apertium-nursery/apertium-tat-rus)
-(define A-TAT-ENG '../../apertium-all/apertium-incubator/apertium-tat-eng)
+(define A-KAZ-TAT '../../../apertium-all/apertium-trunk/apertium-kaz-tat)
+(define A-KAZ-RUS '../../../apertium-all/apertium-trunk/apertium-kaz-rus)
+(define A-ENG-KAZ '../../../apertium-all/apertium-trunk/apertium-eng-kaz)
+(define A-TAT-RUS '../../../apertium-all/apertium-nursery/apertium-tat-rus)
+(define A-TAT-ENG '../../../apertium-all/apertium-incubator/apertium-tat-eng)
 
 
 ;;;;;;;;;;;;;;;
 ;; Corpus/tests
-
 
 (check-equal?
  #{echo "Кішкентай ханзада" | apertium -d (values A-KAZ-TAT) kaz-tat}
