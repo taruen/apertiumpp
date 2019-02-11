@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<dictionary>
+
+  <alphabet>
+    <bak>АБВГҒДҘЕЁЖЗИЙКҠЛМНҢОӨПРСҪТУҮФХҺЦЧШЩЪЫЬЭӘЮЯабвгғдҙеёжзийкҡлмнңоөпрсҫтуүфхһцчшщъыьэәюя</bak>
+    <krc>АаБбВвГгДдЕеЁёЖжЗзИиЙйКкЛлМмНнОоПпРрСсТтУуФфХхЦцЧчШшЩщЪъЫыЬьЭэЮюЯя</krc>
+    <tat>АӘБВГДЕЁЖҖЗИЙКЛМНҢОӨПРСТУҮФХҺЦЧШЩЪЫЬЭЮЯаәбвгдеёжҗзийклмнңоөпрстуүфхһцчшщъыьэюя</tat>
+  </alphabet>
+
+  <sdefs>
+
+    <sdef n="n" c="Noun" a="all">
+      <kaz n="Зат есім"/>
+      <tat n="Исем"/>
+    </sdef>
+
+    <sdef n="pih" c="Past habitual" a="kaz;kir">
+      <kaz c="Ауыспалы өткен шақ" c="-{E}т{I}н-" c="Онлар жазатын."/>
+    </sdef>
+  </sdefs>
+
+  <pardefs>
+
+    <pardef n="CASE" a="all">
+      <e a="all"><p><l></l><r><s n="nom"/></r></p></e>
+      <e a="all"><p><l bak="{N}{I}ң" tat="н{I}ң" kaz="{N}{I}ң"/><r><s n="gen"/></r></p></e>
+      <e a="kaz"><p><l kaz="{M}ен"/><r><s n="ins"/></r></p></e>
+    </pardef>
+
+  </pardefs>
+</dictionary>

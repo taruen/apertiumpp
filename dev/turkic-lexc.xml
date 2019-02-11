@@ -1,0 +1,934 @@
+<lexc>
+  <c>MORPHOLOGICAL TRANSDUCER FOR $LANG</c>
+
+  <mchars>
+    <mchar n="n">
+      <eng>Noun</eng>
+      <bak>Иҫем</bak>
+      <tat>Исем</tat>
+      <rus>Существительное</rus>
+    </mchar>
+  </mchars>
+
+<!--
+np:
+    eng: Proper noun
+    bak: Ялгыҙлыҡ иҫем
+    tat: Ялгызлык исем
+    rus: Имя собственное
+adj:
+    eng: Adjective
+    bak: Ҫыйфат
+    tat: Сыйфат
+    rus: Прилагательное
+num:
+    eng: Numeral
+    bak: Ҫан
+    tat: Сан
+    rus: Числительное
+prn:
+    eng: Pronoun
+    bak: Алмашлыҡ
+    tat: Алмашлык
+    rus: Местоимение
+det:
+    eng: Determiner
+    bak: Детермирнатив
+    tat: Детермирнатив
+    rus: Детермирнатив
+v:
+    eng: Verb
+    bak: Фиғыль
+    tat: Фигыль
+    rus: Глагол
+vaux:
+    eng: Auxiliary verb
+    bak: Ярдәмҫе фиғыль
+    tat: Ярдәмче фигыль
+    rus: Вспомогательный глагол
+adv:
+    eng: Adverb
+    bak: Рәвеш
+    tat: Рәвеш
+    rus: Наречие
+post:
+    eng: Postposition
+    bak: Бәйлек
+    tat: Бәйлек
+    rus: Послелог
+postadv:
+    eng: Postadverb
+    bak: "Пострәвеш" *
+    tat: "Пострәвеш" *1
+    rus: Посленаречие
+cnjcoo:
+    eng: Coordinating conjunction
+    bak: Тезүҫе теркәгеҫ
+    tat: Тезүче теркәгеч
+    rus: Сочинительный союз
+cnjsub:
+    eng: Subordinating conjunction
+    bak: Ияртүҫе теркәгеҫ
+    tat: Ияртүче теркәгеч
+    rus: Подчинительный союз
+cnjadv:
+    eng: Adverbial conjunction
+    bak: Рәвеш-теркәгеҫ
+    tat: Рәвеш-теркәгеч
+    rus: Наречие-союз
+ij:
+    eng: Interjection
+    bak: Ымлыҡ
+    tat: Ымлык
+    rus: Междометие
+abbr:
+    eng: Abbreviation
+    bak: Ҡыскартылма
+    tat: Кыскартылма
+    rus: Аббревиатура
+cop:
+    eng: Copula
+    bak: Копула
+    tat: Копула
+    rus: Копула
+ideo:
+    eng: Ideophone
+    bak: Аваҙ ияртеме
+    tat: Аваз ияртеме
+    rus: Звукоподражательное слово
+top:
+    eng: Toponym
+    bak: Географик атама
+    tat: Географик атама
+    rus: Топоним
+ant:
+    eng: Anthroponym
+    bak: Кеше исеме
+    tat: Кеше исеме
+    rus: Антропоним
+cog:
+    eng: Cognomen
+    bak: Фамилия
+    tat: Фамилия
+    rus: Фамилия
+pat:
+    eng: Patronym
+    bak: Отчество
+    tat: Отчество
+    rus: Отчество
+org:
+    eng: Organization
+    bak: Организация
+    tat: Организация
+    rus: Организация
+al:
+    eng: Other
+    bak: Башка
+    tat: Башка
+    rus: Другое
+m:
+    eng: Masculine
+    bak: Ир-ат исеме
+    tat: Ир-ат исеме
+    rus: Мужской род
+f:
+    eng: Feminine
+    bak: Хатын-кыз исеме
+    tat: Хатын-кыз исеме
+    rus: Женский род
+mf:
+    eng: Masculine/feminine *
+    bak: Уртак исем *
+    tat: Уртак исем *
+    rus: Общий род *
+attr:
+    eng: Attributive
+    bak: Аергыч/сыйфат мәгънәсендә
+    tat: Аергыч/сыйфат мәгънәсендә
+    rus: Аттрибутивное значение
+subst:
+    eng: Substantive
+    bak: Исемләнгән
+    tat: Исемләнгән
+    rus: Субстантивирован
+advl:
+    eng: Adverbial
+    bak: Хәл рәвеш мәгънәсендә
+    tat: Хәл рәвеш мәгънәсендә
+    rus: Обстоятельство
+sg:
+    eng: Singular
+    bak: Берлек сан
+    tat: Берлек сан
+    rus: Единственное число
+pl:
+    eng: Plural
+    bak: Күплек сан
+    tat: Күплек сан
+    rus: Множественное число
+sp:
+    eng: Singular/Plural
+    bak: 
+    tat: 
+    rus: 
+px1sg:
+    eng: 1st person singular
+    bak: 1нче зат берлек сан тартым
+    tat: 1нче зат берлек сан тартым
+    rus: Притяжательный 1го лица ед. числа
+px2sg:
+    eng: 2nd person singular
+    bak: 2нче зат берлек сан тартым
+    tat: 2нче зат берлек сан тартым
+    rus: Притяжательный 2го лица ед. числа
+px3sp:
+    eng: 3rd person singular/plural
+    bak: 3нче зат тартым берлек тә, күплек тә
+    tat: 3нче зат тартым берлек тә, күплек тә
+    rus: Притяжательный 3го лица и ед., и мн. число
+px1pl:
+    eng: 1st person plural
+    bak: 1нче зат күплек сан тартым
+    tat: 1нче зат күплек сан тартым
+    rus: Притяжательный 1го лица мн. числа
+px2pl:
+    eng: 2nd person plural
+    bak: 2нче зат күплек сан тартым
+    tat: 2нче зат күплек сан тартым
+    rus: Притяжательный 1го лица мн. числа
+px3pl:
+    eng: 3rd person plural
+    bak: 3нче зат күплек сан тартым
+    tat: 3нче зат күплек сан тартым
+    rus: Притяжательный 3го лица мн. числа
+px:
+    eng: General possessive
+    bak: -ныҡы-/-неке
+    tat: -ныкы-/-неке-
+    rus: -ныкы-/-неке-
+nom:
+    eng: Nominative
+    bak: Баш килеш
+    tat: Баш килеш
+    rus: Именительный
+gen:
+    eng: Genitive
+    bak: Иялек килеше
+    tat: Иялек килеше
+    rus: Родительный
+dat:
+    eng: Dative
+    bak: Юнәлеш килеше
+    tat: Юнәлеш килеше
+    rus: Дательный
+acc:
+    eng: Accusative
+    bak: Төшем килеше
+    tat: Төшем килеше
+    rus: Винительный
+abl:
+    eng: Ablative
+    bak: Чыгыш килеше
+    tat: Чыгыш килеше
+    rus: Исходный
+loc:
+    eng: Locative
+    bak: Урын-вакыт килеше
+    tat: Урын-вакыт килеше
+    rus: Местно-временной
+
+# ===Morphotactics===
+# 
+# There are two types of lexicons to distinguish here:
+# # lexicons which are continuations for other lexicons, and
+# # lexicons which are continuations for stems.
+# 
+# 
+# Root lexicon lists all the major part of speech categories of the language, but usually there are some "subclasses" to each of these categories (like different subclasses of adjectives, different types of nouns etc.).
+# 
+# 
+# These subclasses are represented by the lexicons of the second type.
+# 
+# 
+# Therefore it is a good idea to keep a list of them with a short description of each and examples in the beginning of stem lexicons section. That way, if there is someone willing to contribute stems to the lexicon, all he needs to know are these specifications provided for him.
+# 
+# Below we describe some of the classes which are common in Turkic languages.
+# 
+# ====Naming continuation lexica====
+# 
+# * Continuation lexica will be named in upper case, and may contain letters, numbers and the symbol <code>-</code>. 
+# ** Examples: <code>LEXICON N1</code>, <code>LEXICON DET-DEM</code>, <code>LEXICON ADV</code>
+# 
+# ====What sorts of distinctions to make ====
+# {{comment|TODO: TV vs. IV, Russian vs. non-Russian in Chuvash}}
+# 
+# ====Numerals====
+# 
+# The system of treating numerals should be more or less the same for all of the Turkic languages. Because numerals make the lexicon cyclic, they need to be treated with care. 
+# 
+# In order to allow the morpholophonological processes to be treated where we don't have any letters on the lexical side, we introduce special archiphonemes which are deleted, but can be used in rules.
+# 
+# {{comment|TODO: describe system we have in kazakh}}
+# 
+# ===Stem lexicons===
+# 
+# {{comment|TODO: Why stems go in lexicon and not infinitives}}
+# 
+# Lines in the stem lexicons should follow the following pattern:
+# 
+# * Left side (lexical form)
+# * Colon <code>:</code>
+# * Right side (surface form)
+# * Space <code> </code>
+# * Continuation lexicon
+# * Space <code> </code>
+# * Semicolon <code>;</code>
+# * Space <code> </code>
+# * Exclamation mark
+# * Open quote <code>"</code>
+# * Gloss (optional)
+# * Close quote <code>"</code>
+# 
+# Example:
+# 
+# <pre>
+# кӗнеке:кӗнек N2 ; ! "llibre, книга"
+# </pre>
+# 
+# == Morphophonology ==
+# {{comment|TODO: px3 is sIn (and why)}}
+# 
+# ==Categorisation==
+# 
+# General comments.
+# 
+# * {{tag|subst}} "Substantive" (like a noun)
+# * {{tag|attr}} "Attributive" (like an adjective)
+# * {{tag|advl}}<sup>?</sup> "Adverbial" (like an adverb)
+# 
+# ===Nominals===
+# 
+# ==== Compound Nouns ====
+# {{comment|TODO: N-N compounds with <px3>}}
+# 
+# 
+# ==== Cases ====
+# 
+# 
+# ===== Comitative / Instrumental / Sociative =====
+# 
+# {|class=wikitable
+# |-
+# ! Language !! Suffix !! Function !! Example(s)
+# |-
+# | Chuvash  || -{п}{A}    || Instrumental<br/>Sociative<br/>Conjunctive  || Ручка'''па''' ҫыратӑп.<br/>Юлташсем'''пе''' калатӑп.<br/>Маша'''па''' Ваня пахчара.
+# |-
+# | Turkish  || -{y}l{A} || Instrumental<br/>Sociative<br/>Conjunctive  || Kalem'''le''' yaziyorum.<br/>Arkadaşlar'''la''' konuşuyorum.<br/>Maşa'''la''' Vanya bahçede.
+# |-
+# | Kazakh || -{M}ен/-{M}енен<br/>-{M}ен/-{M}енен<br />{M}ен/{M}енен || Instrumental<br/>Sociative<br/>Conjunctive || Қалем'''мен''' жазып жатыр.<br />Досы'''мен''' сөйлесіп жатыр.<br/>Маша '''мен''' Ваня бақшада.
+# |-
+# | Kyrgyz || менен/мен || Instrumental<br/>Sociative<br/>Conjunctive || Калам '''менен''' жазып жатат.<br />Досу '''менен''' сүйлөшүп жатат.<br/>Маша '''менен''' Ваня бакчада.
+# |-
+# | Tatar || белән || Instrumental<br/>Sociative<br/>Conjunctive || Каләм '''белән''' яза.<br />Дусты '''белән''' сөйләшә.<br/>Маша '''белән''' Ваня бакчада.
+# |-
+# | Tuvan || биле/-биле || Instrumental<br/>Sociative<br/>Conjunctive || <br/><br/>Азамат '''биле''' Айгуль садта
+# |-
+# |}
+# 
+# === Adjectives ===
+# 
+# Turkic languages usually have several different classes of adjective.  It is best to examine the morphological specifics of adjectives to determine what the different categories are in a given language.  However, a commonly found set of categories, with arbitrarily numbered names, is as follows:
+# 
+# * '''A1''': adjectives that can be both substantivised and adverbialised
+# ** three readings: <adj>, <adj.subst> and <adj.advl>, 
+# ** all readings have comparison levels;
+# * '''A2''': adjectives without adverbial reading
+# ** <adj> and <adj.subst> readings, 
+# ** both readings have comparison levels;
+# * '''A3''': adjectives without adverbial reading
+# ** <adj> and <adj.subst> readings,
+# ** no comparison levels at all;
+# * '''A4''': "pure" adjectives -- no adverbial and substantive readings
+# ** <adj> reading, 
+# ** no comparison levels.
+# 
+# ==== Examples by language ====
+# Setting up charts for various languages of groups of adjectives by their behaviour is one way to both determine what the correct categorisation for the language is, and present the categories.  (Remember that * before a form indicates unattested/impossible forms.)
+# 
+# ===== Chuvash =====
+# 
+# {|class=wikitable
+# ! Type !! Example                !! Reading                !! Phrase
+# |-
+# |rowspan=4| A1   || лайӑх "good"           || {{tag|adj}}            || Ку лайӑх кĕнеке.
+# |-
+#         | лайӑхтарах             ||  {{tag|adj><comp}}     || Ку лайӑхтарахчĕ.
+# |-
+#         | лайӑх                  || {{tag|adj><advl}}      || Вӑл лайӑх ишет.
+# |-
+#         | лайӑххисене            || {{tag|adj><subst><pl><dat}} || Лаиӑххисене куратӑп.
+# |-
+# |-
+# |rowspan=4| A2   || кӑвак "blue"           || {{tag|adj}}            || Эпĕ çак кавак кĕнекене куратӑп.
+# |-
+#         | кӑвактарах               || {{tag|adj><comp}}    || Ку кӗнеке кавактарахче.
+# |-
+#         | *кӑвак                 || {{tag|adj><advl}}      || &mdash;
+# |-
+#         | кӑваккисем             || {{tag|adj><subst><pl}} || Каваккисем куратӑп.
+# |-
+# |-
+# |rowspan=4| A3   || вилĕ "dead"            || {{tag|adj}}            || Эпĕ çак вилӗ сынна куратӑп.
+# |-
+#         | *вилĕрех, *вилĕтерех   || {{tag|adj><comp}}      || &mdash;
+# |-
+#         | *вилĕ                  || {{tag|adj><advl}}      || &mdash;
+# |-
+#         | виллисем               || {{tag|adj><subst><pl}} || Эпĕ виллисем куратӑп.
+# |-
+# |-
+# |rowspan=4| A4   || тĕп "main"             || {{tag|adj}}            || Ку тӗп кӗнеке.
+# |-
+#         | *тĕпрех, *тĕптерех     ||  {{tag|adj><comp}}     || &mdash;
+# |-
+#         | *тĕп                   ||  {{tag|adj><advl}}     || &mdash;
+# |-
+#         | *тĕп                   ||  {{tag|adj><subst}}     || &mdash;
+# |}
+# 
+# ====== Subtypes ======
+# * A1/A2<br/>Comparatives can be -рах, тарах or both, depending on the stem ending sound
+# * A1/A2/A3<br/>Substantivation can be done by the means of a suffix, e.g. лайӑхх·и, (in fact, the 3rd person possessive) or without it
+# 
+# ===== Kazakh =====
+# 
+# ===== Kyrgyz =====
+# {|class=wikitable
+# ! Type       !! Example !! {{tag|adj}}                                            !! {{tag|adj><comp}}                      !! {{tag|adj><advl}}           !! {{tag|adj><subst}}
+# |-
+# ! A1
+# |               жакшы   || Бул китеп '''жакшы'''.                                 || Бул китеп '''жакшыраак'''.             || Ал сууда '''жакшы''' сүзөт. || '''Жакшы'''ларды тааныбайм.
+# |-
+# ! A2
+# |               акылдуу || '''Акылдуу''' технологиялар өнүгүп жатат               || Ал досуна караганда '''акылдуураак'''  || —                           || '''Акылдуулар''' менен кеңеш
+# |-
+# ! A3
+# |              алгачкы  || Эң '''алгачкы''' мектепке келгеним эсимден кетпейт     || —                                      || —                           || Биздин агайыбыз '''алгачкылардан''' болуп ошол методиканы колдоно баштаган
+# |-
+# ! A4
+# |          парламенттик || '''Парламенттик''' башкаруу системасы кандай болот     || —                                      || —                           || —
+# |-
+# ! A5
+# |                кеңири || Бактериялар — табиятта '''кеңири''' таралган эң жөнөкөй бир клеткалуу организмдер тобу || продукция үчүн '''кеңирирээк''' рыноктор ачылат || —      || —
+# |}
+# 
+# ===== Tatar =====
+# 
+# * A1 - яхшы
+# * A2 - иске, (күк)
+# * A3 - үле
+# * A4 - төп
+# 
+# ===== Turkish =====
+# 
+# 
+# {|class=wikitable
+# ! Type !! Example                !! Reading                !! Phrase
+# |-
+# | A1   || iyi "good"             || {{tag|adj}}            || Bu iyi kitap.
+# |-
+# |      || iyi                    || {{tag|adj><advl}}      || O iyi yüzüyor.
+# |-
+# |      || iyileri                || {{tag|adj><subst><pl><abl}} || Iyilerden geldim.
+# |-
+# |-
+# | A3   || ölü "dead"            || {{tag|adj}}            || Bu ölü adami görüyorum.
+# |-
+# |      || *ölü                  || {{tag|adj><advl}}      || &mdash;
+# |-
+# |      || ölüleri               || {{tag|adj><subst><pl}} || Ölüleri görüyorum.
+# |-
+# |-
+# | A4   || ana "main"             || {{tag|adj}}            || Bu programin ana fonksiyonunda sorun var.
+# |-
+# |      || *ana                   ||  {{tag|adj><advl}}     || &mdash;
+# |-
+# |      || *ana                   ||  {{tag|adj><subst}}     || &mdash;
+# |}
+# 
+# === Adverbs ===
+# 
+# === Postpositions ===
+# 
+# {{comment|TODO: "postpositions" which take poss./case are nouns}}
+# 
+# === Pronouns ===
+# 
+# ==== Reflexive pronoun ====
+# 
+# === Basic verb morphology ===
+# This includes stuff that comes before any TAME morphology.
+# 
+# ==== Mood-like stuff ====
+# ===== Passive =====
+# ===== Causative =====
+# ===== Reflexive =====
+# ===== Cooperative =====
+# The cooperative ({{tag|coop}}) adds the meaning to an event that multiple people did it together.  In most Turkic languages it has the form -Iş or similar.  For example, in Kazakh:
+# * Without cooperative: Біз ұнды көтердік.  "We picked up the flour."
+# * With cooperative: Біз ұнды көтер<b>іс</b>тік.  "We [worked together to] pick up the flour."
+# 
+# In a number of languages it can also add the meaning of one person helping another do something, especially when used with a singular subject.
+# * With cooperative: Мен сен көтерген ұнды көтер<b>іс</b>тім.  "I [helped] pick up the flour that you were lifting."
+# 
+# Sometimes the cooperative can get lexicalised in a verb form.  E.g., "арала-" means "wander around", but "аралас-" means "be mixed together".  In this case there is a historical derivational relation between the two forms, but it's probably not safe to say that there is a productive cooperative relationship between them.
+# 
+# Also, in some languages, like Kyrgyz and some dialects of Uzbek, the cooperative has been reappropriated to add plural meaning as well.  So көтөрүштү can be parsed with almost any combination of plurality and cooperativeness, i.e., "s/he helped lift", "they lifted", "they lifted together", "they helped someone lift".
+# 
+# ==== Negative ====
+# Most Turkic languages have a negative form that comes after derivational suffixes and before TAME morphology.  The form is usually something like -mA or -BA.  But see also information on [[#Compound Negative Forms|Compound Negative Forms]].  Either way, the tag for negative is {{tag|neg}}.
+# 
+# ===Finite verb forms===
+# 
+# ====Defective verbs====
+# Many Turkic languages have a defective copula verb in a form like e-/i-.  We call it defective because it does not have a full paradigm, and can be limited in the contexts in which it's used.  It often alternates with null forms (e.g., in present tenses) or with another "be"/"become" verb (like ol-/bol-, e.g., in future tenses).
+# 
+# This table presents common forms of the copula.
+# 
+# {|class="wikitable"
+# |-
+# ! language !! UR !! uses / analyses !! notes
+# |-
+# ! Kazakh
+# | е{{tag|cop}}
+# |
+# * е{{tag|cop}}: (+agreement)
+# * е{{tag|cop}}{{tag|ifi}}:еді (+agreement)
+# * е{{tag|cop}}{{tag|neg}}:емес (+agreement)
+# * е{{tag|cop}}{{tag|ger}}:екен (+noun stuff)
+# | екен is also a modal particle
+# |-
+# ! Tatar
+# | и{{tag|cop}}
+# |
+# * и{{tag|cop}}: (+agreement)
+# * и{{tag|cop}}{{tag|ifi}}:иде (+agreement)
+# * и{{tag|cop}}{{tag|neg}}:түгел (+agreement)
+# * и{{tag|cop}}{{tag|ger}}:икән (+noun stuff)
+# | икән is also a modal particle
+# |-
+# 
+# ! Kyrgyz
+# | э{{tag|cop}}
+# |
+# * э{{tag|cop}}: (+agreement)
+# * э{{tag|cop}}{{tag|ifi}}:элэ (+agreement)
+# * э{{tag|cop}}{{tag|neg}}:эмес (+agreement)
+# * э{{tag|cop}}{{tag|ger}}:экен (+noun stuff)
+# | экен is also a modal particle
+# |-
+# ! Turkish
+# | i{{tag|cop}}
+# |
+# * i{{tag|cop}}:+{y} (+agreement)
+# * i{{tag|cop}}{{tag|ifi}}:+{y}d{I} (+agreement)
+# * i{{tag|cop}}{{tag|neg}}:değil (+agreement)
+# |
+# |-
+# ! Uzbek
+# | e{{tag|cop}}
+# |
+# * e{{tag|cop}}: (+agreement)
+# * e{{tag|cop}}{{tag|ifi}}:edi (+agreement)
+# * e{{tag|cop}}{{tag|neg}}:emas (+agreement)
+# * e{{tag|cop}}{{tag|ger}}:ekan (+noun stuff) (?)
+# | ekan is also a modal particle
+# |}
+# 
+# ==== Compound Negative Forms ====
+# A number of Turkic languages have compound negative verb forms in addition to regular ones.  These forms normally consist of what appears to be either a verbal noun or verbal adjective, followed by a negative adjective or adverb.
+# 
+# For example, in Kazakh, the negative of the general/future is formed with a regular negative, e.g. "бармаймын" "I won't go", but the negative of one of the past-tense forms is a compound negative, e.g. "барған жоқпын" "I didn't go".
+# 
+# ===Non-finite verb forms===
+# This section outlines what categories of non-finite verb forms exist in Turkic, and how to identify the type of category created by a given affix.
+# 
+# {|class="wikitable"
+# |+ overview of non-finite verb forms by type and language
+# |-
+# ! language !! verbal nouns !! verbal adjectives !! participles !! verbal adverbs !! infinitives
+# |-
+# ! Kazakh
+# |valign="top"| -GAн<br />-EтIн<br />-у<br />-(A)р
+# |valign="top"| -GAн<br />-EтIн<br />-ушI<br />-(A)р<br />-GIс
+# |valign="top"| -Iп<br />-E<br />-сA (+{{tag|p*}})<br />-GI (+{{tag|p*}})<br />-EтIн<br />-GAлI
+# |valign="top"| -Iп<br />-E<br />-сA (+{{tag|p*}})<br />-GAншA
+# | —
+# |-
+# ! Turkish
+# |valign="top"| -DIk<br />-(y)AcAk<br/>-mIş<br />-(V)r<br />-m(A)<br />-m(A)k<br />-(y)Iş
+# |valign="top"| -DIk (+{{tag|p*}})<br />-(y)AcAk (+{{tag|p*}})<br />-mIş<br />-(V)r<br />-(y)An<br />
+# | —
+# |valign="top"| -(y)IncA<br />-(y)Ip<br />-(V)rken<br />-(y)ArAk
+# | —
+# |-
+# ! Tatar
+# |valign="top"| -GAн<br />-W<br />-(V)р
+# |valign="top"| -GAн<br />-(V)р
+# |valign="top"| -Iп<br />-E<br />-GI (+{{tag|p*}})
+# |valign="top"| -Iп<br />-E
+# |valign="top"| -(V)ргA
+# |}
+# ====Verbal nouns / gerunds ====
+# Verbal nouns are forms of verbs that allow one to use a verb phrase as a noun phrase.  An example in English might be "running" in the sentence "I like running", or "eating beshbarmaq with my hands" in "I believe in eating beshbarmaq with my hands".  The former sentence in Kazakh would be:
+# ::{{gl|Мен|мен{{tag|prn}}{{tag|nom}}|I}}
+# {{gl|жүгіруді|жүгір{{tag|v}}{{tag|iv}}{{tag|ger}}{{tag|acc}}|running}}
+# {{gl|жақсы|жақсы{{tag|adv}}|well}}
+# {{gl|көремін|көр{{tag|v}}{{tag|tv}}{{tag|aor}}{{tag|p1}}{{tag|sg}}|I see}}
+# ::{{glend|"I like running."}}
+# 
+# You can also embed subjects, kind of like the English "I saw him/his running home."
+# 
+# ::{{gl|Мен|мен{{tag|prn}}{{tag|nom}}|I}}
+# {{gl|оның|ол{{tag|prn}}{{tag|gen}}|his}}
+# {{gl|үйге|үй{{tag|n}}{{tag|dat}}|to home}}
+# {{gl|қарай|қарай{{tag|pst}}|towards}}
+# {{gl|жүгіретінін|жүгір{{tag|v}}{{tag|iv}}{{tag|ger_impf}}{{tag|px3sp}}{{tag|acc}}|his running}}
+# {{gl|көрдім|көр{{tag|v}}{{tag|tv}}{{tag|ifi}}{{tag|p1}}{{tag|sg}}|I saw}}
+# ::{{glend|"I saw him running home."}}
+# 
+# This same sentence could also be translated as follows, depending on whether you're focusing on the fact that he was running (previous) or that you saw him run home (following):
+# ::{{gl|Мен|мен{{tag|prn}}{{tag|nom}}|I}}
+# {{gl|оның|ол{{tag|prn}}{{tag|gen}}|his}}
+# {{gl|үйге|үй{{tag|n}}{{tag|dat}}|to home}}
+# {{gl|қарай|қарай{{tag|pst}}|towards}}
+# {{gl|жүгіргенін|жүгір{{tag|v}}{{tag|iv}}{{tag|ger_prf}}{{tag|px3sp}}{{tag|acc}}|his running}}
+# {{gl|көрдім|көр{{tag|v}}{{tag|tv}}{{tag|ifi}}{{tag|p1}}{{tag|sg}}|I saw}}
+# ::{{glend|"I saw him run home."}}
+# 
+# As implied by this example, while the tense of gerunds is limited in English, gerunds in most Turkic languages can have a wide range of tense/mood/aspect/evidentiality (TMAE) combinations.  Many of these are translated to languages like English as subordinate clauses, e.g. "I believe that he eats beshbarmaq with his hands.":
+# ::{{gl|Беспармақ|беспармақ{{tag|n}}{{tag|acc}}|beshbarmaq}}
+# {{gl|қолымен|қол{{tag|n}}{{tag|px3sp}}{{tag|inst}}|with his hands}}
+# {{gl|жейтініне|же{{tag|v}}{{tag|ger_impf}}{{tag|px3sg}}{{tag|dat}}|to his eating}}
+# {{gl|сенемін|сен{{tag|v}}{{tag|tv}}{{tag|aor}}{{tag|p1}}{{tag|sg}}|I believe}}
+# ::{{glend|I believe that he eats beshbarmaq with his hands."}}
+# 
+# Notice that in these examples, the verb phrase is being used as a subject, object, adjunct, etc.  That is, in Turkic languages, gerunds can take any grammatical role (and morphology) that a noun phrase can take.  In Kazakh, for example, the verbal nouns can take any combination of possession and/or case suffixes.  They may sometimes even take plural suffixes, though often forms that appear to be a gerund followed by a plural suffix are actually plural substantivised [[#Verbal adjectives|verbal adjectives]] ({{tag|gpr}}{{tag|subst}}{{tag|pl}}).
+# 
+# For Turkic languages in apertium, the most fundamental gerund of a language (often used as an infinitive form) takes the {{tag|ger}} tag and other gerunds take tags based on {{tag|ger}} and something about their TMAE specification, such as {{tag|ger_impf}} (for "imperfective gerund") or {{tag|ger_fut}} (for "future gerund").
+# 
+# ====Verbal adjectives ====
+# Verbal adjectives are forms of verbs that allow one to use a verb phrase as an adjectival phrase.  An example in English might be "running" in the sentence "The running man startled me" (as opposed to "the sitting man"), or "running home" in "The man running home startled me" (as opposed to "the man eating beshbarmaq").  These sentences in Kazakh would be:
+# 
+# :{{gl|Жүгіретін|жүгір{{tag|v}}{{tag|vi}}{{tag|gpr_impf}}|running}}
+# {{gl|адам|адам{{tag|n}}{{tag|nom}}|man}}
+# {{gl|мені|мен{{tag|prn}}{{tag|acc}}|me}}
+# {{gl|шошытты.|шошы{{tag|v}}{{tag|iv}}{{tag|caus}}{{tag|ifi}}{{tag|p3}}{{tag|sg}}|he startled.}}
+# :{{glend|"That running man startled me."}}
+# 
+# :{{gl|Үйге|үй{{tag|n}}{{tag|dat}}|to home}}
+# {{gl|жүгіретін|жүгір{{tag|v}}{{tag|vi}}{{tag|gpr_impf}}|running}}
+# {{gl|адам|адам{{tag|n}}{{tag|nom}}|man}}
+# {{gl|мені|мен{{tag|prn}}{{tag|acc}}|me}}
+# {{gl|шошытты.|шошы{{tag|v}}{{tag|iv}}{{tag|caus}}{{tag|ifi}}{{tag|p3}}{{tag|sg}}|he startled.}}
+# :{{glend|"The man running home startled me."}}
+# 
+# Notice that while in English verbal adjective phrases that are longer than just a verb must be placed after the noun they modify, in Kazakh verbal adjective phrases of any length are only ever placed before the noun.
+# 
+# Phrases formed using verbal adjectives in Turkic languages are often translated using relative clauses in languages like English (e.g., "The man who was running [home] startled me.").  Note that in Turkic languages, usually any part of the verb phrase can be relativised (i.e., "extracted" from the embedded verb phrase and made into a nominal argument which the verbal adjective phrase then "modifies").  For example, "The man who I gave a fork to yesterday was eating beshbarmaq" and "The man that gave me a fork yesterday was eating beshbarmaq" can both be translated into Kazakh using verbal adjectives.
+# 
+# :{{gl|Кеше|кеше{{tag|adv}}|yesterday}}
+# {{gl|мен|мен{{tag|prn}}{{tag|nom}}|I}}
+# {{gl|шанышқы|шанышқы{{tag|n}}{{tag|acc}}|fork}}
+# {{gl|берген|бер{{tag|v}}{{tag|tv}}{{tag|gpr_past}}|having given}}
+# {{gl|адам|адам{{tag|n}}{{tag|nom}}|man}}
+# {{gl|беспармақ|беспармақ{{tag|n}}{{tag|nom}}|beshbarmaq}}
+# {{gl|жеп|же{{tag|v}}{{tag|tv}}{{tag|prc}}|eating}}
+# {{gl|жатқан.|жат{{tag|vaux}}{{tag|past}}{{tag|p3}}{{tag|sg}}|was}}
+# :{{glend|"The man who I gave the fork to yesterday was eating beshbarmaq."}}
+# 
+# :{{gl|Кеше|кеше{{tag|adv}}|yesterday}}
+# {{gl|маған|мен{{tag|prn}}{{tag|dat}}|to me}}
+# {{gl|шанышқы|шанышқы{{tag|n}}{{tag|acc}}|fork}}
+# {{gl|берген|бер{{tag|v}}{{tag|tv}}{{tag|gpr_past}}|having given}}
+# {{gl|адам|адам{{tag|n}}{{tag|nom}}|man}}
+# {{gl|беспармақ|беспармақ{{tag|n}}{{tag|nom}}|beshbarmaq}}
+# {{gl|жеп|же{{tag|v}}{{tag|tv}}{{tag|prc}}|eating}}
+# {{gl|жатқан.|жат{{tag|vaux}}{{tag|past}}{{tag|p3}}{{tag|sg}}|was}}
+# :{{glend|"The man who gave me the fork yesterday was eating beshbarmaq."}}
+# 
+# In English, there is a difference between relative clauses that limit/restrict (what's the right term?) the noun and those that don't.  E.g., "The man that I saw yesterday startled me" (specifically that mean startled me) versus "The man, who I saw yesterday, startled me" (a man startled me; it happens that I saw him yesterday).  In Turkic languages the default meaning of a verbal adjective is usually the restricted meaning, e.g. in Kazakh:
+# 
+# :{{gl|Мен|мен{{tag|prn}}{{tag|nom}}|I}}
+# {{gl|кеше|кеше{{tag|adv}}|yesterday}}
+# {{gl|көрген|көр{{tag|v}}{{tag|vt}}{{tag|gpr_past}}|seen}}
+# {{gl|адам|адам{{tag|n}}{{tag|nom}}|man}}
+# {{gl|мені|мен{{tag|prn}}{{tag|acc}}|me}}
+# {{gl|шошытты.|шошы{{tag|v}}{{tag|iv}}{{tag|caus}}{{tag|ifi}}{{tag|p3}}{{tag|sg}}|he startled.}}
+# :{{glend|"The man I saw yesterday startled me."}}
+# 
+# To get the non-restricted meaning in a Turkic language, two finite verb forms would normally be used (e.g., "The man scared me; I saw him yesterday").
+# 
+# Verbal adjectives can also be substantivised to mean "the ones who ...".  For example, in Kazakh, in a translation of the sentence "the ones/people I saw yesterday were eating beshbarmaq", "the ones/people I saw yesterday" would be formed like the first part of "the man I saw yesterday", but without the word "man", and a plural marker instead:
+# 
+# :{{gl|Мен|мен{{tag|prn}}{{tag|nom}}|I}}
+# {{gl|кеше|кеше{{tag|adv}}|yesterday}}
+# {{gl|көргендер|көр{{tag|v}}{{tag|vt}}{{tag|gpr_past}}{{tag|subst}}{{tag|pl}}|ones seen}}
+# {{gl|беспармақ|беспармақ{{tag|n}}{{tag|nom}}|beshbarmaq}}
+# {{gl|жеп|же{{tag|v}}{{tag|tv}}{{tag|prc}}|eating}}
+# {{gl|жатқан.|жат{{tag|vaux}}{{tag|past}}{{tag|p3}}{{tag|pl}}|were}}
+# :{{glend|"The ones/people I saw were eating beshbarmaq."}}
+# 
+# For Turkic languages in apertium, the tags for verbal adjectives are based on {{tag|gpr}}, with a brief TMAE specification following, such as {{tag|gpr_past}} (for "past-tense verbal adjective") or {{tag|gpr_impf}} (for "imperfect verbal adjective").  The abbreviation "gpr" comes from the Russian phrase "<b>г</b>лагольное <b>пр</b>илагательное" [<b>g</b>laˈgolʲnəjɪ <b>pr</b>ʲilaˈgatʲɪlʲnəjɪ], which means "verbal adjective".
+# 
+# ====Participles ====
+# Participles are verb forms that allow a verb phrase to be combined with other verbs for the purpose of adding information about tense/mood/aspect/voice/evidentiality (TMAVE) to the utterance.  That is, it's usually used in the creation of "compound verb tenses", so the following word is almost always a [[#Verbal auxiliaries|verbal auxiliary]], and the participial verb phrase and auxiliary together form <b>only one predicate</b>.
+# 
+# Examples of relevant compound verb phrases in Kazakh include the following:
+# {|class="wikitable"
+# |-
+# ! gloss !! gloss !! participle
+# |-
+# | тамақ жеп біттің || ‘you finished eating’ || ^жеп/же{{tag|v}}{{tag|tv}}{{tag|prc_prf}}$
+# |-
+# | тамақ жей бердің || ‘you kept eating’ || ^жей/же{{tag|v}}{{tag|tv}}{{tag|prc_impf}}$
+# |-
+# | тамақ жейтін шығармын || ‘I seem to be eating’ || ^жейтін/же{{tag|v}}{{tag|tv}}{{tag|prc_irre}}$
+# |-
+# | тамақ жесең болады || ‘you may/can eat’ || ^жесең/же{{tag|v}}{{tag|tv}}{{tag|prc_cnd}}{{tag|p2}}{{tag|sg}}$
+# |-
+# | тамақ жегің келеді || ‘you want to eat’ || ^жегің/же{{tag|v}}{{tag|tv}}{{tag|prc_vol}}{{tag|p2}}{{tag|sg}}$
+# |-
+# | тамақ жегелі жатырсың || ‘you're about to eat’ || ^жегелі/же{{tag|v}}{{tag|tv}}{{tag|prc_purp}}$
+# |-
+# |colspan="3"| etc.
+# |}
+# 
+# Some Turkic participles must agree with their subjects (in person, number, and formality), as with Kazakh's {{tag|prc_cnd}} and {{tag|prc_vol}} above, and most (but not all!) of them also have negative forms.  Examples of negative forms of participles include Kazakh ^ жемей/же{{tag|v}}{{tag|tv}}{{tag|neg}}{{tag|prc_prf}}$ and ^жемейтін/же{{tag|v}}{{tag|tv}}{{tag|neg}}{{tag|prc_irre}}$.
+# 
+# For Turkic languages in apertium, the tags for participles are based on {{tag|prc}}, with a brief TMAE specification following, such as {{tag|prc_impf}} (for "imperfective participle") or {{tag|prc_irre}} (for "irrealis participle").  The abbreviation "prc" comes from the English term "participle" or the Russian equivalent "причастие" [prʲiˈtɕastʲijɪ].
+# 
+# Most participles, along with most verbal adverbs, are often referred to as "converbs" in the Turkology literature.
+# 
+# ====Verbal adverbs ====
+# Verbal adverbs are forms of verbs that allow one to use a verb phrase as an adjunct to another verb phrase.  Each verb phrase (the main one, and the one subordinated by the verbal adverb) is an independent predicate, resulting in ''two separate predicates''.  Use of these forms often relates two events to one another in some way temporally.  An example of a verbal adverb in English is "running" in "Running home, I saw that man".  In Kazakh, a similar sentence could be rendered as:
+# 
+# :{{gl|Үйге|үй{{tag|n}}{{tag|dat}}|to home}}
+# {{gl|жүгіріп|жүгір{{tag|v}}{{tag|iv}}{{tag|gna}}|having run}}
+# {{gl|мен|мен{{tag|prn}}{{tag|nom}}|I}}
+# {{gl|сол|сол{{tag|det}}|that}}
+# {{gl|адамды|адам{{tag|n}}{{tag|acc}}|man}}
+# {{gl|көрдім.|көр{{tag|v}}{{tag|tv}}{{tag|ifi}}{{tag|p1}}{{tag|sg}}|I saw.}}
+# :{{glend|"Having run home, I saw that man."}}
+# 
+# Another example can be found in the following Kazakh sentence:
+# 
+# :{{gl|Мен|мен{{tag|prn}}{{tag|nom}}|I}}
+# {{gl|сол|сол{{tag|det}}|that}}
+# {{gl|адамды|адам{{tag|n}}{{tag|acc}}|man}}
+# {{gl|көрсем|көр{{tag|v}}{{tag|tv}}{{tag|gna_cond}}{{tag|p1}}{{tag|sg}}|if I see}}
+# {{gl|үйге|үй{{tag|n}}{{tag|dat}}|to home}}
+# {{gl|жүгіремін|жүгір{{tag|v}}{{tag|iv}}{{tag|aor}}{{tag|p1}}{{tag|sg}}|I will run}}
+# :{{glend|"If I see that man, I will run home."}}
+# 
+# Some Turkic verbal adverbs must agree with their subjects (in person, number, and formality), as with Kazakh's {{tag|gna_cnd}} above, and almost all of them also have negative forms.  Examples of negative forms of participles include Kazakh ^жемей/же{{tag|v}}{{tag|tv}}{{tag|neg}}{{tag|gna}}$ and ^жемесең/же{{tag|v}}{{tag|tv}}{{tag|neg}}{{tag|gna_cond}}{{tag|p2}}{{tag|sg}}$.  Verbal adverbs can have the same or a different subject as the main verb phrase.
+# 
+# Some forms that are not morphologically verbal adverbs are used in very much the same way as verbal adverbs in Turkic languages.  For example, in Kazakh, a form like ^жүгіргенде/жүгір{{tag|v}}{{tag|iv}}{{tag|ger_past}}{{tag|loc}}$ allows a verb phrase with the verb "жүгір" to be used as an adjunct to another verb phrase, for example in the following sentences in Kazakh:
+# 
+# :{{gl|Үйге|үй{{tag|n}}{{tag|dat}}|to home}}
+# {{gl|жүгіргенде|жүгір{{tag|v}}{{tag|iv}}{{tag|ger_past}}{{tag|loc}}|running}}
+# {{gl|мен|мен{{tag|prn}}{{tag|nom}}|I}}
+# {{gl|сол|сол{{tag|det}}|that}}
+# {{gl|адамды|адам{{tag|n}}{{tag|acc}}|man}}
+# {{gl|көрдім.|көр{{tag|v}}{{tag|tv}}{{tag|ifi}}{{tag|p1}}{{tag|sg}}|I saw.}}
+# :{{glend|"Running home, I saw that man."}}
+# 
+# :{{gl|Үйге|үй{{tag|n}}{{tag|dat}}|to home}}
+# {{gl|жүгіргеннен|жүгір{{tag|v}}{{tag|iv}}{{tag|ger_past}}{{tag|abl}}|running}}
+# {{gl|бері|бері{{tag|post}}|since}}
+# {{gl|мен|мен{{tag|prn}}{{tag|nom}}|I}}
+# {{gl|сол|сол{{tag|det}}|that}}
+# {{gl|адамды|адам{{tag|n}}{{tag|acc}}|man}}
+# {{gl|көрген жоқпын.|көр{{tag|v}}{{tag|tv}}{{tag|neg}}{{tag|past}}{{tag|p1}}{{tag|sg}}|I have not seen.}}
+# :{{glend|"Since running home, I have not seen that man."}}
+# 
+# This is much like English expressions like "While running home, I saw that man" or "Since running home I have not seen that man", where a subordinating "conjunction" or a preposition is used.
+# 
+# For Turkic languages in apertium, the most fundamental verbal adverb of a language takes the {{tag|gna}} tag and other verbal adverbs take tags based on {{tag|gna}}, with a brief TMAE specification following, such as {{tag|gna_cnd}} (for "conditional verbal adverb").  The abbreviation "gna" comes from the Russian word "<b>г</b>лагольное <b>на</b>речие" [<b>g</b>laˈgolʲnəjɪ <b>na</b>ˈrʲetɕijɪ], meaning literally "verbal adverb" (even though these might more commonly be called "деепричастие").
+# 
+# Most verbal adverbs, along with most participles, are often referred to as "converbs" in the Turkology literature.
+# 
+# ===Question word===
+# 
+# ===Copula===
+# 
+# ===Special cases===
+# 
+# ====Nationalities and ethnicities====
+# 
+# Should they be nouns or adjectives ?
+# 
+# ====Colour terms====
+# 
+# ====Cardinal points====
+# 
+# ====The words ''бар'' and ''жок''====
+# 
+# In most (if not all) Turkic languages, there will be a word for "existing" and a word for "not existing". These are adjectives.
+# 
+# Prototypical parts of speech:
+# 
+# * adjective: 
+# * noun:
+# * verb: 
+# * determiner:
+# * pronoun:
+# * adverb:
+# 
+# Positive tests:
+# 
+# * Predicative use:
+# ** бу китап бар.
+# * Attributive use 
+# ** бу бар китап.
+# * Place in the TAMVE system
+# ** бу китап бар болду
+# ** бу китап бар болып жатыр
+# * Place of predication 
+# * Can be substantivised?
+# * What is its "subject"/"argument"/whatever?  (nominative case nouns and gerunds)
+# * What relation does it have with the subject of the sentence ?
+# * What relation does it have with the predicate of the sentence ?
+# * Can bar/yok be used attributively without an argument ? e.g. in the case of "men yok kezde" the argument is "men", but most adjectives don't have arguments.
+# * Are there other adjectives which take arguments like that ? (e.g. could you use kerek like that too ?) how about other adjectives taking nominal arguments ? something like "sky high prices", "compound rich language" ?
+# 
+# Negative tests:
+# 
+# * Doesn't have verb morphology?
+# * Doesn't have reference (e.g. not a pro- form)
+# * But also not negatable with emes/emas/tügel/deyil (are there other non-negatable adjectives?)
+# 
+# {|class=wikitable
+# |-
+# ! Language           !! Word !! {{sc|pred}} !! {{sc|attr}} !! {{sc|subst}}
+# |-
+# |rowspan=2|Kazakh   || бар ||               ||             ||  
+# |-
+# | жоқ               ||             ||  
+# |-
+# |rowspan=2| Kyrgyz   || бар ||                ||             ||  
+# |-
+# | жок               ||             ||  
+# |-
+# |rowspan=2| Tatar    || бар ||                ||             ||  
+# |-
+# | юк                ||             ||  
+# |-
+# |rowspan=2| Bashkir  || бар ||                ||             ||  
+# |-
+# | юҡ               ||             ||  
+# |-
+# |rowspan=2| Kumyk    || бар ||                ||             ||  
+# |-
+# | ёкъ               ||             ||  
+# |-
+# |rowspan=2| Nogay    || бар ||                ||             ||  
+# |-
+# | йок               ||             ||  
+# |-
+# |rowspan=2| Turkish  || var ||                ||             ||  
+# |-
+# | yok               ||             ||  
+# |-
+# |rowspan=2| Chuvash  || пур ||                ||             ||  
+# |-
+# | ҫук               ||             ||  
+# |-
+# |rowspan=2| Tuvan    || бар ||                ||             ||  
+# |-
+# | чок               ||             ||  
+# |-
+# |rowspan=2| Yakut    || баар ||                ||             ||  
+# |-
+# | суох               ||             ||  
+# |-
+# |rowspan=2| Dolgan   || баар ||                ||             ||  
+# |-
+# | һуох               ||             ||  
+# |-
+# |rowspan=2| Uzbek   || bor ||                ||             ||  
+# |-
+# | yo'q               ||             ||  
+# |-
+# |}
+# 
+# ;Examples 
+# 
+# * Бірақ әкесінің '''бар''' байлығы сақталып тұрған банк банкротқа ұшырап, аяқасты кедейленіп қалған Теккерейге ақша табу үшін журналист, суретші-карикатурист болуға тура келді.
+# * "Ұлы  жоқ үйде қыз туғанда ат қою" - giving a name when a girl is born in a house with no sons
+# * "ешқандай иесі  жоқ жер" land without any kind of owner
+# * (?)"biz mutlaka yok şeyler yapmayacağım"
+# * "Аллаһның болу ғалам үшін өте керек нәрсе , оның жоқтығы мүмкін емес"
+# * өндіріске керек су және ауыз су жетістіру
+# * атын дискі , дыбысалғыш , оған граммофон табағының  керек тұсына қоюға және
+# 
+# ==« Derivation » and friends==
+# 
+# The principle behind dealing with derivation is, as far as possible, that we don't want to deal with it. Derivation causes problems for translation because the translation of derivation is even more unpredictable than inflection. So, in general, just say no to derivation. However, if we want to get any kind of reasonable coverage, for each language, we're going to need to deal with about 5&mdash;10 suffixes which are very productive, and quite predictable in meaning.
+# 
+# ==="Abessive" case: -sIz ===
+# The abessive or privative translates as "without" or "-less" in English.  It can be attributive, adverbial, or substantival.  The base reading is {{tag|advl}}, as with other postpositions. If we want {{tag|attr}} and {{tag|subst}} readings, then the word should be lexicalised as an adjective.
+# 
+# {|class=wikitable
+# |-
+# | Chuvash || -с{Ӑ}р 
+# |-
+# | Tatar, Kazakh, Kyrgyz  || -с{I}з
+# |-
+# | Turkish, Turkmen || -s{I}z
+# |- 
+# | Uzbek || -siz
+# |}
+# 
+# ===The suffix -LI===
+# 
+# 
+# {|class=wikitable
+# |-
+# | Tatar, Kazakh || -л{I}
+# |-
+# | Kyrgyz || -луу
+# |-
+# | Turkish, Turkmen || -l{I}
+# |}
+# 
+# ===The suffix -LIK===
+# 
+# ===The suffix -KI===
+# See [[Turkic languages/Ki]].
+# 
+# ===The suffix -DAKI===
+# See [[Turkic languages/Ki]].
+# 
+# So far we are calling this a form of the locative {{tag|loc}} which can take {{tag|attr}} and {{tag|subst}} tags. With the {{tag|subst}} tag it allows nominal inflection, but without the possibility of recursively having -DAKI. 
+# 
+# ===The suffix -NIKI===
+# See [[Turkic languages/Ki]].
+# 
+# So far we are calling this a form of the genitive {{tag|gen}} followed by the {{tag|subst}} tag. It allows nominal inflection, but without the possibility of recursively having -NIKI.
+# 
+# ==Language specific issues==
+# === Turkmen: stem-final voiced and voiceless stops ===
+# In Turkmen, there are three types of stem-final stops:
+# * voiced stops
+# * voiceless stops
+# * stops that are voiceless syllable finally and voiced intervocalically
+# {{comment|TODO: finish description of this and explain how it can be / is dealt with}}
+# 
+# === Chuvash: Russian loans ending in -a with non-final stress ===
+# 
+# 
+# 
+# [[Category:Turkic languages]]
+
+-->

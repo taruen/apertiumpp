@@ -1,0 +1,3 @@
+[submodule "apertium-all"]
+	path = apertium-all
+	url = git@github.com:apertium/apertium-all.git
