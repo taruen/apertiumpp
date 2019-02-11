@@ -56,3 +56,7 @@ setup:
   programmatically
 
 * ?
+
+## Documentation
+
+For up-to-date documentation, browse the doc/apertium++.html file.

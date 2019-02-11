@@ -1,22 +1,38 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html><head><meta http-equiv="content-type" content="text/html; charset=utf-8"/><meta name="viewport" content="width=device-width, initial-scale=0.8"/><title>Apertium++, or Apertium 4.0</title><link rel="stylesheet" type="text/css" href="scribble.css" title="default"/><link rel="stylesheet" type="text/css" href="manual-style.css" title="default"/><link rel="stylesheet" type="text/css" href="manual-racket.css" title="default"/><script type="text/javascript" src="scribble-common.js"></script><script type="text/javascript" src="manual-racket.js"></script><!--[if IE 6]><style type="text/css">.SIEHidden { overflow: hidden; }</style><![endif]--></head><body id="scribble-racket-lang-org"><div class="tocset"><div class="tocview"><div class="tocviewlist tocviewlisttopspace"><div class="tocviewtitle"><table cellspacing="0" cellpadding="0"><tr><td style="width: 1em;"><a href="javascript:void(0);" title="Expand/Collapse" class="tocviewtoggle" onclick="TocviewToggle(this,&quot;tocview_0&quot;);">&#9658;</a></td><td></td><td><a href="" class="tocviewselflink" data-pltdoc="x">Apertium+<span class="mywbr"> &nbsp;</span>+<span class="mywbr"> &nbsp;</span>, or Apertium 4.0</a></td></tr></table></div><div class="tocviewsublistonly" style="display: none;" id="tocview_0"><table cellspacing="0" cellpadding="0"><tr><td align="right">1&nbsp;</td><td><a href="#%28part._.What_could_be_improved_in_.Apertium_3_0_%29" class="tocviewlink" data-pltdoc="x">What could be improved in Apertium 3.0?</a></td></tr></table></div></div></div><div class="tocsub"><table class="tocsublist" cellspacing="0"><tr><td><span class="tocsublinknumber"></span><a href="#%28part._.Apertium____or_.Apertium_4_0%29" class="tocsubseclink" data-pltdoc="x">Apertium+<span class="mywbr"> &nbsp;</span>+<span class="mywbr"> &nbsp;</span>, or Apertium 4.0</a></td></tr><tr><td><span class="tocsublinknumber">1<tt>&nbsp;</tt></span><a href="#%28part._.What_could_be_improved_in_.Apertium_3_0_%29" class="tocsubseclink" data-pltdoc="x">What could be improved in Apertium 3.0?</a></td></tr></table></div></div><div class="maincolumn"><div class="main"><div class="versionbox"><span class="versionNoNav">7.1</span></div><h2><a name="(part._.Apertium____or_.Apertium_4_0)"></a>Apertium++, or Apertium 4.0</h2><p>This is a project with an aim of:</p><ul><li><p>making a free/libre morphological transducer for every language
-of the world;</p></li><li><p>making free/libre machine translators for translating between
-<span style="font-weight: bold">all</span> related languages of a particular language group
-(e.g. Turkic, Slavic, Indo-Iranian etc;)</p></li><li><p>updating Apertium 3.0&rsquo;s official documentation so that it
-reflects changes which have happened since the time of its publication;</p></li><li><p>reducing the code which developers have to maintain
+<html><head><meta http-equiv="content-type" content="text/html; charset=utf-8"/><meta name="viewport" content="width=device-width, initial-scale=0.8"/><title>Apertium++, or Apertium 4.0</title><link rel="stylesheet" type="text/css" href="scribble.css" title="default"/><link rel="stylesheet" type="text/css" href="racket.css" title="default"/><link rel="stylesheet" type="text/css" href="manual-style.css" title="default"/><link rel="stylesheet" type="text/css" href="manual-racket.css" title="default"/><script type="text/javascript" src="scribble-common.js"></script><script type="text/javascript" src="manual-racket.js"></script><!--[if IE 6]><style type="text/css">.SIEHidden { overflow: hidden; }</style><![endif]--></head><body id="scribble-racket-lang-org"><div class="tocset"><div class="tocview"><div class="tocviewlist tocviewlisttopspace"><div class="tocviewtitle"><table cellspacing="0" cellpadding="0"><tr><td style="width: 1em;"><a href="javascript:void(0);" title="Expand/Collapse" class="tocviewtoggle" onclick="TocviewToggle(this,&quot;tocview_0&quot;);">&#9658;</a></td><td></td><td><a href="" class="tocviewselflink" data-pltdoc="x">Apertium+<span class="mywbr"> &nbsp;</span>+<span class="mywbr"> &nbsp;</span>, or Apertium 4.0</a></td></tr></table></div><div class="tocviewsublistonly" style="display: none;" id="tocview_0"><table cellspacing="0" cellpadding="0"><tr><td align="right">1&nbsp;</td><td><a href="#%28part._.What_could_be_improved_in_.Apertium_3_0_%29" class="tocviewlink" data-pltdoc="x">What could be improved in Apertium 3.0?</a></td></tr><tr><td align="right">2&nbsp;</td><td><a href="#%28part._.Dependencies%29" class="tocviewlink" data-pltdoc="x">Dependencies</a></td></tr></table></div></div></div><div class="tocsub"><table class="tocsublist" cellspacing="0"><tr><td><span class="tocsublinknumber"></span><a href="#%28part._.Apertium____or_.Apertium_4_0%29" class="tocsubseclink" data-pltdoc="x">Apertium+<span class="mywbr"> &nbsp;</span>+<span class="mywbr"> &nbsp;</span>, or Apertium 4.0</a></td></tr><tr><td><span class="tocsublinknumber">1<tt>&nbsp;</tt></span><a href="#%28part._.What_could_be_improved_in_.Apertium_3_0_%29" class="tocsubseclink" data-pltdoc="x">What could be improved in Apertium 3.0?</a></td></tr><tr><td><span class="tocsublinknumber">2<tt>&nbsp;</tt></span><a href="#%28part._.Dependencies%29" class="tocsubseclink" data-pltdoc="x">Dependencies</a></td></tr></table></div></div><div class="maincolumn"><div class="main"><div class="versionbox"><span class="versionNoNav">7.1</span></div><h2><a name="(part._.Apertium____or_.Apertium_4_0)"></a>Apertium++, or Apertium 4.0</h2><p>This is a project with an aim of:</p><ul><li><p>making a free/libre morphological transducer for
+every language of the world;</p></li><li><p>making free/libre machine translators for translating
+between <span style="font-weight: bold">all</span> related languages of a particular
+language group (e.g. Turkic, Slavic, Indo-Iranian etc);</p></li><li><p>updating Apertium 3.0&rsquo;s official documentation so
+that it reflects changes which have happened since the time
+of its publication;</p></li><li><p>reducing the code which developers have to maintain
 in a typical Apertium 3.0 monolingual or bilingual package.</p></li></ul><blockquote class="refpara"><blockquote class="refcolumn"><blockquote class="refcontent"><p>Hence two pluses in the name of the project...</p></blockquote></blockquote></blockquote><p>The project, in its spirit and aims is similar to the
 <a href="https://www.apertium.org">Apertium project</a>, and can be
-considered its spinoff, with two additions:</p><ul><li><p>for each language, we will maintain a corpus of sharable texts,
-parallel or comparable to corpora for other languges</p></li><li><p>machine translators will have a speech recognition &amp; speech synthesis
-front-ends (based on Mozilla&rsquo;s Common Voice and DeepSpeech projects).</p></li></ul><blockquote class="refpara"><blockquote class="refcolumn"><blockquote class="refcontent"><p>To be frank, if we come up with some useful technology,
-we hope to see it merged to the Apertium&rsquo;s code base.</p></blockquote></blockquote></blockquote><p>Since one of the declared goals of ours is being able to handle speech (not
-just the written word), and, since we want to re-evaluate some of the design
-decisions made in the Apertium project (and yet are not sure at all whether
-such re-evaluations will turn out to be wise desicions), we decided to make a
-separate project out of this effort.</p><h3>1<tt>&nbsp;</tt><a name="(part._.What_could_be_improved_in_.Apertium_3_0_)"></a>What could be improved in Apertium 3.0?</h3><p>Apertium is a great project, with quite a few contributors, but here is a list of things deemed as less-than-optimal in the current Apertium setup:</p><ul><li><p>transfer rules are unidirectional, and currently there is no way of
-marking a transfer rule as &lsquo;bidirectional&rsquo; and get a transfer rule for the
-opposite direction for free,</p></li><li><p>there can be and usually there are several entries in a .lexc or .dix
-files with the same left-hand side (and there is no compile-time checks against
-mistakenly adding the same word twice, possibly with a right and a wrong
-category</p></li><li><p>rather long compile cycles, translators are not extensible
-programmatically</p></li><li><p>?</p></li></ul></div></div><div id="contextindicator">&nbsp;</div></body></html>
+considered its spinoff, with two additions:</p><ul><li><p>for each language, we will maintain a corpus of
+sharable texts, parallel or comparable to corpora for other
+languges</p></li><li><p>machine translators will have a speech recognition &amp;
+speech synthesis front-ends (based on Mozilla&rsquo;s Common Voice
+and DeepSpeech projects).</p></li></ul><blockquote class="refpara"><blockquote class="refcolumn"><blockquote class="refcontent"><p>To be frank, if we come up with some useful
+technology, we hope to see it merged to the Apertium&rsquo;s code
+base.</p></blockquote></blockquote></blockquote><p>Since one of the declared goals of ours is being able to
+handle speech (not just the written word), and, since we
+want to re-evaluate some of the design decisions made in the
+Apertium project (and yet are not sure at all whether such
+re-evaluations will turn out to be wise desicions), we
+decided to make a separate project out of this effort.</p><h3>1<tt>&nbsp;</tt><a name="(part._.What_could_be_improved_in_.Apertium_3_0_)"></a>What could be improved in Apertium 3.0?</h3><p>Apertium is a great project, with quite a few contributors,
+but here is a list of things deemed as less-than-optimal in
+the current Apertium setup:</p><ul><li><p>transfer rules are unidirectional, and currently
+there is no way of marking a transfer rule as
+&lsquo;bidirectional&rsquo; and get a transfer rule for the opposite
+direction for free,</p></li><li><p>there can be and usually there are several entries in
+a .lexc or .dix files with the same left-hand side (and
+there is no compile-time checks against mistakenly adding
+the same word twice, possibly with a right and a wrong
+category</p></li><li><p>rather long compile cycles, translators are not
+extensible programmatically</p></li><li><p>?</p></li></ul><h3>2<tt>&nbsp;</tt><a name="(part._.Dependencies)"></a>Dependencies</h3><p>The <span class="stt">"apertium-tests"</span> contains tests for Apertium&rsquo;s
+monolingual and bilingual packages. These tests are written
+in the <a href="https://racket-lang.org">Racket</a>
+programming language using its dialect called
+<a href="https://docs.racket-lang.org/rash/index.html">Rash</a>.</p><p>To run the tests, first you&rsquo;ll need to install the Racket
+language following the instructions at
+<a href="https://racket-lang.org"><span class="url">https://racket-lang.org</span></a>. Then, install the Rash
+package with the <span class="RktSym">raco</span><span class="RktMeta"></span><span class="hspace">&nbsp;</span><span class="RktMeta"></span><span class="RktSym">pkg</span><span class="RktMeta"></span><span class="hspace">&nbsp;</span><span class="RktMeta"></span><span class="RktSym">install</span><span class="RktMeta"></span><span class="hspace">&nbsp;</span><span class="RktMeta"></span><span class="RktSym">rash</span><span class="RktMeta"></span> command.</p></div></div><div id="contextindicator">&nbsp;</div></body></html>
