@@ -73,13 +73,27 @@ the current Apertium setup:
 
 @section{Dependencies}
 
-The @filepath{apertium-tests} contains tests for Apertium's
-monolingual and bilingual packages. These tests are written
-in the @(link "https://racket-lang.org" "Racket")
-programming language using its dialect called
+The @filepath{apertium-tests} directory contains tests for
+Apertium's monolingual and bilingual packages. These tests
+are written in the
+@(link "https://racket-lang.org" "Racket") programming
+language using its dialect called
 @(link "https://docs.racket-lang.org/rash/index.html" "Rash").
 
 To run the tests, first you'll need to install the Racket
 language following the instructions at
 @(url "https://racket-lang.org"). Then, install the Rash
 package with the @(code "raco pkg install rash") command.
+
+After that, you can open the @filepath{.rtk} files in
+@filepath{apertium-tests} in DrRacket (and IDE for the
+Racket language), and run each clicking on the "Run" button
+in DrRacket or pressing F5.
+
+Tests do not compile the monolingual or bilingual packages
+automatically, so you'll need to do that beforehand.
+
+In test files, you also might need to change the path to the
+monolingual or bilingual packages you're testing. Tests
+assume that both @filepath{apertium-all} and @filepath{
+ apertium-tests} are in the same directory.

@@ -28,11 +28,18 @@ a .lexc or .dix files with the same left-hand side (and
 there is no compile-time checks against mistakenly adding
 the same word twice, possibly with a right and a wrong
 category</p></li><li><p>rather long compile cycles, translators are not
-extensible programmatically</p></li><li><p>?</p></li></ul><h3>2<tt>&nbsp;</tt><a name="(part._.Dependencies)"></a>Dependencies</h3><p>The <span class="stt">"apertium-tests"</span> contains tests for Apertium&rsquo;s
-monolingual and bilingual packages. These tests are written
-in the <a href="https://racket-lang.org">Racket</a>
-programming language using its dialect called
+extensible programmatically</p></li><li><p>?</p></li></ul><h3>2<tt>&nbsp;</tt><a name="(part._.Dependencies)"></a>Dependencies</h3><p>The <span class="stt">"apertium-tests"</span> directory contains tests for
+Apertium&rsquo;s monolingual and bilingual packages. These tests
+are written in the
+<a href="https://racket-lang.org">Racket</a> programming
+language using its dialect called
 <a href="https://docs.racket-lang.org/rash/index.html">Rash</a>.</p><p>To run the tests, first you&rsquo;ll need to install the Racket
 language following the instructions at
 <a href="https://racket-lang.org"><span class="url">https://racket-lang.org</span></a>. Then, install the Rash
-package with the <span class="RktSym">raco</span><span class="RktMeta"></span><span class="hspace">&nbsp;</span><span class="RktMeta"></span><span class="RktSym">pkg</span><span class="RktMeta"></span><span class="hspace">&nbsp;</span><span class="RktMeta"></span><span class="RktSym">install</span><span class="RktMeta"></span><span class="hspace">&nbsp;</span><span class="RktMeta"></span><span class="RktSym">rash</span><span class="RktMeta"></span> command.</p></div></div><div id="contextindicator">&nbsp;</div></body></html>
+package with the <span class="RktSym">raco</span><span class="RktMeta"></span><span class="hspace">&nbsp;</span><span class="RktMeta"></span><span class="RktSym">pkg</span><span class="RktMeta"></span><span class="hspace">&nbsp;</span><span class="RktMeta"></span><span class="RktSym">install</span><span class="RktMeta"></span><span class="hspace">&nbsp;</span><span class="RktMeta"></span><span class="RktSym">rash</span><span class="RktMeta"></span> command.</p><p>After that, you can open the <span class="stt">".rtk"</span> files in
+<span class="stt">"apertium-tests"</span> in DrRacket (and IDE for the
+Racket language), and run each clicking on the "Run" button
+in DrRacket or pressing F5.</p><p>Tests do not compile the monolingual or bilingual packages
+automatically, so you&rsquo;ll need to do that beforehand.</p><p>In test files, you also might need to change the path to the
+monolingual or bilingual packages you&rsquo;re testing. Tests
+assume that both <span class="stt">"apertium-all"</span> and <span class="stt">"apertium-tests"</span> are in the same directory.</p></div></div><div id="contextindicator">&nbsp;</div></body></html>
