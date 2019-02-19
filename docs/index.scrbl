@@ -1,6 +1,7 @@
 #lang scribble/manual
 
-@title[#:version ""]{Apertium++, or Apertium 4.0}
+@title[#:version ""]{Apertium++!, or Apertium 4.0, or making
+ Apertium DSLs internal/embedded}
 
 This is a project with an aim of:
 
@@ -15,7 +16,8 @@ This is a project with an aim of:
 
  @item{updating Apertium 3.0's official documentation so
   that it reflects changes which have happened since the time
-  of its publication;}
+  of its publication, especially as the result of Google
+  Summer of Code projects;}
 
  @item{reducing the code which developers have to maintain
   in a typical Apertium 3.0 monolingual or bilingual package.}]
@@ -69,6 +71,14 @@ the current Apertium setup:
  @item{rather long compile cycles, translators are not
   extensible programmatically}
 
+ @item{not possible to re-use components in a programmatic
+  way (i.e. without having to copy-paste manually, which
+  sooner or later will lead to out-of-date chunks). Want we
+  want instead is having a way to say, e.g. something like
+  this: @code{from apertium-tat-rus import transfer-rule-x},
+  @code{from apertium-symbols import n, v, adj, np}, @code{
+   parameterize(transfer-rule-x, lemma="foo")} etc.}
+
  @item{?}]
 
 @section{Dependencies}
@@ -85,7 +95,7 @@ language following the instructions at
 @(url "https://racket-lang.org"). Then, install the Rash
 package with the @(code "raco pkg install rash") command.
 
-After that, you can open the @filepath{.rtk} files in
+After that, you can open the @filepath{.rkt} files in
 @filepath{apertium-tests} in DrRacket (and IDE for the
 Racket language), and run each clicking on the "Run" button
 in DrRacket or pressing F5.
@@ -97,3 +107,7 @@ In test files, you also might need to change the path to the
 monolingual or bilingual packages you're testing. Tests
 assume that both @filepath{apertium-all} and @filepath{
  apertium-tests} are in the same directory.
+
+@section{Background reading}
+
+@url{http://www.greghendershott.com/fear-of-macros/}
