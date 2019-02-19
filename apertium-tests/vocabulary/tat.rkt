@@ -15,6 +15,42 @@
 ;; Apertium's dictionaries, for which we thank them very much.
 
 (require rackunit)
+(require (for-syntax racket/base
+                     racket/match))
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Macros / syntax / language
+
+
+;; expand
+;; (> 'мы<qst> "~мы")
+;; into
+;; (check-equal?
+;;  #{echo '^мы<qst>$ | apertium -f none -d (values A-TAT) tat-gener}
+;;  "~мы")
+
+(define-syntax (> stx)
+               (match (syntax->list stx)
+                      [(list _ lexical surface)
+                       (datum->syntax stx `(check-equal?
+                                            #{echo (string-append "^" (symbol->string (values ,lexical)) "$") | apertium -f none -d (values A-TAT) tat-gener}
+                                            ,surface))]))
+
+
+;; expand
+;; (< 'мы<qst> "ме")
+;; into
+;; (check-equal?
+;;  #{echo "ме" | apertium -d (values A-TAT) tat-morph}
+;;  '^мы<qst>$)
+
+(define-syntax (< stx)
+               (match (syntax->list stx)
+                      [(list _ lexical surface)
+                       (datum->syntax stx `(check-equal?
+                                            #{echo (values ,surface) | apertium -d (values A-TAT) tat-morph}
+                                            (string-append "^" (symbol->string ,lexical) "$")))]))
 
 
 ;;;;;;;;;;;;
@@ -28,6 +64,5 @@
 ;; Vocabulary/tests
 
 
-(check-equal?
- #{echo "а" | apertium -d (values A-TAT) tat-morph}
- "^а/а<ltr>/а<ij>/а<ideo>$")
+(> 'сәлам<ij> "сәлам")
+(< 'сәлам<ij> "сәлам")
