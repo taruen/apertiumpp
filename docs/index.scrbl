@@ -35,12 +35,16 @@ considered its spinoff, with two additions:
   languges}
 
  @item{machine translators will have a speech recognition &
-  speech synthesis front-ends (based on Mozilla's Common Voice
-  and DeepSpeech projects).}]
+  speech synthesis front-ends (based on Mozilla's
+  @hyperlink["https://voice.mozilla.org"]{Common Voice} and
+  @hyperlink["https://github.com/mozilla/DeepSpeech"]{
+   DeepSpeech} projects).}]
 
 @margin-note{To be frank, if we come up with some useful
  technology, we hope to see it merged to the Apertium's code
- base.}
+ base (maybe in the form of different campaigns, such as
+ "Help us to create a mophological transducer for every human
+ language!").}
 
 Since one of the declared goals of ours is being able to
 handle speech (not just the written word), and, since we
@@ -81,7 +85,46 @@ the current Apertium setup:
 
  @item{?}]
 
-@section{Dependencies}
+We suppose that most of the problems listed will be due the
+fact that the domain-specific languages used in Apertium
+(and there a handful of them -- one seen in monolingual and
+bilingual @code{.dix} files, one seen in @code{chunking},
+@code{ interchunk} and @code{postchunk} transfer rules,
+@code{ lexc}, @code{twol} and others are so-called external
+DSLs. They are parsed and compiled. When writing in these
+DSLs, you don't have access to a full-fledged programming
+language which would allow you to extend the DSL in question
+easily and simplify&automate things. You also don't have
+access to useful features of a full-fledged programming
+language like a proper module system, which would allow you
+to re-use code accross monolingual and bilingual packages
+reliably.
+
+@section{Desiderata}
+
+@itemlist[
+
+ @item{Every Apertium 3.0. program is a valid
+           Apertium 4.0 program.}]
+
+@section{Installation}
+
+At the core of what we do is a Racket package called @italic{
+ apertiumpp}. Here are insttructions on how to install it:
+
+@itemlist[
+ @item{Install the @hyperlink["https://racket-lang.org"]{Racket
+ language}.}
+  
+ @item{Clone this repository: @code{git clone
+ https://github.com/taruen/apertium}.}
+
+ @item{Go to the @code{apertiumpp} directory.}
+
+ @item{Install the apertiumpp package: @code{rack pkg install
+ apertiumpp}.}]
+
+@section{Tests/data for Apertium 3.0. packages}
 
 The @filepath{apertium-tests} directory contains tests for
 Apertium's monolingual and bilingual packages. These tests
@@ -90,12 +133,7 @@ are written in the
 language using its dialect called
 @(link "https://docs.racket-lang.org/rash/index.html" "Rash").
 
-To run the tests, first you'll need to install the Racket
-language following the instructions at
-@(url "https://racket-lang.org"). Then, install the Rash
-package with the @(code "raco pkg install rash") command.
-
-After that, you can open the @filepath{.rkt} files in
+You can open the @filepath{.rkt} files in
 @filepath{apertium-tests} in DrRacket (and IDE for the
 Racket language), and run each clicking on the "Run" button
 in DrRacket or pressing F5.
