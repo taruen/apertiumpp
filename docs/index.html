@@ -25,7 +25,7 @@ language!").</p></blockquote></blockquote></blockquote><p>Since one of the decla
 handle speech (not just the written word), and, since we
 want to re-evaluate some of the design decisions made in the
 Apertium project (and yet are not sure at all whether such
-re-evaluations will turn out to be wise desicions), we
+re-evaluations will turn out to be wise decisions), we
 decided to make a separate project out of this effort.</p><h3>1<tt>&nbsp;</tt><a name="(part._.What_could_be_improved_in_.Apertium_3_0_)"></a>What could be improved in Apertium 3.0?</h3><p>Apertium is a great project, with quite a few contributors,
 but here is a list of things deemed as less-than-optimal in
 the current Apertium setup:</p><ul><li><p>transfer rules are unidirectional, and currently
@@ -53,9 +53,11 @@ language which would allow you to extend the DSL in question
 easily and simplify&amp;automate things. You also don&rsquo;t have
 access to useful features of a full-fledged programming
 language like a proper module system, which would allow you
-to re-use code accross monolingual and bilingual packages
+to re-use code across monolingual and bilingual packages
 reliably.</p><h3>2<tt>&nbsp;</tt><a name="(part._.Desiderata)"></a>Desiderata</h3><ul><li><p>Every Apertium 3.0. program is a valid
-    Apertium 4.0 program.</p></li></ul><h3>3<tt>&nbsp;</tt><a name="(part._.Installation)"></a>Installation</h3><p>At the core of what we do is a Racket package called <span style="font-style: italic">apertiumpp</span>. Here are insttructions on how to install it:</p><ul><li><p>Install the <a href="https://racket-lang.org">Racket
+    Apertium 4.0 program.</p></li></ul><h3>3<tt>&nbsp;</tt><a name="(part._.Installation)"></a>Installation</h3><p>At the core of this project is a Racket package called
+<span style="font-style: italic">apertiumpp</span>. Here are insttructions on how to
+install it:</p><ul><li><p>Install the <a href="https://racket-lang.org">Racket
 language</a>.</p></li><li><p>Clone this repository: <span class="RktSym">git</span><span class="RktMeta"></span><span class="hspace">&nbsp;</span><span class="RktMeta"></span><span class="RktSym">clone</span><span class="RktMeta"></span><span class="hspace">&nbsp;</span><span class="RktMeta"></span><span class="RktSym">https://github.com/taruen/apertium</span><span class="RktMeta"></span>.</p></li><li><p>Go to the <span class="RktSym">apertiumpp</span><span class="RktMeta"></span> directory.</p></li><li><p>Install the apertiumpp package: <span class="RktSym">rack</span><span class="RktMeta"></span><span class="hspace">&nbsp;</span><span class="RktMeta"></span><span class="RktSym">pkg</span><span class="RktMeta"></span><span class="hspace">&nbsp;</span><span class="RktMeta"></span><span class="RktSym">install</span><span class="RktMeta"></span><span class="hspace">&nbsp;</span><span class="RktMeta"></span><span class="RktSym">apertiumpp</span><span class="RktMeta"></span>.</p></li></ul><h3>4<tt>&nbsp;</tt><a name="(part._.Tests_data_for_.Apertium_3_0__packages)"></a>Tests/data for Apertium 3.0. packages</h3><p>The <span class="stt">"apertium-tests"</span> directory contains tests for
 Apertium&rsquo;s monolingual and bilingual packages. These tests
 are written in the
@@ -67,4 +69,6 @@ Racket language), and run each clicking on the "Run" button
 in DrRacket or pressing F5.</p><p>Tests do not compile the monolingual or bilingual packages
 automatically, so you&rsquo;ll need to do that beforehand.</p><p>In test files, you also might need to change the path to the
 monolingual or bilingual packages you&rsquo;re testing. Tests
-assume that both <span class="stt">"apertium-all"</span> and <span class="stt">"apertium-tests"</span> are in the same directory.</p><h3>5<tt>&nbsp;</tt><a name="(part._.Background_reading)"></a>Background reading</h3><p><a href="http://www.greghendershott.com/fear-of-macros/"><span class="url">http://www.greghendershott.com/fear-of-macros/</span></a></p></div></div><div id="contextindicator">&nbsp;</div></body></html>
+assume that both
+<a href="https://github.com/apertium/apertium-all">apertium-all</a> and <span class="stt">" apertium-tests"</span> are in the same
+directory.</p><h3>5<tt>&nbsp;</tt><a name="(part._.Background_reading)"></a>Background reading</h3><p><a href="http://www.greghendershott.com/fear-of-macros/"><span class="url">http://www.greghendershott.com/fear-of-macros/</span></a></p></div></div><div id="contextindicator">&nbsp;</div></body></html>

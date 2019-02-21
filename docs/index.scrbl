@@ -50,7 +50,7 @@ Since one of the declared goals of ours is being able to
 handle speech (not just the written word), and, since we
 want to re-evaluate some of the design decisions made in the
 Apertium project (and yet are not sure at all whether such
-re-evaluations will turn out to be wise desicions), we
+re-evaluations will turn out to be wise decisions), we
 decided to make a separate project out of this effort.
 
 @section{What could be improved in Apertium 3.0?}
@@ -97,7 +97,7 @@ language which would allow you to extend the DSL in question
 easily and simplify&automate things. You also don't have
 access to useful features of a full-fledged programming
 language like a proper module system, which would allow you
-to re-use code accross monolingual and bilingual packages
+to re-use code across monolingual and bilingual packages
 reliably.
 
 @section{Desiderata}
@@ -109,8 +109,9 @@ reliably.
 
 @section{Installation}
 
-At the core of what we do is a Racket package called @italic{
- apertiumpp}. Here are insttructions on how to install it:
+At the core of this project is a Racket package called
+@italic{apertiumpp}. Here are insttructions on how to
+install it:
 
 @itemlist[
  @item{Install the @hyperlink["https://racket-lang.org"]{Racket
@@ -143,8 +144,10 @@ automatically, so you'll need to do that beforehand.
 
 In test files, you also might need to change the path to the
 monolingual or bilingual packages you're testing. Tests
-assume that both @filepath{apertium-all} and @filepath{
- apertium-tests} are in the same directory.
+assume that both
+@hyperlink["https://github.com/apertium/apertium-all"]{
+ apertium-all} and @filepath{ apertium-tests} are in the same
+directory.
 
 @section{Background reading}
 
