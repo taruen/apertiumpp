@@ -7,4 +7,6 @@
 
 @defmodule[apertiumpp]
 
-Package Description Here
+@defproc[(explain [tag string?] [lang symbol?])
+         string?]{
+ Get a description, in language `lang', for what a given Apertium tag stands for.}
