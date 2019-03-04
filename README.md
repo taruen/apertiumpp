@@ -85,21 +85,10 @@ monolingual and bilingual packages reliably.
 
 * Every Apertium 3.0. program is a valid Apertium 4.0 program.
 
-## 3. Installation
+## 3. Apertiumpp library
 
-At the core of this project is a Racket library called _apertiumpp_.
-Here are insttructions on how to install it:
-
-* Install the [Racket language](https://racket-lang.org).
-
-* Clone this repository:
-  `git` `clone` `https://github.com/taruen/apertiumpp`.
-
-* `cd` to the `apertiumpp` directory.
-
-* Install the apertiumpp package: `raco` `pkg` `install` `apertiumpp`.
-
-The documentation of the library can be found at
+At the core of this project is a Racket library called _apertiumpp_. The
+documentation of the library can be found at
 [https://taruen.github.io/apertiumpp/apertiumpp/](./apertiumpp/).
 
 ## 4. Tests/data for Apertium 3.0. packages
