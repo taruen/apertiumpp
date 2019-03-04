@@ -105,25 +105,29 @@ reliably.
 @itemlist[
 
  @item{Every Apertium 3.0. program is a valid
-           Apertium 4.0 program.}]
+  Apertium 4.0 program.}]
 
 @section{Installation}
 
-At the core of this project is a Racket package called
+At the core of this project is a Racket library called
 @italic{apertiumpp}. Here are insttructions on how to
 install it:
 
 @itemlist[
  @item{Install the @hyperlink["https://racket-lang.org"]{Racket
- language}.}
+   language}.}
   
  @item{Clone this repository: @code{git clone
- https://github.com/taruen/apertium}.}
+   https://github.com/taruen/apertiumpp}.}
 
- @item{Go to the @code{apertiumpp} directory.}
+ @item{@tt{cd} to the @code{apertiumpp} directory.}
 
- @item{Install the apertiumpp package: @code{rack pkg install
- apertiumpp}.}]
+ @item{Install the apertiumpp package: @code{raco pkg install
+   apertiumpp}.}]
+
+The documentation of the library can be found at
+@hyperlink["./apertiumpp/"]{
+ https://taruen.github.io/apertiumpp/apertiumpp/}.
 
 @section{Tests/data for Apertium 3.0. packages}
 
