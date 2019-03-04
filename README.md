@@ -1,5 +1,4 @@
-# Apertium++!, or Apertium 4.0, or making
-Apertium DSLs internal/embedded
+# Apertium++!, or Apertium 4.0, or making Apertium DSLs internal/embedded
 
 This is a project with an aim of:
 
