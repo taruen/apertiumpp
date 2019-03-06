@@ -21,7 +21,7 @@ Here are insttructions on how to install apertiumpp:
  @item{Clone this repository: @code{git clone
    https://github.com/taruen/apertiumpp}.}
 
- @item{@tt{cd} to the @code{apertiumpp} directory.}
+ @item{@tt{cd} to the @code{apertiumpp/apertiumpp} directory.}
 
  @item{Install the apertiumpp package: @code{raco pkg install
    apertiumpp}.}]
