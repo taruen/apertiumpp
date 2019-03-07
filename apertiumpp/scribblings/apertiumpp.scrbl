@@ -23,8 +23,10 @@ Here are insttructions on how to install apertiumpp:
 
  @item{@tt{cd} to the @code{apertiumpp/apertiumpp} directory.}
 
- @item{Install the apertiumpp package: @code{raco pkg install
-   apertiumpp}.}]
+ @item{Install the apertiumpp package: @code{raco pkg install}.}]
+
+Later on, when there are any updates in the Git repository,
+you should run @code{raco setup -p apertiumpp}.
 
 @section{Reference}
 
