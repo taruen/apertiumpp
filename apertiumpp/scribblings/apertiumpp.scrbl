@@ -4,9 +4,9 @@
                      apertiumpp)
           scribble/eval)
 
-@title[#:version "0.0"]{Apertiumpp: various utilities for writing and
- manipulating @hyperlink["https://www.apertium.org"]{Apertium
-  project's} rule-based machine translators}
+@title[#:version "0.0"]{Apertiumpp: various utilities for writing
+  @hyperlink["https://www.apertium.org"]{Apertium project's} rule-based machine
+  translators}
 
 @author{Ilnar Salimzianov}
 
