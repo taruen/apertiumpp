@@ -1,9 +1,11 @@
-(define lang "kaz")
-(define title "The Little Prince")
-(define license "all rights reserved")
-(define translation-published-in "2013")
-(define isbn "978-601-282-723-1")
-(define translator "Ж. Қонаева")
+#lang scribble/text
+
+@(define lang "kaz")
+@(define title "The Little Prince")
+@(define license "all rights reserved")
+@(define translation-published-in "2013")
+@(define isbn "978-601-282-723-1")
+@(define translator "Ж. Қонаева")
 
 Кішкентай ханзада
 
@@ -23,7 +25,7 @@ I
 
 Мен бұл өнер туындысын ересек кісілерге көрсеттім де, олардан суретім қорқыныш тудырады ма деп сұрадым.
 
-Олар: «Қалпақ та қорқынышты болады ма екен?» - десті.
+Олар: «Қалпақ та қорқынышты болады ма екен?» — десті.
 
 Ал менің салғаным қалпақ емес еді. Ол пілді қорқытып жатқан айдаһар жыланның суреті болатын.
 
