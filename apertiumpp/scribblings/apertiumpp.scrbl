@@ -2,7 +2,8 @@
 
 @(require (for-label racket/base
                      apertiumpp)
-          scribble/eval)
+          scribble/eval
+          scribble/extract)
 
 @title[#:version "0.0"]{Apertiumpp: various utilities for writing
   @hyperlink["https://www.apertium.org"]{Apertium project's} rule-based machine
@@ -31,6 +32,8 @@ latest version.
 
 @section{Reference}
 
+@subsection{Glossary}
+
 @defmodule[apertiumpp/glossary]
 
 @defproc[(explain [tag string?] [lang symbol?])
@@ -53,3 +56,9 @@ latest version.
  (explain "n" 'eng)
  (explain "a-made-up-non-existing-tag" 'eng)
  (explain "n" 'a-made-up-non-existing-lang)]
+
+@subsection{Apertium-pkg}
+
+@defmodule[apertiumpp/apertium-pkg]
+@include-extracted[apertiumpp/apertium-pkg]
+
