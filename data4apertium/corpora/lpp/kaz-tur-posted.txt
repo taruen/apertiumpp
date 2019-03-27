@@ -1,11 +1,11 @@
-#*lang *scribble/t*ext
+#lang scribble/text
 
-@(*def*ine *lang #"*kaz#")
-@(*def*ine t*it*le #"Th*e *Litt*le P*rince#")
-@(*def*ine *license #"*all *right*s *reserved#")
-@(*def*ine t*ranslat*io*n-pu*blish*ed-*in #"2013#")
-@(*def*ine *isbn #"978-601-282-723-1#")
-@(*def*ine t*ranslato*r #"Yıl *Қонаева#")
+@(define lang "kaz")
+@(define title "The Little Prince")
+@(define license "all rights reserved")
+@(define translation-published-in "2013")
+@(define isbn "978-601-282-723-1")
+@(define translator "Ж. Қонаева")
 
 Küçük *ханзада
 
@@ -2728,3 +2728,4 @@ fakat eğer da anı düşüp şu yerden #geç, sizden lütfen, *асықпаңы
 *Егерде sol *мезетте bir sihirli çocuk size yaklaşıp gülse, *егерде onun altınca sarı kılları olsa, sizin soruna yanıt *қайтармаса, siz, *әрине, onun kim olduğunu rengine #koy.
 
 Bağışlı olarak görelim! Beni #şu *ренжіте çıkmayıp, bana onun çabuk döndüğüne yerli yazıp gönderelim ...
+
