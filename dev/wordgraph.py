@@ -2,15 +2,7 @@
 """
 wordgraph.py
 
-A library for converting two or more Apertium bidixes into a Wordgraph (its
-definition you can see below) and then doing various things with that
-wordgraph such as:
-- exporting it as a Multidix, in which entries are *optionally* linked to
-  English Wordnet's definitions (see bidixes2multidix.py),
-- translating English Wordnet lemmas to other languages via (chain) lookup
-  in the wordgraph or in Google/Yandex translate (see enwordnet2twordnet.py),
-- or generating new bidixes for language pairs for which you didn't have a
-  bidix before (TODO).
+A library for converting two or more Apertium bidixes into a Wordgraph.
 
 USAGE: import wordgraph as wg
 
@@ -35,10 +27,10 @@ import sys
 
 ISO2_2_ISO3 = {'kz': 'kaz', 'tt': 'tat', 'ky': 'kir', 'tr': 'tur', 'cv': 'chv',
                'uz': 'uzb', 'ba': 'bak', 'tk': 'tuk', 'ug': 'uig', 'az': 'aze',
-               'en': 'eng'}
+               'ru': 'rus', 'en': 'eng'}
 ISO3_2_ISO2 = {'kaz': 'kk', 'tat': 'tt', 'kir': 'ky', 'tur': 'tr', 'chv': 'cv',
                'uzb': 'uz', 'bak': 'ba', 'tuk': 'tk', 'uig': 'ug', 'aze': 'az',
-               'eng': 'en'}
+               'rus': 'ru', 'eng': 'en'}
 
 
 ## Data definitions
@@ -106,6 +98,7 @@ WG_3 = {MONOLING_E_6: {MONOLING_E_7, MONOLING_E_8, MONOLING_E_9},
 ## Functions
 ## =========
 
+
 def main(main_bidix, iso_codes):
     """ String (List of String) -> String
 
@@ -149,43 +142,6 @@ def main(main_bidix, iso_codes):
  
     return minidom.parseString(ET.tostring(root)).toprettyxml(indent="  ",
                                                               newl="\n")
-
-
-def manytags2singletag(wg):
-    """ WordGraph -> WordGraph
-
-    Iterate through all nodes (= MonolingEntries) of wg and, if
-    a monolingentry.tags has many tags, limit it to a single tag
-    (part-of-speech tag).
-    """
-    def _manytags2singletag(me):
-        if len(me.tags) > 1:
-            return MonolingEntry(me.lang, me.lm, me.tags[:1])
-        else:
-            return me
-
-    res = defaultdict(set)
-    for me in wg:
-        if len(me.tags) > 1:
-            for neibr in wg[me]:
-                res[_manytags2singletag(me)].add(_manytags2singletag(neibr))
-        else:
-            for neibr in wg[me]:
-                res[me].add(_manytags2singletag(neibr))
-    return res
- 
-def test_manytags2singletag():
-    assert manytags2singletag(WG_3) == \
-        {MonolingEntry("eng", "Moscow", ("np",)):
-            {MonolingEntry("tat", "Мәскәү", ("np",)),
-             MonolingEntry("rus", "Москва", ("np",)),
-             MonolingEntry("tur", "Moskova", ())},
-         MonolingEntry("tat", "Мәскәү", ("np",)):
-             {MonolingEntry("eng", "Moscow", ("np",))},
-         MonolingEntry("rus", "Москва", ("np",)):
-             {MonolingEntry("eng", "Moscow", ("np",))},
-         MonolingEntry("tur", "Moskova", ()):
-             {MonolingEntry("eng", "Moscow", ("np",))}}
 
 
 def g_connections(graph, start_node):
