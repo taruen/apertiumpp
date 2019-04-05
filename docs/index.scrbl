@@ -133,9 +133,11 @@ This will tell Racket where the Apertium linguictic package is
 located on your computer.
 
 For that to work, Apertium package should have an @filepath{info.rkt}
-file. See @filepath{apertium-tat} or @filepath{apertium-kaz-tat} for
-an example.
+file and a @filepath{main.rkt} file with the functionionality you want to
+export and test. See @hyperlink{https://github.com/apertium/apertium-kaz}{apertium-kaz}
+and  @hyperlink{https://github.com/apertium/apertium-kaz-tat}{apertium-kaz-tat}
+for an example.
  
-@section{Background reading}
+@section{Background reading (for potentional contributors, not users)}
 
 @url{http://www.greghendershott.com/fear-of-macros/}
