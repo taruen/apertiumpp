@@ -115,7 +115,7 @@ found at @hyperlink["./apertiumpp/"]{
 
 @section{Tests/data for Apertium 3.0. packages}
 
-The @filepath{apertium-tests} directory contains tests for
+The @filepath{data4apertium} directory contains tests for
 Apertium's monolingual and bilingual packages. These tests
 are written in the
 @(link "https://racket-lang.org" "Racket") programming
