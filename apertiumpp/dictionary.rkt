@@ -81,42 +81,46 @@
         "" '() '() '() (hash)))))))
 
 
-(struct sdef (n))
+(struct sdef (n attrs))
 
 (provide
  (struct*-doc
-  sdef ([n string?])
+  sdef ([n string?] [attrs (hash/c symbol? string?)])
   ("interpretation: a symbol definition."
    @itemlist[@item{@(racket sdef-n) : grammatical symbol used in dictionary
-              pardefs or entries.}])))
+              pardefs or entries.}
+             @item{@(racket sdef-attrs) : user-defined attributes with name
+              and value}])))
 
-(define SDEF-0 (sdef "n"))
+(define SDEF-0 (sdef "n" (hash 'c "Noun")))
 
 (provide
  (thing-doc
   SDEF-0 sdef?
   ("A noun symbol."
    @(racketblock
-     (define SDEF-0 (sdef "n"))))))
+     (define SDEF-0 (sdef "n" (hash 'c "Noun")))))))
 
 
-(struct pardef (n con))
+(struct pardef (n con attrs))
 
 (provide
  (struct*-doc
-  pardef ([n string?] [con (listof e?)])
+  pardef ([n string?] [con (listof e?)] [attrs (hash/c symbol? string?)])
   ("interpretation: a paradigm definition."
    @itemlist[@item{@(racket pardef-n) : the name of the paradigm}
-             @item{@(racket pardef-con) : its content}])))
+             @item{@(racket pardef-con) : its content}
+             @item{@(racket pardef-attrs) : any additional attributes}])))
 
 
-(struct section (n type con))
+(struct section (n type con attrs))
 
 (provide
  (struct*-doc
   section ([n string?]
            [type (or/c STANDARD PREBLANK POSTBLANK INCONDITIONAL)]
-           [con (listof e?)])
+           [con (listof e?)]
+           [attrs (hash/c symbol? string?)])
   ("interpretation: a section of a dictionary with entries"
    @itemlist[@item{@(racket section-n) : name/id of the section}
              @item{@(racket section-type) :
@@ -129,10 +133,11 @@
               that require an unconditional tokenisation and the placing of a
               blank (before and after, respectively), and \"inconditional\" for
               the rest of forms that require unconditional tokenization."}
-             @item{@(racket section-con) : content (entries)}])))
+             @item{@(racket section-con) : content (entries)}
+             @item{@(racket section-attrs) : any additional attributes}])))
 
 
-(struct e (o re lm l r par))
+(struct e (o re lm l r par attrs))
 
 (provide
  (struct*-doc
@@ -141,16 +146,18 @@
      [lm (or/c #f string?)]
      [l string?]
      [r string?]
-     [par (or/c #f string?)])
+     [par (or/c #f string?)]
+     [attrs (hash/c symbol? string?)])
   ("interpretation: an entry in a dictionary paradigm or section."
    @itemlist[@item{@(racket e-o) : usage restriction, either LR (only analyse
-              this form) or RL (only generate this form) or #f (not set.}
+              this form) or RL (only generate this form) or #f (not set)}
              @item{@(racket e-re) : regular expression or #f (not set)}
              @item{@(racket e-lm) : lemma or #f (not set)}
              @item{@(racket e-l) : left/lower/surface string}
              @item{@(racket e-r) : right/upper/lexical string}
              @item{@(racket e-par) : name of the (inflection) paradigm or #f
-              (not set)}])))
+              (not set)}
+             @item{@(racket e-attrs) : any additional attributes}])))
 
 (require sxml)
  (ssax:xml->sxml (open-input-file
