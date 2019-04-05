@@ -57,6 +57,11 @@ latest version.
  (explain "a-made-up-non-existing-tag" 'eng)
  (explain "n" 'a-made-up-non-existing-lang)]
 
+@subsection{Bilingual dictionary}
+
+@defmodule[apertiumpp/bidix]
+@include-extracted[apertiumpp/bidix]
+
 @subsection{Apertium-pkg}
 
 @defmodule[apertiumpp/apertium-pkg]
