@@ -122,21 +122,20 @@ are written in the
 language using its dialect called
 @(link "https://docs.racket-lang.org/rash/index.html" "Rash").
 
-You can open the @filepath{.rkt} files in
-@filepath{apertium-tests} in DrRacket (and IDE for the
-Racket language), and run each clicking on the "Run" button
-in DrRacket or pressing F5.
+You can run @filepath{.rkt} tests in
+@filepath{data4apertium} with the @code{racket foo.rkt} command.
 
-Tests do not compile the monolingual or bilingual packages
-automatically, so you'll need to do that beforehand.
+Before running tests, you should @code{cd} to the Apertium
+linguistic data package you want to test, and run the @code{raco pkg install}
+command while in that directory.
 
-In test files, you also might need to change the path to the
-monolingual or bilingual packages you're testing. Tests
-assume that both
-@hyperlink["https://github.com/apertium/apertium-all"]{
- apertium-all} and @filepath{ apertium-tests} are in the same
-directory.
+This will tell Racket where the Apertium linguictic package is
+located on your computer.
 
+For that to work, Apertium package should have an @filepath{info.rkt}
+file. See @filepath{apertium-tat} or @filepath{apertium-kaz-tat} for
+an example.
+ 
 @section{Background reading}
 
 @url{http://www.greghendershott.com/fear-of-macros/}

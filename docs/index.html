@@ -58,12 +58,10 @@ Apertium&rsquo;s monolingual and bilingual packages. These tests
 are written in the
 <a href="https://racket-lang.org">Racket</a> programming
 language using its dialect called
-<a href="https://docs.racket-lang.org/rash/index.html">Rash</a>.</p><p>You can open the <span class="stt">".rkt"</span> files in
-<span class="stt">"apertium-tests"</span> in DrRacket (and IDE for the
-Racket language), and run each clicking on the "Run" button
-in DrRacket or pressing F5.</p><p>Tests do not compile the monolingual or bilingual packages
-automatically, so you&rsquo;ll need to do that beforehand.</p><p>In test files, you also might need to change the path to the
-monolingual or bilingual packages you&rsquo;re testing. Tests
-assume that both
-<a href="https://github.com/apertium/apertium-all">apertium-all</a> and <span class="stt">" apertium-tests"</span> are in the same
-directory.</p><h3>5<tt>&nbsp;</tt><a name="(part._.Background_reading)"></a>Background reading</h3><p><a href="http://www.greghendershott.com/fear-of-macros/"><span class="url">http://www.greghendershott.com/fear-of-macros/</span></a></p></div></div><div id="contextindicator">&nbsp;</div></body></html>
+<a href="https://docs.racket-lang.org/rash/index.html">Rash</a>.</p><p>You can run <span class="stt">".rkt"</span> tests in
+<span class="stt">"data4apertium"</span> with the <span class="RktSym">racket</span><span class="RktMeta"></span><span class="hspace">&nbsp;</span><span class="RktMeta"></span><span class="RktSym">foo.rkt</span><span class="RktMeta"></span> command.</p><p>Before running tests, you should <span class="RktSym">cd</span><span class="RktMeta"></span> to the Apertium
+linguistic data package you want to test, and run the <span class="RktSym">raco</span><span class="RktMeta"></span><span class="hspace">&nbsp;</span><span class="RktMeta"></span><span class="RktSym">pkg</span><span class="RktMeta"></span><span class="hspace">&nbsp;</span><span class="RktMeta"></span><span class="RktSym">install</span><span class="RktMeta"></span>
+command while in that directory.</p><p>This will tell Racket where the Apertium linguictic package is
+located on your computer.</p><p>For that to work, Apertium package should have an <span class="stt">"info.rkt"</span>
+file. See <span class="stt">"apertium-tat"</span> or <span class="stt">"apertium-kaz-tat"</span> for
+an example.</p><h3>5<tt>&nbsp;</tt><a name="(part._.Background_reading)"></a>Background reading</h3><p><a href="http://www.greghendershott.com/fear-of-macros/"><span class="url">http://www.greghendershott.com/fear-of-macros/</span></a></p></div></div><div id="contextindicator">&nbsp;</div></body></html>
