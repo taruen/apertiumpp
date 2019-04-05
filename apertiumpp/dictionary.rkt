@@ -25,7 +25,7 @@
 ;; Data definitions
 
 
-(struct dictionary (lang alphabet sdefs pardefs sections))
+(struct dictionary (lang alphabet sdefs pardefs sections attrs))
 
 (provide
  (struct*-doc
@@ -33,48 +33,52 @@
               [alphabet string?]
               [sdefs (listof sdef?)]
               [pardefs (listof pardef?)]
-              [sections (listof section?)])
+              [sections (listof section?)]
+              [attrs (hash/c symbol? string?)])
   ("interpretation: an Apertium dictionary (read: contents of a .dix file)."
-   @itemlist[@item{@(racket lang) : ISO 639-3 code(s) of the language(s)}
-             @item{@(racket alphabet) : relevant for a monolingual dictionary
-              only}
-             @item{@(racket sdefs) : grammatical symbols used in dictionary
-              entries}
-             @item{@(racket pardefs) : paradigm definitions}
-             @item{@(racket sections) : lists of dictionary entries}])))
+   @itemlist[@item{@(racket dictionary-lang) : ISO 639-3 code(s) of the
+              language(s)}
+             @item{@(racket dictionary-alphabet) : relevant for a monolingual
+              dictionary only}
+             @item{@(racket dictionary-sdefs) : grammatical symbols used in
+              dictionary entries}
+             @item{@(racket dictionary-pardefs) : paradigm definitions}
+             @item{@(racket dictionary-sections) : lists of dictionary entries}
+             @item{@(racket dictionary-attrs) : user-defined attributes
+              with name and value}])))
 
 (define D-0
   (dictionary
    'eng
    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
-   '() '() '()))
+   '() '() '() (hash)))
 
 (provide
  (thing-doc
-  D-0 (dictionary?)
+  D-0 dictionary?
   ("An example of an empty English dictionary:"
    @(racketblock
      (define D-0
        (dictionary
         'eng
         "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
-        '() '() '()))))))
+        '() '() '() (hash)))))))
 
 (define D-B-0
   (dictionary
    'eng-tat
    ""
-   '() '() '()))
+   '() '() '() (hash)))
 
 (provide
  (thing-doc
-  D-B-0 (dictionary?)
+  D-B-0 dictionary?
   ("An empty English-Tatar bilingual dictionary:"
    @(racketblock
      (define D-B-0
        (dictionary
         'eng-tat
-        "" '() '() '()))))))
+        "" '() '() '() (hash)))))))
 
 
 (struct sdef (n))
@@ -86,7 +90,15 @@
    @itemlist[@item{@(racket sdef-n) : grammatical symbol used in dictionary
               pardefs or entries.}])))
 
-(define SDEF-O (sdef "n"))
+(define SDEF-0 (sdef "n"))
+
+(provide
+ (thing-doc
+  SDEF-0 sdef?
+  ("A noun symbol."
+   @(racketblock
+     (define SDEF-0 (sdef "n"))))))
+
 
 (struct pardef (n con))
 
@@ -108,7 +120,7 @@
   ("interpretation: a section of a dictionary with entries"
    @itemlist[@item{@(racket section-n) : name/id of the section}
              @item{@(racket section-type) :
-             A quote from the @hyperlink{https://taruen.github.io/organisation/index/modules-spec.html}{official
+              A quote from the @hyperlink{https://taruen.github.io/organisation/index/modules-spec.html}{official
                documentation}:The value of the attribute type is used to
               express the kind of string tokenization applied in each
               dictionary section: the possible values of this attribute are:
@@ -124,19 +136,23 @@
 
 (provide
  (struct*-doc
-  e ([o (or/c LR RL)] [re string?] [lm string?] [l string?] [r string?]
-                      [par string?])
+  e ([o (or/c #f LR RL)]
+     [re (or/c #f string?)]
+     [lm (or/c #f string?)]
+     [l string?]
+     [r string?]
+     [par (or/c #f string?)])
   ("interpretation: an entry in a dictionary paradigm or section."
    @itemlist[@item{@(racket e-o) : usage restriction, either LR (only analyse
-              this form) or RL (only generate this form).}
-             @item{@(racket e-re) : regular expression}
-             @item{@(racket e-lm) : lemma}
+              this form) or RL (only generate this form) or #f (not set.}
+             @item{@(racket e-re) : regular expression or #f (not set)}
+             @item{@(racket e-lm) : lemma or #f (not set)}
              @item{@(racket e-l) : left/lower/surface string}
              @item{@(racket e-r) : right/upper/lexical string}
-             @item{@(racket e-par) : (inflection) paradigm}])))
+             @item{@(racket e-par) : name of the (inflection) paradigm or #f
+              (not set)}])))
 
-
-;(require sxml)
-;(ssax:xml->sxml (open-input-file
-;                 "/home/selimcan/1Working/1Taruen/apertium-turkic/divan.dix")
-;                  '())
+(require sxml)
+ (ssax:xml->sxml (open-input-file
+                   "/tmp/apertium-kaz-tat.kaz-tat.dix")
+                    '())
