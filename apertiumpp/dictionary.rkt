@@ -29,7 +29,7 @@
 
 (provide
  (struct*-doc
-  dictionary ([lang symbol?]
+  dictionary ([lang (listof symbol?)]
               [alphabet string?]
               [sdefs (listof sdef?)]
               [pardefs (listof pardef?)]
@@ -49,7 +49,7 @@
 
 (define D-0
   (dictionary
-   'eng
+   '(eng)
    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
    '() '() '() (hash)))
 
@@ -60,13 +60,13 @@
    @(racketblock
      (define D-0
        (dictionary
-        'eng
+        '(eng)
         "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
         '() '() '() (hash)))))))
 
 (define D-B-0
   (dictionary
-   'eng-tat
+   '(eng tat)
    ""
    '() '() '() (hash)))
 
@@ -77,7 +77,7 @@
    @(racketblock
      (define D-B-0
        (dictionary
-        'eng-tat
+        '(eng tat)
         "" '() '() '() (hash)))))))
 
 
@@ -159,7 +159,30 @@
               (not set)}
              @item{@(racket e-attrs) : any additional attributes}])))
 
-(require sxml)
- (ssax:xml->sxml (open-input-file
-                   "/tmp/apertium-kaz-tat.kaz-tat.dix")
-                    '())
+
+;;;;;;;;;;;;
+;; Functions
+
+
+(require xml xml/path)
+(permissive-xexprs #t)
+
+
+(define (parse-dix dix)
+  (define parsed
+    (xml->xexpr (document-element (read-xml (open-input-file dix)))))
+  (dictionary
+   '(kaz-tat)
+   (se-path* '(alphabet) parsed)
+   (se-path*/list '(sdef) parsed)
+   (se-path*/list '(pardef) parsed)
+   (se-path*/list '(section) parsed)
+   (hash)))
+
+(provide
+ (proc-doc/names
+  parse-dix (string? . -> . dictionary?) (bidix)
+  ("Parse .dix file and return a " (racket dictionary) ".")))
+
+
+;(se-path*/list '(section) (xml->xexpr (document-element (read-xml (open-input-file "/tmp/apertium-kaz-tat.kaz-tat.dix")))))
