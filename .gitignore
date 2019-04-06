@@ -1,1 +1,3 @@
-/*.sxref
+*.sxref
+*.rktd
+__pycache__
