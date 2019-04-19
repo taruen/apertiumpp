@@ -48,6 +48,7 @@
     "apertium-incubator/apertium-sah-eng/"
     "apertium-nursery/apertium-tat-bak/"
     "apertium-incubator/apertium-tat-eng/"
+    "apertium-incubator/apertium-tat-kaa/"
     "apertium-incubator/apertium-tat-kir/"
     "apertium-nursery/apertium-tat-rus/"
     "apertium-nursery/apertium-tuk-tur/"

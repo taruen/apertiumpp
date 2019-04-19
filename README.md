@@ -93,23 +93,27 @@ documentation of the library can be found at
 
 ## 4. Tests/data for Apertium 3.0. packages
 
-The `"apertium-tests"` directory contains tests for Apertium’s
+The `"data4apertium"` directory contains tests for Apertium’s
 monolingual and bilingual packages. These tests are written in the
 [Racket](https://racket-lang.org) programming language using its dialect
 called [Rash](https://docs.racket-lang.org/rash/index.html).
 
-You can open the `".rkt"` files in `"apertium-tests"` in DrRacket \(and
-IDE for the Racket language\), and run each clicking on the "Run" button
-in DrRacket or pressing F5.
+You can run `".rkt"` tests in `"data4apertium"` with the
+`racket` `foo.rkt` command.
 
-Tests do not compile the monolingual or bilingual packages
-automatically, so you’ll need to do that beforehand.
+Before running tests, you should `cd` to the Apertium linguistic data
+package you want to test, and run the `raco` `pkg` `install` command
+while in that directory.
 
-In test files, you also might need to change the path to the monolingual
-or bilingual packages you’re testing. Tests assume that both
-[apertium-all](https://github.com/apertium/apertium-all) and `"
-apertium-tests"` are in the same directory.
+This will tell Racket where the Apertium linguictic package is located
+on your computer.
 
-## 5. Background reading
+For that to work, Apertium package should have an `"info.rkt"` file and
+a `"main.rkt"` file with the functionality you want to export and test.
+See [apertium-kaz](https://github.com/apertium/apertium-kaz) and
+[apertium-kaz-tat](https://github.com/apertium/apertium-kaz-tat) for an
+example.
+
+## 5. Background reading \(for potentional contributors, not users\)
 
 [http://www.greghendershott.com/fear-of-macros/](http://www.greghendershott.com/fear-of-macros/)

@@ -29,13 +29,13 @@ notifications:
         recipients:
             - ilnar@selimcan.org
         on_failure: always
-        on_success: never
+        on_success: always
 end
   )
 
-(for ([l MONOLINGUAL])
-  (define travisyml (string-append "apertium-all/" l ".travis.yml"))  
-  (when (not (file-exists? travisyml))
-    (display-to-file MONOLINGUAL-TRAVIS-YML travisyml)))
-;; git pull
-;; etc
+;(for ([l MONOLINGUAL])
+;  (define travisyml (string-append "apertium-all/" l ".travis.yml"))  
+;  (when (not (file-exists? travisyml))
+;    (display-to-file MONOLINGUAL-TRAVIS-YML travisyml)))
+; git pull
+; etc
