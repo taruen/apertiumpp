@@ -3,22 +3,29 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
+<!-- 2019-04-20 Sat 14:07 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>PROJECT T, or APERTIUM++!</title>
-<!-- 2018-10-23 Tue 18:03 -->
-<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
-<meta  name="generator" content="Org-mode" />
+<meta name="generator" content="Org mode" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
-  .title  { text-align: center; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
   .todo   { font-family: monospace; color: red; }
-  .done   { color: green; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
   .tag    { background-color: #eee; font-family: monospace;
             padding: 2px; font-size: 80%; font-weight: normal; }
   .timestamp { color: #bebebe; }
   .timestamp-kwd { color: #5f9ea0; }
-  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
-  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
-  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
   .underline { text-decoration: underline; }
   #postamble p, #preamble p { font-size: 90%; margin: .2em; }
   p.verse { margin-left: 3%; }
@@ -45,27 +52,111 @@
     border: 1px solid black;
   }
   pre.src:hover:before { display: inline;}
-  pre.src-sh:before    { content: 'sh'; }
-  pre.src-bash:before  { content: 'sh'; }
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
   pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
-  pre.src-R:before     { content: 'R'; }
-  pre.src-perl:before  { content: 'Perl'; }
-  pre.src-java:before  { content: 'Java'; }
-  pre.src-sql:before   { content: 'SQL'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
 
   table { border-collapse:collapse; }
   caption.t-above { caption-side: top; }
   caption.t-bottom { caption-side: bottom; }
   td, th { vertical-align:top;  }
-  th.right  { text-align: center;  }
-  th.left   { text-align: center;   }
-  th.center { text-align: center; }
-  td.right  { text-align: right;  }
-  td.left   { text-align: left;   }
-  td.center { text-align: center; }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
   dt { font-weight: bold; }
-  .footpara:nth-child(2) { display: inline; }
-  .footpara { display: block; }
+  .footpara { display: inline; }
   .footdef  { margin-bottom: 1em; }
   .figure { padding: 1em; }
   .figure p { text-align: center; }
@@ -85,6 +176,7 @@
     { font-size: 10px; font-weight: bold; white-space: nowrap; }
   .org-info-js_search-highlight
     { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
   /*]]>*/-->
 </style>
 <script type="text/javascript">
@@ -92,7 +184,7 @@
 @licstart  The following is the entire license notice for the
 JavaScript code in this tag.
 
-Copyright (C) 2012-2013 Free Software Foundation, Inc.
+Copyright (C) 2012-2018 Free Software Foundation, Inc.
 
 The JavaScript code in this tag is free software: you can
 redistribute it and/or modify it under the terms of the GNU
@@ -133,48 +225,28 @@ for the JavaScript code in this tag.
  }
 /*]]>*///-->
 </script>
-<script type="text/javascript" src="http://orgmode.org/mathjax/MathJax.js"></script>
-<script type="text/javascript">
-<!--/*--><![CDATA[/*><!--*/
+<script type="text/x-mathjax-config">
     MathJax.Hub.Config({
-        // Only one of the two following lines, depending on user settings
-        // First allows browser-native MathML display, second forces HTML/CSS
-        //  config: ["MMLorHTML.js"], jax: ["input/TeX"],
-            jax: ["input/TeX", "output/HTML-CSS"],
-        extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js",
-                     "TeX/noUndefined.js"],
-        tex2jax: {
-            inlineMath: [ ["\\(","\\)"] ],
-            displayMath: [ ['$$','$$'], ["\\[","\\]"], ["\\begin{displaymath}","\\end{displaymath}"] ],
-            skipTags: ["script","noscript","style","textarea","pre","code"],
-            ignoreClass: "tex2jax_ignore",
-            processEscapes: false,
-            processEnvironments: true,
-            preview: "TeX"
-        },
-        showProcessingMessages: true,
         displayAlign: "center",
-        displayIndent: "2em",
+        displayIndent: "0em",
 
-        "HTML-CSS": {
-             scale: 100,
-             availableFonts: ["STIX","TeX"],
-             preferredFont: "TeX",
-             webFont: "TeX",
-             imageFont: "TeX",
-             showMathMenu: true,
-        },
-        MMLorHTML: {
-             prefer: {
-                 MSIE:    "MML",
-                 Firefox: "MML",
-                 Opera:   "HTML",
-                 other:   "HTML"
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
              }
-        }
-    });
-/*]]>*///-->
+});
 </script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
 </head>
 <body>
 <div id="content">
@@ -183,167 +255,92 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#sec-1">1. OBJECTIVES</a></li>
-<li><a href="#sec-2">2. RATIONALE</a></li>
-<li><a href="#sec-3">3. WHAT WAS DONE</a></li>
-<li><a href="#sec-4">4. WORKING ON / NEEDED</a>
+<li><a href="#org75b9e67">1. OBJECTIVES</a></li>
+<li><a href="#orgc70526e">2. RATIONALE</a></li>
+<li><a href="#orgdd876eb">3. WHAT WAS DONE</a></li>
+<li><a href="#org3ad3f2f">4. WORKING ON / NEEDED</a>
 <ul>
-<li><a href="#sec-4-1">4.1. Resources</a>
+<li><a href="#orge0c5ad5">4.1. Resources</a>
 <ul>
-<li><a href="#sec-4-1-1">4.1.1. Multilingual dictionary</a>
+<li><a href="#orgd49716b">4.1.1. Multilingual dictionary</a>
 <ul>
-<li><a href="#sec-4-1-1-1">4.1.1.1. RATIONALE</a></li>
-<li><a href="#sec-4-1-1-2">4.1.1.2. OBJECTIVES</a></li>
-<li><a href="#sec-4-1-1-3">4.1.1.3. CONSTRAINTS</a></li>
-<li><a href="#sec-4-1-1-4">4.1.1.4. OPTIONS</a>
+<li><a href="#org6b39353">4.1.1.1. RATIONALE</a></li>
+<li><a href="#orga061bc3">4.1.1.2. OBJECTIVES</a></li>
+<li><a href="#orga250087">4.1.1.3. CONSTRAINTS</a></li>
+<li><a href="#orga1b2a33">4.1.1.4. OPTIONS</a>
 <ul>
-<li><a href="#sec-4-1-1-4-1">4.1.1.4.1. Wordnet</a></li>
+<li><a href="#org3a619bd">4.1.1.4.1. Wordnet</a></li>
 </ul>
 </li>
-<li><a href="#sec-4-1-1-5">4.1.1.5. WHAT WAS DONE</a>
+<li><a href="#org159230a">4.1.1.5. WHAT WAS DONE</a>
 <ul>
-<li><a href="#sec-4-1-1-5-1">4.1.1.5.1. A library for converting two or more Apertium bidixes into a wordgraph</a></li>
-<li><a href="#sec-4-1-1-5-2">4.1.1.5.2. A script for converting English Wordnet leammas into Turkic languages</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#sec-4-1-2">4.1.2. Parallel corpus</a></li>
-</ul>
-</li>
-<li><a href="#sec-4-2">4.2. Connecting nodes</a>
-<ul>
-<li><a href="#sec-4-2-1">4.2.1. Nodes: Morphological Transducers</a>
-<ul>
-<li><a href="#sec-4-2-1-1">4.2.1.1. <code>APERTIUM-KAZ</code>: A MORPHOLOGICAL TRANSDUCER AND DISAMBIGUATOR FOR KAZAKH</a>
-<ul>
-<li><a href="#sec-4-2-1-1-1">4.2.1.1.1. Installation</a></li>
-<li><a href="#sec-4-2-1-1-2">4.2.1.1.2. Usage</a></li>
-<li><a href="#sec-4-2-1-1-3">4.2.1.1.3. Annotating texts using <code>apertium-kaz</code> and extending it with more stems while doing so</a></li>
-<li><a href="#sec-4-2-1-1-4">4.2.1.1.4. Stems from Russian that end with one of the voiced consonants (б, г), such as &lt;code&gt;геолог&lt;/code&gt; should be entered as spelled, but should be put in the right category for foreign words (e.g., if a noun, then &lt;code&gt;N5&lt;/code&gt;).</a></li>
-<li><a href="#sec-4-2-1-1-5">4.2.1.1.5. Words that are commonly written in both forms (e.g., орнында and орынында) need special treatment: add &lt;code&gt;! Dir/LR&lt;/code&gt; after the form that should not be generated (i.e., the form that is the non-normative version), and add &lt;code&gt;! Err/Orth&lt;/code&gt; after it too if it should be considered a spelling mistake.</a></li>
-<li><a href="#sec-4-2-1-1-6">4.2.1.1.6. IV = intransitive verbs; TV = transitive verbs</a></li>
-<li><a href="#sec-4-2-1-1-7">4.2.1.1.7. If the verb can take a direct object with -НЫ, then it's not IV; otherwise it is TV</a></li>
-<li><a href="#sec-4-2-1-1-8">4.2.1.1.8. For phrasal verbs (e.g,. "қабыл ал", "пайда бол", "мойынға ал"), do not categorise it according to its elements; instead treat it as a single verb (TV, IV, TV).</a></li>
-<li><a href="#sec-4-2-1-1-9">4.2.1.1.9. Infinitives ending in -ю should end in ‹й› instead, e.g ‹сүю› should be entered as &lt;code&gt;сүй&lt;/code&gt;</a></li>
-<li><a href="#sec-4-2-1-1-10">4.2.1.1.10. Some verbs have a "hidden" ‹ы› or ‹і› under the ‹у›, for example &lt;code&gt;ері&lt;/code&gt;, &lt;code&gt;аршы&lt;/code&gt;, &lt;code&gt;аңды&lt;/code&gt;, etc.  These verb stems should be added ''with'' the ‹ы› or ‹і›.</a></li>
-<li><a href="#sec-4-2-1-1-11">4.2.1.1.11. Of course, verbs with ‹у› in the stem should keep the ‹у›, like &lt;code&gt;жу&lt;/code&gt;, &lt;code&gt;қу&lt;/code&gt;, &lt;code&gt;жау&lt;/code&gt;, etc.</a></li>
-<li><a href="#sec-4-2-1-1-12">4.2.1.1.12. ''especially'' if the last vowel is ‹и› or ‹у›</a></li>
-<li><a href="#sec-4-2-1-1-13">4.2.1.1.13. ''especially'' if they end with a consonant that would normally be voiced before a vowel-initial suffix in Kazakh words (п, к)</a></li>
-<li><a href="#sec-4-2-1-1-14">4.2.1.1.14. N1</a></li>
-<li><a href="#sec-4-2-1-1-15">4.2.1.1.15. N-COMPOUND-PX</a></li>
-<li><a href="#sec-4-2-1-1-16">4.2.1.1.16. N5</a></li>
-<li><a href="#sec-4-2-1-1-17">4.2.1.1.17. N1-ABBR</a></li>
-<li><a href="#sec-4-2-1-1-18">4.2.1.1.18. N-INFL-INKI</a></li>
-<li><a href="#sec-4-2-1-1-19">4.2.1.1.19. (could be derived from anthroponyms automatically?)</a></li>
-<li><a href="#sec-4-2-1-1-20">4.2.1.1.20. NP-TOP: toponyms (in particular, river names should go here too)</a></li>
-<li><a href="#sec-4-2-1-1-21">4.2.1.1.21. NP-TOP-ASSR: former and future soviet socialistic republic names ending with СР: &lt;code&gt;Қырғыз% КСР:Қырғыз% КСР%{э%}%{й%} NP-TOP-ASSR ;&lt;/code&gt;</a></li>
-<li><a href="#sec-4-2-1-1-22">4.2.1.1.22. NP-ORG: organization names</a></li>
-<li><a href="#sec-4-2-1-1-23">4.2.1.1.23. NP-ORG-LAT: organization names written in Latin character. Example: Microsoft</a></li>
-<li><a href="#sec-4-2-1-1-24">4.2.1.1.24. NP-AL: proper names not belonging to one of the above NP-* classes. Example: Восток</a></li>
-<li><a href="#sec-4-2-1-1-25">4.2.1.1.25. Test 1: can the word in question modify verb? "Жақсы оқиды" OK? A: yes.</a></li>
-<li><a href="#sec-4-2-1-1-26">4.2.1.1.26. Test 2: has a comparative form? "Жақсырақ" OK? A: yes</a></li>
-<li><a href="#sec-4-2-1-1-27">4.2.1.1.27. ==&gt; жақсы A1</a></li>
-<li><a href="#sec-4-2-1-1-28">4.2.1.1.28. '''көрші''' елдер</a></li>
-<li><a href="#sec-4-2-1-1-29">4.2.1.1.29. '''əлем''' чемпионаты</a></li>
-<li><a href="#sec-4-2-1-1-30">4.2.1.1.30. Үстелде қалам '''да''', қарындаш '''та''', дәптер '''де''' жатыр.</a></li>
-<li><a href="#sec-4-2-1-1-31">4.2.1.1.31. Абай әуелі ауылдағы Ғабитхан молдадан сауатын ашады '''да''', 10 жасқа толған соң 3 жыл Семейдегі Ахмет Риза медресесінде оқиды.</a></li>
-<li><a href="#sec-4-2-1-1-32">4.2.1.1.32. Мен '''де''' барамын.</a></li>
-<li><a href="#sec-4-2-1-1-33">4.2.1.1.33. Аузы қисық болса '''да''' байдын баласы сөйлесін.</a></li>
-<li><a href="#sec-4-2-1-1-34">4.2.1.1.34. '''Мынау''' үй жаңа.</a></li>
-<li><a href="#sec-4-2-1-1-35">4.2.1.1.35. '''Мынау''' — терезе емес.</a></li>
-<li><a href="#sec-4-2-1-1-36">4.2.1.1.36. Кітап '''оқу''' адамдарды ақылдырақ етеді.</a></li>
-<li><a href="#sec-4-2-1-1-37">4.2.1.1.37. '''Оқу''' басталды.</a></li>
-<li><a href="#sec-4-2-1-1-38">4.2.1.1.38. Ол кәзір '''ұйықтап''' жатыр.</a></li>
-<li><a href="#sec-4-2-1-1-39">4.2.1.1.39. Мектепті '''бітіріп''', университетке түстім.</a></li>
-<li><a href="#sec-4-2-1-1-40">4.2.1.1.40. Орталық Азиядан арий тайпалары '''келіп''' қоныстанды.</a></li>
+<li><a href="#org06b30ad">4.1.1.5.1. A library for converting two or more Apertium bidixes into a wordgraph</a></li>
+<li><a href="#org0806fb0">4.1.1.5.2. A script for converting English Wordnet leammas into Turkic languages</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#sec-4-2-2">4.2.2. To English</a></li>
-<li><a href="#sec-4-2-3">4.2.3. To Russian</a></li>
-<li><a href="#sec-4-2-4">4.2.4. Intraturkic</a>
+<li><a href="#org582cc58">4.1.2. Parallel corpus</a></li>
+</ul>
+</li>
+<li><a href="#org52e458a">4.2. Connecting nodes</a>
 <ul>
-<li><a href="#sec-4-2-4-1">4.2.4.1. apertium-kaz-tat, apertium-tur-tat, apertium-crh-tur</a></li>
+<li><a href="#org14c27d7">4.2.1. Nodes: Morphological Transducers</a></li>
+<li><a href="#orge205bca">4.2.2. To English</a></li>
+<li><a href="#org6eee63c">4.2.3. To Russian</a></li>
+<li><a href="#org90d57fb">4.2.4. Intraturkic</a>
+<ul>
+<li><a href="#org3be7e7f">4.2.4.1. apertium-kaz-tat, apertium-tur-tat, apertium-crh-tur</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#sec-4-3">4.3. QA and meta-stuff</a>
+<li><a href="#org5cd8f0a">4.3. QA and meta-stuff</a>
 <ul>
-<li><a href="#sec-4-3-1">4.3.1. apertium fitnesse</a></li>
-<li><a href="#sec-4-3-2">4.3.2. rbmt-as-a-data-structure = a (Racket-based?) programming language with a syntax similar to what is seen on .</a>
+<li><a href="#org5e8d96d">4.3.1. apertium fitnesse</a></li>
+<li><a href="#org54cd045">4.3.2. rbmt-as-a-data-structure = a (Racket-based?) programming language with a syntax similar to what is seen on http://fitnesse.selimcan.org/FrontPage.ApertiumTurkic.ApertiumKaz.</a>
 <ul>
-<li><a href="#sec-4-3-2-1">4.3.2.1. Rationale</a></li>
-<li><a href="#sec-4-3-2-2">4.3.2.2. Code</a></li>
+<li><a href="#orgd4b12d3">4.3.2.1. Rationale</a></li>
+<li><a href="#org842528b">4.3.2.2. Code</a></li>
 </ul>
 </li>
-<li><a href="#sec-4-3-3">4.3.3. Problem 404</a>
+<li><a href="#org1af2749">4.3.3. Problem 404</a>
 <ul>
-<li><a href="#sec-4-3-3-1">4.3.3.1. Problem 404.a</a></li>
-<li><a href="#sec-4-3-3-2">4.3.3.2. Problem 404.b</a></li>
-<li><a href="#sec-4-3-3-3">4.3.3.3. Problem 404.c</a></li>
+<li><a href="#org2cec8cc">4.3.3.1. Problem 404.a</a></li>
+<li><a href="#org6a782cb">4.3.3.2. Problem 404.b</a></li>
+<li><a href="#org9ef5479">4.3.3.3. Problem 404.c</a></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#sec-5">5. ROADMAP</a></li>
-<li><a href="#sec-6">6. NOTES</a>
+<li><a href="#org5181c5b">5. ROADMAP</a></li>
+<li><a href="#org2a648d8">6. NOTES</a>
 <ul>
-<li><a href="#sec-6-1">6.1. Methods of auditing a monolingual dictionary</a></li>
-<li><a href="#sec-6-2">6.2. Principles of tagset choice</a></li>
+<li><a href="#orgb11396f">6.1. Methods of auditing a monolingual dictionary</a></li>
+<li><a href="#org835dd13">6.2. Principles of tagset choice</a></li>
+<li><a href="#orgd0d6091">6.3. Minimal monolingual Apertiumpp package</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 <p>
-This is a project with an aim of making machine translation possible between
-<b>all</b> of the related languages of a particular language group (e.g. Turkic,
-Slavic, Indo-Iranian etc.) in the most efficient manner. Currently we work on
-Turkic languages since they happen to be the languages we know several of, but
-the toolkit is meant to be language-independent. The project, in its spirit and
-aims is similar to the <a href="https://www.apertium.org">Apertium project</a>, and can be considered its spinoff (to
-be frank, if we come up with some useful technology, we hope to see it merged
-to the Apertium's code base), but, since one of the declared goals of ours is
-being able to handle speech (not just the written word), and, since we want to
-re-evaluate some of the design decisions made in the Apertium project and yet
-are not sure at all whether such re-evaluations will turn out to be wise
-desicions, we decided to make a separate project out of this effort.
+This page documents research carried over in the <a href="https://taruen.github.io/apertiumpp/">Apertiumpp project</a>.
 </p>
 
-<p>
-Things deemed as less-than-optimal in the current Apertium setup:
-</p>
-<ul class="org-ul">
-<li>transfer rules are unidirectional, and currently there is no way of marking
-a transfer rules as `bidirectional' and get a transfer rule for the opposite
-direction for free,
-</li>
-<li>there can be and usually there are several entries in a .lexc or .dix files
-with the same left-hand side (and there is no compile-time checks against
-mistakenly adding the same word twice, possibly with a right and a wrong
-category.
-</li>
-</ul>
-
-<div id="outline-container-sec-1" class="outline-2">
-<h2 id="sec-1"><span class="section-number-2">1</span> OBJECTIVES</h2>
+<div id="outline-container-org75b9e67" class="outline-2">
+<h2 id="org75b9e67"><span class="section-number-2">1</span> OBJECTIVES</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Enabling machine translation:
 </p>
 
 <ol class="org-ol">
-<li>from any Turkic language to any other Turkic language,
-</li>
-<li>between any Turkic language and English, and
-</li>
-<li>between any Turkic language and Russian.
-</li>
+<li>from any Turkic language to any other Turkic language,</li>
+<li>between any Turkic language and English, and</li>
+<li>between any Turkic language and Russian.</li>
 </ol>
 
 <p>
@@ -351,19 +348,16 @@ What we're after:
 </p>
 
 <ol class="org-ol">
-<li>Machine translators themselves.
-</li>
+<li>Machine translators themselves.</li>
 <li>Description of the process and infrastructure for solving the same problem
-for another family of languages in the most efficient manner.
-</li>
+for another family of languages in the most efficient manner.</li>
 <li>Better yet, a program which asks native speakers the right questions in the
 right order, judges whether answers are reliable, and writes machine
-translators for us.
-</li>
-<li>Text-to-speech systems.
-</li>
-<li>Speech recognition systems.
-</li>
+translators for us.</li>
+<li>Text-to-speech systems.</li>
+<li>Speech recognition systems.</li>
+<li>Annotated corpora with a standard interface.</li>
+<li>Spellcheckers (and keyboard layouts, if missing).</li>
 </ol>
 
 <p>
@@ -398,12 +392,10 @@ Conditions:
 </p>
 
 <ol class="org-ol">
-<li>\(Word Error Rate(t_i) < THRESHOLD\) for every \(i\).
-</li>
+<li>\(Word Error Rate(t_i) < THRESHOLD\) for every \(i\).</li>
 <li>As a byproduct, the process generates a standalone morphological analyzer
 (applicable as a spellchecker), dependency and/or semantic parser, speech
-recognizer and speech synthesizer for every \(l \in L\).
-</li>
+recognizer and speech synthesizer for every \(l \in L\).</li>
 </ol>
 <p>
 <b>End Problem 1</b>)
@@ -425,35 +417,28 @@ are considered connected if there is a (<a href="http://wiki.apertium.org/wiki/M
 </div>
 </div>
 
-<div id="outline-container-sec-2" class="outline-2">
-<h2 id="sec-2"><span class="section-number-2">2</span> RATIONALE</h2>
+<div id="outline-container-orgc70526e" class="outline-2">
+<h2 id="orgc70526e"><span class="section-number-2">2</span> RATIONALE</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 Applications:
 </p>
 <ul class="org-ul">
-<li>translating Khanacademy's content (Creative Commons BY-NC-SA 3.0 US)
-</li>
+<li>translating Khanacademy's content (Creative Commons BY-NC-SA 3.0 US)</li>
 <li>translating (English) Wikipedia (Creative Commons BY-SA 3.0 Unported)
 <ul class="org-ul">
-<li><a href="https://meta.wikimedia.org/wiki/List_of_articles_every_Wikipedia_should_have">articles every Wikipedia should have</a>
-</li>
-<li>selected articles of other Wikipedias
-</li>
-</ul>
-</li>
-<li>localizing free/libre software
-</li>
-<li>translating other resources listed on <a href="http://selimcan.org">http://selimcan.org</a>
-</li>
-<li>components used as spell and grammar checkers and in QA systems
-</li>
+<li><a href="https://meta.wikimedia.org/wiki/List_of_articles_every_Wikipedia_should_have">articles every Wikipedia should have</a></li>
+<li>selected articles of other Wikipedias</li>
+</ul></li>
+<li>localizing free/libre software</li>
+<li>translating other resources listed on <a href="http://selimcan.org">http://selimcan.org</a></li>
+<li>components used as spell and grammar checkers and in QA systems</li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-sec-3" class="outline-2">
-<h2 id="sec-3"><span class="section-number-2">3</span> WHAT WAS DONE</h2>
+<div id="outline-container-orgdd876eb" class="outline-2">
+<h2 id="orgdd876eb"><span class="section-number-2">3</span> WHAT WAS DONE</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 See <a href="http://wiki.apertium.org/wiki/Turkic_languages">http://wiki.apertium.org/wiki/Turkic_languages</a>.
@@ -461,43 +446,35 @@ See <a href="http://wiki.apertium.org/wiki/Turkic_languages">http://wiki.apertiu
 </div>
 </div>
 
-<div id="outline-container-sec-4" class="outline-2">
-<h2 id="sec-4"><span class="section-number-2">4</span> WORKING ON / NEEDED</h2>
+<div id="outline-container-org3ad3f2f" class="outline-2">
+<h2 id="org3ad3f2f"><span class="section-number-2">4</span> WORKING ON / NEEDED</h2>
 <div class="outline-text-2" id="text-4">
-</div><div id="outline-container-sec-4-1" class="outline-3">
-<h3 id="sec-4-1"><span class="section-number-3">4.1</span> Resources</h3>
+</div>
+<div id="outline-container-orge0c5ad5" class="outline-3">
+<h3 id="orge0c5ad5"><span class="section-number-3">4.1</span> Resources</h3>
 <div class="outline-text-3" id="text-4-1">
 <ul class="org-ul">
 <li>multilingual dictionary
 <ul class="org-ul">
-<li>closed class words
-</li>
-<li>nouns, adjectives, verbs, adverbs
-</li>
-<li>proper nouns / named entities
-</li>
-</ul>
-</li>
-<li>parallel corpus
-</li>
-<li>parallel tagged corpus
-</li>
-<li>parallel treebank
-</li>
-<li>multilingual dictionary of idioms (a translation memory)
-</li>
-<li>spoken texts (under CC0, CC-BY, CC-BY-SA or compatible licenses)
-</li>
-<li>a mobile app which collects all of the above from the volunteer contributors
-</li>
+<li>closed class words</li>
+<li>nouns, adjectives, verbs, adverbs</li>
+<li>proper nouns / named entities</li>
+</ul></li>
+<li>parallel corpus</li>
+<li>parallel tagged corpus</li>
+<li>parallel treebank</li>
+<li>multilingual dictionary of idioms (a translation memory)</li>
+<li>spoken texts (under CC0, CC-BY, CC-BY-SA or compatible licenses)</li>
+<li>a mobile app which collects all of the above from the volunteer contributors</li>
 </ul>
 </div>
 
-<div id="outline-container-sec-4-1-1" class="outline-4">
-<h4 id="sec-4-1-1"><span class="section-number-4">4.1.1</span> Multilingual dictionary</h4>
+<div id="outline-container-orgd49716b" class="outline-4">
+<h4 id="orgd49716b"><span class="section-number-4">4.1.1</span> Multilingual dictionary</h4>
 <div class="outline-text-4" id="text-4-1-1">
-</div><div id="outline-container-sec-4-1-1-1" class="outline-5">
-<h5 id="sec-4-1-1-1"><span class="section-number-5">4.1.1.1</span> RATIONALE</h5>
+</div>
+<div id="outline-container-org6b39353" class="outline-5">
+<h5 id="org6b39353"><span class="section-number-5">4.1.1.1</span> RATIONALE</h5>
 <div class="outline-text-5" id="text-4-1-1-1">
 <p>
 \(n\) languages make up \(\sum_{i=1}^{n-1} i\) bilingual machine translators. For 21
@@ -511,8 +488,8 @@ might be feasible.
 </div>
 </div>
 
-<div id="outline-container-sec-4-1-1-2" class="outline-5">
-<h5 id="sec-4-1-1-2"><span class="section-number-5">4.1.1.2</span> OBJECTIVES</h5>
+<div id="outline-container-orga061bc3" class="outline-5">
+<h5 id="orga061bc3"><span class="section-number-5">4.1.1.2</span> OBJECTIVES</h5>
 <div class="outline-text-5" id="text-4-1-1-2">
 <p>
 A multilingual dictionary from which individual monolingual and
@@ -523,30 +500,20 @@ bilingual dictionaries can be generated.
 TODO a representation/format for the multidix
 </p>
 <ul class="org-ul">
-<li>see <a href="http://wiki.apertium.org/wiki/User:Unhammer/wishlist">Unhammer's wishlist</a> for details
-</li>
+<li>see <a href="http://wiki.apertium.org/wiki/User:Unhammer/wishlist">Unhammer's wishlist</a> for details</li>
 <li>entries contain:
 <ul class="org-ul">
-<li>stem
-</li>
-<li>the LEXICON(s)/pardef(s) the stem should be linked to in the monodix
-</li>
-<li>tags which should end up in the bidix (or a bidix pardef)
-</li>
-<li>alternative or erroneous spellings (LR/RL forms)
-</li>
-<li>other attributes (language variant, style, archaic or not etc)
-</li>
-<li>example sentences with the word in question
-</li>
-</ul>
-</li>
+<li>stem</li>
+<li>the LEXICON(s)/pardef(s) the stem should be linked to in the monodix</li>
+<li>tags which should end up in the bidix (or a bidix pardef)</li>
+<li>alternative or erroneous spellings (LR/RL forms)</li>
+<li>other attributes (language variant, style, archaic or not etc)</li>
+<li>example sentences with the word in question</li>
+</ul></li>
 <li>options:
 <ul class="org-ul">
-<li>a DTD based on dix.dtd?
-</li>
-</ul>
-</li>
+<li>a DTD based on dix.dtd?</li>
+</ul></li>
 </ul>
 
 <p>
@@ -554,7 +521,7 @@ TODO a program which converts Apertium mono- and bidixes into a multidix
 </p>
 
 <p>
-See <a href="#wordgraph.py">1</a> and <a href="#enwordnet2twordnet.py">1</a>.
+See <a href="#orgf7292ae">1</a> and <a href="#org491d004">1</a>.
 </p>
 
 <p>
@@ -563,20 +530,19 @@ TODO a program which converts a multidix into Apertium monodixes and bidixes
 </div>
 </div>
 
-<div id="outline-container-sec-4-1-1-3" class="outline-5">
-<h5 id="sec-4-1-1-3"><span class="section-number-5">4.1.1.3</span> CONSTRAINTS</h5>
+<div id="outline-container-orga250087" class="outline-5">
+<h5 id="orga250087"><span class="section-number-5">4.1.1.3</span> CONSTRAINTS</h5>
 <div class="outline-text-5" id="text-4-1-1-3">
 <ul class="org-ul">
 <li>should be writable by monolingual Turkic speakers (speakers of only
 one Turkic language, that is. Knowledge of English or Russian is assumed,
-since otherwise the only reliable linkage would be pictures).
-</li>
+since otherwise the only reliable linkage would be pictures).</li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-sec-4-1-1-4" class="outline-5">
-<h5 id="sec-4-1-1-4"><span class="section-number-5">4.1.1.4</span> OPTIONS</h5>
+<div id="outline-container-orga1b2a33" class="outline-5">
+<h5 id="orga1b2a33"><span class="section-number-5">4.1.1.4</span> OPTIONS</h5>
 <div class="outline-text-5" id="text-4-1-1-4">
 <ul class="org-ul">
 <li>pivoting
@@ -584,731 +550,718 @@ since otherwise the only reliable linkage would be pictures).
 <li>translating entries from a public domain/libre English dictionary
 <ul class="org-ul">
 <li>Wordnet? GNU collaborative dictionary of English? Wiktionary?
-OmegaWiki?
-</li>
-</ul>
-</li>
+OmegaWiki?</li>
+</ul></li>
 <li>same for Russian (if there is any available&#x2026;)
 <ul class="org-ul">
 <li>TODO check [<a href="https://en.wikipedia.org/wiki/Ushakov_Dictionary">https://en.wikipedia.org/wiki/Ushakov_Dictionary</a>] might be in
-the public domain now
-</li>
-</ul>
-</li>
+the public domain now</li>
+</ul></li>
 <li>translating entries from a libre Turkic dictionary
 <ul class="org-ul">
 <li>is there any? Probably not.
 <ul class="org-ul">
-<li>TODO email publishers (<a href="http://www.twirpx.com/file/1077154">this</a> one is of interest). DONE several times, but
-no responce yet.
-</li>
-</ul>
-</li>
+<li>DONE email publishers (<a href="http://www.twirpx.com/file/1077154">this</a> one is of interest).
+<ul class="org-ul">
+<li>Ibragimov Institute of Language, Literature and Art @ Tatarstan
+Academy of Sciences in email communication allowed entry words and
+part-of-speech tags from the currently 3-volume (А-К) ``Татар теленең
+аңлатмалы сүзлеге'' (``Explanatory Dictionary of Tatar'') found here
+<a href="http://www.antat.ru/tt/iyli/publishing/book/index.php">http://www.antat.ru/tt/iyli/publishing/book/index.php</a> to be used in
+Apertium's dictionaries.</li>
+</ul></li>
+</ul></li>
 <li>even if there is one, allowing a monolingual Turkic speaker to translate
 words into his own language will require translating the <b>definitions</b> into
 English or Russian, which is a huge amount of work compared to translating
-the words only
-</li>
-</ul>
-</li>
-</ul>
-</li>
+the words only</li>
+</ul></li>
+</ul></li>
 
-<li>inducing from bilingual corpora
-</li>
+<li>inducing from bilingual corpora</li>
 
 <li>inducing from monolingual corpora
 <ul class="org-ul">
 <li>Haghighi, A., Liang, P., Berg-Kirkpatrick, T., &amp; Klein, D. (2008,
 June). Learning Bilingual Lexicons from Monolingual Corpora. In
-ACL (Vol. 2008, pp. 771-779).
-</li>
+ACL (Vol. 2008, pp. 771-779).</li>
 <li>Koehn, P., &amp; Knight, K. (2002, July). Learning a translation
 lexicon from monolingual corpora. In Proceedings of the ACL-02
 workshop on Unsupervised lexical acquisition-Volume 9
-(pp. 9-16). Association for Computational Linguistics.
-</li>
-<li>&#x2026;
-</li>
-</ul>
-</li>
+(pp. 9-16). Association for Computational Linguistics.</li>
+<li>&#x2026;</li>
+</ul></li>
 
-<li>currently apertium-eng-kaz.eng-kaz.dix has roughly
+<li><p>
+currently apertium-eng-kaz.eng-kaz.dix has roughly
+</p>
 <div class="org-src-container">
-
-<pre class="src src-sh" id="eng-kaz-entries">grep -c "&lt;e&gt;" ../apertium-all/apertium-trunk/apertium-eng-kaz/apertium-eng-kaz.eng-kaz.dix
+<pre class="src src-sh" id="org5c17aa0">grep -c <span style="color: #CC9393;">"&lt;e&gt;"</span> ../apertium-all/apertium-trunk/apertium-eng-kaz/apertium-eng-kaz.eng-kaz.dix
 </pre>
 </div>
 
 <pre class="example">
 32886
+
 </pre>
 
 <p>
 entries in it.
-</p>
-</li>
+</p></li>
 
-<li>also see: <a href="http://wiki.apertium.org/wiki/Bilingual_dictionary_discovery">http://wiki.apertium.org/wiki/Bilingual_dictionary_discovery</a>
-</li>
+<li>also see: <a href="http://wiki.apertium.org/wiki/Bilingual_dictionary_discovery">http://wiki.apertium.org/wiki/Bilingual_dictionary_discovery</a></li>
 </ul>
 </div>
 
-<div id="outline-container-sec-4-1-1-4-1" class="outline-6">
-<h6 id="sec-4-1-1-4-1"><span class="section-number-6">4.1.1.4.1</span> Wordnet</h6>
+<div id="outline-container-org3a619bd" class="outline-6">
+<h6 id="org3a619bd"><span class="section-number-6">4.1.1.4.1</span> Wordnet</h6>
 <div class="outline-text-6" id="text-4-1-1-4-1">
 <ul class="org-ul">
 <li>experiences with translating English Wordnet into another language?
 <ul class="org-ul">
 <li>Lindén, K., &amp; Carlson, L. (2010). FinnWordNet–Finnish WordNet by
 Translation. LexicoNordica–Nordic Journal of Lexicography, 17,
-119-140.
-</li>
+119-140.</li>
 <li>Lindén, K., &amp; Niemi, J. (2014). Is it possible to create a very large
 wordnet in 100 days? An evaluation. Language resources and evaluation,
-48(2), 191-201.
-</li>
+48(2), 191-201.</li>
 <li>Isahara, H., Bond, F., Uchimoto, K., Utiyama, M., &amp; Kanzaki,
-K. (2008). Development of the Japanese WordNet.
-</li>
+K. (2008). Development of the Japanese WordNet.</li>
 <li>Niemi, J., Lindén, K., &amp; Hyvärinen, M. (2012, January). Using a Bilingual
 Resource to Add Synonyms to a Wordnet. In Proceedings of the Global Wordnet
-Conference.
-</li>
+Conference.</li>
 <li>Bond, F., Isahara, H., Kanzaki, K., &amp; Uchimoto, K. (2008). Boot-strapping a
-WordNet using multiple existing WordNets.
-</li>
-<li><a href="http://compling.hss.ntu.edu.sg/omw/">Open Multilingual Wordnet</a>
-</li>
-<li><a href="http://globalwordnet.org">Global WordNet Association</a>
-</li>
-</ul>
-</li>
-<li>pros: free license, no need to scan anything, good for papers
-</li>
+WordNet using multiple existing WordNets.</li>
+<li><a href="http://compling.hss.ntu.edu.sg/omw/">Open Multilingual Wordnet</a></li>
+<li><a href="http://globalwordnet.org">Global WordNet Association</a></li>
+</ul></li>
+<li>pros: free license, no need to scan anything, good for papers</li>
 </ul>
 </div>
 </div>
 </div>
 
-<div id="outline-container-sec-4-1-1-5" class="outline-5">
-<h5 id="sec-4-1-1-5"><span class="section-number-5">4.1.1.5</span> WHAT WAS DONE</h5>
+<div id="outline-container-org159230a" class="outline-5">
+<h5 id="org159230a"><span class="section-number-5">4.1.1.5</span> WHAT WAS DONE</h5>
 <div class="outline-text-5" id="text-4-1-1-5">
-</div><div id="outline-container-sec-4-1-1-5-1" class="outline-6">
-<h6 id="sec-4-1-1-5-1"><span class="section-number-6">4.1.1.5.1</span> A library for converting two or more Apertium bidixes into a wordgraph</h6>
+</div>
+<div id="outline-container-org06b30ad" class="outline-6">
+<h6 id="org06b30ad"><span class="section-number-6">4.1.1.5.1</span> A library for converting two or more Apertium bidixes into a wordgraph</h6>
 <div class="outline-text-6" id="text-4-1-1-5-1">
 <div class="org-src-container">
+<pre class="src src-python" id="orgf7292ae">
+<span style="color: #9FC59F;">"""</span>
+<span style="color: #9FC59F;">wordgraph.py</span>
 
-<pre class="src src-python" id="wordgraph.py">"""
-wordgraph.py
+<span style="color: #9FC59F;">A library for converting two or more Apertium bidixes into a Wordgraph (its</span>
+<span style="color: #9FC59F;">definition you can see below) and then doing various things with that</span>
+<span style="color: #9FC59F;">wordgraph such as:</span>
+<span style="color: #9FC59F;">- exporting it as a Multidix, in which entries are *optionally* linked to</span>
+<span style="color: #9FC59F;">  English Wordnet's definitions (see bidixes2multidix.py),</span>
+<span style="color: #9FC59F;">- translating English Wordnet lemmas to other languages via (chain) lookup</span>
+<span style="color: #9FC59F;">  in the wordgraph or in Google/Yandex translate (see enwordnet2twordnet.py),</span>
+<span style="color: #9FC59F;">- or generating new bidixes for language pairs for which you didn't have a</span>
+<span style="color: #9FC59F;">  bidix before (TODO).</span>
 
-A library for converting two or more Apertium bidixes into a Wordgraph (its
-definition you can see below) and then doing various things with that
-wordgraph such as:
-- exporting it as a Multidix, in which entries are *optionally* linked to
-  English Wordnet's definitions (see bidixes2multidix.py),
-- translating English Wordnet lemmas to other languages via (chain) lookup
-  in the wordgraph or in Google/Yandex translate (see enwordnet2twordnet.py),
-- or generating new bidixes for language pairs for which you didn't have a
-  bidix before (TODO).
+<span style="color: #9FC59F;">USAGE: import wordgraph as wg</span>
 
-USAGE: import wordgraph as wg
+<span style="color: #9FC59F;">TODO:</span>
+<span style="color: #9FC59F;">  - handle LR RL restrictions</span>
+<span style="color: #9FC59F;">"""</span>
 
-TODO:
-  - handle LR RL restrictions
-"""
-
-import xml.etree.ElementTree as ET
-from xml.dom import minidom
-import glob
-import os.path
-from collections import namedtuple, defaultdict
-from io import StringIO
-import re
-from copy import deepcopy
-import sys
-
-
-## Constants
-## =========
+<span style="color: #F0DFAF; font-weight: bold;">import</span> xml.etree.ElementTree <span style="color: #F0DFAF; font-weight: bold;">as</span> ET
+<span style="color: #F0DFAF; font-weight: bold;">from</span> xml.dom <span style="color: #F0DFAF; font-weight: bold;">import</span> minidom
+<span style="color: #F0DFAF; font-weight: bold;">import</span> glob
+<span style="color: #F0DFAF; font-weight: bold;">import</span> os.path
+<span style="color: #F0DFAF; font-weight: bold;">from</span> collections <span style="color: #F0DFAF; font-weight: bold;">import</span> namedtuple, defaultdict
+<span style="color: #F0DFAF; font-weight: bold;">from</span> io <span style="color: #F0DFAF; font-weight: bold;">import</span> StringIO
+<span style="color: #F0DFAF; font-weight: bold;">import</span> re
+<span style="color: #F0DFAF; font-weight: bold;">from</span> copy <span style="color: #F0DFAF; font-weight: bold;">import</span> deepcopy
+<span style="color: #F0DFAF; font-weight: bold;">import</span> sys
 
 
-ISO2_2_ISO3 = {'kz': 'kaz', 'tt': 'tat', 'ky': 'kir', 'tr': 'tur', 'cv': 'chv',
-               'uz': 'uzb', 'ba': 'bak', 'tk': 'tuk', 'ug': 'uig', 'az': 'aze',
-               'en': 'eng'}
-ISO3_2_ISO2 = {'kaz': 'kk', 'tat': 'tt', 'kir': 'ky', 'tur': 'tr', 'chv': 'cv',
-               'uzb': 'uz', 'bak': 'ba', 'tuk': 'tk', 'uig': 'ug', 'aze': 'az',
-               'eng': 'en'}
+<span style="color: #5F7F5F;">## </span><span style="color: #7F9F7F;">Constants</span>
+<span style="color: #5F7F5F;">## </span><span style="color: #7F9F7F;">=========</span>
 
 
-## Data definitions
-## ================
+<span style="color: #DFAF8F;">ISO2_2_ISO3</span> = {<span style="color: #CC9393;">'kz'</span>: <span style="color: #CC9393;">'kaz'</span>, <span style="color: #CC9393;">'tt'</span>: <span style="color: #CC9393;">'tat'</span>, <span style="color: #CC9393;">'ky'</span>: <span style="color: #CC9393;">'kir'</span>, <span style="color: #CC9393;">'tr'</span>: <span style="color: #CC9393;">'tur'</span>, <span style="color: #CC9393;">'cv'</span>: <span style="color: #CC9393;">'chv'</span>,
+               <span style="color: #CC9393;">'uz'</span>: <span style="color: #CC9393;">'uzb'</span>, <span style="color: #CC9393;">'ba'</span>: <span style="color: #CC9393;">'bak'</span>, <span style="color: #CC9393;">'tk'</span>: <span style="color: #CC9393;">'tuk'</span>, <span style="color: #CC9393;">'ug'</span>: <span style="color: #CC9393;">'uig'</span>, <span style="color: #CC9393;">'az'</span>: <span style="color: #CC9393;">'aze'</span>,
+               <span style="color: #CC9393;">'en'</span>: <span style="color: #CC9393;">'eng'</span>}
+<span style="color: #DFAF8F;">ISO3_2_ISO2</span> = {<span style="color: #CC9393;">'kaz'</span>: <span style="color: #CC9393;">'kk'</span>, <span style="color: #CC9393;">'tat'</span>: <span style="color: #CC9393;">'tt'</span>, <span style="color: #CC9393;">'kir'</span>: <span style="color: #CC9393;">'ky'</span>, <span style="color: #CC9393;">'tur'</span>: <span style="color: #CC9393;">'tr'</span>, <span style="color: #CC9393;">'chv'</span>: <span style="color: #CC9393;">'cv'</span>,
+               <span style="color: #CC9393;">'uzb'</span>: <span style="color: #CC9393;">'uz'</span>, <span style="color: #CC9393;">'bak'</span>: <span style="color: #CC9393;">'ba'</span>, <span style="color: #CC9393;">'tuk'</span>: <span style="color: #CC9393;">'tk'</span>, <span style="color: #CC9393;">'uig'</span>: <span style="color: #CC9393;">'ug'</span>, <span style="color: #CC9393;">'aze'</span>: <span style="color: #CC9393;">'az'</span>,
+               <span style="color: #CC9393;">'eng'</span>: <span style="color: #CC9393;">'en'</span>}
 
 
-MonolingEntry = namedtuple("MonolingEntry", ["lang", "lm", "tags"])
-##
-## MonolingEntry is MonolingEntry(String, String, (Tuple of String))
-## interp.: a monolingual dictionary entry, where:
-##          - lang is iso3 code of the language
-##          - lm is the lemma
-##          - tags are the symbols used in Apertium to denote part-of-speech
-##            tags and other morphological features (the ones which you'd
-##            put into a bidix)
-
-MONOLING_E_1 = MonolingEntry("eng", "", ())  # null translation
-MONOLING_E_2 = MonolingEntry("eng", "file", ("n",))
-MONOLING_E_3 = MonolingEntry("kaz", "файл", ("n",))
-MONOLING_E_4 = MonolingEntry("kaz", "егеу", ("n",))
-MONOLING_E_5 = MonolingEntry("tat", "игәү", ("n",))
-MONOLING_E_6 = MonolingEntry("eng", "Moscow", ("np", "top"))
-MONOLING_E_7 = MonolingEntry("tat", "Мәскәү", ("np", "top", "hargle"))
-MONOLING_E_8 = MonolingEntry("rus", "Москва", ("np",))
-MONOLING_E_9 = MonolingEntry("tur", "Moskova", ())
+<span style="color: #5F7F5F;">## </span><span style="color: #7F9F7F;">Data definitions</span>
+<span style="color: #5F7F5F;">## </span><span style="color: #7F9F7F;">================</span>
 
 
-## A Graph is a Dictionary which maps Object to a (Set of Object).
-## interp.: {node: {its, neighbouring, nodes}
+<span style="color: #DFAF8F;">MonolingEntry</span> = namedtuple(<span style="color: #CC9393;">"MonolingEntry"</span>, [<span style="color: #CC9393;">"lang"</span>, <span style="color: #CC9393;">"lm"</span>, <span style="color: #CC9393;">"tags"</span>])
+<span style="color: #5F7F5F;">##</span>
+<span style="color: #5F7F5F;">## </span><span style="color: #7F9F7F;">MonolingEntry is MonolingEntry(String, String, (Tuple of String))</span>
+<span style="color: #5F7F5F;">## </span><span style="color: #7F9F7F;">interp.: a monolingual dictionary entry, where:</span>
+<span style="color: #5F7F5F;">##          </span><span style="color: #7F9F7F;">- lang is iso3 code of the language</span>
+<span style="color: #5F7F5F;">##          </span><span style="color: #7F9F7F;">- lm is the lemma</span>
+<span style="color: #5F7F5F;">##          </span><span style="color: #7F9F7F;">- tags are the symbols used in Apertium to denote part-of-speech</span>
+<span style="color: #5F7F5F;">##            </span><span style="color: #7F9F7F;">tags and other morphological features (the ones which you'd</span>
+<span style="color: #5F7F5F;">##            </span><span style="color: #7F9F7F;">put into a bidix)</span>
 
-G_1 = {'a': {'b', 'c'},                     ## a---b---d---f
-       'b': {'a', 'c', 'd'},                ##  \ /
-       'c': {'a', 'b'},                     ##   c     g  h---i
-       'd': {'b', 'f'},
-       'f': {'d'},
-       'g': {},
-       'h': {'i'},
-       'i': {'h'}}
+<span style="color: #DFAF8F;">MONOLING_E_1</span> = MonolingEntry(<span style="color: #CC9393;">"eng"</span>, <span style="color: #CC9393;">""</span>, ())  <span style="color: #5F7F5F;"># </span><span style="color: #7F9F7F;">null translation</span>
+<span style="color: #DFAF8F;">MONOLING_E_2</span> = MonolingEntry(<span style="color: #CC9393;">"eng"</span>, <span style="color: #CC9393;">"file"</span>, (<span style="color: #CC9393;">"n"</span>,))
+<span style="color: #DFAF8F;">MONOLING_E_3</span> = MonolingEntry(<span style="color: #CC9393;">"kaz"</span>, <span style="color: #CC9393;">"&#1092;&#1072;&#1081;&#1083;"</span>, (<span style="color: #CC9393;">"n"</span>,))
+<span style="color: #DFAF8F;">MONOLING_E_4</span> = MonolingEntry(<span style="color: #CC9393;">"kaz"</span>, <span style="color: #CC9393;">"&#1077;&#1075;&#1077;&#1091;"</span>, (<span style="color: #CC9393;">"n"</span>,))
+<span style="color: #DFAF8F;">MONOLING_E_5</span> = MonolingEntry(<span style="color: #CC9393;">"tat"</span>, <span style="color: #CC9393;">"&#1080;&#1075;&#1241;&#1199;"</span>, (<span style="color: #CC9393;">"n"</span>,))
+<span style="color: #DFAF8F;">MONOLING_E_6</span> = MonolingEntry(<span style="color: #CC9393;">"eng"</span>, <span style="color: #CC9393;">"Moscow"</span>, (<span style="color: #CC9393;">"np"</span>, <span style="color: #CC9393;">"top"</span>))
+<span style="color: #DFAF8F;">MONOLING_E_7</span> = MonolingEntry(<span style="color: #CC9393;">"tat"</span>, <span style="color: #CC9393;">"&#1052;&#1241;&#1089;&#1082;&#1241;&#1199;"</span>, (<span style="color: #CC9393;">"np"</span>, <span style="color: #CC9393;">"top"</span>, <span style="color: #CC9393;">"hargle"</span>))
+<span style="color: #DFAF8F;">MONOLING_E_8</span> = MonolingEntry(<span style="color: #CC9393;">"rus"</span>, <span style="color: #CC9393;">"&#1052;&#1086;&#1089;&#1082;&#1074;&#1072;"</span>, (<span style="color: #CC9393;">"np"</span>,))
+<span style="color: #DFAF8F;">MONOLING_E_9</span> = MonolingEntry(<span style="color: #CC9393;">"tur"</span>, <span style="color: #CC9393;">"Moskova"</span>, ())
 
 
-## WordGraph is a Graph which maps MonolingEntry to
-## a (Set of MonolingEntry)
-## interp.: {monoling_e_1: {monoling_e_2, monoling_e_3},
-##           monoling_e_2: {monoling_e_1},
-##           monoling_e_3: {monoling_e_1}}
-##
-##   means that (monoling_e_1 and monoling_e_2), and
-##   (monoling_e_1 and monoling_e_3) were translations of each other in a bidix.
+<span style="color: #5F7F5F;">## </span><span style="color: #7F9F7F;">A Graph is a Dictionary which maps Object to a (Set of Object).</span>
+<span style="color: #5F7F5F;">## </span><span style="color: #7F9F7F;">interp.: {node: {its, neighbouring, nodes}</span>
 
-WG_1 = {MONOLING_E_2: {MONOLING_E_3, MONOLING_E_4},
+<span style="color: #DFAF8F;">G_1</span> = {<span style="color: #CC9393;">'a'</span>: {<span style="color: #CC9393;">'b'</span>, <span style="color: #CC9393;">'c'</span>},                     <span style="color: #5F7F5F;">## </span><span style="color: #7F9F7F;">a---b---d---f</span>
+       <span style="color: #CC9393;">'b'</span>: {<span style="color: #CC9393;">'a'</span>, <span style="color: #CC9393;">'c'</span>, <span style="color: #CC9393;">'d'</span>},                <span style="color: #5F7F5F;">##  </span><span style="color: #7F9F7F;">\ /</span>
+       <span style="color: #CC9393;">'c'</span>: {<span style="color: #CC9393;">'a'</span>, <span style="color: #CC9393;">'b'</span>},                     <span style="color: #5F7F5F;">##   </span><span style="color: #7F9F7F;">c     g  h---i</span>
+       <span style="color: #CC9393;">'d'</span>: {<span style="color: #CC9393;">'b'</span>, <span style="color: #CC9393;">'f'</span>},
+       <span style="color: #CC9393;">'f'</span>: {<span style="color: #CC9393;">'d'</span>},
+       <span style="color: #CC9393;">'g'</span>: {},
+       <span style="color: #CC9393;">'h'</span>: {<span style="color: #CC9393;">'i'</span>},
+       <span style="color: #CC9393;">'i'</span>: {<span style="color: #CC9393;">'h'</span>}}
+
+
+<span style="color: #5F7F5F;">## </span><span style="color: #7F9F7F;">WordGraph is a Graph which maps MonolingEntry to</span>
+<span style="color: #5F7F5F;">## </span><span style="color: #7F9F7F;">a (Set of MonolingEntry)</span>
+<span style="color: #5F7F5F;">## </span><span style="color: #7F9F7F;">interp.: {monoling_e_1: {monoling_e_2, monoling_e_3},</span>
+<span style="color: #5F7F5F;">##           </span><span style="color: #7F9F7F;">monoling_e_2: {monoling_e_1},</span>
+<span style="color: #5F7F5F;">##           </span><span style="color: #7F9F7F;">monoling_e_3: {monoling_e_1}}</span>
+<span style="color: #5F7F5F;">##</span>
+<span style="color: #5F7F5F;">##   </span><span style="color: #7F9F7F;">means that (monoling_e_1 and monoling_e_2), and</span>
+<span style="color: #5F7F5F;">##   </span><span style="color: #7F9F7F;">(monoling_e_1 and monoling_e_3) were translations of each other in a bidix.</span>
+
+<span style="color: #DFAF8F;">WG_1</span> = {MONOLING_E_2: {MONOLING_E_3, MONOLING_E_4},
         MONOLING_E_3: {MONOLING_E_2},
         MONOLING_E_4: {MONOLING_E_2}}
 
-WG_2 = {MONOLING_E_2: {MONOLING_E_3, MONOLING_E_4},
+<span style="color: #DFAF8F;">WG_2</span> = {MONOLING_E_2: {MONOLING_E_3, MONOLING_E_4},
         MONOLING_E_3: {MONOLING_E_2},
         MONOLING_E_4: {MONOLING_E_2, MONOLING_E_5},
         MONOLING_E_5: {MONOLING_E_4}}
 
-WG_3 = {MONOLING_E_6: {MONOLING_E_7, MONOLING_E_8, MONOLING_E_9},
+<span style="color: #DFAF8F;">WG_3</span> = {MONOLING_E_6: {MONOLING_E_7, MONOLING_E_8, MONOLING_E_9},
         MONOLING_E_7: {MONOLING_E_6},
         MONOLING_E_8: {MONOLING_E_6},
         MONOLING_E_9: {MONOLING_E_6}}
 
 
-## Functions
-## =========
+<span style="color: #5F7F5F;">## </span><span style="color: #7F9F7F;">Functions</span>
+<span style="color: #5F7F5F;">## </span><span style="color: #7F9F7F;">=========</span>
 
-def main(main_bidix, iso_codes):
-    """ String (List of String) -&gt; String
+<span style="color: #F0DFAF; font-weight: bold;">def</span> <span style="color: #93E0E3;">main</span>(main_bidix, iso_codes):
+    <span style="color: #9FC59F;">""" String (List of String) -&gt; String</span>
 
-    Given the path to the main bidix (read: biggest English-to-X or
-    X-to-English dictionary) and a list of iso3 codes of relevant languages,
-    construct a multidix, in which English words are linked to
-    their Wordnet definitions (in case of nouns, adjectives, verbs and
-    adverbs) and their translations to languages listed in iso_codes, and
-    return a string representation of that multidix (read: xml).
+<span style="color: #9FC59F;">    Given the path to the main bidix (read: biggest English-to-X or</span>
+<span style="color: #9FC59F;">    X-to-English dictionary) and a list of iso3 codes of relevant languages,</span>
+<span style="color: #9FC59F;">    construct a multidix, in which English words are linked to</span>
+<span style="color: #9FC59F;">    their Wordnet definitions (in case of nouns, adjectives, verbs and</span>
+<span style="color: #9FC59F;">    adverbs) and their translations to languages listed in iso_codes, and</span>
+<span style="color: #9FC59F;">    return a string representation of that multidix (read: xml).</span>
 
-    A word is considered a translation of the English word if there exists
-    a path between the two in the WordGraph constructed out of the bidixes.
-    """
-    wg = bidixes2wordgraph(
+<span style="color: #9FC59F;">    A word is considered a translation of the English word if there exists</span>
+<span style="color: #9FC59F;">    a path between the two in the WordGraph constructed out of the bidixes.</span>
+<span style="color: #9FC59F;">    """</span>
+    <span style="color: #DFAF8F;">wg</span> = bidixes2wordgraph(
         append_leftiso3_rightiso3(
             get_bidixes(iso_codes)))
 
-    bidix = ET.parse(main_bidix)
-    root = bidix.getroot()
-    for e in root.iter('e'):
-        try:
-            left, right = pair2monolings(e[0], 'eng', 'kaz')
-        except IndexError:  # &lt;e&gt;&lt;re&gt;...&lt;/re&gt;&lt;p&gt;...&lt;/p&gt;
-            left, right = pair2monolings(e[1], 'eng', 'kaz')
-        if left.lm and len(left.tags) &gt;= 1:
-            if left.tags[0] in {'n', 'v', 'adj', 'adv'}:
-                for defn in \
-                  [synset.definition() for synset in \
+    <span style="color: #DFAF8F;">bidix</span> = ET.parse(main_bidix)
+    <span style="color: #DFAF8F;">root</span> = bidix.getroot()
+    <span style="color: #F0DFAF; font-weight: bold;">for</span> e <span style="color: #F0DFAF; font-weight: bold;">in</span> root.<span style="color: #DCDCCC; font-weight: bold;">iter</span>(<span style="color: #CC9393;">'e'</span>):
+        <span style="color: #F0DFAF; font-weight: bold;">try</span>:
+            <span style="color: #DFAF8F;">left</span>, <span style="color: #DFAF8F;">right</span> = pair2monolings(e[0], <span style="color: #CC9393;">'eng'</span>, <span style="color: #CC9393;">'kaz'</span>)
+        <span style="color: #F0DFAF; font-weight: bold;">except</span> <span style="color: #7CB8BB;">IndexError</span>:  <span style="color: #5F7F5F;"># </span><span style="color: #7F9F7F;">&lt;e&gt;&lt;re&gt;...&lt;/re&gt;&lt;p&gt;...&lt;/p&gt;</span>
+            <span style="color: #DFAF8F;">left</span>, <span style="color: #DFAF8F;">right</span> = pair2monolings(e[1], <span style="color: #CC9393;">'eng'</span>, <span style="color: #CC9393;">'kaz'</span>)
+        <span style="color: #F0DFAF; font-weight: bold;">if</span> left.lm <span style="color: #F0DFAF; font-weight: bold;">and</span> <span style="color: #DCDCCC; font-weight: bold;">len</span>(left.tags) &gt;= 1:
+            <span style="color: #F0DFAF; font-weight: bold;">if</span> left.tags[0] <span style="color: #F0DFAF; font-weight: bold;">in</span> {<span style="color: #CC9393;">'n'</span>, <span style="color: #CC9393;">'v'</span>, <span style="color: #CC9393;">'adj'</span>, <span style="color: #CC9393;">'adv'</span>}:
+                <span style="color: #F0DFAF; font-weight: bold;">for</span> defn <span style="color: #F0DFAF; font-weight: bold;">in</span> \
+                  [synset.definition() <span style="color: #F0DFAF; font-weight: bold;">for</span> synset <span style="color: #F0DFAF; font-weight: bold;">in</span> \
                     wn.synsets(left.lm,
                                APERTIUMPOS_2_WNPOS[left.tags[0]])]:
-                    if e.text:
-                        e.text +=(defn + '\n')
-                    else:
-                        e.text = defn + '\n'
+                    <span style="color: #F0DFAF; font-weight: bold;">if</span> e.text:
+                        <span style="color: #DFAF8F;">e.text</span> +=(defn + <span style="color: #CC9393;">'\n'</span>)
+                    <span style="color: #F0DFAF; font-weight: bold;">else</span>:
+                        <span style="color: #DFAF8F;">e.text</span> = defn + <span style="color: #CC9393;">'\n'</span>
         e.append(deepcopy(monolinge_2_iso3element(left)))
         e.append(deepcopy(monolinge_2_iso3element(right)))
-        for monoling_e in wg_connections(wg, left):
+        <span style="color: #F0DFAF; font-weight: bold;">for</span> monoling_e <span style="color: #F0DFAF; font-weight: bold;">in</span> wg_connections(wg, left):
             e.append(deepcopy(monolinge_2_iso3element(monoling_e)))
-        for p in e.iter('p'):
+        <span style="color: #F0DFAF; font-weight: bold;">for</span> p <span style="color: #F0DFAF; font-weight: bold;">in</span> e.<span style="color: #DCDCCC; font-weight: bold;">iter</span>(<span style="color: #CC9393;">'p'</span>):
             e.remove(p)
  
-    return minidom.parseString(ET.tostring(root)).toprettyxml(indent="  ",
-                                                              newl="\n")
+    <span style="color: #F0DFAF; font-weight: bold;">return</span> minidom.parseString(ET.tostring(root)).toprettyxml(indent=<span style="color: #CC9393;">"  "</span>,
+                                                              newl=<span style="color: #CC9393;">"\n"</span>)
 
 
-def manytags2singletag(wg):
-    """ WordGraph -&gt; WordGraph
+<span style="color: #F0DFAF; font-weight: bold;">def</span> <span style="color: #93E0E3;">manytags2singletag</span>(wg):
+    <span style="color: #9FC59F;">""" WordGraph -&gt; WordGraph</span>
 
-    Iterate through all nodes (= MonolingEntries) of wg and, if
-    a monolingentry.tags has many tags, limit it to a single tag
-    (part-of-speech tag).
-    """
-    def _manytags2singletag(me):
-        if len(me.tags) &gt; 1:
-            return MonolingEntry(me.lang, me.lm, me.tags[:1])
-        else:
-            return me
+<span style="color: #9FC59F;">    Iterate through all nodes (= MonolingEntries) of wg and, if</span>
+<span style="color: #9FC59F;">    a monolingentry.tags has many tags, limit it to a single tag</span>
+<span style="color: #9FC59F;">    (part-of-speech tag).</span>
+<span style="color: #9FC59F;">    """</span>
+    <span style="color: #F0DFAF; font-weight: bold;">def</span> <span style="color: #93E0E3;">_manytags2singletag</span>(me):
+        <span style="color: #F0DFAF; font-weight: bold;">if</span> <span style="color: #DCDCCC; font-weight: bold;">len</span>(me.tags) &gt; 1:
+            <span style="color: #F0DFAF; font-weight: bold;">return</span> MonolingEntry(me.lang, me.lm, me.tags[:1])
+        <span style="color: #F0DFAF; font-weight: bold;">else</span>:
+            <span style="color: #F0DFAF; font-weight: bold;">return</span> me
 
-    res = defaultdict(set)
-    for me in wg:
-        if len(me.tags) &gt; 1:
-            for neibr in wg[me]:
+    <span style="color: #DFAF8F;">res</span> = defaultdict(<span style="color: #DCDCCC; font-weight: bold;">set</span>)
+    <span style="color: #F0DFAF; font-weight: bold;">for</span> me <span style="color: #F0DFAF; font-weight: bold;">in</span> wg:
+        <span style="color: #F0DFAF; font-weight: bold;">if</span> <span style="color: #DCDCCC; font-weight: bold;">len</span>(me.tags) &gt; 1:
+            <span style="color: #F0DFAF; font-weight: bold;">for</span> neibr <span style="color: #F0DFAF; font-weight: bold;">in</span> wg[me]:
                 res[_manytags2singletag(me)].add(_manytags2singletag(neibr))
-        else:
-            for neibr in wg[me]:
+        <span style="color: #F0DFAF; font-weight: bold;">else</span>:
+            <span style="color: #F0DFAF; font-weight: bold;">for</span> neibr <span style="color: #F0DFAF; font-weight: bold;">in</span> wg[me]:
                 res[me].add(_manytags2singletag(neibr))
-    return res
+    <span style="color: #F0DFAF; font-weight: bold;">return</span> res
  
-def test_manytags2singletag():
-    assert manytags2singletag(WG_3) == \
-        {MonolingEntry("eng", "Moscow", ("np",)):
-            {MonolingEntry("tat", "Мәскәү", ("np",)),
-             MonolingEntry("rus", "Москва", ("np",)),
-             MonolingEntry("tur", "Moskova", ())},
-         MonolingEntry("tat", "Мәскәү", ("np",)):
-             {MonolingEntry("eng", "Moscow", ("np",))},
-         MonolingEntry("rus", "Москва", ("np",)):
-             {MonolingEntry("eng", "Moscow", ("np",))},
-         MonolingEntry("tur", "Moskova", ()):
-             {MonolingEntry("eng", "Moscow", ("np",))}}
+<span style="color: #F0DFAF; font-weight: bold;">def</span> <span style="color: #93E0E3;">test_manytags2singletag</span>():
+    <span style="color: #F0DFAF; font-weight: bold;">assert</span> manytags2singletag(WG_3) == \
+        {MonolingEntry(<span style="color: #CC9393;">"eng"</span>, <span style="color: #CC9393;">"Moscow"</span>, (<span style="color: #CC9393;">"np"</span>,)):
+            {MonolingEntry(<span style="color: #CC9393;">"tat"</span>, <span style="color: #CC9393;">"&#1052;&#1241;&#1089;&#1082;&#1241;&#1199;"</span>, (<span style="color: #CC9393;">"np"</span>,)),
+             MonolingEntry(<span style="color: #CC9393;">"rus"</span>, <span style="color: #CC9393;">"&#1052;&#1086;&#1089;&#1082;&#1074;&#1072;"</span>, (<span style="color: #CC9393;">"np"</span>,)),
+             MonolingEntry(<span style="color: #CC9393;">"tur"</span>, <span style="color: #CC9393;">"Moskova"</span>, ())},
+         MonolingEntry(<span style="color: #CC9393;">"tat"</span>, <span style="color: #CC9393;">"&#1052;&#1241;&#1089;&#1082;&#1241;&#1199;"</span>, (<span style="color: #CC9393;">"np"</span>,)):
+             {MonolingEntry(<span style="color: #CC9393;">"eng"</span>, <span style="color: #CC9393;">"Moscow"</span>, (<span style="color: #CC9393;">"np"</span>,))},
+         MonolingEntry(<span style="color: #CC9393;">"rus"</span>, <span style="color: #CC9393;">"&#1052;&#1086;&#1089;&#1082;&#1074;&#1072;"</span>, (<span style="color: #CC9393;">"np"</span>,)):
+             {MonolingEntry(<span style="color: #CC9393;">"eng"</span>, <span style="color: #CC9393;">"Moscow"</span>, (<span style="color: #CC9393;">"np"</span>,))},
+         MonolingEntry(<span style="color: #CC9393;">"tur"</span>, <span style="color: #CC9393;">"Moskova"</span>, ()):
+             {MonolingEntry(<span style="color: #CC9393;">"eng"</span>, <span style="color: #CC9393;">"Moscow"</span>, (<span style="color: #CC9393;">"np"</span>,))}}
 
 
-def g_connections(graph, start_node):
-    """ Graph -&gt; (Generator Object)
+<span style="color: #F0DFAF; font-weight: bold;">def</span> <span style="color: #93E0E3;">g_connections</span>(graph, start_node):
+    <span style="color: #9FC59F;">""" Graph -&gt; (Generator Object)</span>
 
-    Traverse the graph (avoiding cycles) starting with start_node and yield
-    all nodes the start node is connected to.
-    """
-    frontier = set()
-    seen = {start_node}
-    for neighbour in graph[start_node]:
+<span style="color: #9FC59F;">    Traverse the graph (avoiding cycles) starting with start_node and yield</span>
+<span style="color: #9FC59F;">    all nodes the start node is connected to.</span>
+<span style="color: #9FC59F;">    """</span>
+    <span style="color: #DFAF8F;">frontier</span> = <span style="color: #DCDCCC; font-weight: bold;">set</span>()
+    <span style="color: #DFAF8F;">seen</span> = {start_node}
+    <span style="color: #F0DFAF; font-weight: bold;">for</span> neighbour <span style="color: #F0DFAF; font-weight: bold;">in</span> graph[start_node]:
         frontier.add(neighbour)
-    while frontier:
-        current = frontier.pop()
-        if current not in seen:
-            yield current
+    <span style="color: #F0DFAF; font-weight: bold;">while</span> frontier:
+        <span style="color: #DFAF8F;">current</span> = frontier.pop()
+        <span style="color: #F0DFAF; font-weight: bold;">if</span> current <span style="color: #F0DFAF; font-weight: bold;">not</span> <span style="color: #F0DFAF; font-weight: bold;">in</span> seen:
+            <span style="color: #F0DFAF; font-weight: bold;">yield</span> current
             seen.add(current)
-            for neighbour in graph[current]:
+            <span style="color: #F0DFAF; font-weight: bold;">for</span> neighbour <span style="color: #F0DFAF; font-weight: bold;">in</span> graph[current]:
                 frontier.add(neighbour)
-        else:
-            continue
+        <span style="color: #F0DFAF; font-weight: bold;">else</span>:
+            <span style="color: #F0DFAF; font-weight: bold;">continue</span>
 
-def test_g_connections():
-    assert list(g_connections(G_1, 'g')) == []
-    assert list(g_connections(G_1, 'h')) == ['i']
-    assert sorted(g_connections(G_1, 'i')) == ['h']
-    assert sorted(g_connections(G_1, 'a')) == ['b', 'c', 'd', 'f']
-    assert sorted(g_connections(G_1, 'c')) == ['a', 'b', 'd', 'f']
+<span style="color: #F0DFAF; font-weight: bold;">def</span> <span style="color: #93E0E3;">test_g_connections</span>():
+    <span style="color: #F0DFAF; font-weight: bold;">assert</span> <span style="color: #DCDCCC; font-weight: bold;">list</span>(g_connections(G_1, <span style="color: #CC9393;">'g'</span>)) == []
+    <span style="color: #F0DFAF; font-weight: bold;">assert</span> <span style="color: #DCDCCC; font-weight: bold;">list</span>(g_connections(G_1, <span style="color: #CC9393;">'h'</span>)) == [<span style="color: #CC9393;">'i'</span>]
+    <span style="color: #F0DFAF; font-weight: bold;">assert</span> <span style="color: #DCDCCC; font-weight: bold;">sorted</span>(g_connections(G_1, <span style="color: #CC9393;">'i'</span>)) == [<span style="color: #CC9393;">'h'</span>]
+    <span style="color: #F0DFAF; font-weight: bold;">assert</span> <span style="color: #DCDCCC; font-weight: bold;">sorted</span>(g_connections(G_1, <span style="color: #CC9393;">'a'</span>)) == [<span style="color: #CC9393;">'b'</span>, <span style="color: #CC9393;">'c'</span>, <span style="color: #CC9393;">'d'</span>, <span style="color: #CC9393;">'f'</span>]
+    <span style="color: #F0DFAF; font-weight: bold;">assert</span> <span style="color: #DCDCCC; font-weight: bold;">sorted</span>(g_connections(G_1, <span style="color: #CC9393;">'c'</span>)) == [<span style="color: #CC9393;">'a'</span>, <span style="color: #CC9393;">'b'</span>, <span style="color: #CC9393;">'d'</span>, <span style="color: #CC9393;">'f'</span>]
 
 
-def wg_connections(graph, start_node):
-    """ WordGraph -&gt; (Generator MonolingEntry)
+<span style="color: #F0DFAF; font-weight: bold;">def</span> <span style="color: #93E0E3;">wg_connections</span>(graph, start_node):
+    <span style="color: #9FC59F;">""" WordGraph -&gt; (Generator MonolingEntry)</span>
 
-    Traverse the graph (avoiding cycles) starting with start_node and yield
-    all nodes the start node is connected to.
-    """
-    frontier = set()
-    seen = {start_node.lang}
-    for neighbour in graph[start_node]:
+<span style="color: #9FC59F;">    Traverse the graph (avoiding cycles) starting with start_node and yield</span>
+<span style="color: #9FC59F;">    all nodes the start node is connected to.</span>
+<span style="color: #9FC59F;">    """</span>
+    <span style="color: #DFAF8F;">frontier</span> = <span style="color: #DCDCCC; font-weight: bold;">set</span>()
+    <span style="color: #DFAF8F;">seen</span> = {start_node.lang}
+    <span style="color: #F0DFAF; font-weight: bold;">for</span> neighbour <span style="color: #F0DFAF; font-weight: bold;">in</span> graph[start_node]:
         frontier.add(neighbour)
-    while frontier:
-        current = frontier.pop()
-        if current.lang not in seen:
-            yield current
+    <span style="color: #F0DFAF; font-weight: bold;">while</span> frontier:
+        <span style="color: #DFAF8F;">current</span> = frontier.pop()
+        <span style="color: #F0DFAF; font-weight: bold;">if</span> current.lang <span style="color: #F0DFAF; font-weight: bold;">not</span> <span style="color: #F0DFAF; font-weight: bold;">in</span> seen:
+            <span style="color: #F0DFAF; font-weight: bold;">yield</span> current
             seen.add(current.lang)
-            for neighbour in graph[current]:
-                if neighbour.lang not in seen:
+            <span style="color: #F0DFAF; font-weight: bold;">for</span> neighbour <span style="color: #F0DFAF; font-weight: bold;">in</span> graph[current]:
+                <span style="color: #F0DFAF; font-weight: bold;">if</span> neighbour.lang <span style="color: #F0DFAF; font-weight: bold;">not</span> <span style="color: #F0DFAF; font-weight: bold;">in</span> seen:
                     frontier.add(neighbour)
-        else:
-            continue
+        <span style="color: #F0DFAF; font-weight: bold;">else</span>:
+            <span style="color: #F0DFAF; font-weight: bold;">continue</span>
 
-def test_wg_connections():
-    assert sorted(g_connections(WG_2, MONOLING_E_2)) ==\
-           sorted([MONOLING_E_3,
+<span style="color: #F0DFAF; font-weight: bold;">def</span> <span style="color: #93E0E3;">test_wg_connections</span>():
+    <span style="color: #F0DFAF; font-weight: bold;">assert</span> <span style="color: #DCDCCC; font-weight: bold;">sorted</span>(g_connections(WG_2, MONOLING_E_2)) ==\
+           <span style="color: #DCDCCC; font-weight: bold;">sorted</span>([MONOLING_E_3,
                    MONOLING_E_4,
                    MONOLING_E_5])
 
 
-def bidixes2wordgraph(bidixes):
-    """ (List of (String, String, String) -&gt; WordGraph
+<span style="color: #F0DFAF; font-weight: bold;">def</span> <span style="color: #93E0E3;">bidixes2wordgraph</span>(bidixes):
+    <span style="color: #9FC59F;">""" (List of (String, String, String) -&gt; WordGraph</span>
 
-    Given a list of (bidix file name, lang1 iso3 code, lang 2 iso3 code)
-    tuples, return a WordGraph with all stems contained in those bidix files.
-    """
-    res = defaultdict(set)
-    for bidix, left_lang, right_lang in bidixes:
-        try:
-            bidix_root = ET.parse(bidix).getroot()
-        except ET.ParseError:
-            print("Couldn't parse ", bidix, ". Ill-formed xml?",
-                  file=sys.stderr)
-            continue
-        for pair in bidix_root.iter('p'):
-            left, right = pair2monolings(pair, left_lang, right_lang)
+<span style="color: #9FC59F;">    Given a list of (bidix file name, lang1 iso3 code, lang 2 iso3 code)</span>
+<span style="color: #9FC59F;">    tuples, return a WordGraph with all stems contained in those bidix files.</span>
+<span style="color: #9FC59F;">    """</span>
+    <span style="color: #DFAF8F;">res</span> = defaultdict(<span style="color: #DCDCCC; font-weight: bold;">set</span>)
+    <span style="color: #F0DFAF; font-weight: bold;">for</span> bidix, left_lang, right_lang <span style="color: #F0DFAF; font-weight: bold;">in</span> bidixes:
+        <span style="color: #F0DFAF; font-weight: bold;">try</span>:
+            <span style="color: #DFAF8F;">bidix_root</span> = ET.parse(bidix).getroot()
+        <span style="color: #F0DFAF; font-weight: bold;">except</span> ET.ParseError:
+            <span style="color: #F0DFAF; font-weight: bold;">print</span>(<span style="color: #CC9393;">"Couldn't parse "</span>, bidix, <span style="color: #CC9393;">". Ill-formed xml?"</span>,
+                  <span style="color: #DCDCCC; font-weight: bold;">file</span>=sys.stderr)
+            <span style="color: #F0DFAF; font-weight: bold;">continue</span>
+        <span style="color: #F0DFAF; font-weight: bold;">for</span> pair <span style="color: #F0DFAF; font-weight: bold;">in</span> bidix_root.<span style="color: #DCDCCC; font-weight: bold;">iter</span>(<span style="color: #CC9393;">'p'</span>):
+            <span style="color: #DFAF8F;">left</span>, <span style="color: #DFAF8F;">right</span> = pair2monolings(pair, left_lang, right_lang)
             res[left].add(right)
             res[right].add(left)
-    return res
+    <span style="color: #F0DFAF; font-weight: bold;">return</span> res
 
-def test_bidixes2wordgraph():
-    eng_kaz = StringIO(u"""&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-                     &lt;dictionary&gt;
-                       &lt;alphabet&gt;&lt;/alphabet&gt;
-                       &lt;sdefs&gt;
-                         &lt;sdef n="n"               c="Noun"/&gt;
-                       &lt;/sdefs&gt;
+<span style="color: #F0DFAF; font-weight: bold;">def</span> <span style="color: #93E0E3;">test_bidixes2wordgraph</span>():
+    <span style="color: #DFAF8F;">eng_kaz</span> = StringIO(u<span style="color: #CC9393;">"""&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span style="color: #CC9393;">                     &lt;dictionary&gt;</span>
+<span style="color: #CC9393;">                       &lt;alphabet&gt;&lt;/alphabet&gt;</span>
+<span style="color: #CC9393;">                       &lt;sdefs&gt;</span>
+<span style="color: #CC9393;">                         &lt;sdef n="n"               c="Noun"/&gt;</span>
+<span style="color: #CC9393;">                       &lt;/sdefs&gt;</span>
 
-                       &lt;section id="main" type="standard"&gt;
-                         &lt;e&gt;&lt;p&gt;&lt;l&gt;file&lt;s n="n"/&gt;&lt;/l&gt;&lt;r&gt;файл&lt;s n="n"/&gt;&lt;/r&gt;&lt;/p&gt;&lt;/e&gt;
-                         &lt;e&gt;&lt;p&gt;&lt;l&gt;file&lt;s n="n"/&gt;&lt;/l&gt;&lt;r&gt;егеу&lt;s n="n"/&gt;&lt;/r&gt;&lt;/p&gt;&lt;/e&gt;
-                       &lt;/section&gt;
-                     &lt;/dictionary&gt;""")
-    kaz_tat = StringIO(u"""&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-                     &lt;dictionary&gt;
-                       &lt;alphabet&gt;&lt;/alphabet&gt;
-                       &lt;sdefs&gt;
-                         &lt;sdef n="n"               c="Noun"/&gt;
-                       &lt;/sdefs&gt;
+<span style="color: #CC9393;">                       &lt;section id="main" type="standard"&gt;</span>
+<span style="color: #CC9393;">                         &lt;e&gt;&lt;p&gt;&lt;l&gt;file&lt;s n="n"/&gt;&lt;/l&gt;&lt;r&gt;&#1092;&#1072;&#1081;&#1083;&lt;s n="n"/&gt;&lt;/r&gt;&lt;/p&gt;&lt;/e&gt;</span>
+<span style="color: #CC9393;">                         &lt;e&gt;&lt;p&gt;&lt;l&gt;file&lt;s n="n"/&gt;&lt;/l&gt;&lt;r&gt;&#1077;&#1075;&#1077;&#1091;&lt;s n="n"/&gt;&lt;/r&gt;&lt;/p&gt;&lt;/e&gt;</span>
+<span style="color: #CC9393;">                       &lt;/section&gt;</span>
+<span style="color: #CC9393;">                     &lt;/dictionary&gt;"""</span>)
+    <span style="color: #DFAF8F;">kaz_tat</span> = StringIO(u<span style="color: #CC9393;">"""&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span style="color: #CC9393;">                     &lt;dictionary&gt;</span>
+<span style="color: #CC9393;">                       &lt;alphabet&gt;&lt;/alphabet&gt;</span>
+<span style="color: #CC9393;">                       &lt;sdefs&gt;</span>
+<span style="color: #CC9393;">                         &lt;sdef n="n"               c="Noun"/&gt;</span>
+<span style="color: #CC9393;">                       &lt;/sdefs&gt;</span>
 
-                       &lt;section id="main" type="standard"&gt;
-                         &lt;e&gt;&lt;p&gt;&lt;l&gt;егеу&lt;s n="n"/&gt;&lt;/l&gt;&lt;r&gt;игәү&lt;s n="n"/&gt;&lt;/r&gt;&lt;/p&gt;&lt;/e&gt;
-                       &lt;/section&gt;
-                     &lt;/dictionary&gt;""")
+<span style="color: #CC9393;">                       &lt;section id="main" type="standard"&gt;</span>
+<span style="color: #CC9393;">                         &lt;e&gt;&lt;p&gt;&lt;l&gt;&#1077;&#1075;&#1077;&#1091;&lt;s n="n"/&gt;&lt;/l&gt;&lt;r&gt;&#1080;&#1075;&#1241;&#1199;&lt;s n="n"/&gt;&lt;/r&gt;&lt;/p&gt;&lt;/e&gt;</span>
+<span style="color: #CC9393;">                       &lt;/section&gt;</span>
+<span style="color: #CC9393;">                     &lt;/dictionary&gt;"""</span>)
 
-    assert bidixes2wordgraph([(eng_kaz, "eng", "kaz"),
-                              (kaz_tat, "kaz", "tat")]) == WG_2
+    <span style="color: #F0DFAF; font-weight: bold;">assert</span> bidixes2wordgraph([(eng_kaz, <span style="color: #CC9393;">"eng"</span>, <span style="color: #CC9393;">"kaz"</span>),
+                              (kaz_tat, <span style="color: #CC9393;">"kaz"</span>, <span style="color: #CC9393;">"tat"</span>)]) == WG_2
 
 
-def pair2monolings(pair, left_lang, right_lang):
-    """ ElementTree.Element String String -&gt; (MonolingEntry, MonolingEntry)
+<span style="color: #F0DFAF; font-weight: bold;">def</span> <span style="color: #93E0E3;">pair2monolings</span>(pair, left_lang, right_lang):
+    <span style="color: #9FC59F;">""" ElementTree.Element String String -&gt; (MonolingEntry, MonolingEntry)</span>
 
-    Extract the &lt;l&gt;eft and &lt;r&gt;ight hand sides from a &lt;p&gt;air element.
-    """
-    return MonolingEntry(left_lang,
-                         ' '.join(pair[0].itertext()),
-                         tuple(s.attrib['n'] for s in pair[0].iter('s'))), \
+<span style="color: #9FC59F;">    Extract the &lt;l&gt;eft and &lt;r&gt;ight hand sides from a &lt;p&gt;air element.</span>
+<span style="color: #9FC59F;">    """</span>
+    <span style="color: #F0DFAF; font-weight: bold;">return</span> MonolingEntry(left_lang,
+                         <span style="color: #CC9393;">' '</span>.join(pair[0].itertext()),
+                         <span style="color: #DCDCCC; font-weight: bold;">tuple</span>(s.attrib[<span style="color: #CC9393;">'n'</span>] <span style="color: #F0DFAF; font-weight: bold;">for</span> s <span style="color: #F0DFAF; font-weight: bold;">in</span> pair[0].<span style="color: #DCDCCC; font-weight: bold;">iter</span>(<span style="color: #CC9393;">'s'</span>))), \
            MonolingEntry(right_lang,
-                         ' '.join(pair[1].itertext()),
-                         tuple(s.attrib['n'] for s in pair[1].iter('s')))
+                         <span style="color: #CC9393;">' '</span>.join(pair[1].itertext()),
+                         <span style="color: #DCDCCC; font-weight: bold;">tuple</span>(s.attrib[<span style="color: #CC9393;">'n'</span>] <span style="color: #F0DFAF; font-weight: bold;">for</span> s <span style="color: #F0DFAF; font-weight: bold;">in</span> pair[1].<span style="color: #DCDCCC; font-weight: bold;">iter</span>(<span style="color: #CC9393;">'s'</span>)))
 
-def test_pair2monolings():
-    assert pair2monolings(ET.fromstring("""&lt;p&gt;&lt;l&gt;file&lt;s n="n"/&gt;&lt;/l&gt;&lt;r&gt;файл&lt;s n="n"/&gt;&lt;/r&gt;&lt;/p&gt;"""), "eng", "kaz") == \
+<span style="color: #F0DFAF; font-weight: bold;">def</span> <span style="color: #93E0E3;">test_pair2monolings</span>():
+    <span style="color: #F0DFAF; font-weight: bold;">assert</span> pair2monolings(ET.fromstring(<span style="color: #CC9393;">"""&lt;p&gt;&lt;l&gt;file&lt;s n="n"/&gt;&lt;/l&gt;&lt;r&gt;&#1092;&#1072;&#1081;&#1083;&lt;s n="n"/&gt;&lt;/r&gt;&lt;/p&gt;"""</span>), <span style="color: #CC9393;">"eng"</span>, <span style="color: #CC9393;">"kaz"</span>) == \
            (MONOLING_E_2, MONOLING_E_3)
 
 
-def monolinge_2_iso3element(monoling_e):
-    """ MonolingEntry -&gt; ElementTree.Element
+<span style="color: #F0DFAF; font-weight: bold;">def</span> <span style="color: #93E0E3;">monolinge_2_iso3element</span>(monoling_e):
+    <span style="color: #9FC59F;">""" MonolingEntry -&gt; ElementTree.Element</span>
 
-    Convert the given monolingual entry into a xml element to be put
-    inside of &lt;e&gt; in the final multidix.
-    """
-    res = ET.Element(monoling_e.lang)
-    res.text = monoling_e.lm
-    for tag in monoling_e.tags:
-        ET.SubElement(res, 's', {'n': tag})
-    return res
+<span style="color: #9FC59F;">    Convert the given monolingual entry into a xml element to be put</span>
+<span style="color: #9FC59F;">    inside of &lt;e&gt; in the final multidix.</span>
+<span style="color: #9FC59F;">    """</span>
+    <span style="color: #DFAF8F;">res</span> = ET.Element(monoling_e.lang)
+    <span style="color: #DFAF8F;">res.text</span> = monoling_e.lm
+    <span style="color: #F0DFAF; font-weight: bold;">for</span> tag <span style="color: #F0DFAF; font-weight: bold;">in</span> monoling_e.tags:
+        ET.SubElement(res, <span style="color: #CC9393;">'s'</span>, {<span style="color: #CC9393;">'n'</span>: tag})
+    <span style="color: #F0DFAF; font-weight: bold;">return</span> res
 
-def test_monolinge_2_iso3element():
-    assert ET.tostring(monolinge_2_iso3element(MONOLING_E_1),
-                       encoding="unicode") == "&lt;eng /&gt;"
-    assert ET.tostring(monolinge_2_iso3element(MONOLING_E_6),
-                       encoding="unicode") == \
-           """&lt;eng&gt;Moscow&lt;s n="np" /&gt;&lt;s n="top" /&gt;&lt;/eng&gt;"""
+<span style="color: #F0DFAF; font-weight: bold;">def</span> <span style="color: #93E0E3;">test_monolinge_2_iso3element</span>():
+    <span style="color: #F0DFAF; font-weight: bold;">assert</span> ET.tostring(monolinge_2_iso3element(MONOLING_E_1),
+                       encoding=<span style="color: #CC9393;">"unicode"</span>) == <span style="color: #CC9393;">"&lt;eng /&gt;"</span>
+    <span style="color: #F0DFAF; font-weight: bold;">assert</span> ET.tostring(monolinge_2_iso3element(MONOLING_E_6),
+                       encoding=<span style="color: #CC9393;">"unicode"</span>) == \
+           <span style="color: #CC9393;">"""&lt;eng&gt;Moscow&lt;s n="np" /&gt;&lt;s n="top" /&gt;&lt;/eng&gt;"""</span>
 
 
-def append_leftiso3_rightiso3(bidixes):
-    """ (List of String) -&gt; (List of (String, String, String))
+<span style="color: #F0DFAF; font-weight: bold;">def</span> <span style="color: #93E0E3;">append_leftiso3_rightiso3</span>(bidixes):
+    <span style="color: #9FC59F;">""" (List of String) -&gt; (List of (String, String, String))</span>
 
-    Given a list with the names of bidix files, extract the language names
-    and return a list with (bidix file name, lang1 iso3 code, lang2 iso3 code)
-    tuples.
-    ASSUME: bidix files are named following the standard:
-            apertium-iso2or3-iso2or3.iso2or3-iso2or3.dix
-    """
-    res = []
-    for bidix in bidixes:
-        try:
-            parse = re.search(r'.*apertium-([^-]+)-([^-]+).\1-\2.dix', bidix)
-            lang1_iso3 = ISO2_2_ISO3.get(parse.group(1), parse.group(1))
-            lang2_iso3 = ISO2_2_ISO3.get(parse.group(2), parse.group(2))
+<span style="color: #9FC59F;">    Given a list with the names of bidix files, extract the language names</span>
+<span style="color: #9FC59F;">    and return a list with (bidix file name, lang1 iso3 code, lang2 iso3 code)</span>
+<span style="color: #9FC59F;">    tuples.</span>
+<span style="color: #9FC59F;">    ASSUME: bidix files are named following the standard:</span>
+<span style="color: #9FC59F;">            apertium-iso2or3-iso2or3.iso2or3-iso2or3.dix</span>
+<span style="color: #9FC59F;">    """</span>
+    <span style="color: #DFAF8F;">res</span> = []
+    <span style="color: #F0DFAF; font-weight: bold;">for</span> bidix <span style="color: #F0DFAF; font-weight: bold;">in</span> bidixes:
+        <span style="color: #F0DFAF; font-weight: bold;">try</span>:
+            <span style="color: #DFAF8F;">parse</span> = re.search(r<span style="color: #CC9393;">'.*apertium-([^-]+)-([^-]+).\1-\2.dix'</span>, bidix)
+            <span style="color: #DFAF8F;">lang1_iso3</span> = ISO2_2_ISO3.get(parse.group(1), parse.group(1))
+            <span style="color: #DFAF8F;">lang2_iso3</span> = ISO2_2_ISO3.get(parse.group(2), parse.group(2))
             res.append((bidix, lang1_iso3, lang2_iso3))
-        except AttributeError:
-            raise ValueError("Couldn't figure out the source language and "
-                             "target language's iso codes from the bidix name!")
-    return res
+        <span style="color: #F0DFAF; font-weight: bold;">except</span> <span style="color: #7CB8BB;">AttributeError</span>:
+            <span style="color: #F0DFAF; font-weight: bold;">raise</span> <span style="color: #7CB8BB;">ValueError</span>(<span style="color: #CC9393;">"Couldn't figure out the source language and "</span>
+                             <span style="color: #CC9393;">"target language's iso codes from the bidix name!"</span>)
+    <span style="color: #F0DFAF; font-weight: bold;">return</span> res
 
-def test_append_leftiso3_rightiso3():
-    assert append_leftiso3_rightiso3(['../apertium-kaz-tat.kaz-tat.dix',
-                                      '/home/foo/apertium-tt-ky.tt-ky.dix',
-                                      'apertium-ug-kaz.ug-kaz.dix']) == \
-           [('../apertium-kaz-tat.kaz-tat.dix', 'kaz', 'tat'),
-            ('/home/foo/apertium-tt-ky.tt-ky.dix', 'tat', 'kir'),
-            ('apertium-ug-kaz.ug-kaz.dix', 'uig', 'kaz')]
+<span style="color: #F0DFAF; font-weight: bold;">def</span> <span style="color: #93E0E3;">test_append_leftiso3_rightiso3</span>():
+    <span style="color: #F0DFAF; font-weight: bold;">assert</span> append_leftiso3_rightiso3([<span style="color: #CC9393;">'../apertium-kaz-tat.kaz-tat.dix'</span>,
+                                      <span style="color: #CC9393;">'/home/foo/apertium-tt-ky.tt-ky.dix'</span>,
+                                      <span style="color: #CC9393;">'apertium-ug-kaz.ug-kaz.dix'</span>]) == \
+           [(<span style="color: #CC9393;">'../apertium-kaz-tat.kaz-tat.dix'</span>, <span style="color: #CC9393;">'kaz'</span>, <span style="color: #CC9393;">'tat'</span>),
+            (<span style="color: #CC9393;">'/home/foo/apertium-tt-ky.tt-ky.dix'</span>, <span style="color: #CC9393;">'tat'</span>, <span style="color: #CC9393;">'kir'</span>),
+            (<span style="color: #CC9393;">'apertium-ug-kaz.ug-kaz.dix'</span>, <span style="color: #CC9393;">'uig'</span>, <span style="color: #CC9393;">'kaz'</span>)]
 
 
-def get_bidixes(apertium_root, skip_folders, iso_codes):
-    """ String (List of String) (List of String) -&gt; (List of String)
+<span style="color: #F0DFAF; font-weight: bold;">def</span> <span style="color: #93E0E3;">get_bidixes</span>(apertium_root, skip_folders, iso_codes):
+    <span style="color: #9FC59F;">""" String (List of String) (List of String) -&gt; (List of String)</span>
 
-    Return the paths to all bidixes in apertium_root repo, in which both sl and
-    tl are a language in iso_codes (except for bidixes in skip_folders)
-    """
+<span style="color: #9FC59F;">    Return the paths to all bidixes in apertium_root repo, in which both sl and</span>
+<span style="color: #9FC59F;">    tl are a language in iso_codes (except for bidixes in skip_folders)</span>
+<span style="color: #9FC59F;">    """</span>
 
-    def is_skippable(filepath):
-        """ String -&gt; Boolean
+    <span style="color: #F0DFAF; font-weight: bold;">def</span> <span style="color: #93E0E3;">is_skippable</span>(filepath):
+        <span style="color: #9FC59F;">""" String -&gt; Boolean</span>
 
-        Given a path to a bidix file, return True if it is located in
-        a folder which should be skipped (code in branches/,release/ or similar).
-        """
-        for f in skip_folders:
-            if f in filepath:
-                return True
-        return False
+<span style="color: #9FC59F;">        Given a path to a bidix file, return True if it is located in</span>
+<span style="color: #9FC59F;">        a folder which should be skipped (code in branches/,release/ or similar).</span>
+<span style="color: #9FC59F;">        """</span>
+        <span style="color: #F0DFAF; font-weight: bold;">for</span> f <span style="color: #F0DFAF; font-weight: bold;">in</span> skip_folders:
+            <span style="color: #F0DFAF; font-weight: bold;">if</span> f <span style="color: #F0DFAF; font-weight: bold;">in</span> filepath:
+                <span style="color: #F0DFAF; font-weight: bold;">return</span> <span style="color: #BFEBBF;">True</span>
+        <span style="color: #F0DFAF; font-weight: bold;">return</span> <span style="color: #BFEBBF;">False</span>
 
-    res = []
-    for filename in glob.iglob(apertium_root + '**/*.dix', recursive=True):
-        if not is_skippable(filename):
-            basename = os.path.basename(filename)
-            for frst_iso in iso_codes:
-                for scnd_iso in iso_codes:
-                    if basename == "apertium-{0}-{1}.{0}-{1}.dix".format(frst_iso,
+    <span style="color: #DFAF8F;">res</span> = []
+    <span style="color: #F0DFAF; font-weight: bold;">for</span> filename <span style="color: #F0DFAF; font-weight: bold;">in</span> glob.iglob(apertium_root + <span style="color: #CC9393;">'**/*.dix'</span>, recursive=<span style="color: #BFEBBF;">True</span>):
+        <span style="color: #F0DFAF; font-weight: bold;">if</span> <span style="color: #F0DFAF; font-weight: bold;">not</span> is_skippable(filename):
+            <span style="color: #DFAF8F;">basename</span> = os.path.basename(filename)
+            <span style="color: #F0DFAF; font-weight: bold;">for</span> frst_iso <span style="color: #F0DFAF; font-weight: bold;">in</span> iso_codes:
+                <span style="color: #F0DFAF; font-weight: bold;">for</span> scnd_iso <span style="color: #F0DFAF; font-weight: bold;">in</span> iso_codes:
+                    <span style="color: #F0DFAF; font-weight: bold;">if</span> basename == <span style="color: #CC9393;">"apertium-{0}-{1}.{0}-{1}.dix"</span>.<span style="color: #DCDCCC; font-weight: bold;">format</span>(frst_iso,
                                                                          scnd_iso):
                         res.append(filename)
-    print('\n'.join(res), file=sys.stderr)
-    return res
+    <span style="color: #F0DFAF; font-weight: bold;">print</span>(<span style="color: #CC9393;">'\n'</span>.join(res), <span style="color: #DCDCCC; font-weight: bold;">file</span>=sys.stderr)
+    <span style="color: #F0DFAF; font-weight: bold;">return</span> res
 
 
-## Formatters
-## ----------
+<span style="color: #5F7F5F;">## </span><span style="color: #7F9F7F;">Formatters</span>
+<span style="color: #5F7F5F;">## </span><span style="color: #7F9F7F;">----------</span>
 
 
-def wordgraph2sexp(wg):
-    """ WordGraph -&gt; String
+<span style="color: #F0DFAF; font-weight: bold;">def</span> <span style="color: #93E0E3;">wordgraph2sexp</span>(wg):
+    <span style="color: #9FC59F;">""" WordGraph -&gt; String</span>
 
-    Return s-expression representation of wg.
-    """
+<span style="color: #9FC59F;">    Return s-expression representation of wg.</span>
+<span style="color: #9FC59F;">    """</span>
 
-    def me2sexp(me):
-        return '(' + me.lang + ' "' + me.lm + '" (' + \
-               ' '.join(me.tags) + '))'
+    <span style="color: #F0DFAF; font-weight: bold;">def</span> <span style="color: #93E0E3;">me2sexp</span>(me):
+        <span style="color: #F0DFAF; font-weight: bold;">return</span> <span style="color: #CC9393;">'('</span> + me.lang + <span style="color: #CC9393;">' "'</span> + me.lm + <span style="color: #CC9393;">'" ('</span> + \
+               <span style="color: #CC9393;">' '</span>.join(me.tags) + <span style="color: #CC9393;">'))'</span>
 
-    return '(' + '\n '.join(me2sexp(k) + \
-                           ' (' + \
-                           ' '.join(me2sexp(n) for n in sorted(list(v))) + \
-                           ')' \
-                           for k, v in wg.items()) + \
-           ')'
+    <span style="color: #F0DFAF; font-weight: bold;">return</span> <span style="color: #CC9393;">'('</span> + <span style="color: #CC9393;">'\n '</span>.join(me2sexp(k) + \
+                           <span style="color: #CC9393;">' ('</span> + \
+                           <span style="color: #CC9393;">' '</span>.join(me2sexp(n) <span style="color: #F0DFAF; font-weight: bold;">for</span> n <span style="color: #F0DFAF; font-weight: bold;">in</span> <span style="color: #DCDCCC; font-weight: bold;">sorted</span>(<span style="color: #DCDCCC; font-weight: bold;">list</span>(v))) + \
+                           <span style="color: #CC9393;">')'</span> \
+                           <span style="color: #F0DFAF; font-weight: bold;">for</span> k, v <span style="color: #F0DFAF; font-weight: bold;">in</span> wg.items()) + \
+           <span style="color: #CC9393;">')'</span>
 
-def test_wordgraph2sexp():
-    expected = \
-    """
-    ((eng "file" (n)) ((kaz "егеу" (n))
-                       (kaz "файл" (n)))
-     (kaz "файл" (n)) ((eng "file" (n)))
-     (kaz "егеу" (n)) ((eng "file" (n))))
-    """
-    assert " ".join(wordgraph2sexp(WG_1).split()) == " ".join(expected.split())
+<span style="color: #F0DFAF; font-weight: bold;">def</span> <span style="color: #93E0E3;">test_wordgraph2sexp</span>():
+    <span style="color: #DFAF8F;">expected</span> = \
+    <span style="color: #CC9393;">"""</span>
+<span style="color: #CC9393;">    ((eng "file" (n)) ((kaz "&#1077;&#1075;&#1077;&#1091;" (n))</span>
+<span style="color: #CC9393;">                       (kaz "&#1092;&#1072;&#1081;&#1083;" (n)))</span>
+<span style="color: #CC9393;">     (kaz "&#1092;&#1072;&#1081;&#1083;" (n)) ((eng "file" (n)))</span>
+<span style="color: #CC9393;">     (kaz "&#1077;&#1075;&#1077;&#1091;" (n)) ((eng "file" (n))))</span>
+<span style="color: #CC9393;">    """</span>
+    <span style="color: #F0DFAF; font-weight: bold;">assert</span> <span style="color: #CC9393;">" "</span>.join(wordgraph2sexp(WG_1).split()) == <span style="color: #CC9393;">" "</span>.join(expected.split())
 
 
-## Runner
-## ======
+<span style="color: #5F7F5F;">## </span><span style="color: #7F9F7F;">Runner</span>
+<span style="color: #5F7F5F;">## </span><span style="color: #7F9F7F;">======</span>
 
-#    print(main(MAIN_BIDIX, RELEVANT_ISOS))
+<span style="color: #5F7F5F;">#    </span><span style="color: #7F9F7F;">print(main(MAIN_BIDIX, RELEVANT_ISOS))</span>
+
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-sec-4-1-1-5-2" class="outline-6">
-<h6 id="sec-4-1-1-5-2"><span class="section-number-6">4.1.1.5.2</span> A script for converting English Wordnet leammas into Turkic languages</h6>
+<div id="outline-container-org0806fb0" class="outline-6">
+<h6 id="org0806fb0"><span class="section-number-6">4.1.1.5.2</span> A script for converting English Wordnet leammas into Turkic languages</h6>
 <div class="outline-text-6" id="text-4-1-1-5-2">
 <div class="org-src-container">
+<pre class="src src-python" id="org491d004">
+<span style="color: #5F7F5F;">## </span><span style="color: #7F9F7F;">enwordnet2wordnet.py</span>
+<span style="color: #5F7F5F;">##</span>
+<span style="color: #5F7F5F;">## </span><span style="color: #7F9F7F;">A script which walks over the synsets in the English Wordnet and prints</span>
+<span style="color: #5F7F5F;">## </span><span style="color: #7F9F7F;">translations for each English lemma in each synset using Google Translate</span>
+<span style="color: #5F7F5F;">## </span><span style="color: #7F9F7F;">(gt), Yandex Translate (yt) and looking them up in Apertium (ap) bilingual</span>
+<span style="color: #5F7F5F;">## </span><span style="color: #7F9F7F;">dictionaries (turned into a multilingual word graph beforehand).</span>
+<span style="color: #5F7F5F;">##</span>
+<span style="color: #5F7F5F;">## </span><span style="color: #7F9F7F;">USAGE: python3 enwordnet2twordnet.py</span>
+<span style="color: #5F7F5F;">##</span>
+<span style="color: #5F7F5F;">## </span><span style="color: #7F9F7F;">A snippet from the current output:</span>
+<span style="color: #5F7F5F;">##</span>
+<span style="color: #5F7F5F;">## </span><span style="color: #7F9F7F;">def: (botany) a living organism lacking the power of locomotion</span>
+<span style="color: #5F7F5F;">## </span><span style="color: #7F9F7F;">ex: []</span>
+<span style="color: #5F7F5F;">##     </span><span style="color: #7F9F7F;">eng: plant</span>
+<span style="color: #5F7F5F;">##         </span><span style="color: #7F9F7F;">aze-gt: bitki?</span>
+<span style="color: #5F7F5F;">##         </span><span style="color: #7F9F7F;">aze-yt: zavod?</span>
+<span style="color: #5F7F5F;">##         </span><span style="color: #7F9F7F;">bak-yt: &#1079;&#1072;&#1074;&#1086;&#1076;?</span>
+<span style="color: #5F7F5F;">##         </span><span style="color: #7F9F7F;">kaz-ap: &#1082;&#1241;&#1089;&#1110;&#1087;&#1086;&#1088;&#1099;&#1085;?</span>
+<span style="color: #5F7F5F;">##         </span><span style="color: #7F9F7F;">kaz-ap: &#1257;&#1089;&#1110;&#1084;&#1076;&#1110;&#1082;?</span>
+<span style="color: #5F7F5F;">##         </span><span style="color: #7F9F7F;">kaz-ap: &#1092;&#1072;&#1073;&#1088;&#1080;&#1082;&#1072;?</span>
+<span style="color: #5F7F5F;">##         </span><span style="color: #7F9F7F;">kaz-ap: &#1079;&#1072;&#1091;&#1099;&#1090;?</span>
+<span style="color: #5F7F5F;">##         </span><span style="color: #7F9F7F;">kaz-ap: &#1179;&#1086;&#1085;&#1076;&#1099;&#1088;&#1171;&#1099;?</span>
+<span style="color: #5F7F5F;">##         </span><span style="color: #7F9F7F;">kaz-ap: &#1082;&#1257;&#1096;&#1077;&#1090;?</span>
+<span style="color: #5F7F5F;">##         </span><span style="color: #7F9F7F;">kaz-gt: &#1257;&#1089;&#1110;&#1084;&#1076;&#1110;&#1082;?</span>
+<span style="color: #5F7F5F;">##         </span><span style="color: #7F9F7F;">kaz-yt: &#1079;&#1072;&#1091;&#1099;&#1090;?</span>
+<span style="color: #5F7F5F;">##         </span><span style="color: #7F9F7F;">kir-gt: &#1257;&#1089;&#1199;&#1084;&#1076;&#1199;&#1082;?</span>
+<span style="color: #5F7F5F;">##         </span><span style="color: #7F9F7F;">kir-yt: &#1079;&#1072;&#1074;&#1086;&#1076;?</span>
+<span style="color: #5F7F5F;">##         </span><span style="color: #7F9F7F;">tat-ap: &#1082;&#1086;&#1084;&#1073;&#1080;&#1085;&#1072;&#1090;?</span>
+<span style="color: #5F7F5F;">##         </span><span style="color: #7F9F7F;">tat-ap: &#1199;&#1089;&#1077;&#1084;&#1083;&#1077;&#1082;?</span>
+<span style="color: #5F7F5F;">##         </span><span style="color: #7F9F7F;">tat-ap: &#1079;&#1072;&#1074;&#1086;&#1076;?</span>
+<span style="color: #5F7F5F;">##         </span><span style="color: #7F9F7F;">tat-yt: &#1079;&#1072;&#1074;&#1086;&#1076;?</span>
+<span style="color: #5F7F5F;">##         </span><span style="color: #7F9F7F;">tur-gt: bitki?</span>
+<span style="color: #5F7F5F;">##         </span><span style="color: #7F9F7F;">tur-yt: bitki?</span>
+<span style="color: #5F7F5F;">##         </span><span style="color: #7F9F7F;">uzb-gt: o&amp;#39;simlik?</span>
+<span style="color: #5F7F5F;">##         </span><span style="color: #7F9F7F;">uzb-yt: o'simlik?</span>
+<span style="color: #5F7F5F;">##     </span><span style="color: #7F9F7F;">eng: flora</span>
+<span style="color: #5F7F5F;">##         </span><span style="color: #7F9F7F;">aze-gt: flora?</span>
+<span style="color: #5F7F5F;">##         </span><span style="color: #7F9F7F;">aze-yt: Flora?</span>
+<span style="color: #5F7F5F;">##         </span><span style="color: #7F9F7F;">bak-yt: &#1060;&#1083;&#1086;&#1088;&#1072;?</span>
+<span style="color: #5F7F5F;">##         </span><span style="color: #7F9F7F;">kaz-ap: &#1092;&#1083;&#1086;&#1088;&#1072;?</span>
+<span style="color: #5F7F5F;">##         </span><span style="color: #7F9F7F;">kaz-gt: &#1257;&#1089;&#1110;&#1084;&#1076;&#1110;&#1082;&#1090;&#1077;&#1088;?</span>
+<span style="color: #5F7F5F;">##         </span><span style="color: #7F9F7F;">kaz-yt: &#1060;&#1083;&#1086;&#1088;&#1072;?</span>
+<span style="color: #5F7F5F;">##         </span><span style="color: #7F9F7F;">kir-gt: &#1257;&#1089;&#1199;&#1084;&#1076;&#1199;&#1082;&#1090;&#1257;&#1088;?</span>
+<span style="color: #5F7F5F;">##         </span><span style="color: #7F9F7F;">kir-yt: &#1060;&#1083;&#1086;&#1088;&#1072;?</span>
+<span style="color: #5F7F5F;">##         </span><span style="color: #7F9F7F;">tat-ap: &#1092;&#1083;&#1086;&#1088;&#1072;?</span>
+<span style="color: #5F7F5F;">##         </span><span style="color: #7F9F7F;">tat-yt: &#1060;&#1083;&#1086;&#1088;&#1072;?</span>
+<span style="color: #5F7F5F;">##         </span><span style="color: #7F9F7F;">tur-gt: bitki &#246;rt&#252;s&#252;?</span>
+<span style="color: #5F7F5F;">##         </span><span style="color: #7F9F7F;">tur-yt: flora?</span>
+<span style="color: #5F7F5F;">##         </span><span style="color: #7F9F7F;">uzb-gt: flora?</span>
+<span style="color: #5F7F5F;">##         </span><span style="color: #7F9F7F;">uzb-yt: o'simlik?</span>
+<span style="color: #5F7F5F;">##     </span><span style="color: #7F9F7F;">eng: plant life</span>
+<span style="color: #5F7F5F;">##         </span><span style="color: #7F9F7F;">aze-gt: bitki h&#601;yt&#305;?</span>
+<span style="color: #5F7F5F;">##         </span><span style="color: #7F9F7F;">aze-yt: h&#601;yt bitkil&#601;r ?</span>
+<span style="color: #5F7F5F;">##         </span><span style="color: #7F9F7F;">bak-yt: &#1199;&#1195;&#1077;&#1084;&#1083;&#1077;&#1082;&#1090;&#1241;&#1088; &#1090;&#1086;&#1088;&#1084;&#1086;&#1096;&#1086; ?</span>
+<span style="color: #5F7F5F;">##         </span><span style="color: #7F9F7F;">kaz-gt: &#1256;&#1089;&#1110;&#1084;&#1076;&#1110;&#1082;&#1090;&#1077;&#1088;&#1076;&#1110;&#1187; &#1257;&#1084;&#1110;&#1088;&#1110;?</span>
+<span style="color: #5F7F5F;">##         </span><span style="color: #7F9F7F;">kaz-yt: &#1257;&#1089;&#1110;&#1084;&#1076;&#1110;&#1082;&#1090;&#1077;&#1088;&#1076;&#1110;&#1187; &#1257;&#1084;&#1110;&#1088;&#1110; ?</span>
+<span style="color: #5F7F5F;">##         </span><span style="color: #7F9F7F;">kir-gt: &#1257;&#1089;&#1199;&#1084;&#1076;&#1199;&#1082;&#1090;&#1257;&#1088;&#1076;&#1199;&#1085; &#1078;&#1072;&#1096;&#1086;&#1086;?</span>
+<span style="color: #5F7F5F;">##         </span><span style="color: #7F9F7F;">kir-yt: &#1072;&#1082;-&#1257;&#1089;&#1199;&#1084;&#1076;&#1199;&#1082;&#1090;&#1257;&#1088;&#1076;&#1199;&#1085; ?</span>
+<span style="color: #5F7F5F;">##         </span><span style="color: #7F9F7F;">tat-yt: &#1090;&#1086;&#1088;&#1084;&#1099;&#1096; &#1199;&#1089;&#1077;&#1084;&#1083;&#1077;&#1082;&#1083;&#1241;&#1088; ?</span>
+<span style="color: #5F7F5F;">##         </span><span style="color: #7F9F7F;">tur-gt: bitki hayt&#305;?</span>
+<span style="color: #5F7F5F;">##         </span><span style="color: #7F9F7F;">tur-yt: bitki ya&#351;am&#305;?</span>
+<span style="color: #5F7F5F;">##         </span><span style="color: #7F9F7F;">uzb-gt: o&amp;#39;simlik hayoti?</span>
+<span style="color: #5F7F5F;">##         </span><span style="color: #7F9F7F;">uzb-yt: o'simlik hayoti?</span>
+<span style="color: #5F7F5F;">## </span><span style="color: #7F9F7F;">&lt;...&gt;</span>
+<span style="color: #5F7F5F;">## </span><span style="color: #7F9F7F;">Full output is in the xnet/ folder.</span>
 
-<pre class="src src-python" id="enwordnet2twordnet.py">## enwordnet2wordnet.py
-##
-## A script which walks over the synsets in the English Wordnet and prints
-## translations for each English lemma in each synset using Google Translate
-## (gt), Yandex Translate (yt) and looking them up in Apertium (ap) bilingual
-## dictionaries (turned into a multilingual word graph beforehand).
-##
-## USAGE: python3 enwordnet2twordnet.py
-##
-## A snippet from the current output:
-##
-## def: (botany) a living organism lacking the power of locomotion
-## ex: []
-##     eng: plant
-##         aze-gt: bitki?
-##         aze-yt: zavod?
-##         bak-yt: завод?
-##         kaz-ap: кәсіпорын?
-##         kaz-ap: өсімдік?
-##         kaz-ap: фабрика?
-##         kaz-ap: зауыт?
-##         kaz-ap: қондырғы?
-##         kaz-ap: көшет?
-##         kaz-gt: өсімдік?
-##         kaz-yt: зауыт?
-##         kir-gt: өсүмдүк?
-##         kir-yt: завод?
-##         tat-ap: комбинат?
-##         tat-ap: үсемлек?
-##         tat-ap: завод?
-##         tat-yt: завод?
-##         tur-gt: bitki?
-##         tur-yt: bitki?
-##         uzb-gt: o&amp;#39;simlik?
-##         uzb-yt: o'simlik?
-##     eng: flora
-##         aze-gt: flora?
-##         aze-yt: Flora?
-##         bak-yt: Флора?
-##         kaz-ap: флора?
-##         kaz-gt: өсімдіктер?
-##         kaz-yt: Флора?
-##         kir-gt: өсүмдүктөр?
-##         kir-yt: Флора?
-##         tat-ap: флора?
-##         tat-yt: Флора?
-##         tur-gt: bitki örtüsü?
-##         tur-yt: flora?
-##         uzb-gt: flora?
-##         uzb-yt: o'simlik?
-##     eng: plant life
-##         aze-gt: bitki həytı?
-##         aze-yt: həyt bitkilər ?
-##         bak-yt: үҫемлектәр тормошо ?
-##         kaz-gt: Өсімдіктердің өмірі?
-##         kaz-yt: өсімдіктердің өмірі ?
-##         kir-gt: өсүмдүктөрдүн жашоо?
-##         kir-yt: ак-өсүмдүктөрдүн ?
-##         tat-yt: тормыш үсемлекләр ?
-##         tur-gt: bitki haytı?
-##         tur-yt: bitki yaşamı?
-##         uzb-gt: o&amp;#39;simlik hayoti?
-##         uzb-yt: o'simlik hayoti?
-## &lt;...&gt;
-## Full output is in the xnet/ folder.
+<span style="color: #F0DFAF; font-weight: bold;">import</span> nltk
+nltk.data.path.append(r<span style="color: #CC9393;">"/home/selimcan/local/nltk_data"</span>)
+<span style="color: #F0DFAF; font-weight: bold;">from</span> nltk.corpus <span style="color: #F0DFAF; font-weight: bold;">import</span> wordnet <span style="color: #F0DFAF; font-weight: bold;">as</span> wn
+<span style="color: #F0DFAF; font-weight: bold;">from</span> yandex_translate <span style="color: #F0DFAF; font-weight: bold;">import</span> YandexTranslate  <span style="color: #5F7F5F;">## </span><span style="color: #7F9F7F;">pip install yandex.translate</span>
+<span style="color: #F0DFAF; font-weight: bold;">from</span> googleapiclient.discovery <span style="color: #F0DFAF; font-weight: bold;">import</span> build
 
-import nltk
-nltk.data.path.append(r"/home/selimcan/local/nltk_data")
-from nltk.corpus import wordnet as wn
-from yandex_translate import YandexTranslate  ## pip install yandex.translate
-from googleapiclient.discovery import build
-
-import wordgraph as wg
-
-
-############
-## Constants
+<span style="color: #F0DFAF; font-weight: bold;">import</span> wordgraph <span style="color: #F0DFAF; font-weight: bold;">as</span> wg
 
 
-APERTIUM_ROOT = '../apertium-all/'
+<span style="color: #5F7F5F;">############</span>
+<span style="color: #5F7F5F;">## </span><span style="color: #7F9F7F;">Constants</span>
 
-## from here: http://wiki.apertium.org/wiki/Turkic-languages
-RELEVANT_ISOS =  ['kaz', 'kz', 'tat', 'tt', 'kir', 'ky', 'tyv', 'tur', 'tr',
-                  'chv', 'cv', 'kum', 'kaa', 'uzb', 'uz', 'sah', 'crh', 'krc',
-                  'bak', 'ba', 'nog', 'gag', 'tuk', 'tk', 'uig', 'ug', 'kjh',
-                  'ota', 'aze', 'az', 'eng', 'en']
 
-SKIP_FOLDERS = ['release', 'branches']  ## only relevant for the old svn repo
+<span style="color: #DFAF8F;">APERTIUM_ROOT</span> = <span style="color: #CC9393;">'../apertium-all/'</span>
 
-MAIN_BIDIX = APERTIUM_ROOT + \
-             'apertium-trunk/apertium-eng-kaz/apertium-eng-kaz.eng-kaz.dix'
+<span style="color: #5F7F5F;">## </span><span style="color: #7F9F7F;">from here: http://wiki.apertium.org/wiki/Turkic-languages</span>
+<span style="color: #DFAF8F;">RELEVANT_ISOS</span> =  [<span style="color: #CC9393;">'kaz'</span>, <span style="color: #CC9393;">'kz'</span>, <span style="color: #CC9393;">'tat'</span>, <span style="color: #CC9393;">'tt'</span>, <span style="color: #CC9393;">'kir'</span>, <span style="color: #CC9393;">'ky'</span>, <span style="color: #CC9393;">'tyv'</span>, <span style="color: #CC9393;">'tur'</span>, <span style="color: #CC9393;">'tr'</span>,
+                  <span style="color: #CC9393;">'chv'</span>, <span style="color: #CC9393;">'cv'</span>, <span style="color: #CC9393;">'kum'</span>, <span style="color: #CC9393;">'kaa'</span>, <span style="color: #CC9393;">'uzb'</span>, <span style="color: #CC9393;">'uz'</span>, <span style="color: #CC9393;">'sah'</span>, <span style="color: #CC9393;">'crh'</span>, <span style="color: #CC9393;">'krc'</span>,
+                  <span style="color: #CC9393;">'bak'</span>, <span style="color: #CC9393;">'ba'</span>, <span style="color: #CC9393;">'nog'</span>, <span style="color: #CC9393;">'gag'</span>, <span style="color: #CC9393;">'tuk'</span>, <span style="color: #CC9393;">'tk'</span>, <span style="color: #CC9393;">'uig'</span>, <span style="color: #CC9393;">'ug'</span>, <span style="color: #CC9393;">'kjh'</span>,
+                  <span style="color: #CC9393;">'ota'</span>, <span style="color: #CC9393;">'aze'</span>, <span style="color: #CC9393;">'az'</span>, <span style="color: #CC9393;">'eng'</span>, <span style="color: #CC9393;">'en'</span>]
 
-APERTIUMPOS_2_WNPOS = {'n': wn.NOUN, 'v': wn.VERB, 'adj': wn.ADJ, 'adv': wn.ADV}
+<span style="color: #DFAF8F;">SKIP_FOLDERS</span> = [<span style="color: #CC9393;">'release'</span>, <span style="color: #CC9393;">'branches'</span>]  <span style="color: #5F7F5F;">## </span><span style="color: #7F9F7F;">only relevant for the old svn repo</span>
 
-POS = 'n'
+<span style="color: #DFAF8F;">MAIN_BIDIX</span> = APERTIUM_ROOT + \
+             <span style="color: #CC9393;">'apertium-trunk/apertium-eng-kaz/apertium-eng-kaz.eng-kaz.dix'</span>
 
-GT_API_KEY = 'get one yourself if you need to'
+<span style="color: #DFAF8F;">APERTIUMPOS_2_WNPOS</span> = {<span style="color: #CC9393;">'n'</span>: wn.NOUN, <span style="color: #CC9393;">'v'</span>: wn.VERB, <span style="color: #CC9393;">'adj'</span>: wn.ADJ, <span style="color: #CC9393;">'adv'</span>: wn.ADV}
 
-GT = build('translate', 'v2', developerKey=GT_API_KEY)
+<span style="color: #DFAF8F;">POS</span> = <span style="color: #CC9393;">'n'</span>
 
-YAT_API_KEY = 'get one yourself if you need to'
+<span style="color: #DFAF8F;">GT_API_KEY</span> = <span style="color: #CC9393;">'get one yourself if you need to'</span>
 
-YAT = YandexTranslate(YAT_API_KEY)
+<span style="color: #DFAF8F;">GT</span> = build(<span style="color: #CC9393;">'translate'</span>, <span style="color: #CC9393;">'v2'</span>, developerKey=GT_API_KEY)
 
-AWG = wg.manytags2singletag(
+<span style="color: #DFAF8F;">YAT_API_KEY</span> = <span style="color: #CC9393;">'get one yourself if you need to'</span>
+
+<span style="color: #DFAF8F;">YAT</span> = YandexTranslate(YAT_API_KEY)
+
+<span style="color: #DFAF8F;">AWG</span> = wg.manytags2singletag(
           wg.bidixes2wordgraph(
               wg.append_leftiso3_rightiso3(
                   wg.get_bidixes(APERTIUM_ROOT, SKIP_FOLDERS, RELEVANT_ISOS))))
 
-TURKIC = ['alt', 'aze', 'bak', 'chv', 'crh', 'gag', 'kaa', 'kaz', 'kir', 'kjh',
-          'krc', 'kum', 'nog', 'ota', 'sah', 'tat', 'tuk', 'tur', 'tyv', 'uig',
-          'uzb']
+<span style="color: #DFAF8F;">TURKIC</span> = [<span style="color: #CC9393;">'alt'</span>, <span style="color: #CC9393;">'aze'</span>, <span style="color: #CC9393;">'bak'</span>, <span style="color: #CC9393;">'chv'</span>, <span style="color: #CC9393;">'crh'</span>, <span style="color: #CC9393;">'gag'</span>, <span style="color: #CC9393;">'kaa'</span>, <span style="color: #CC9393;">'kaz'</span>, <span style="color: #CC9393;">'kir'</span>, <span style="color: #CC9393;">'kjh'</span>,
+          <span style="color: #CC9393;">'krc'</span>, <span style="color: #CC9393;">'kum'</span>, <span style="color: #CC9393;">'nog'</span>, <span style="color: #CC9393;">'ota'</span>, <span style="color: #CC9393;">'sah'</span>, <span style="color: #CC9393;">'tat'</span>, <span style="color: #CC9393;">'tuk'</span>, <span style="color: #CC9393;">'tur'</span>, <span style="color: #CC9393;">'tyv'</span>, <span style="color: #CC9393;">'uig'</span>,
+          <span style="color: #CC9393;">'uzb'</span>]
 
-TURKIC_IN_GT = {'aze','kaz', 'kir', 'tur', 'uzb'}
+<span style="color: #DFAF8F;">TURKIC_IN_GT</span> = {<span style="color: #CC9393;">'aze'</span>,<span style="color: #CC9393;">'kaz'</span>, <span style="color: #CC9393;">'kir'</span>, <span style="color: #CC9393;">'tur'</span>, <span style="color: #CC9393;">'uzb'</span>}
 
-TURKIC_IN_YAT = {'aze', 'bak', 'kaz', 'kir', 'tat', 'tur', 'uzb'}
-
-
-############
-## Functions
+<span style="color: #DFAF8F;">TURKIC_IN_YAT</span> = {<span style="color: #CC9393;">'aze'</span>, <span style="color: #CC9393;">'bak'</span>, <span style="color: #CC9393;">'kaz'</span>, <span style="color: #CC9393;">'kir'</span>, <span style="color: #CC9393;">'tat'</span>, <span style="color: #CC9393;">'tur'</span>, <span style="color: #CC9393;">'uzb'</span>}
 
 
-def yat_translate(s, lang1, lang2):
-    """ (String String String) -&gt; String
-
-    Translate lang1 string s to lang2 with Yandex Translate.
-    """
-    return ' '.join(YAT.translate(s, lang1 + '-' + lang2)['text'])
+<span style="color: #5F7F5F;">############</span>
+<span style="color: #5F7F5F;">## </span><span style="color: #7F9F7F;">Functions</span>
 
 
-def gt_translate(s, lang1, lang2):
-    """ (String String String) -&gt; String
+<span style="color: #F0DFAF; font-weight: bold;">def</span> <span style="color: #93E0E3;">yat_translate</span>(s, lang1, lang2):
+    <span style="color: #9FC59F;">""" (String String String) -&gt; String</span>
 
-    Translate lang1 string s to lang2 with Google Translate.
-    """
-    return GT.translations().list(source=lang1,
-                                  target=lang2, q=s).execute()['translations'][0]['translatedText']
-
-
-#########
-## Runner
+<span style="color: #9FC59F;">    Translate lang1 string s to lang2 with Yandex Translate.</span>
+<span style="color: #9FC59F;">    """</span>
+    <span style="color: #F0DFAF; font-weight: bold;">return</span> <span style="color: #CC9393;">' '</span>.join(YAT.translate(s, lang1 + <span style="color: #CC9393;">'-'</span> + lang2)[<span style="color: #CC9393;">'text'</span>])
 
 
-for s in list(wn.all_synsets(POS))[:10]:
-    print('def:', s.definition())
-    print('ex:', s.examples())
-    for l in s.lemmas():
-        l = l.name().replace('_', ' ')
-        print('    eng:', l)
-        for lang in TURKIC:
-            seen = set()
-            try:
-                nbrs = AWG[wg.MonolingEntry('eng', l, (POS,))]
-                for n in nbrs:
-                    if n.lang == lang and n.lm not in seen:
-                        print('        ' + lang + '-ap:', n.lm + '?')
+<span style="color: #F0DFAF; font-weight: bold;">def</span> <span style="color: #93E0E3;">gt_translate</span>(s, lang1, lang2):
+    <span style="color: #9FC59F;">""" (String String String) -&gt; String</span>
+
+<span style="color: #9FC59F;">    Translate lang1 string s to lang2 with Google Translate.</span>
+<span style="color: #9FC59F;">    """</span>
+    <span style="color: #F0DFAF; font-weight: bold;">return</span> GT.translations().<span style="color: #DCDCCC; font-weight: bold;">list</span>(source=lang1,
+                                  target=lang2, q=s).execute()[<span style="color: #CC9393;">'translations'</span>][0][<span style="color: #CC9393;">'translatedText'</span>]
+
+
+<span style="color: #5F7F5F;">#########</span>
+<span style="color: #5F7F5F;">## </span><span style="color: #7F9F7F;">Runner</span>
+
+
+<span style="color: #F0DFAF; font-weight: bold;">for</span> s <span style="color: #F0DFAF; font-weight: bold;">in</span> <span style="color: #DCDCCC; font-weight: bold;">list</span>(wn.all_synsets(POS))[:10]:
+    <span style="color: #F0DFAF; font-weight: bold;">print</span>(<span style="color: #CC9393;">'def:'</span>, s.definition())
+    <span style="color: #F0DFAF; font-weight: bold;">print</span>(<span style="color: #CC9393;">'ex:'</span>, s.examples())
+    <span style="color: #F0DFAF; font-weight: bold;">for</span> l <span style="color: #F0DFAF; font-weight: bold;">in</span> s.lemmas():
+        <span style="color: #DFAF8F;">l</span> = l.name().replace(<span style="color: #CC9393;">'_'</span>, <span style="color: #CC9393;">' '</span>)
+        <span style="color: #F0DFAF; font-weight: bold;">print</span>(<span style="color: #CC9393;">'    eng:'</span>, l)
+        <span style="color: #F0DFAF; font-weight: bold;">for</span> lang <span style="color: #F0DFAF; font-weight: bold;">in</span> TURKIC:
+            <span style="color: #DFAF8F;">seen</span> = <span style="color: #DCDCCC; font-weight: bold;">set</span>()
+            <span style="color: #F0DFAF; font-weight: bold;">try</span>:
+                <span style="color: #DFAF8F;">nbrs</span> = AWG[wg.MonolingEntry(<span style="color: #CC9393;">'eng'</span>, l, (POS,))]
+                <span style="color: #F0DFAF; font-weight: bold;">for</span> n <span style="color: #F0DFAF; font-weight: bold;">in</span> nbrs:
+                    <span style="color: #F0DFAF; font-weight: bold;">if</span> n.lang == lang <span style="color: #F0DFAF; font-weight: bold;">and</span> n.lm <span style="color: #F0DFAF; font-weight: bold;">not</span> <span style="color: #F0DFAF; font-weight: bold;">in</span> seen:
+                        <span style="color: #F0DFAF; font-weight: bold;">print</span>(<span style="color: #CC9393;">'        '</span> + lang + <span style="color: #CC9393;">'-ap:'</span>, n.lm + <span style="color: #CC9393;">'?'</span>)
                         seen.add(n.lm)
-            except KeyError:
-                try:
-                    nbrs = AWG[wg.MonolingEntry('eng', l, ())]
-                    for n in nbrs:
-                        if n.lang == lang and n.lm not in seen:
-                            print('        ' + lang + '-ap:', n.lm + '?')
+            <span style="color: #F0DFAF; font-weight: bold;">except</span> <span style="color: #7CB8BB;">KeyError</span>:
+                <span style="color: #F0DFAF; font-weight: bold;">try</span>:
+                    <span style="color: #DFAF8F;">nbrs</span> = AWG[wg.MonolingEntry(<span style="color: #CC9393;">'eng'</span>, l, ())]
+                    <span style="color: #F0DFAF; font-weight: bold;">for</span> n <span style="color: #F0DFAF; font-weight: bold;">in</span> nbrs:
+                        <span style="color: #F0DFAF; font-weight: bold;">if</span> n.lang == lang <span style="color: #F0DFAF; font-weight: bold;">and</span> n.lm <span style="color: #F0DFAF; font-weight: bold;">not</span> <span style="color: #F0DFAF; font-weight: bold;">in</span> seen:
+                            <span style="color: #F0DFAF; font-weight: bold;">print</span>(<span style="color: #CC9393;">'        '</span> + lang + <span style="color: #CC9393;">'-ap:'</span>, n.lm + <span style="color: #CC9393;">'?'</span>)
                             seen.add(n.lm)
-                except KeyError:
-                    pass
-            if lang in TURKIC_IN_GT:
-                print('        ' + lang + '-gt:',
-                      gt_translate(l, 'eng', lang) + '?')
-            if lang in TURKIC_IN_YAT:
-                print('        ' + lang + '-yat:',
-                      yat_translate(l, 'en', wg.ISO3_2_ISO2[lang]) + '?')
+                <span style="color: #F0DFAF; font-weight: bold;">except</span> <span style="color: #7CB8BB;">KeyError</span>:
+                    <span style="color: #F0DFAF; font-weight: bold;">pass</span>
+            <span style="color: #F0DFAF; font-weight: bold;">if</span> lang <span style="color: #F0DFAF; font-weight: bold;">in</span> TURKIC_IN_GT:
+                <span style="color: #F0DFAF; font-weight: bold;">print</span>(<span style="color: #CC9393;">'        '</span> + lang + <span style="color: #CC9393;">'-gt:'</span>,
+                      gt_translate(l, <span style="color: #CC9393;">'eng'</span>, lang) + <span style="color: #CC9393;">'?'</span>)
+            <span style="color: #F0DFAF; font-weight: bold;">if</span> lang <span style="color: #F0DFAF; font-weight: bold;">in</span> TURKIC_IN_YAT:
+                <span style="color: #F0DFAF; font-weight: bold;">print</span>(<span style="color: #CC9393;">'        '</span> + lang + <span style="color: #CC9393;">'-yat:'</span>,
+                      yat_translate(l, <span style="color: #CC9393;">'en'</span>, wg.ISO3_2_ISO2[lang]) + <span style="color: #CC9393;">'?'</span>)
+
 </pre>
 </div>
 
@@ -1320,20 +1273,17 @@ Putting it into action:
 </div>
 </div>
 
-<div id="outline-container-sec-4-1-2" class="outline-4">
-<h4 id="sec-4-1-2"><span class="section-number-4">4.1.2</span> Parallel corpus</h4>
+<div id="outline-container-org582cc58" class="outline-4">
+<h4 id="org582cc58"><span class="section-number-4">4.1.2</span> Parallel corpus</h4>
 <div class="outline-text-4" id="text-4-1-2">
 <p>
 Conditions:
 </p>
 
 <ul class="org-ul">
-<li>already available for the max. number of Turkic languages
-</li>
-<li>free license
-</li>
-<li>contemporary language
-</li>
+<li>already available for the max. number of Turkic languages</li>
+<li>free license</li>
+<li>contemporary language</li>
 </ul>
 
 <p>
@@ -1341,61 +1291,37 @@ Options:
 </p>
 
 <ul class="org-ul">
-<li>Bible
-</li>
+<li>Bibel</li>
 
 <li>Quran. Available in
 <ul class="org-ul">
 <li>kaz (from kuran.kz; in turkiccorpora;
 <ul class="org-ul">
 <li>TODO contact authors &#x2013; sharing on tanzil.net? (via Tanzil it will end up
-in OPUS)
-</li>
-<li>TODO reformat to conform tanzil format if the answer is yes)
-</li>
-</ul>
-</li>
-<li>tat (in turkiccorpora; few other not OCR'd)
-</li>
-<li>kir (TODO add to turkiccorpora; available <a href="http://www.quran-ebook.com/">here</a> and <a href="https://archive.org/details/TranslationOfTheMeaningOfTheNobleQuranInTheKYRGYZKIRGHIZLanguageHQ">here</a>) :GCI:
-</li>
-<li>tyv?
-</li>
-<li>tur * 10 (TODO add to turkiccorpora; available on tanzil.net)
-</li>
+in OPUS)</li>
+<li>TODO reformat to conform tanzil format if the answer is yes)</li>
+</ul></li>
+<li>tat (in turkiccorpora; few other not OCR'd)</li>
+<li>kir (TODO add to turkiccorpora; available <a href="http://www.quran-ebook.com/">here</a> and <a href="https://archive.org/details/TranslationOfTheMeaningOfTheNobleQuranInTheKYRGYZKIRGHIZLanguageHQ">here</a>) :GCI:</li>
+<li>tyv?</li>
+<li>tur * 10 (TODO add to turkiccorpora; available on tanzil.net)</li>
 <li>chv (yes, but couldn't find online. Available upon request in electronic
-for, the author of it says in an interview)
-</li>
-<li>kum?
-</li>
-<li>kaa?
-</li>
-<li>uzb (TODO add to turkiccorpora; available on tanzil.net)
-</li>
-<li>sah?
-</li>
-<li>crh (TODO add to turkiccorpora; available <a href="http://crimean.org/islam/koran/dizen-qurtnezir">here</a>) :GCI:
-</li>
-<li>krc (TODO convert to plain text; available in: turkiccorpora/dev) :GCI:
-</li>
-<li>bak (TODO convert to plain text; available in: turkiccorpora/dev) :GCI:
-</li>
-<li>nog?
-</li>
-<li>gag?
-</li>
-<li>tuk (yes, but couldn't find online)
-</li>
-<li>uig (TODO add to turkiccorpora; available on tanzil.net)
-</li>
-<li>kjh?
-</li>
-<li>ota (probably not OCR'd)
-</li>
-<li>aze * 2 (TODO add to turkiccorpora; available on tanzil.net) :GCI:
-</li>
-</ul>
-</li>
+for, the author of it says in an interview)</li>
+<li>kum?</li>
+<li>kaa?</li>
+<li>uzb (TODO add to turkiccorpora; available on tanzil.net)</li>
+<li>sah?</li>
+<li>crh (TODO add to turkiccorpora; available <a href="http://crimean.org/islam/koran/dizen-qurtnezir">here</a>) :GCI:</li>
+<li>krc (TODO convert to plain text; available in: turkiccorpora/dev) :GCI:</li>
+<li>bak (TODO convert to plain text; available in: turkiccorpora/dev) :GCI:</li>
+<li>nog?</li>
+<li>gag?</li>
+<li>tuk (yes, but couldn't find online)</li>
+<li>uig (TODO add to turkiccorpora; available on tanzil.net)</li>
+<li>kjh?</li>
+<li>ota (probably not OCR'd)</li>
+<li>aze * 2 (TODO add to turkiccorpora; available on tanzil.net) :GCI:</li>
+</ul></li>
 </ul>
 
 <p>
@@ -1403,18 +1329,18 @@ Also see:
 </p>
 
 <ul class="org-ul">
-<li><a href="http://wiki.apertium.org/wiki/Parallel_corpus_pruning">http://wiki.apertium.org/wiki/Parallel_corpus_pruning</a>
-</li>
+<li><a href="http://wiki.apertium.org/wiki/Parallel_corpus_pruning">http://wiki.apertium.org/wiki/Parallel_corpus_pruning</a></li>
 </ul>
 </div>
 </div>
 </div>
 
-<div id="outline-container-sec-4-2" class="outline-3">
-<h3 id="sec-4-2"><span class="section-number-3">4.2</span> Connecting nodes</h3>
+<div id="outline-container-org52e458a" class="outline-3">
+<h3 id="org52e458a"><span class="section-number-3">4.2</span> Connecting nodes</h3>
 <div class="outline-text-3" id="text-4-2">
-</div><div id="outline-container-sec-4-2-1" class="outline-4">
-<h4 id="sec-4-2-1"><span class="section-number-4">4.2.1</span> Nodes: Morphological Transducers</h4>
+</div>
+<div id="outline-container-org14c27d7" class="outline-4">
+<h4 id="org14c27d7"><span class="section-number-4">4.2.1</span> Nodes: Morphological Transducers</h4>
 <div class="outline-text-4" id="text-4-2-1">
 <p>
 21 is the number of Turkic languages identified on
@@ -1430,794 +1356,10 @@ tags, so that technically no out-of-vocabulary (OOV) words are left in the
 output of a transducer.
 </p>
 </div>
-
-<div id="outline-container-sec-4-2-1-1" class="outline-5">
-<h5 id="sec-4-2-1-1"><span class="section-number-5">4.2.1.1</span> <code>APERTIUM-KAZ</code>: A MORPHOLOGICAL TRANSDUCER AND DISAMBIGUATOR FOR KAZAKH</h5>
-<div class="outline-text-5" id="text-4-2-1-1">
-<p>
-WARNING: this is an early draft.
-</p>
-
-<p>
-What follows is the documentation for <code>apertium-kaz</code> &#x2013; a morphological
-transducer and disambiguator for Kazakh. First draft of this documentation was
-written, or, rather, assembled from various writings on <a href="https://wiki.apertium.org">Apertium's wiki</a> and then
-extended with more details by <a href="http://ifs.name">ifs</a> on September-October 2018 for members of the
-`Deep Learning for Sequential Models in Natural Language Processing with
-Applications to Kazakh' (dlsmnlpak) research group at Nazarbayev University and
-elsewhere. That being said, I hope that it will be useful for anyone who uses
-<code>apertium-kaz</code> and maybe wants or needs to extend it with more stems or other
-features. Most of the things said in this guide should be applicable to
-Apertium's transducers for other Turkic languages as well.
-</p>
-
-<p>
-&#x2014;
-</p>
-
-<p>
-<b>Apertium-kaz</b> is a morphological transducer and disambiguator for Kazakh,
-currently under development. It is intended to be compatible with transducers
-for other Turkic languages so that they can be translated between. It's used in
-the following language pairs:
-</p>
-
-<ul class="org-ul">
-<li>Kazakh and Tatar
-</li>
-<li>English and Kazakh
-</li>
-<li>Kyrgyz and Kazakh
-</li>
-<li>Kazakh and Karakalpak
-</li>
-<li>Khalkha and Kazakh
-</li>
-<li>Kazakh and Russian
-</li>
-</ul>
 </div>
 
-<div id="outline-container-sec-4-2-1-1-1" class="outline-6">
-<h6 id="sec-4-2-1-1-1"><span class="section-number-6">4.2.1.1.1</span> Installation</h6>
-</div>
-
-<div id="outline-container-sec-4-2-1-1-2" class="outline-6">
-<h6 id="sec-4-2-1-1-2"><span class="section-number-6">4.2.1.1.2</span> Usage</h6>
-<div class="outline-text-6" id="text-4-2-1-1-2">
-<p>
-One of the goals of the dlsmnlpak research project is to extend <code>apertium-kaz</code>
-with more stems and probabilistic guessing/tagging capabilities. The latter, by
-the nature of the problem, requires creating a human-annotated corpus of Kazakh
-of some sort. This task itself, however, did not make it into the final contract
-with the ministry, which forces us even more to be as efficient while creating
-it (or assembling it from other sources such as by converting/adjusting them).
-</p>
-
-<p>
-The general principle here is to annotate <b>not</b> from scratch, but by taking the
-the output of <code>apertium-kaz</code> as the basis. This is logical b
-</p>
-</div>
-</div>
-
-<div id="outline-container-sec-4-2-1-1-3" class="outline-6">
-<h6 id="sec-4-2-1-1-3"><span class="section-number-6">4.2.1.1.3</span> Annotating texts using <code>apertium-kaz</code> and extending it with more stems while doing so</h6>
-<div class="outline-text-6" id="text-4-2-1-1-3">
-<p>
-Imagine the following scenario: a linguist is annotating a Kazakh text with
-morphological information, taking the output of <code>kaz-morph</code> or <code>kaz-tagger</code> as a
-starting point. Since the coverage of <code>apertium-kaz</code> at the time of this writing
-(September 2018) is about 95%, #+BEGIN<sub>COMMENT</sub> TODO measure this automatically
-and put the result here #+END<sub>COMMENT</sub> it is reasonable to assume that, in the
-text that she is annotating, the linguist will encounter stems unrecognized by
-the transducer.
-</p>
-
-<p>
-Each stem in <code>apertium-kaz.kaz.lexc</code> &#x2013; the lexicon of the transducer &#x2013; can be
-followed by one ore more affixes of Kazakh, and thus cover many wordforms. Thus
-when annotating a text with morphological tags, it is wise to add missing stems
-to the lexicon frequently, re-compile <code>apertium-kaz</code>
-</p>
-
-<p>
-The most effective way of working is arguably the following way of working in
-`layers':
-</p>
-
-<ul class="org-ul">
-<li>pass the text that you want to annotate through the <code>kaz-tagger</code> mode
-</li>
-<li>read the output from the beginning
-</li>
-<li>for each unrecognized wordform:
-<ul class="org-ul">
-<li>identify its stem, following the information on that below
-</li>
-<li>try to analyse the stem: <code>echo "stem" | apertium -d . kaz-morph</code>
-</li>
-<li>if success: add the unrec. wordform to the end of <code>apertium-kaz.kaz.lexc</code>
-    this way: =wordform
-</li>
-<li>else: add stem to <code>apertium-kaz.kaz.lexc</code> this way: =stem:stem LEXICON ; !
-"english gloss"=, where you choose lexicon following the guidelines below
-</li>
-<li>recompile <code>apertium-kaz</code>
-</li>
-<li>pass the rest of the text you're annotating through the <code>kaz-tagger</code> mode
-</li>
-<li>make sure that the wordform is correctly analysed now
-</li>
-<li>repeat for the above steps for the rest of the text
-</li>
-</ul>
-</li>
-<li>once there are no unrecognized wordforms, start selecting the correct
-analysis, if there are multiple. That is, filling in the third column of the
-spreadsheet.
-</li>
-<li>if the input wordform is misspelled, do not correct it in place, but add the
-sixth column in that row, in which give the properly spelled form of the
-word. Why? Misspellings info is quite valuable info, which will alllow us to
-do automatic spelling correction and thus making <code>apertium-kaz</code> more robust.
-</li>
-<li>add the resulting file to <code>apertium-kaz/corpus</code>, commit and push
-</li>
-</ul>
-
-<p>
-TODO Later there will be a program/Racket-based programming language ( which we
-will call Apertium#), which, given some free-form text, does some of the above
-and calculates probabilities automatically, under the hood,.
-</p>
-
-<p>
-What does this output format give us?
-</p>
-
-<ul class="org-ul">
-<li>All information potentially useful for statistical training +
-meta-information (license, source, genre, year etc) in one place.
-</li>
-<li>Machine-readable.
-</li>
-<li>Spreadsheet friendly = easy &amp; fast to edit.
-</li>
-<li>Close/equivalent to the format used in NoSketchEngine and other corpus
-processing tools, thus less overhead with converting etc.
-</li>
-
-<li>getting to 100% coverage;
-</li>
-</ul>
-<p>
-One of the goals <code>=</code> Guidelines for adding stems <code>=</code>
-</p>
-
-<p>
-<code>==</code> An overview of the process <code>==</code>
-</p>
-
-<p>
-If you see that a wordform is not supported by apertium-kaz and you want to add it, you have to figure out three things:
-</p>
-
-<p>
-Here is an example of a word already in the apertium-kaz.kaz.lexc file:
-</p>
-
-<p>
-&lt;pre&gt;
-кітап:кітап N1 ; ! "book"
-&lt;/pre&gt;
-</p>
-
-<p>
-As in this example, in most cases, the left hand-side and the right-hand side of the entry are the same. The left-hand side is the underlying form, the right-hand is the surface form. Continuation lexicon in this example is N1. What comes after the exclamation mark '!' are comments. Glosses are a good thing to have, but technically they are only a comment, and thus optional.
-</p>
-
-<p>
-Here is an example where the left and right hand sides are not the same:
-</p>
-
-<p>
-&lt;pre&gt;
-күн% тәртібі:күн% тәртіп N-COMPOUND-PX ; ! ""
-&lt;/pre&gt;
-</p>
-
-<p>
-This has been implemented in that way so that forms like "күн тәртіптері" can also be analysed as forms of the word "күн тәртібі".
-</p>
-
-<p>
-The example above also shows that spaces in a word have to be escaped with %. So is the hyphen sign:
-</p>
-
-<p>
-&lt;pre&gt;
-мән%-жай:мән%-жай N1 ; ! ""
-&lt;/pre&gt;
-</p>
-
-<p>
-<code>==</code> General <code>==</code>
-</p>
-
-<ul class="org-ul">
-<li>Before adding a stem, be sure it does not already exist in lexc. A good way to do that is to look up stem(s) you want to add with &lt;code&gt;lt-proc kaz.automorf.bin&lt;/code&gt;. In some cases, you'll see that the stem isn't analysed at all:
-</li>
-</ul>
-
-<p>
-^foo/*foo$
-</p>
-
-<p>
-In some cases, it will be analysed, but as something else than what you want to add it as:
-</p>
-
-<p>
-^Жол/жол&lt;adj&gt;$ ^жөндеуші/жөнде&lt;v&gt;&lt;tv&gt;&lt;gpr<sub>pot</sub>&gt;\(^./.<sent>\)
-</p>
-
-<p>
-(assuming that you want to add "Жол жөндеуші as a company name, which it happens to be).
-</p>
-
-<p>
-Another, probably more relevant example:
-</p>
-
-<p>
-&lt;pre&gt;
-apertium-kaz$ echo "қабылдау" | apertium -d . kaz-tagger 
-^қабылдау/қабылда&lt;v&gt;&lt;tv&gt;&lt;ger&gt;&lt;nom&gt;\(^./.<sent>\)
-&lt;/pre&gt;
-</p>
-
-<p>
-(supposing that some other forms of the word, say with case affixes, like e.g. "қабылдауды" weren't analysed (see the next paragraph) and thus you looked up қабылдау in &lt;code&gt;kaz.autogen.bin&lt;/code&gt;). Looking the <b>stem</b> up (note: not the surface form, the stem) with the &lt;code&gt;lt-proc kaz.autogen.bin&lt;/code&gt; command before adding it to the lexc file gives you a chance to save some work and to avoid addiing the same thing twice.
-</p>
-
-<p>
-In the third case, you will see that the stem is already there, is linked to the right lexicon, but some surface forms of the word are not analysed. This means that either there is a problem with the phonology part, or you've discovered some affix currently not supported by apertium-kaz. Both issues have to be documented/reported (the simplest way would be just to add an 'ISSUES' file to apertium-kaz and commit it).
-</p>
-
-<ul class="org-ul">
-<li>Provide a commit message saying what you did.  At a bare minimum, "adding more stems" is okay, but "a" or "ф" is not.  Try to be more informative though; e.g. "added stems from story, mostly NP-TOP and NP-ANT" or similar.
-</li>
-<li>Many stems exhibit a voicing alternation like п/б, к/г, қ/ғ.  This is processed automatically by twol, but these stems ''must'' be added with the ''voiceless'' consonant (п, к, қ), e.g &lt;code&gt;тақ:тақ V-TV ;&lt;/code&gt;
-</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-sec-4-2-1-1-4" class="outline-6">
-<h6 id="sec-4-2-1-1-4"><span class="section-number-6">4.2.1.1.4</span> Stems from Russian that end with one of the voiced consonants (б, г), such as &lt;code&gt;геолог&lt;/code&gt; should be entered as spelled, but should be put in the right category for foreign words (e.g., if a noun, then &lt;code&gt;N5&lt;/code&gt;).</h6>
-<div class="outline-text-6" id="text-4-2-1-1-4">
-<ul class="org-ul">
-<li>Words that have an inserted ‹ы› or ‹і› in some forms should get &lt;code&gt;%{y%}&lt;/code&gt; in that spot on the right side, e.g. &lt;code&gt;орын:ор%{y%}н N1 ;&lt;/code&gt;.
-</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-sec-4-2-1-1-5" class="outline-6">
-<h6 id="sec-4-2-1-1-5"><span class="section-number-6">4.2.1.1.5</span> Words that are commonly written in both forms (e.g., орнында and орынында) need special treatment: add &lt;code&gt;! Dir/LR&lt;/code&gt; after the form that should not be generated (i.e., the form that is the non-normative version), and add &lt;code&gt;! Err/Orth&lt;/code&gt; after it too if it should be considered a spelling mistake.</h6>
-<div class="outline-text-6" id="text-4-2-1-1-5">
-<ul class="org-ul">
-<li>Any changes to continuation classes should be discussed on the apertium-turkic mailing list.
-</li>
-</ul>
-
-<p>
-Most likely, a word not covered by apertium-kaz already will be an open class word. Below are some comments on the open-class word lexicons.
-</p>
-
-<p>
-<code>==</code> Verbs <code>==</code>
-</p>
-<ul class="org-ul">
-<li>Categorise correctly according to IV or TV status:
-</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-sec-4-2-1-1-6" class="outline-6">
-<h6 id="sec-4-2-1-1-6"><span class="section-number-6">4.2.1.1.6</span> IV = intransitive verbs; TV = transitive verbs</h6>
-</div>
-<div id="outline-container-sec-4-2-1-1-7" class="outline-6">
-<h6 id="sec-4-2-1-1-7"><span class="section-number-6">4.2.1.1.7</span> If the verb can take a direct object with -НЫ, then it's not IV; otherwise it is TV</h6>
-</div>
-<div id="outline-container-sec-4-2-1-1-8" class="outline-6">
-<h6 id="sec-4-2-1-1-8"><span class="section-number-6">4.2.1.1.8</span> For phrasal verbs (e.g,. "қабыл ал", "пайда бол", "мойынға ал"), do not categorise it according to its elements; instead treat it as a single verb (TV, IV, TV).</h6>
-<div class="outline-text-6" id="text-4-2-1-1-8">
-<ul class="org-ul">
-<li>There should be no infinitival final -у or -ю.  It is best to take the part of the verb before -GAн or -DI in those forms.
-</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-sec-4-2-1-1-9" class="outline-6">
-<h6 id="sec-4-2-1-1-9"><span class="section-number-6">4.2.1.1.9</span> Infinitives ending in -ю should end in ‹й› instead, e.g ‹сүю› should be entered as &lt;code&gt;сүй&lt;/code&gt;</h6>
-</div>
-<div id="outline-container-sec-4-2-1-1-10" class="outline-6">
-<h6 id="sec-4-2-1-1-10"><span class="section-number-6">4.2.1.1.10</span> Some verbs have a "hidden" ‹ы› or ‹і› under the ‹у›, for example &lt;code&gt;ері&lt;/code&gt;, &lt;code&gt;аршы&lt;/code&gt;, &lt;code&gt;аңды&lt;/code&gt;, etc.  These verb stems should be added ''with'' the ‹ы› or ‹і›.</h6>
-</div>
-<div id="outline-container-sec-4-2-1-1-11" class="outline-6">
-<h6 id="sec-4-2-1-1-11"><span class="section-number-6">4.2.1.1.11</span> Of course, verbs with ‹у› in the stem should keep the ‹у›, like &lt;code&gt;жу&lt;/code&gt;, &lt;code&gt;қу&lt;/code&gt;, &lt;code&gt;жау&lt;/code&gt;, etc.</h6>
-<div class="outline-text-6" id="text-4-2-1-1-11">
-<ul class="org-ul">
-<li>Do not add passive or cooperative forms of verb stems (e.g., ‹тартыл› is passive of ‹тарт›, and ‹тартыс› is cooperative) unless absolutely needed for translation.  In this case, put &lt;code&gt;! Use/MT ! Der/Pass&lt;/code&gt; or &lt;code&gt;! Use/MT ! Der/Coop&lt;/code&gt; after the entry, respectively.
-</li>
-<li>If you add a causative form of a verb (e.g., ‹отырғыз› is causative of ‹отыр›), put &lt;code&gt;! Der/Caus&lt;/code&gt; after it.
-</li>
-</ul>
-
-<p>
-<code>==</code> Nouns <code>==</code>
-</p>
-<ul class="org-ul">
-<li>Some nouns end in ‹ә›, and have interesting or inconsistent-looking phonology, like &lt;code&gt;күнә&lt;/code&gt;, &lt;code&gt;кінә&lt;/code&gt;.  These should be added with the right side missing its ‹ә› and in the class N1-Ә.  E.g., &lt;code&gt;күнә:күн N1-Ә ;&lt;/code&gt;
-</li>
-<li>Nouns from Russian should be classified as &lt;code&gt;N5&lt;/code&gt;
-</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-sec-4-2-1-1-12" class="outline-6">
-<h6 id="sec-4-2-1-1-12"><span class="section-number-6">4.2.1.1.12</span> ''especially'' if the last vowel is ‹и› or ‹у›</h6>
-</div>
-<div id="outline-container-sec-4-2-1-1-13" class="outline-6">
-<h6 id="sec-4-2-1-1-13"><span class="section-number-6">4.2.1.1.13</span> ''especially'' if they end with a consonant that would normally be voiced before a vowel-initial suffix in Kazakh words (п, к)</h6>
-<div class="outline-text-6" id="text-4-2-1-1-13">
-<ul class="org-ul">
-<li>Nouns that are compounds ending in a possessive form (like ‹ауа райы›) should be categorised into the &lt;code&gt;N-COMPOUND-PX&lt;/code&gt; category and entered without the possessive ending on the right side, e.g. &lt;code&gt;ауа% райы:ауа% рай N-COMPOUND-PX ; ! "weather,climate"&lt;/code&gt;
-</li>
-<li>If you're adding a noun that can also be used as an adjective, think whether it's actually an adjective or actually a noun and add it to the right category.  You'll want to subcategorise it correctly so that e.g. if it's a noun it can also take the {{tag|attr}} tag.
-</li>
-</ul>
-
-<p>
-<code>==</code> Adjectives <code>==</code>
-</p>
-<ul class="org-ul">
-<li>The basic categorisation of adjectives depends on whether it takes comparative morphology (-ЫрАҚ), can be substantivised (acts like a noun), and/or can be adverbialised (acts like an adverb).  Be sure to put the adjective in the right category according what those categories allow.
-</li>
-
-<li>If you're adding an adjective that can also be used as a noun, think whether it's actually an adjective or actually a noun and add it to the right category.  You'll want to subcategorise it correctly so that e.g. if it's an adjective it can also take the {{tag|subst}} tag.
-</li>
-</ul>
-
-<p>
-<code>==</code> Adverbs <code>==</code>
-</p>
-<ul class="org-ul">
-<li>If you want to add an adverb, first think whether the word is really an adjective that can be used like an adverb.  If this is the case, then add it as an adjective in the appropriate adjective class that can take the {{tag|advl}} tag.  In the bidix, you'll want to translate the {{tag|adj}} and the {{tag|adj}}{{tag|advl}} forms differently.
-</li>
-</ul>
-
-<p>
-<code>=</code> Additional tags <code>=</code>
-</p>
-
-<p>
-In a .lexc file, after the '!' you will also see &lt;code&gt;Dir/LR&lt;/code&gt;, &lt;code&gt;Dir/RL&lt;/code&gt;, &lt;code&gt;Err/Orth&lt;/code&gt; and &lt;code&gt;Use/MT&lt;/code&gt; comments. The meaning of them is as follows:
-</p>
-
-<p>
-'''&lt;code&gt;Dir/LR&lt;/code&gt;''' means: analyse this surface form, but don't generate it. Here is a good example:
-</p>
-
-<p>
-&lt;pre&gt;
-сұхбат:сұқбат N1 ; ! "conversation/interview" Dir/LR
-сұхбат:сұхбат N1 ; ! "conversation/interview"
-&lt;/pre&gt;
-</p>
-
-<p>
-In other words, &lt;code&gt;Dir/LR&lt;/code&gt; marks alternative spellings of a word. If the alternative spelling isn't just alternative, but actually erroneous (but occurs quite commonly so that you want to support it), it is marked with the '''&lt;code&gt;Err/Orth&lt;/code&gt;''' tag:
-</p>
-
-<p>
-&lt;pre&gt;
-орын:ор%{y%}н N1 ; ! "place,seat"
-орын:орын N1 ; ! "place,seat"  ! Dir/LR ! Err/Orth
-&lt;/pre&gt;
-</p>
-
-<p>
-"Орыны" for example, is considered erroneous spelling of "орын&lt;n&gt;&lt;px3sp&gt;&lt;nom&gt;". Such markings will allow us to produce better spell checkers.
-</p>
-
-<p>
-In the examples above, if you don't mark either of the stems with &lt;code&gt;Dir/LR&lt;/code&gt;, then the Kazakh generator, (if we personify it a bit) given a string like "<sup>сұхбат</sup>&lt;n&gt;&lt;nom&gt;$ for input, won't know which surface form to choose and will output both, separated with a slash: сұхбат/сұқбат.
-</p>
-
-<p>
-As the name suggests, '''&lt;code&gt;Dir/RL&lt;/code&gt;''' has the meaning opposite to &lt;code&gt;Dir/LR&lt;/code&gt;: 'generate this surface form, but do not analyse it'. You won't see it much in a lexc file and almost certainly won't need to mark a stem you add as Dir/RL. Here is an example though: 
-</p>
-
-<p>
-&lt;pre&gt;
-да:%~да CC ; ! "also" Dir/RL
-&lt;/pre&gt;
-</p>
-
-<p>
-The conjunction ^да&lt;cnj$ gets generated as "~да". This is necessary for a somewhat hacky way of handling the vowel harmony (read: making sure that the "да" gets rendered as "де" when the preceding word has front vowels) in cases where the standard way of handling the vowel harmony (read: <i>twol</i>) fails because the preceding word is unknown. 
-</p>
-
-<p>
-'''Use/MT''' (at least, in its original usage) marks (compound) words which are needed for translation, but probably shouldn't be in a "vanilla" Kazakh transducer:
-</p>
-
-<p>
-&lt;pre&gt;
-қайда% болса% сонда:қайда% болса% сонда PRON-IND ; ! "anywhere" Use/MT
-&lt;/pre&gt;
-</p>
-
-<p>
-It has been also used to mark words which the person who added them wasn't sure how to classify. Such words will be reviewed later.
-</p>
-
-<p>
-<code>=</code> Full inventory of lexicons the stems can be linked to <code>=</code>
-</p>
-
-<p>
-It is useful to distinguish two classes of lexicons:
-</p>
-<p>
-Here is an attempt to document the lexicons of the second kind found in the &lt;code&gt;apertium-kaz.kaz.lexc&lt;/code&gt; file (so that: 1. people can add stems to a lexc file without having to read the lexc file itself 2. we can re-evaluate our decisions):
-</p>
-
-<p>
-Nouns:
-</p>
-</div>
-</div>
-<div id="outline-container-sec-4-2-1-1-14" class="outline-6">
-<h6 id="sec-4-2-1-1-14"><span class="section-number-6">4.2.1.1.14</span> N1</h6>
-</div>
-<div id="outline-container-sec-4-2-1-1-15" class="outline-6">
-<h6 id="sec-4-2-1-1-15"><span class="section-number-6">4.2.1.1.15</span> N-COMPOUND-PX</h6>
-</div>
-<div id="outline-container-sec-4-2-1-1-16" class="outline-6">
-<h6 id="sec-4-2-1-1-16"><span class="section-number-6">4.2.1.1.16</span> N5</h6>
-</div>
-<div id="outline-container-sec-4-2-1-1-17" class="outline-6">
-<h6 id="sec-4-2-1-1-17"><span class="section-number-6">4.2.1.1.17</span> N1-ABBR</h6>
-</div>
-<div id="outline-container-sec-4-2-1-1-18" class="outline-6">
-<h6 id="sec-4-2-1-1-18"><span class="section-number-6">4.2.1.1.18</span> N-INFL-INKI</h6>
-<div class="outline-text-6" id="text-4-2-1-1-18">
-<p>
-Proper nouns:
-</p>
-<ul class="org-ul">
-<li>NP-ANT-F: feminine anthroponyms
-</li>
-<li>NP-ANT-M: masculine anthroponyms
-</li>
-<li>NP-COG-OB: family names ending with -ов or -ев
-</li>
-<li>NP-COG-IN: family names ending with -ин
-</li>
-<li>NP-COG-M: family name not ending with -ов, -ев or -in; masculine. Example: Галицкий
-</li>
-<li>NP-COG-F: family name not ending with -ов, -ев or -in; feminine. Example: Толстая
-</li>
-<li>NP-COG-MF: family names not ending with -ов, -ев or -in which are both masculine and feminine: 
-</li>
-<li>NP-PAT-VICH: patronyms ending with -вич (and thus which can also take the -вна ending): &lt;code&gt;Васильевич:Василье NP-PAT-VICH ; ! ""&lt;/code&gt;
-</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-sec-4-2-1-1-19" class="outline-6">
-<h6 id="sec-4-2-1-1-19"><span class="section-number-6">4.2.1.1.19</span> (could be derived from anthroponyms automatically?)</h6>
-</div>
-<div id="outline-container-sec-4-2-1-1-20" class="outline-6">
-<h6 id="sec-4-2-1-1-20"><span class="section-number-6">4.2.1.1.20</span> NP-TOP: toponyms (in particular, river names should go here too)</h6>
-</div>
-<div id="outline-container-sec-4-2-1-1-21" class="outline-6">
-<h6 id="sec-4-2-1-1-21"><span class="section-number-6">4.2.1.1.21</span> NP-TOP-ASSR: former and future soviet socialistic republic names ending with СР: &lt;code&gt;Қырғыз% КСР:Қырғыз% КСР%{э%}%{й%} NP-TOP-ASSR ;&lt;/code&gt;</h6>
-</div>
-<div id="outline-container-sec-4-2-1-1-22" class="outline-6">
-<h6 id="sec-4-2-1-1-22"><span class="section-number-6">4.2.1.1.22</span> NP-ORG: organization names</h6>
-</div>
-<div id="outline-container-sec-4-2-1-1-23" class="outline-6">
-<h6 id="sec-4-2-1-1-23"><span class="section-number-6">4.2.1.1.23</span> NP-ORG-LAT: organization names written in Latin character. Example: Microsoft</h6>
-</div>
-<div id="outline-container-sec-4-2-1-1-24" class="outline-6">
-<h6 id="sec-4-2-1-1-24"><span class="section-number-6">4.2.1.1.24</span> NP-AL: proper names not belonging to one of the above NP-* classes. Example: Восток</h6>
-<div class="outline-text-6" id="text-4-2-1-1-24">
-<p>
-Verbs:
-</p>
-<ul class="org-ul">
-<li>V-TV
-</li>
-<li>V-IV
-</li>
-<li>Vinfl-AUX
-</li>
-</ul>
-
-<p>
-Adjectives:
-</p>
-
-<ul class="org-ul">
-<li>A1: adjectives which can be adverbialised and have a comparative form. Example: жақсы.
-</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-sec-4-2-1-1-25" class="outline-6">
-<h6 id="sec-4-2-1-1-25"><span class="section-number-6">4.2.1.1.25</span> Test 1: can the word in question modify verb? "Жақсы оқиды" OK? A: yes.</h6>
-</div>
-<div id="outline-container-sec-4-2-1-1-26" class="outline-6">
-<h6 id="sec-4-2-1-1-26"><span class="section-number-6">4.2.1.1.26</span> Test 2: has a comparative form? "Жақсырақ" OK? A: yes</h6>
-</div>
-<div id="outline-container-sec-4-2-1-1-27" class="outline-6">
-<h6 id="sec-4-2-1-1-27"><span class="section-number-6">4.2.1.1.27</span> ==&gt; жақсы A1</h6>
-<div class="outline-text-6" id="text-4-2-1-1-27">
-<ul class="org-ul">
-<li>A2: adjectives which cannot be adverbialized, but which do have the comparative form. Example: &lt;code&gt;лайық:лайық A2 ; ! ""&lt;/code&gt;
-</li>
-
-<li>A3: adjectives which can neither be adverbialized nor have comparative form
-</li>
-
-<li>A4: initially: adjectives like социал or (tat.) ''биологик'' = (kaz.) ''биологиялық'' which the author of this classification of adjectives thought to never substantivize, but have seen them substativized since then and thus considers deprecated.
-</li>
-</ul>
-
-<p>
-The whole purpose of introducing subclasses of adjectives was to avoid overgenerating forms which do not exist.
-</p>
-
-<p>
-If you're unsure which adjective lexicon to select, pick A1.
-</p>
-
-<ul class="org-ul">
-<li>A6:
-</li>
-</ul>
-
-<p>
-Adverbs:
-</p>
-
-<ul class="org-ul">
-<li>ADV
-</li>
-<li>ADV-ITG
-</li>
-<li>ADV-WITH-KI
-</li>
-<li>ADV-WITH-KI-I
-</li>
-<li>ADV-LANG
-</li>
-</ul>
-
-<p>
-<i>Category:Tools</i>
-<i>Category:Kazakh</i>
-</p>
-
-<hr  />
-
-<p>
-{{TOCD}}
-</p>
-
-<p>
-<code>=Verbal noun or noun=</code>
-</p>
-
-<p>
-<code>=Nominal compounds=</code>
-</p>
-
-<p>
-When choosing between {{tag|attr}} and {{tag|nom}} in noun1-noun2 compounds, the choice basically depends on if noun2 is marked for possession. If it is marked for possession then you should chose {{tag|nom}}, if not, then choose {{tag|attr}}.
-</p>
-
-<ul class="org-ul">
-<li>{{tag|attr}}:
-</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-sec-4-2-1-1-28" class="outline-6">
-<h6 id="sec-4-2-1-1-28"><span class="section-number-6">4.2.1.1.28</span> '''көрші''' елдер</h6>
-<div class="outline-text-6" id="text-4-2-1-1-28">
-<ul class="org-ul">
-<li>{{tag|nom}}:
-</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-sec-4-2-1-1-29" class="outline-6">
-<h6 id="sec-4-2-1-1-29"><span class="section-number-6">4.2.1.1.29</span> '''əлем''' чемпионаты</h6>
-<div class="outline-text-6" id="text-4-2-1-1-29">
-<p>
-However, there are cases when noun2 is marked for possession but noun1 is not its possessor, e.g. 
-"жазба әдебиеті" in a phrase "қазақ жазба әдебиеті". 
-&lt;pre&gt;
-қазақ       жазба          әдебиеті
-Kazakh.NOM  written.ATTR   literature.3SG
-&lt;/pre&gt;
-If we blindly applied the above rule for "жазба әдебиеті", then we would tag "жазба" as {{tag|nom}}, but actually "әдебиеті" is possessed by "қазақ", not by "жазба". 
-Moreover, it is possible to drop "i" in "жазба әдебиеті", thus "жазба" is {{tag|attr}}.
-</p>
-
-
-
-<p>
-&lt;!&#x2013; def. izafet: Иранның экономиясы&#x2013;&gt;
-</p>
-
-<p>
-<code>=Specific words=</code>
-</p>
-
-<p>
-<code>=</code>"-DA"<code>=</code>
-</p>
-
-<p>
-The word "-DA" can be a conjunction or a postadverb:
-</p>
-
-<ul class="org-ul">
-<li>&lt;code&gt;cnjcoo&lt;/code&gt; [joins two or more noun/verb phrases; it's conjoining two parallel things in the same phrase, as opposed to saying that it's adding one thing to something from before]
-</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-sec-4-2-1-1-30" class="outline-6">
-<h6 id="sec-4-2-1-1-30"><span class="section-number-6">4.2.1.1.30</span> Үстелде қалам '''да''', қарындаш '''та''', дәптер '''де''' жатыр.</h6>
-</div>
-<div id="outline-container-sec-4-2-1-1-31" class="outline-6">
-<h6 id="sec-4-2-1-1-31"><span class="section-number-6">4.2.1.1.31</span> Абай әуелі ауылдағы Ғабитхан молдадан сауатын ашады '''да''', 10 жасқа толған соң 3 жыл Семейдегі Ахмет Риза медресесінде оқиды.</h6>
-<div class="outline-text-6" id="text-4-2-1-1-31">
-<ul class="org-ul">
-<li>&lt;code&gt;postadverb&lt;/code&gt; [means 'also', 'even', or used for emphasis]
-</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-sec-4-2-1-1-32" class="outline-6">
-<h6 id="sec-4-2-1-1-32"><span class="section-number-6">4.2.1.1.32</span> Мен '''де''' барамын.</h6>
-</div>
-<div id="outline-container-sec-4-2-1-1-33" class="outline-6">
-<h6 id="sec-4-2-1-1-33"><span class="section-number-6">4.2.1.1.33</span> Аузы қисық болса '''да''' байдын баласы сөйлесін.</h6>
-<div class="outline-text-6" id="text-4-2-1-1-33">
-<p>
-<code>=</code>"бұл", "мынау", "осы", "мына", "анау", "ана", "сол"<code>=</code>
-</p>
-
-<p>
-The word "бұл" (along with "мынау", "осы", "мына", "анау", "ана", "сол") can be either a determiner, modifying a noun phrase, or a pronoun, replacing a noun phrase.
-</p>
-
-<p>
-&lt;code&gt;det.dem&lt;/code&gt;
-</p>
-</div>
-</div>
-<div id="outline-container-sec-4-2-1-1-34" class="outline-6">
-<h6 id="sec-4-2-1-1-34"><span class="section-number-6">4.2.1.1.34</span> '''Мынау''' үй жаңа.</h6>
-<div class="outline-text-6" id="text-4-2-1-1-34">
-<ul class="org-ul">
-<li>&lt;code&gt;prn&lt;/code&gt;
-</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-sec-4-2-1-1-35" class="outline-6">
-<h6 id="sec-4-2-1-1-35"><span class="section-number-6">4.2.1.1.35</span> '''Мынау''' — терезе емес.</h6>
-<div class="outline-text-6" id="text-4-2-1-1-35">
-<p>
-<i>Category:Kazakh</i>
-</p>
-
-<p>
-The way to tell is whether it's part of the following noun phrase (det dem) or separate from it (prn)
-</p>
-
-<p>
-<code>==Verbs in dictionary form==</code>
-</p>
-
-<p>
-A verb in a dictionary form (gerund) can sometimes be a noun.
-</p>
-<ul class="org-ul">
-<li>&lt;code&gt;ger&lt;/code&gt;
-</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-sec-4-2-1-1-36" class="outline-6">
-<h6 id="sec-4-2-1-1-36"><span class="section-number-6">4.2.1.1.36</span> Кітап '''оқу''' адамдарды ақылдырақ етеді.</h6>
-<div class="outline-text-6" id="text-4-2-1-1-36">
-<ul class="org-ul">
-<li>&lt;code&gt;n&lt;/code&gt;
-</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-sec-4-2-1-1-37" class="outline-6">
-<h6 id="sec-4-2-1-1-37"><span class="section-number-6">4.2.1.1.37</span> '''Оқу''' басталды.</h6>
-<div class="outline-text-6" id="text-4-2-1-1-37">
-<p>
-With gerunds you often get embedded arguments, like "кітап" in the example above.
-</p>
-
-<p>
-If there is an adjective or determiner preceding: noun.
-</p>
-
-<p>
-Some cases are ambiguous: Балалардың '''оқу'''ы жақсы болды.  Here, it's unclear whether бала is the subject of a verbal noun or the possessor of a noun.  In cases like this, the context can sometimes provide some intuition; e.g., in "Балалардың '''оқу'''ы басталды.", оқу seems more like a noun and less like a gerund.  In such ambiguous cases, if you have an intuition, go with that.  If not, go with verbal noun (the reason being that we would need more things in our lexicon, and also that these "noun" are derived from verbs anyway).
-</p>
-
-<p>
-<code>==Perfect participle or Verbal adverb==</code>
-</p>
-
-<p>
-Perfect participle (&lt;code&gt;prc<sub>perf</sub>&lt;/code&gt;) if there is an auxiliary following, otherwise verbal adverb (&lt;code&gt;gna<sub>perf</sub>&lt;/code&gt;)
-</p>
-<ul class="org-ul">
-<li>&lt;code&gt;prc<sub>perf</sub>&lt;/code&gt;
-</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-sec-4-2-1-1-38" class="outline-6">
-<h6 id="sec-4-2-1-1-38"><span class="section-number-6">4.2.1.1.38</span> Ол кәзір '''ұйықтап''' жатыр.</h6>
-<div class="outline-text-6" id="text-4-2-1-1-38">
-<ul class="org-ul">
-<li>&lt;code&gt;gna<sub>perf</sub>&lt;/code&gt;
-</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-sec-4-2-1-1-39" class="outline-6">
-<h6 id="sec-4-2-1-1-39"><span class="section-number-6">4.2.1.1.39</span> Мектепті '''бітіріп''', университетке түстім.</h6>
-</div>
-<div id="outline-container-sec-4-2-1-1-40" class="outline-6">
-<h6 id="sec-4-2-1-1-40"><span class="section-number-6">4.2.1.1.40</span> Орталық Азиядан арий тайпалары '''келіп''' қоныстанды.</h6>
-<div class="outline-text-6" id="text-4-2-1-1-40">
-<p>
-There is also other evidence that ''келіп'' in the example above is a verbal adverb: In particular, you can put arguments/adjuncts of ''қоныстанды'' between ''келіп'' and ''қоныстанды'', like "Орталық Азиядан арий тайпалары келіп бұл аймақта қоныстанды." In this case the two verbs function
-as separate predicates, which participle+auxiliary constructions don't do.
-</p>
-
-<p>
-<code>=Futher reading=</code>
-</p>
-
-<p>
-<a href="http://web.stanford.edu/~lelia/krejci_glass.pdf">http://web.stanford.edu/~lelia/krejci_glass.pdf</a>
-</p>
-</div>
-</div>
-</div>
-</div>
-
-<div id="outline-container-sec-4-2-2" class="outline-4">
-<h4 id="sec-4-2-2"><span class="section-number-4">4.2.2</span> To English</h4>
+<div id="outline-container-orge205bca" class="outline-4">
+<h4 id="orge205bca"><span class="section-number-4">4.2.2</span> To English</h4>
 <div class="outline-text-4" id="text-4-2-2">
 <p>
 apertium-eng-kaz, apetium-tat-eng,
@@ -2225,8 +1367,8 @@ apertium-eng-kaz, apetium-tat-eng,
 </div>
 </div>
 
-<div id="outline-container-sec-4-2-3" class="outline-4">
-<h4 id="sec-4-2-3"><span class="section-number-4">4.2.3</span> To Russian</h4>
+<div id="outline-container-org6eee63c" class="outline-4">
+<h4 id="org6eee63c"><span class="section-number-4">4.2.3</span> To Russian</h4>
 <div class="outline-text-4" id="text-4-2-3">
 <p>
 apertium-kaz-rus, apertium-tat-rus,
@@ -2234,20 +1376,22 @@ apertium-kaz-rus, apertium-tat-rus,
 </div>
 </div>
 
-<div id="outline-container-sec-4-2-4" class="outline-4">
-<h4 id="sec-4-2-4"><span class="section-number-4">4.2.4</span> Intraturkic</h4>
+<div id="outline-container-org90d57fb" class="outline-4">
+<h4 id="org90d57fb"><span class="section-number-4">4.2.4</span> Intraturkic</h4>
 <div class="outline-text-4" id="text-4-2-4">
-</div><div id="outline-container-sec-4-2-4-1" class="outline-5">
-<h5 id="sec-4-2-4-1"><span class="section-number-5">4.2.4.1</span> apertium-kaz-tat, apertium-tur-tat, apertium-crh-tur</h5>
+</div>
+<div id="outline-container-org3be7e7f" class="outline-5">
+<h5 id="org3be7e7f"><span class="section-number-5">4.2.4.1</span> apertium-kaz-tat, apertium-tur-tat, apertium-crh-tur</h5>
 </div>
 </div>
 </div>
 
-<div id="outline-container-sec-4-3" class="outline-3">
-<h3 id="sec-4-3"><span class="section-number-3">4.3</span> QA and meta-stuff</h3>
+<div id="outline-container-org5cd8f0a" class="outline-3">
+<h3 id="org5cd8f0a"><span class="section-number-3">4.3</span> QA and meta-stuff</h3>
 <div class="outline-text-3" id="text-4-3">
-</div><div id="outline-container-sec-4-3-1" class="outline-4">
-<h4 id="sec-4-3-1"><span class="section-number-4">4.3.1</span> apertium fitnesse</h4>
+</div>
+<div id="outline-container-org5e8d96d" class="outline-4">
+<h4 id="org5e8d96d"><span class="section-number-4">4.3.1</span> apertium fitnesse</h4>
 <div class="outline-text-4" id="text-4-3-1">
 <p>
 See <a href="https://gitlab.com/selimcan/apertium-fitnesse">https://gitlab.com/selimcan/apertium-fitnesse</a> and
@@ -2256,11 +1400,12 @@ See <a href="https://gitlab.com/selimcan/apertium-fitnesse">https://gitlab.com/s
 </div>
 </div>
 
-<div id="outline-container-sec-4-3-2" class="outline-4">
-<h4 id="sec-4-3-2"><span class="section-number-4">4.3.2</span> rbmt-as-a-data-structure = a (Racket-based?) programming language with a syntax similar to what is seen on <a href="http://fitnesse.selimcan.org/FrontPage.ApertiumTurkic.ApertiumKaz">http://fitnesse.selimcan.org/FrontPage.ApertiumTurkic.ApertiumKaz</a>.</h4>
+<div id="outline-container-org54cd045" class="outline-4">
+<h4 id="org54cd045"><span class="section-number-4">4.3.2</span> rbmt-as-a-data-structure = a (Racket-based?) programming language with a syntax similar to what is seen on <a href="http://fitnesse.selimcan.org/FrontPage.ApertiumTurkic.ApertiumKaz">http://fitnesse.selimcan.org/FrontPage.ApertiumTurkic.ApertiumKaz</a>.</h4>
 <div class="outline-text-4" id="text-4-3-2">
-</div><div id="outline-container-sec-4-3-2-1" class="outline-5">
-<h5 id="sec-4-3-2-1"><span class="section-number-5">4.3.2.1</span> Rationale</h5>
+</div>
+<div id="outline-container-orgd4b12d3" class="outline-5">
+<h5 id="orgd4b12d3"><span class="section-number-5">4.3.2.1</span> Rationale</h5>
 <div class="outline-text-5" id="text-4-3-2-1">
 <p>
 Data-driven methods seem to win. The philosophy here is an old and simple one:
@@ -2274,105 +1419,105 @@ given. That is, ideally it has to be a fully automatic process.
 </div>
 </div>
 
-<div id="outline-container-sec-4-3-2-2" class="outline-5">
-<h5 id="sec-4-3-2-2"><span class="section-number-5">4.3.2.2</span> Code</h5>
+<div id="outline-container-org842528b" class="outline-5">
+<h5 id="org842528b"><span class="section-number-5">4.3.2.2</span> Code</h5>
 <div class="outline-text-5" id="text-4-3-2-2">
 <div class="org-src-container">
+<pre class="src src-python" id="org605113d"><span style="color: #5F7F5F;">#</span><span style="color: #7F9F7F;">!/usr/bin/env python3</span>
 
-<pre class="src src-python" id="annotate.py">#!/usr/bin/env python3
+<span style="color: #9FC59F;">"""</span>
+<span style="color: #9FC59F;">annotate.py: a script for semi-automacally annotating texts *by using* and *for</span>
+<span style="color: #9FC59F;">             improving* an Apertium machine translator (or training other</span>
+<span style="color: #9FC59F;">             machine translators).</span>
 
-"""
-annotate.py: a script for semi-automacally annotating texts *by using* and *for
-             improving* an Apertium machine translator (or training other
-             machine translators).
+<span style="color: #9FC59F;">INPUT: 6 column, one-token-per-line text in the following format:</span>
 
-INPUT: 6 column, one-token-per-line text in the following format:
+<span style="color: #9FC59F;">|surface form |lemma |tags |lexicon |lexicalAffixes |correctlySpelled|</span>
 
-|surface form |lemma |tags |lexicon |lexicalAffixes |correctlySpelled|
+<span style="color: #9FC59F;">In the input, any column, except for the first one with surface forms, can be</span>
+<span style="color: #9FC59F;">empty:</span>
 
-In the input, any column, except for the first one with surface forms, can be
-empty:
+<span style="color: #9FC59F;">|&#1091;&#1088;&#1084;&#1072;&#1085;&#1085;&#1072;&#1088;|||||</span>
 
-|урманнар|||||
+<span style="color: #9FC59F;">What annotate.py will do is it will fill in the rest of the columns:</span>
 
-What annotate.py will do is it will fill in the rest of the columns:
+<span style="color: #9FC59F;">|&#1091;&#1088;&#1084;&#1072;&#1085;&#1085;&#1072;&#1088;|&#1091;&#1088;&#1084;&#1072;&#1085;|n pl nom|N1||</span>
 
-|урманнар|урман|n pl nom|N1||
+<span style="color: #9FC59F;">If a cell is already filled in in the input, annotate.py will leave it as it is.</span>
 
-If a cell is already filled in in the input, annotate.py will leave it as it is.
+<span style="color: #9FC59F;">Such already-filled-in cells serve as training data for annotate.py for guessing</span>
+<span style="color: #9FC59F;">the lemma &amp; lexicon &amp; possibly correct spelling (in cases where the surface form</span>
+<span style="color: #9FC59F;">is unknown for the Apertium's morphological transducer), or for selecting</span>
+<span style="color: #9FC59F;">correct reading (in cases where Apertium returns several analyses for the given</span>
+<span style="color: #9FC59F;">surface form). The script will read in all of the input, train itself on the</span>
+<span style="color: #9FC59F;">already annotated part, and fill in the empty cells with its guesses.</span>
 
-Such already-filled-in cells serve as training data for annotate.py for guessing
-the lemma &amp; lexicon &amp; possibly correct spelling (in cases where the surface form
-is unknown for the Apertium's morphological transducer), or for selecting
-correct reading (in cases where Apertium returns several analyses for the given
-surface form). The script will read in all of the input, train itself on the
-already annotated part, and fill in the empty cells with its guesses.
+<span style="color: #9FC59F;">Ultimately it will modiy the Apertium transducer in place, or spit out a new</span>
+<span style="color: #9FC59F;">version of it, after having seen the annotated data.</span>
 
-Ultimately it will modiy the Apertium transducer in place, or spit out a new
-version of it, after having seen the annotated data.
+<span style="color: #9FC59F;">The `lexical affixes' cell might stay empty even in the output of annotate.py,</span>
+<span style="color: #9FC59F;">but the cell itself has to be there.</span>
 
-The `lexical affixes' cell might stay empty even in the output of annotate.py,
-but the cell itself has to be there.
+<span style="color: #9FC59F;">An example of a token where the `lexical affixes' field is not empty:</span>
+<span style="color: #9FC59F;">|&#1091;&#1088;&#1084;&#1072;&#1085;&#1085;&#1072;&#1088;|&#1091;&#1088;&#1084;&#1072;&#1085;|n pl nom|N1|&#1091;&#1088;&#1084;&#1072;&#1085;&gt;LA&#1088;|</span>
 
-An example of a token where the `lexical affixes' field is not empty:
-|урманнар|урман|n pl nom|N1|урман&gt;LAр|
+<span style="color: #9FC59F;">For tokens which were misspelled (or incorrectly OCR'd) in the original, there</span>
+<span style="color: #9FC59F;">can be an optional sixth cell, where the correct spelling of the surface form</span>
+<span style="color: #9FC59F;">is given.</span>
 
-For tokens which were misspelled (or incorrectly OCR'd) in the original, there
-can be an optional sixth cell, where the correct spelling of the surface form
-is given.
+<span style="color: #9FC59F;">The reason for putting the correct spelling in an additional cell and keep</span>
+<span style="color: #9FC59F;">the original spelling as it is, is that the data about misspellings is a</span>
+<span style="color: #9FC59F;">valuable thing to have (for training an automatic spelling corrector, in</span>
+<span style="color: #9FC59F;">particular).</span>
 
-The reason for putting the correct spelling in an additional cell and keep
-the original spelling as it is, is that the data about misspellings is a
-valuable thing to have (for training an automatic spelling corrector, in
-particular).
+<span style="color: #9FC59F;">Once a particular piece of text is fully annotated, we encourage you to add it</span>
+<span style="color: #9FC59F;">to our shared corpus in the `corpus' directory in the repo of the Apertium</span>
+<span style="color: #9FC59F;">morphological analyser in question (if the license of the text allows that),</span>
+<span style="color: #9FC59F;">with meta-information about the courpus in the following format, and submit</span>
+<span style="color: #9FC59F;">a pull request:</span>
+<span style="color: #9FC59F;"> </span>
+<span style="color: #9FC59F;">BEGIN EXAMPLE</span>
+<span style="color: #9FC59F;">&lt;corpus&gt;</span>
+<span style="color: #9FC59F;">  &lt;doc title="&#1050;&#1110;&#1096;&#1082;&#1077;&#1085;&#1090;&#1072;&#1081; &#1093;&#1072;&#1085;&#1079;&#1072;&#1076;&#1072;" author="&#1040;. &#1076;&#1077; &#1057;&#1077;&#1085;&#1090;-&#1069;&#1082;&#1079;&#1102;&#1087;&#1077;&#1088;&#1080;"</span>
+<span style="color: #9FC59F;">       translator="&#1046;. &#1178;&#1086;&#1085;&#1072;&#1077;&#1074;&#1072;" pub="2013" lang="kk" origlang="fr"</span>
+<span style="color: #9FC59F;">       source="kitap.kz/12345/abcde.html" license="allRightsReserved"</span>
+<span style="color: #9FC59F;">       annotators="&#1052;&#1241;&#1093;&#1084;&#1199;&#1090; &#1057;&#1072;&#1083;&#1099;&#1179;&#1090;&#1257;&#1083;&#1077;&#1091;&#1096;&#1110; (optional@email.com)"&gt;</span>
+<span style="color: #9FC59F;">    &lt;p&gt;</span>
+<span style="color: #9FC59F;">      &lt;s&gt;&#1041;&#1110;&#1088;&#1076;&#1077;, &#1072;&#1083;&#1090;&#1100; &#1078;&#1072;&#1089;&#1090;&#1072;&#1171;&#1099; &#1082;&#1077;&#1079;&#1110;&#1084;&#1076;&#1077; [...]</span>
+<span style="color: #9FC59F;">        &lt;t&gt;|&#1041;&#1110;&#1088;&#1076;&#1077;|&#1073;&#1110;&#1088;&#1076;&#1077;|adv|ADV||&lt;/t&gt;</span>
+<span style="color: #9FC59F;">        &lt;t&gt;|&#1072;&#1083;&#1090;&#1100;|&#1072;&#1083;&#1090;&#1099;|num|NUM||&#1072;&#1083;&#1090;&#1099;|&lt;/t&gt;</span>
+<span style="color: #9FC59F;">        [...]</span>
+<span style="color: #9FC59F;">      &lt;/s&gt;</span>
+<span style="color: #9FC59F;">      [...]</span>
+<span style="color: #9FC59F;">   &lt;/p&gt;</span>
+<span style="color: #9FC59F;">  &lt;/doc&gt;    </span>
+<span style="color: #9FC59F;">&lt;/corpus&gt;</span>
+<span style="color: #9FC59F;">END EXAMPLE</span>
 
-Once a particular piece of text is fully annotated, we encourage you to add it
-to our shared corpus in the `corpus' directory in the repo of the Apertium
-morphological analyser in question (if the license of the text allows that),
-with meta-information about the courpus in the following format, and submit
-a pull request:
- 
-BEGIN EXAMPLE
-&lt;corpus&gt;
-  &lt;doc title="Кішкентай ханзада" author="А. де Сент-Экзюпери"
-       translator="Ж. Қонаева" pub="2013" lang="kk" origlang="fr"
-       source="kitap.kz/12345/abcde.html" license="allRightsReserved"
-       annotators="Мәхмүт Салықтөлеуші (optional@email.com)"&gt;
-    &lt;p&gt;
-      &lt;s&gt;Бірде, алть жастағы кезімде [...]
-        &lt;t&gt;|Бірде|бірде|adv|ADV||&lt;/t&gt;
-        &lt;t&gt;|алть|алты|num|NUM||алты|&lt;/t&gt;
-        [...]
-      &lt;/s&gt;
-      [...]
-   &lt;/p&gt;
-  &lt;/doc&gt;    
-&lt;/corpus&gt;
-END EXAMPLE
+<span style="color: #9FC59F;">USAGE:</span>
+<span style="color: #9FC59F;">"""</span>
 
-USAGE:
-"""
-
-from collections import namedtuple
-
-
-##################
-## Data definitons
+<span style="color: #F0DFAF; font-weight: bold;">from</span> collections <span style="color: #F0DFAF; font-weight: bold;">import</span> namedtuple
 
 
-## Token is a Token(String, String, ListOfString, String, String, StringOrNone).
+<span style="color: #5F7F5F;">##################</span>
+<span style="color: #5F7F5F;">## </span><span style="color: #7F9F7F;">Data definitons</span>
 
-T_0 = ["урманнар", "", [], "", "", None]
-T_1 = ["урманнар", "урман", ["n", "pl", "nom"], "N1", "", None]
-T_2 = ["алть", "алты", ["num", "pl", "nom"], "N1", "", "алты"]
+
+<span style="color: #5F7F5F;">## </span><span style="color: #7F9F7F;">Token is a Token(String, String, ListOfString, String, String, StringOrNone).</span>
+
+<span style="color: #DFAF8F;">T_0</span> = [<span style="color: #CC9393;">"&#1091;&#1088;&#1084;&#1072;&#1085;&#1085;&#1072;&#1088;"</span>, <span style="color: #CC9393;">""</span>, [], <span style="color: #CC9393;">""</span>, <span style="color: #CC9393;">""</span>, <span style="color: #BFEBBF;">None</span>]
+<span style="color: #DFAF8F;">T_1</span> = [<span style="color: #CC9393;">"&#1091;&#1088;&#1084;&#1072;&#1085;&#1085;&#1072;&#1088;"</span>, <span style="color: #CC9393;">"&#1091;&#1088;&#1084;&#1072;&#1085;"</span>, [<span style="color: #CC9393;">"n"</span>, <span style="color: #CC9393;">"pl"</span>, <span style="color: #CC9393;">"nom"</span>], <span style="color: #CC9393;">"N1"</span>, <span style="color: #CC9393;">""</span>, <span style="color: #BFEBBF;">None</span>]
+<span style="color: #DFAF8F;">T_2</span> = [<span style="color: #CC9393;">"&#1072;&#1083;&#1090;&#1100;"</span>, <span style="color: #CC9393;">"&#1072;&#1083;&#1090;&#1099;"</span>, [<span style="color: #CC9393;">"num"</span>, <span style="color: #CC9393;">"pl"</span>, <span style="color: #CC9393;">"nom"</span>], <span style="color: #CC9393;">"N1"</span>, <span style="color: #CC9393;">""</span>, <span style="color: #CC9393;">"&#1072;&#1083;&#1090;&#1099;"</span>]
+
 </pre>
 </div>
 </div>
 </div>
 </div>
 
-<div id="outline-container-sec-4-3-3" class="outline-4">
-<h4 id="sec-4-3-3"><span class="section-number-4">4.3.3</span> Problem 404</h4>
+<div id="outline-container-org1af2749" class="outline-4">
+<h4 id="org1af2749"><span class="section-number-4">4.3.3</span> Problem 404</h4>
 <div class="outline-text-4" id="text-4-3-3">
 <p>
 Rationale: out-of-vocabulary words lead to not firing transfer rules. Not firing
@@ -2390,25 +1535,24 @@ Possible formulations:
 </p>
 </div>
 
-<div id="outline-container-sec-4-3-3-1" class="outline-5">
-<h5 id="sec-4-3-3-1"><span class="section-number-5">4.3.3.1</span> Problem 404.a</h5>
+<div id="outline-container-org2cec8cc" class="outline-5">
+<h5 id="org2cec8cc"><span class="section-number-5">4.3.3.1</span> Problem 404.a</h5>
 <div class="outline-text-5" id="text-4-3-3-1">
 <div class="org-src-container">
-
 <pre class="src src-text">## INPUT-1:
 ## ...
-## ^анасы/ана&lt;n&gt;&lt;px3sp&gt;&lt;nom&gt;/ана&lt;n&gt;&lt;px3sp&gt;&lt;nom&gt;+и&lt;cop&gt;&lt;aor&gt;&lt;p3&gt;&lt;pl&gt;/ана&lt;n&gt;&lt;px3sp&gt;&lt;nom&gt;+и&lt;cop&gt;&lt;aor&gt;&lt;p3&gt;&lt;sg&gt;$
-## ^хәйрелниса/*хәйрелниса$
-## ^Нәҗметдин/Нәҗметдин&lt;np&gt;&lt;ant&gt;&lt;m&gt;&lt;nom&gt;/Нәҗметдин&lt;np&gt;&lt;ant&gt;&lt;m&gt;&lt;nom&gt;+и&lt;cop&gt;&lt;aor&gt;&lt;p3&gt;&lt;pl&gt;/Нәҗметдин&lt;np&gt;&lt;ant&gt;&lt;m&gt;&lt;nom&gt;+и&lt;cop&gt;&lt;aor&gt;&lt;p3&gt;&lt;sg&gt;$
-## ^кызы/кыз&lt;n&gt;&lt;px3sp&gt;&lt;nom&gt;/кыз&lt;n&gt;&lt;px3sp&gt;&lt;nom&gt;+и&lt;cop&gt;&lt;aor&gt;&lt;p3&gt;&lt;pl&gt;/кыз&lt;n&gt;&lt;px3sp&gt;&lt;nom&gt;+и&lt;cop&gt;&lt;aor&gt;&lt;p3&gt;&lt;sg&gt;$
+## ^&#1072;&#1085;&#1072;&#1089;&#1099;/&#1072;&#1085;&#1072;&lt;n&gt;&lt;px3sp&gt;&lt;nom&gt;/&#1072;&#1085;&#1072;&lt;n&gt;&lt;px3sp&gt;&lt;nom&gt;+&#1080;&lt;cop&gt;&lt;aor&gt;&lt;p3&gt;&lt;pl&gt;/&#1072;&#1085;&#1072;&lt;n&gt;&lt;px3sp&gt;&lt;nom&gt;+&#1080;&lt;cop&gt;&lt;aor&gt;&lt;p3&gt;&lt;sg&gt;$
+## ^&#1093;&#1241;&#1081;&#1088;&#1077;&#1083;&#1085;&#1080;&#1089;&#1072;/*&#1093;&#1241;&#1081;&#1088;&#1077;&#1083;&#1085;&#1080;&#1089;&#1072;$
+## ^&#1053;&#1241;&#1175;&#1084;&#1077;&#1090;&#1076;&#1080;&#1085;/&#1053;&#1241;&#1175;&#1084;&#1077;&#1090;&#1076;&#1080;&#1085;&lt;np&gt;&lt;ant&gt;&lt;m&gt;&lt;nom&gt;/&#1053;&#1241;&#1175;&#1084;&#1077;&#1090;&#1076;&#1080;&#1085;&lt;np&gt;&lt;ant&gt;&lt;m&gt;&lt;nom&gt;+&#1080;&lt;cop&gt;&lt;aor&gt;&lt;p3&gt;&lt;pl&gt;/&#1053;&#1241;&#1175;&#1084;&#1077;&#1090;&#1076;&#1080;&#1085;&lt;np&gt;&lt;ant&gt;&lt;m&gt;&lt;nom&gt;+&#1080;&lt;cop&gt;&lt;aor&gt;&lt;p3&gt;&lt;sg&gt;$
+## ^&#1082;&#1099;&#1079;&#1099;/&#1082;&#1099;&#1079;&lt;n&gt;&lt;px3sp&gt;&lt;nom&gt;/&#1082;&#1099;&#1079;&lt;n&gt;&lt;px3sp&gt;&lt;nom&gt;+&#1080;&lt;cop&gt;&lt;aor&gt;&lt;p3&gt;&lt;pl&gt;/&#1082;&#1099;&#1079;&lt;n&gt;&lt;px3sp&gt;&lt;nom&gt;+&#1080;&lt;cop&gt;&lt;aor&gt;&lt;p3&gt;&lt;sg&gt;$
 ## ...
 ##
 ## OUTPUT-1:
 ## ...
-## ^анасы/ана&lt;n&gt;&lt;px3sp&gt;&lt;nom&gt;/ана&lt;n&gt;&lt;px3sp&gt;&lt;nom&gt;+и&lt;cop&gt;&lt;aor&gt;&lt;p3&gt;&lt;pl&gt;/ана&lt;n&gt;&lt;px3sp&gt;&lt;nom&gt;+и&lt;cop&gt;&lt;aor&gt;&lt;p3&gt;&lt;sg&gt;$
-## ^хәйрелниса/хәйрелниса&lt;np&gt;&lt;ant&gt;&lt;f&gt;&lt;nom&gt;$
-## ^Нәҗметдин/Нәҗметдин&lt;np&gt;&lt;ant&gt;&lt;m&gt;&lt;nom&gt;/Нәҗметдин&lt;np&gt;&lt;ant&gt;&lt;m&gt;&lt;nom&gt;+и&lt;cop&gt;&lt;aor&gt;&lt;p3&gt;&lt;pl&gt;/Нәҗметдин&lt;np&gt;&lt;ant&gt;&lt;m&gt;&lt;nom&gt;+и&lt;cop&gt;&lt;aor&gt;&lt;p3&gt;&lt;sg&gt;$
-## ^кызы/кыз&lt;n&gt;&lt;px3sp&gt;&lt;nom&gt;/кыз&lt;n&gt;&lt;px3sp&gt;&lt;nom&gt;+и&lt;cop&gt;&lt;aor&gt;&lt;p3&gt;&lt;pl&gt;/кыз&lt;n&gt;&lt;px3sp&gt;&lt;nom&gt;+и&lt;cop&gt;&lt;aor&gt;&lt;p3&gt;&lt;sg&gt;$
+## ^&#1072;&#1085;&#1072;&#1089;&#1099;/&#1072;&#1085;&#1072;&lt;n&gt;&lt;px3sp&gt;&lt;nom&gt;/&#1072;&#1085;&#1072;&lt;n&gt;&lt;px3sp&gt;&lt;nom&gt;+&#1080;&lt;cop&gt;&lt;aor&gt;&lt;p3&gt;&lt;pl&gt;/&#1072;&#1085;&#1072;&lt;n&gt;&lt;px3sp&gt;&lt;nom&gt;+&#1080;&lt;cop&gt;&lt;aor&gt;&lt;p3&gt;&lt;sg&gt;$
+## ^&#1093;&#1241;&#1081;&#1088;&#1077;&#1083;&#1085;&#1080;&#1089;&#1072;/&#1093;&#1241;&#1081;&#1088;&#1077;&#1083;&#1085;&#1080;&#1089;&#1072;&lt;np&gt;&lt;ant&gt;&lt;f&gt;&lt;nom&gt;$
+## ^&#1053;&#1241;&#1175;&#1084;&#1077;&#1090;&#1076;&#1080;&#1085;/&#1053;&#1241;&#1175;&#1084;&#1077;&#1090;&#1076;&#1080;&#1085;&lt;np&gt;&lt;ant&gt;&lt;m&gt;&lt;nom&gt;/&#1053;&#1241;&#1175;&#1084;&#1077;&#1090;&#1076;&#1080;&#1085;&lt;np&gt;&lt;ant&gt;&lt;m&gt;&lt;nom&gt;+&#1080;&lt;cop&gt;&lt;aor&gt;&lt;p3&gt;&lt;pl&gt;/&#1053;&#1241;&#1175;&#1084;&#1077;&#1090;&#1076;&#1080;&#1085;&lt;np&gt;&lt;ant&gt;&lt;m&gt;&lt;nom&gt;+&#1080;&lt;cop&gt;&lt;aor&gt;&lt;p3&gt;&lt;sg&gt;$
+## ^&#1082;&#1099;&#1079;&#1099;/&#1082;&#1099;&#1079;&lt;n&gt;&lt;px3sp&gt;&lt;nom&gt;/&#1082;&#1099;&#1079;&lt;n&gt;&lt;px3sp&gt;&lt;nom&gt;+&#1080;&lt;cop&gt;&lt;aor&gt;&lt;p3&gt;&lt;pl&gt;/&#1082;&#1099;&#1079;&lt;n&gt;&lt;px3sp&gt;&lt;nom&gt;+&#1080;&lt;cop&gt;&lt;aor&gt;&lt;p3&gt;&lt;sg&gt;$
 ## ...
 </pre>
 </div>
@@ -2426,10 +1570,9 @@ For example, if we run Tatar Quran through apertium-tat:
 </p>
 
 <div class="org-src-container">
-
-<pre class="src src-sh" id="uniq-tag-sequences">cat ../../../turkiccorpora/tat.quran.nughmani.txt | \
-apertium -d ../../apertium-languages/apertium-tat tat-tagger | \
-grep -oP "(&lt;[[:alnum:]]+&gt;)*" | sort | uniq | wc -l
+<pre class="src src-sh" id="org51f81e9">cat ../../../turkiccorpora/tat.quran.nughmani.txt | <span style="color: #CC9393;">\</span>
+apertium -d ../../apertium-languages/apertium-tat tat-tagger | <span style="color: #CC9393;">\</span>
+grep -oP <span style="color: #CC9393;">"(&lt;[[:alnum:]]+&gt;)*"</span> | sort | uniq | wc -l
 </pre>
 </div>
 
@@ -2438,7 +1581,8 @@ we get
 </p>
 
 <pre class="example">
-0
+991
+
 </pre>
 
 <p>
@@ -2446,10 +1590,9 @@ uniq tag sequences.
 </p>
 
 <div class="org-src-container">
-
 <pre class="src src-text">n-px3sp-nom  -&gt;  ?  -&gt;  np-ant-m-nom  -&gt; n-px3sp-nom
     |            |           |                |
-  анасы      хәйрелниса  Нәҗметдин          кызы
+  &#1072;&#1085;&#1072;&#1089;&#1099;      &#1093;&#1241;&#1081;&#1088;&#1077;&#1083;&#1085;&#1080;&#1089;&#1072;  &#1053;&#1241;&#1175;&#1084;&#1077;&#1090;&#1076;&#1080;&#1085;          &#1082;&#1099;&#1079;&#1099;
 
 P(n-px3sp-nom), P(np-ant-m-nom), P(n-px3sp-nom) = 1
 </pre>
@@ -2460,10 +1603,8 @@ What we want instead of the ? is (not too sure)
 </p>
 
 <ul class="org-ul">
-<li>probability distribution of 991 tag sequences observed ?
-</li>
-<li>a tag that maximizes the probability of the entire sequence ?
-</li>
+<li>probability distribution of 991 tag sequences observed ?</li>
+<li>a tag that maximizes the probability of the entire sequence ?</li>
 </ul>
 
 <p>
@@ -2472,25 +1613,24 @@ Belief propagation?
 </div>
 </div>
 
-<div id="outline-container-sec-4-3-3-2" class="outline-5">
-<h5 id="sec-4-3-3-2"><span class="section-number-5">4.3.3.2</span> Problem 404.b</h5>
+<div id="outline-container-org6a782cb" class="outline-5">
+<h5 id="org6a782cb"><span class="section-number-5">4.3.3.2</span> Problem 404.b</h5>
 <div class="outline-text-5" id="text-4-3-3-2">
 <div class="org-src-container">
-
 <pre class="src src-text">## INPUT-2:
 ## ...
-## ^анасы/ана N1$
-## ^хәйрелниса/*хәйрелниса$
-## ^Нәҗметдин/Нәҗметдин NP-ANT-M$
-## ^кызы/кыз N1$
+## ^&#1072;&#1085;&#1072;&#1089;&#1099;/&#1072;&#1085;&#1072; N1$
+## ^&#1093;&#1241;&#1081;&#1088;&#1077;&#1083;&#1085;&#1080;&#1089;&#1072;/*&#1093;&#1241;&#1081;&#1088;&#1077;&#1083;&#1085;&#1080;&#1089;&#1072;$
+## ^&#1053;&#1241;&#1175;&#1084;&#1077;&#1090;&#1076;&#1080;&#1085;/&#1053;&#1241;&#1175;&#1084;&#1077;&#1090;&#1076;&#1080;&#1085; NP-ANT-M$
+## ^&#1082;&#1099;&#1079;&#1099;/&#1082;&#1099;&#1079; N1$
 ## ...
 ##
 ## OUTPUT-2:
 ## ...
-## ^анасы/ана N1$
-## ^хәйрелниса/Хәйрелниса NP-ANT-F$
-## ^Нәҗметдин/Нәҗметдин NP-ANT-M$
-## ^кызы/кыз N1$
+## ^&#1072;&#1085;&#1072;&#1089;&#1099;/&#1072;&#1085;&#1072; N1$
+## ^&#1093;&#1241;&#1081;&#1088;&#1077;&#1083;&#1085;&#1080;&#1089;&#1072;/&#1061;&#1241;&#1081;&#1088;&#1077;&#1083;&#1085;&#1080;&#1089;&#1072; NP-ANT-F$
+## ^&#1053;&#1241;&#1175;&#1084;&#1077;&#1090;&#1076;&#1080;&#1085;/&#1053;&#1241;&#1175;&#1084;&#1077;&#1090;&#1076;&#1080;&#1085; NP-ANT-M$
+## ^&#1082;&#1099;&#1079;&#1099;/&#1082;&#1099;&#1079; N1$
 ## ...
 </pre>
 </div>
@@ -2502,25 +1642,24 @@ dictionaries.
 </div>
 </div>
 
-<div id="outline-container-sec-4-3-3-3" class="outline-5">
-<h5 id="sec-4-3-3-3"><span class="section-number-5">4.3.3.3</span> Problem 404.c</h5>
+<div id="outline-container-org9ef5479" class="outline-5">
+<h5 id="org9ef5479"><span class="section-number-5">4.3.3.3</span> Problem 404.c</h5>
 <div class="outline-text-5" id="text-4-3-3-3">
 <div class="org-src-container">
-
 <pre class="src src-text">## INPUT-3:
 ## ...
-## ^анасы/ана&lt;n&gt;&lt;px3sp&gt;&lt;nom&gt;$
-## ^хәйрелниса/*хәйрелниса$
-## ^Нәҗметдин/Нәҗметдин&lt;np&gt;&lt;ant&gt;&lt;m&gt;&lt;nom&gt;$
-## ^кызы/кыз&lt;n&gt;&lt;px3sp&gt;&lt;nom&gt;$
+## ^&#1072;&#1085;&#1072;&#1089;&#1099;/&#1072;&#1085;&#1072;&lt;n&gt;&lt;px3sp&gt;&lt;nom&gt;$
+## ^&#1093;&#1241;&#1081;&#1088;&#1077;&#1083;&#1085;&#1080;&#1089;&#1072;/*&#1093;&#1241;&#1081;&#1088;&#1077;&#1083;&#1085;&#1080;&#1089;&#1072;$
+## ^&#1053;&#1241;&#1175;&#1084;&#1077;&#1090;&#1076;&#1080;&#1085;/&#1053;&#1241;&#1175;&#1084;&#1077;&#1090;&#1076;&#1080;&#1085;&lt;np&gt;&lt;ant&gt;&lt;m&gt;&lt;nom&gt;$
+## ^&#1082;&#1099;&#1079;&#1099;/&#1082;&#1099;&#1079;&lt;n&gt;&lt;px3sp&gt;&lt;nom&gt;$
 ## ...
 ##
 ## OUTPUT-3:
 ## ...
-## ^анасы/ана&lt;n&gt;&lt;px3sp&gt;&lt;nom&gt;$
-## ^хәйрелниса/Хәйрелниса&lt;np&gt;&lt;ant&gt;&lt;f&gt;&lt;nom&gt;$
-## ^Нәҗметдин/Нәҗметдин&lt;np&gt;&lt;ant&gt;&lt;m&gt;&lt;nom&gt;$
-## ^кызы/кыз&lt;n&gt;&lt;px3sp&gt;&lt;nom&gt;$
+## ^&#1072;&#1085;&#1072;&#1089;&#1099;/&#1072;&#1085;&#1072;&lt;n&gt;&lt;px3sp&gt;&lt;nom&gt;$
+## ^&#1093;&#1241;&#1081;&#1088;&#1077;&#1083;&#1085;&#1080;&#1089;&#1072;/&#1061;&#1241;&#1081;&#1088;&#1077;&#1083;&#1085;&#1080;&#1089;&#1072;&lt;np&gt;&lt;ant&gt;&lt;f&gt;&lt;nom&gt;$
+## ^&#1053;&#1241;&#1175;&#1084;&#1077;&#1090;&#1076;&#1080;&#1085;/&#1053;&#1241;&#1175;&#1084;&#1077;&#1090;&#1076;&#1080;&#1085;&lt;np&gt;&lt;ant&gt;&lt;m&gt;&lt;nom&gt;$
+## ^&#1082;&#1099;&#1079;&#1099;/&#1082;&#1099;&#1079;&lt;n&gt;&lt;px3sp&gt;&lt;nom&gt;$
 ## ...
 </pre>
 </div>
@@ -2534,18 +1673,12 @@ Background reading:
 </p>
 
 <ul class="org-ul">
-<li>Apertium Tagger related
-</li>
-<li>Zhenis et al.'s paper on Hybrid Kazakh disambiguation tool
-</li>
-<li>NLTK on stemming, lemmatization and pos-tagging
-</li>
-<li>Guessing with CG?
-</li>
-<li>Y&amp;M on stemming, lemmatization and pos-tagging
-</li>
-<li>M&amp;S on the same
-</li>
+<li>Apertium Tagger related</li>
+<li>Zhenis et al.'s paper on Hybrid Kazakh disambiguation tool</li>
+<li>NLTK on stemming, lemmatization and pos-tagging</li>
+<li>Guessing with CG?</li>
+<li>Y&amp;M on stemming, lemmatization and pos-tagging</li>
+<li>M&amp;S on the same</li>
 </ul>
 </div>
 </div>
@@ -2553,41 +1686,53 @@ Background reading:
 </div>
 </div>
 
-<div id="outline-container-sec-5" class="outline-2">
-<h2 id="sec-5"><span class="section-number-2">5</span> ROADMAP</h2>
+<div id="outline-container-org5181c5b" class="outline-2">
+<h2 id="org5181c5b"><span class="section-number-2">5</span> ROADMAP</h2>
 </div>
 
-<div id="outline-container-sec-6" class="outline-2">
-<h2 id="sec-6"><span class="section-number-2">6</span> NOTES</h2>
+<div id="outline-container-org2a648d8" class="outline-2">
+<h2 id="org2a648d8"><span class="section-number-2">6</span> NOTES</h2>
 <div class="outline-text-2" id="text-6">
-</div><div id="outline-container-sec-6-1" class="outline-3">
-<h3 id="sec-6-1"><span class="section-number-3">6.1</span> Methods of auditing a monolingual dictionary</h3>
+</div>
+<div id="outline-container-orgb11396f" class="outline-3">
+<h3 id="orgb11396f"><span class="section-number-3">6.1</span> Methods of auditing a monolingual dictionary</h3>
 <div class="outline-text-3" id="text-6-1">
 <ul class="org-ul">
 <li>Take stems contained in it and pass them through the transducer to see whether
 they get multiple analyses (some of which might be wrong). Better yet, use the
 <code>lexc2dix</code> library, parse the .lexc file with it, and get the list of stems
-which are linked to 2 or more continuation lexicons.
-</li>
+which are linked to 2 or more continuation lexicons.</li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-sec-6-2" class="outline-3">
-<h3 id="sec-6-2"><span class="section-number-3">6.2</span> Principles of tagset choice</h3>
+<div id="outline-container-org835dd13" class="outline-3">
+<h3 id="org835dd13"><span class="section-number-3">6.2</span> Principles of tagset choice</h3>
 <div class="outline-text-3" id="text-6-2">
 <ul class="org-ul">
 <li>surface form has to be deterministically reconstructuble from lemma + tags /
-subreadings
-</li>
+subreadings</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgd0d6091" class="outline-3">
+<h3 id="orgd0d6091"><span class="section-number-3">6.3</span> Minimal monolingual Apertiumpp package</h3>
+<div class="outline-text-3" id="text-6-3">
+<ul class="org-ul">
+<li>transducers + disambiguator</li>
+<li>spellchecker</li>
+<li>annotated corpus with an interface</li>
+<li>virtual keyboard</li>
+<li>Common Voice's interface translations</li>
+<li>sentences for Common Voice</li>
 </ul>
 </div>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2018-10-23 Tue 18:03</p>
-<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.2.2 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
+<p class="date">Created: 2019-04-20 Sat 14:07</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

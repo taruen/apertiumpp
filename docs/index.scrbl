@@ -99,6 +99,10 @@ language like a proper module system, which would allow you
 to re-use code across monolingual and bilingual packages
 reliably.
 
+To be fair, Apertium was designed for translating between
+closely-related languages. And for that it works sufficiently
+well.
+
 @section{Desiderata}
 
 @itemlist[

@@ -1,7 +1,7 @@
 
 # -*- mode: org; -*-
 
-#+TITLE:      PROJECT T, or APERTIUM++
+#+TITLE:      PROJECT T, or APERTIUM++!
 #+AUTHOR:      
 #+DATE:        
 #+EMAIL:       
@@ -9,28 +9,7 @@
 #+OPTIONS:     H:5 num:5 toc:t \n:nil ::t |:t ^:t f:t tex:t ...
 #+BIBLIOGRAPHY: refs plain
 
-This is a project with an aim of making machine translation possible between
-*all* of the related languages of a particular language group (e.g. Turkic,
-Slavic, Indo-Iranian etc.) in the most efficient manner. Currently we work on
-Turkic languages since they happen to be the languages we know several of, but
-the toolkit is meant to be language-independent. The project, in its spirit and
-aims is similar to the [[https://www.apertium.org][Apertium project]], and can be considered its spinoff or
-part (to be frank, if we come up with some useful technology, we hope to see it
-merged to the Apertium's code base), but, since one of the declared goals of
-ours is being able to handle speech (not just the written word), and, since we
-want to re-evaluate some of the design decisions made in the Apertium project
-(and yet are not sure at all whether such re-evaluations will turn out to be
-wise desicions), we decided to make a separate project out of this effort.
-
-Things deemed as less-than-optimal in the current Apertium setup:
-- transfer rules are unidirectional, and currently there is no way of marking
-  a transfer rule as `bidirectional' and get a transfer rule for the opposite
-  direction for free,
-- there can be and usually there are several entries in a .lexc or .dix files
-  with the same left-hand side (and there is no compile-time checks against
-  mistakenly adding the same word twice, possibly with a right and a wrong
-  category.
-- ?
+This page documents research carried over in the [[https://taruen.github.io/apertiumpp/][Apertiumpp project]].
 
 * OBJECTIVES
 
@@ -50,6 +29,8 @@ What we're after:
    translators for us.
 4. Text-to-speech systems.
 5. Speech recognition systems.
+6. Annotated corpora with a standard interface.
+7. Spellcheckers (and keyboard layouts, if missing).
 
 Somewhat more formally:
 
@@ -857,7 +838,7 @@ Conditions:
 
 Options:
 
-- Bible
+- Bibel
 
 - Quran. Available in
   - kaz (from kuran.kz; in turkiccorpora;
@@ -904,8 +885,6 @@ defined as above 95% coverage on a range corpora. For the rest 5% of words or
 so, we'd like the transducer/tagger to probabilistically guess the correct
 tags, so that technically no out-of-vocabulary (OOV) words are left in the
 output of a transducer.
-
-#+INCLUDE: "languages/apertium-kaz/doc/apertium-kaz.org" :min-level 4
 
 *** To English
 
@@ -1168,3 +1147,12 @@ Background reading:
 
 - surface form has to be deterministically reconstructuble from lemma + tags /
   subreadings
+
+** Minimal monolingual Apertiumpp package
+
+- transducers + disambiguator
+- spellchecker
+- annotated corpus with an interface
+- virtual keyboard
+- Common Voice's interface translations
+- sentences for Common Voice
