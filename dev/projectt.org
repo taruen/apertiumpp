@@ -838,9 +838,9 @@ Conditions:
 
 Options:
 
-- Bibel
++ Bible
 
-- Quran. Available in
++ Quran. Available in
   - kaz (from kuran.kz; in turkiccorpora;
     - TODO contact authors -- sharing on tanzil.net? (via Tanzil it will end up
       in OPUS)
@@ -865,6 +865,10 @@ Options:
   - kjh?
   - ota (probably not OCR'd)
   - aze * 2 (TODO add to turkiccorpora; available on tanzil.net) :GCI:
+
++ [[https://www.unicode.org/udhr/translations.html][Universal Declaration of Human Rights]]. Available in 520 languages as of
+  19.04.2019. Pretty small (~1500 words), but a good alternative or complement
+  for the 'James and Mary' story because of the social value of this document.
 
 Also see:
 
