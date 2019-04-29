@@ -1172,7 +1172,7 @@ Background reading:
   - chv, done
   - kum, done
   - kaa, done
-  - uzb, 
+  - uzb, done
   - sah, done
   - crh, done
   - krc, done
