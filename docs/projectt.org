@@ -1160,3 +1160,36 @@ Background reading:
 - virtual keyboard
 - Common Voice's interface translations
 - sentences for Common Voice
+
+* TODAY
+
+- find and add Bible translations in $l$ for all $l$ in $L$ to data4apertium:
+  - kaz, done
+  - tat, done
+  - kir, done
+  - tyv, done
+  - tur, 
+  - chv, done
+  - kum, done
+  - kaa, done
+  - uzb, 
+  - sah, done
+  - crh, done
+  - krc, done
+  - bak,
+  - nog, done
+  - gag, 
+  - tuk, 
+  - uig, 
+  - alt, done
+  - kjh, done 
+  - ota, 
+  - aze
+
+- for all apertium-l and apertium-x-l and apertium-l-x, add a circleci script which:
+  - builds the package
+  - measures its coverage on New Testament
+  - deploys NT|cov| badge somewhere public, say Amazon S3 
+
+- add a list of all turkic monolingual packages and translators with a turkic on either side, along with Bible|cov| badge
+  to apertium.github.io/turkic.html 
