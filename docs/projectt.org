@@ -9,7 +9,7 @@
 #+OPTIONS:     H:5 num:5 toc:t \n:nil ::t |:t ^:t f:t tex:t ...
 #+BIBLIOGRAPHY: refs plain
 
-This page documents research carried over in the [[https://taruen.github.io/apertiumpp/][Apertiumpp project]].
+This page documents research carried over in the Turkic branch of the [[https://taruen.github.io/apertiumpp/][Apertiumpp project]].
 
 * OBJECTIVES
 
