@@ -1,6 +1,6 @@
 #lang at-exp racket
 
-;;A representation of & functions for Apertium's (bilingual) dictionaries
+;; A representation of & functions for Apertium's dictionaries
 
 (require scribble/srcdoc
          (for-doc racket/base scribble/manual))
@@ -13,8 +13,8 @@
 ;; Constants
 
 
-(define LR "LR")
-(define RL "RL")
+(define NA "LR")
+(define NG "RL")
 (define STANDARD "standard")
 (define PREBLANK "preblank")
 (define POSTBLANK "postblank")
@@ -35,7 +35,7 @@
               [pardefs (listof pardef?)]
               [sections (listof section?)]
               [attrs (hash/c symbol? string?)])
-  ("interpretation: an Apertium dictionary (read: contents of a .dix file)."
+  ("interpretation: an Apertium dictionary (read: contents of a .dix or .lexc file)."
    @itemlist[@item{@(racket dictionary-lang) : ISO 639-3 code(s) of the
               language(s)}
              @item{@(racket dictionary-alphabet) : relevant for a monolingual
@@ -141,7 +141,7 @@
 
 (provide
  (struct*-doc
-  e ([o (or/c #f LR RL)]
+  e ([o (or/c #f NA NG)]
      [re (or/c #f string?)]
      [lm (or/c #f string?)]
      [l string?]
@@ -149,8 +149,9 @@
      [par (or/c #f string?)]
      [attrs (hash/c symbol? string?)])
   ("interpretation: an entry in a dictionary paradigm or section."
-   @itemlist[@item{@(racket e-o) : usage restriction, either LR (only analyse
-              this form) or RL (only generate this form) or #f (not set)}
+   @itemlist[@item{@(racket e-o) : usage restriction, either NA (`no analysis',
+              only generate this form) or NG (`no generation', only analyse
+              this form) or #f (not set)}
              @item{@(racket e-re) : regular expression or #f (not set)}
              @item{@(racket e-lm) : lemma or #f (not set)}
              @item{@(racket e-l) : left/lower/surface string}
@@ -168,6 +169,10 @@
 (permissive-xexprs #t)
 
 
+
+;; Wishlist
+
+
 (define (parse-dix dix)
   (define parsed
     (xml->xexpr (document-element (read-xml (open-input-file dix)))))
@@ -182,7 +187,33 @@
 (provide
  (proc-doc/names
   parse-dix (string? . -> . dictionary?) (bidix)
-  ("Parse .dix file and return a " (racket dictionary) ".")))
-
+  ("WISHLIST ITEM. Parse .dix file and return a " (racket dictionary) ".")))
 
 ;(se-path*/list '(section) (xml->xexpr (document-element (read-xml (open-input-file "/tmp/apertium-kaz-tat.kaz-tat.dix")))))
+
+
+(define (parse-lexc lexc)
+  D-0)
+
+(provide
+ (proc-doc/names
+  parse-lexc (string? . -> . dictionary?) (lexc)
+  ("WISHLIST ITEM. Parse .lexc file and return a " (racket dictionary) ".")))
+
+
+(define (dictionary2dix d)
+  "")
+
+(provide
+ (proc-doc/names
+  dictionary2dix (dictionary? . -> . string?) (d)
+  ("WISHLIST ITEM. Convert a " (racket dictionary) " into a .dix file.")))
+
+
+(define (dictionary2lexc d)
+  "")
+
+(provide
+ (proc-doc/names
+  dictionary2lexc (dictionary? . -> . string?) (d)
+  ("WISHLIST ITEM. Convert a " (racket dictionary) " into a .lexc file.")))
