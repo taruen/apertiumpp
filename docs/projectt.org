@@ -157,7 +157,7 @@ TODO a program which converts a multidix into Apertium monodixes and bidixes
           from the currently 3-volume (А-К) ``Татар теленең
           аңлатмалы сүзлеге'' (``Explanatory Dictionary of Tatar'') found here
           http://www.antat.ru/tt/iyli/publishing/book/index.php, as well as entries
-          from the 2013 ~``Explanatory Dictionary of Tatar for Schools'' in
+          from other dictonaries over which the institute holds copyright, in
           Apertium's dictionaries. Which means that we have at least one Turkic
           explanatory dictionary (with parts-of-speech info and examples) we can
           use in Apertium.
