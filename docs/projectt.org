@@ -45,7 +45,8 @@ Unknown:
 
 Algorithm for obtaining machine translators $t_i ... t_{n * (n-1)+2n}$ from
 $l_1$ to $l_2$ where $l_1 \in L$ and $l_2 \in L \cup \{eng, rus\}$ and machine
-translators themselvelves, including spech-to-text and text-to-speech frontends.
+translators themselves, including spech-to-text and text-to-speech frontends
+and annotated corpora.
 
 Conditions:
 
@@ -72,7 +73,7 @@ Applications:
   - [[https://meta.wikimedia.org/wiki/List_of_articles_every_Wikipedia_should_have][articles every Wikipedia should have]]
   - selected articles of other Wikipedias
 - localizing free/libre software
-- translating other resources listed on [[http://selimcan.org]]
+- translating other resources listed on [[http://selimcan.org/tat/about.html]]
 - components used as spell and grammar checkers and in QA systems
 
 * WHAT WAS DONE
@@ -142,21 +143,35 @@ TODO a program which converts a multidix into Apertium monodixes and bidixes
     - Wordnet? GNU collaborative dictionary of English? Wiktionary?
       OmegaWiki?
   - same for Russian (if there is any available...)
-    - TODO check [https://en.wikipedia.org/wiki/Ushakov_Dictionary] might be in
+    - DONE check [https://en.wikipedia.org/wiki/Ushakov_Dictionary] might be in
       the public domain now
+      - Dmitry Nikolayevich Ushakov died in 1942, and all 4 volumes of the dictionary
+        were published in 1935-1940, which means that all of them are in the public
+        domain now in Russian Federation.
   - translating entries from a libre Turkic dictionary
     - is there any? Probably not.
-      - DONE email publishers ([[http://www.twirpx.com/file/1077154][this]] one is of interest).
-        - Ibragimov Institute of Language, Literature and Art @ Tatarstan
-          Academy of Sciences in email communication allowed entry words and
-          part-of-speech tags from the currently 3-volume (А-К) ``Татар теленең
+      - DONE email publishers (+[[http://www.twirpx.com/file/1077154][this]] one is of interest+. No reason for using an
+          older edition given that we have a permission to use newer ones now)
+        - Ibrahimov Institute of Language, Literature and Art @ Tatarstan
+          Academy of Sciences in email communication allowed to use the entries
+          from the currently 3-volume (А-К) ``Татар теленең
           аңлатмалы сүзлеге'' (``Explanatory Dictionary of Tatar'') found here
-          http://www.antat.ru/tt/iyli/publishing/book/index.php to be used in
-          Apertium's dictionaries.
-    - even if there is one, allowing a monolingual Turkic speaker to translate
-      words into his own language will require translating the *definitions* into
-      English or Russian, which is a huge amount of work compared to translating
-      the words only
+          http://www.antat.ru/tt/iyli/publishing/book/index.php, as well as entries
+          from the 2013 ~``Explanatory Dictionary of Tatar for Schools'' in
+          Apertium's dictionaries. Which means that we have at least one Turkic
+          explanatory dictionary (with parts-of-speech info and examples) we can
+          use in Apertium.
+      - TODO ask Kazakhstani colleagues to do the same kind of negotiations
+        about the [[https://kitap.kz/][Universal Dictionary of Kazakh]] (Қазақ тілінің әмбебап
+        сөздігі). Read: can we get a permission to use it for making a
+        free/open-source morphological analyser for Kazakh (in Apertium) and
+        publish its contents under GPLv3 and/or CC BY-SA license?
+    - +even if there is one, allowing a monolingual Turkic speaker to translate+
+      +words into his own language will require translating the *definitions* into+
+      +English or Russian, which is a huge amount of work compared to translating+
+      +the words only+ The idea here is to use the very same turkic-turkic translators
+      as we get them by translating entry words for translating entry examples and
+      definitions.
 
 - inducing from bilingual corpora
 
@@ -838,7 +853,14 @@ Conditions:
 
 Options:
 
-+ Bible
++ Bible.
+  - Currently [[https://github.com/taruen/apertiumpp/tree/master/data4apertium/corpora/bible][we have]] New Testaments in alt, chv, crh, kaa, kaz, kir, kjh,
+    krc, kum, nog, sah, tat, tyv, uzb.
+  - TODO scrape ibt.org.ru and gospelgo and add tur, bak, gag, tuk, uig, ota?
+    and aze translations of the Bible/New Testament in the [[http://wiki.apertium.org/wiki/Bible_corpora][standard format]].
+  - TODO if the process did not require any manual correction, get Bible/NT
+    translations for all languages / all languages currently present in
+    Apertium, otherwise mark this todo as a :GCI: task
 
 + Quran. Available in
   - kaz (from kuran.kz; in turkiccorpora;
@@ -892,22 +914,22 @@ output of a transducer.
 
 *** To English
 
-apertium-eng-kaz, apetium-tat-eng,
+apertium-eng-kaz, apetium-tat-eng...
 
 *** To Russian
 
-apertium-kaz-rus, apertium-tat-rus,
+apertium-kaz-rus, apertium-tat-rus...
 
 *** Intraturkic
 
-**** apertium-kaz-tat, apertium-tur-tat, apertium-crh-tur
+**** apertium-tat-bak, apertium-kaz-tat, apertium-chv-tat, apertium-tur-tat, apertium-crh-tur...
 
 ** QA and meta-stuff
 
 *** apertium fitnesse
 
 See https://gitlab.com/selimcan/apertium-fitnesse and
-http://fitnesse.selimcan.org.
++http://fitnesse.selimcan.org+.
 
 *** rbmt-as-a-data-structure = a (Racket-based?) programming language with a syntax similar to what is seen on [[http://fitnesse.selimcan.org/FrontPage.ApertiumTurkic.ApertiumKaz]].
 
@@ -1135,6 +1157,7 @@ Background reading:
   - Guessing with CG?
   - Y&M on stemming, lemmatization and pos-tagging
   - M&S on the same
+  - Lemming and other tools of Munich University's mighty CIS group
 
 * ROADMAP
 
@@ -1145,7 +1168,7 @@ Background reading:
 - Take stems contained in it and pass them through the transducer to see whether
   they get multiple analyses (some of which might be wrong). Better yet, use the
   ~lexc2dix~ library, parse the .lexc file with it, and get the list of stems
-  which are linked to 2 or more continuation lexicons.
+  which are linked to 2 or more continuation lexicons. :idea:
 
 ** Principles of tagset choice
 
@@ -1163,7 +1186,14 @@ Background reading:
 
 * TODAY
 
-- find and add Bible translations in $l$ for all $l$ in $L$ to data4apertium:
+- check at least the first 2500 words from 2005 Explanatory dictionary of Tatar
+  and make sure that they are present in apertium-tat and their pos tags in the
+  latter are correct
+
+* ON THE NEXT "META"-WORK DAY
+
+- find and add Bible translations in $l$ for all $l$ in $L$ to data4apertium
+  (see notes on the Bible corpus above):
   - kaz, done
   - tat, done
   - kir, done
@@ -1189,7 +1219,13 @@ Background reading:
 - for all apertium-l and apertium-x-l and apertium-l-x, add a circleci script which:
   - builds the package
   - measures its coverage on New Testament
-  - deploys NT|cov| badge somewhere public, say Amazon S3 
+  - checks that it hasn't decreased
+  - deploys NT|cov| badge somewhere public, +say Amazon S3+, so that it becomes visible
+    on apertium.github.io/status.html and apertium.github.io/turkic.html
+  - keep in mind the discussion we had on 29.04.2019 on #apertium on using S3
 
 - add a list of all turkic monolingual packages and translators with a turkic on either side, along with Bible|cov| badge
-  to apertium.github.io/turkic.html 
+  to apertium.github.io/turkic.html It should resemble http://wiki.apertium.org/wiki/Turkic_languages
+  (but should show information from the latest git revisions).
+
+* ON THE NEXT "APERTIUM-TURKIC LINGUISTIC DATA" DAY
