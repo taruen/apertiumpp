@@ -1186,7 +1186,7 @@ Background reading:
 
 * TODAY
 
-- check at least the first 2500 words from 2005 Explanatory dictionary of Tatar
+- check at least the first 10000 words from 2005 Explanatory dictionary of Tatar
   and make sure that they are present in apertium-tat and their pos tags in the
   latter are correct
 
@@ -1227,5 +1227,7 @@ Background reading:
 - add a list of all turkic monolingual packages and translators with a turkic on either side, along with Bible|cov| badge
   to apertium.github.io/turkic.html It should resemble http://wiki.apertium.org/wiki/Turkic_languages
   (but should show information from the latest git revisions).
+
+- Hector said he can get chuvash newspaper texts. :email:
 
 * ON THE NEXT "APERTIUM-TURKIC LINGUISTIC DATA" DAY
