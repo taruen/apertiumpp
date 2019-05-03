@@ -926,7 +926,14 @@ apertium-kaz-rus, apertium-tat-rus...
 
 ** QA and meta-stuff
 
-*** apertium fitnesse
+*** apertium-quality
+
+<selimcan> In particular, what I missed in aq/yaml tests are directionality
+restrictions (i.e. 'make sure X is generated', 'make sure Y is analysed', 'make
+sure Z is *not* analysed) + exit codes so that it can be used on
+travis/circleci
+
+*** apertium-fitnesse
 
 See https://gitlab.com/selimcan/apertium-fitnesse and
 +http://fitnesse.selimcan.org+.
