@@ -34,11 +34,11 @@ jobs:
           command: |
             mkdir /tmp/res/
             curl https://raw.githubusercontent.com/taruen/apertiumpp/master/data4apertium/corpora/jam/@|LANG|.txt > /tmp/jam.@|LANG|.txt
-            sh cov.sh jam
+            sh .circleci/cov.sh jam
             curl https://raw.githubusercontent.com/taruen/apertiumpp/master/data4apertium/corpora/udhr/udhr_@|LANG|.txt > /tmp/udhr.@|LANG|.txt
-            sh cov.sh udhr
+            sh .circleci/cov.sh udhr
             curl https://raw.githubusercontent.com/taruen/apertiumpp/master/data4apertium/corpora/bible/@|LANG|.nt.ibt.txt > /tmp/bible.@|LANG|.txt
-            sh cov.sh bible
+            sh .circleci/cov.sh bible
             aws s3 cp /tmp/res/ s3://apertium/apertium-@|LANG|/ --exclude "*" --include "cov.*.txt"
             aws s3 cp /tmp/res/ s3://apertium/apertium-@|LANG|/ --exclude "*" --include "cov.*.svg"
 
