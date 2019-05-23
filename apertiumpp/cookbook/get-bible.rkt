@@ -54,7 +54,7 @@
         ((sxpath '(@ href *text*))
          ((sxpath "//a[@data-vars-event-action='Next']") p)))
       (if (empty? nextpage)
-          acc
+          (append acc ((sxpath "//span[contains(@class, 'verse')]") p))
           (recur (fetch (string-append ROOT (first nextpage))) (append acc ((sxpath "//span[contains(@class, 'verse')]") p))))))
 
   (recur firstpage '()))
