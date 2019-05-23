@@ -31,7 +31,7 @@ direction for free,</p></li><li><p>there can be and usually there are several en
 a .lexc or .dix files with the same left-hand side (and
 there is no compile-time checks against mistakenly adding
 the same word twice, possibly with a right and a wrong
-category</p></li><li><p>rather long compile cycles, translators are not
+category)</p></li><li><p>rather long compile cycles, translators are not
 extensible programmatically</p></li><li><p>not possible to re-use components in a programmatic
 way (i.e. without having to copy-paste manually, which
 sooner or later will lead to out-of-date chunks). Want we
@@ -53,7 +53,8 @@ to re-use code across monolingual and bilingual packages
 reliably.</p><p>To be fair, Apertium was designed for translating between
 closely-related languages. And for that it works sufficiently
 well.</p><h3>2<tt>&nbsp;</tt><a name="(part._.Desiderata)"></a>Desiderata</h3><ul><li><p>Every Apertium 3.0. program is a valid
-Apertium 4.0 program.</p></li></ul><h3>3<tt>&nbsp;</tt><a name="(part._.Apertiumpp_library)"></a>Apertiumpp library</h3><p>At the core of this project is a Racket library called
+Apertium 4.0 program.</p></li></ul><h3>3<tt>&nbsp;</tt><a name="(part._.Apertiumpp_library)"></a>Apertiumpp library</h3><p>At the core of this project is a
+<a href="https://racket-lang.org/">Racket</a> library called
 <span style="font-style: italic">apertiumpp</span>. The documentation of the library can be
 found at <a href="./apertiumpp/">https://taruen.github.io/apertiumpp/apertiumpp/</a>.</p><h3>4<tt>&nbsp;</tt><a name="(part._.Tests_data_for_.Apertium_3_0__packages)"></a>Tests/data for Apertium 3.0. packages</h3><p>The <span class="stt">"data4apertium"</span> directory contains tests for
 Apertium&rsquo;s monolingual and bilingual packages. These tests

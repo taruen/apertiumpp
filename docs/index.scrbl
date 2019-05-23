@@ -69,7 +69,7 @@ the current Apertium setup:
   a .lexc or .dix files with the same left-hand side (and
   there is no compile-time checks against mistakenly adding
   the same word twice, possibly with a right and a wrong
-  category}
+  category)}
 
  @item{rather long compile cycles, translators are not
   extensible programmatically}
@@ -112,7 +112,8 @@ well.
 
 @section{Apertiumpp library}
 
-At the core of this project is a Racket library called
+At the core of this project is a
+@hyperlink["https://racket-lang.org/"]{Racket} library called
 @italic{apertiumpp}. The documentation of the library can be
 found at @hyperlink["./apertiumpp/"]{
  https://taruen.github.io/apertiumpp/apertiumpp/}.

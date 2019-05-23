@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2019-05-04 Sat 00:20 -->
+<!-- 2019-05-23 Thu 18:55 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>PROJECT T, or APERTIUM++!</title>
@@ -255,78 +255,80 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgbe0065c">1. OBJECTIVES</a></li>
-<li><a href="#orgb60d761">2. RATIONALE</a></li>
-<li><a href="#org79d995d">3. WHAT WAS DONE</a></li>
-<li><a href="#orgac72eb7">4. WORKING ON / NEEDED</a>
+<li><a href="#org7fbfbec">1. OBJECTIVES</a></li>
+<li><a href="#orga6bb2e1">2. RATIONALE</a></li>
+<li><a href="#org5d07616">3. WHAT WAS DONE</a></li>
+<li><a href="#org754866a">4. WORKING ON / NEEDED</a>
 <ul>
-<li><a href="#org749d3c0">4.1. Resources</a>
+<li><a href="#org2cd755f">4.1. Resources</a>
 <ul>
-<li><a href="#orgcd74e1b">4.1.1. Multilingual dictionary</a>
+<li><a href="#org4a6997e">4.1.1. Multilingual dictionary</a>
 <ul>
-<li><a href="#orgfa3145b">4.1.1.1. RATIONALE</a></li>
-<li><a href="#orgf095366">4.1.1.2. OBJECTIVES</a></li>
-<li><a href="#org2dc3e0b">4.1.1.3. CONSTRAINTS</a></li>
-<li><a href="#org55ee5cd">4.1.1.4. OPTIONS</a>
+<li><a href="#org6441490">4.1.1.1. RATIONALE</a></li>
+<li><a href="#orgad0e1e7">4.1.1.2. OBJECTIVES</a></li>
+<li><a href="#org0e1816e">4.1.1.3. CONSTRAINTS</a></li>
+<li><a href="#orge5ae461">4.1.1.4. OPTIONS</a>
 <ul>
-<li><a href="#org7060b7c">4.1.1.4.1. Wordnet</a></li>
+<li><a href="#org715ed00">4.1.1.4.1. Wordnet</a></li>
 </ul>
 </li>
-<li><a href="#org108b4e4">4.1.1.5. WHAT WAS DONE</a>
+<li><a href="#org4ad8e33">4.1.1.5. WHAT WAS DONE</a>
 <ul>
-<li><a href="#orgf80be51">4.1.1.5.1. A library for converting two or more Apertium bidixes into a wordgraph</a></li>
-<li><a href="#orgbf977e9">4.1.1.5.2. A script for converting English Wordnet leammas into Turkic languages</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#org2609532">4.1.2. Parallel corpus</a></li>
-</ul>
-</li>
-<li><a href="#orgbf09c25">4.2. Connecting nodes</a>
-<ul>
-<li><a href="#orgf9fe3a9">4.2.1. Nodes: Morphological Transducers</a></li>
-<li><a href="#org952c36c">4.2.2. To English</a></li>
-<li><a href="#orge43c36b">4.2.3. To Russian</a></li>
-<li><a href="#org11f67a4">4.2.4. Intraturkic</a>
-<ul>
-<li><a href="#orgb53f38b">4.2.4.1. apertium-tat-bak, apertium-kaz-tat, apertium-chv-tat, apertium-tur-tat, apertium-crh-tur&#x2026;</a></li>
+<li><a href="#org92a9fbd">4.1.1.5.1. A library for converting two or more Apertium bidixes into a wordgraph</a></li>
+<li><a href="#org35c8f55">4.1.1.5.2. A script for converting English Wordnet leammas into Turkic languages</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org8712fc1">4.3. QA and meta-stuff</a>
+<li><a href="#org2e72218">4.1.2. Parallel corpus</a></li>
+</ul>
+</li>
+<li><a href="#org3a50a32">4.2. Connecting nodes</a>
 <ul>
-<li><a href="#orgdceb6e1">4.3.1. apertium-quality</a></li>
-<li><a href="#org9630fbb">4.3.2. apertium-fitnesse</a></li>
-<li><a href="#orgf8fbb14">4.3.3. rbmt-as-a-data-structure = a (Racket-based?) programming language with a syntax similar to what is seen on http://fitnesse.selimcan.org/FrontPage.ApertiumTurkic.ApertiumKaz.</a>
+<li><a href="#org02187f5">4.2.1. Nodes: Morphological Transducers</a></li>
+<li><a href="#org42c9529">4.2.2. To English</a></li>
+<li><a href="#orgce6751a">4.2.3. To Russian</a></li>
+<li><a href="#org2200ac0">4.2.4. Intraturkic</a>
 <ul>
-<li><a href="#org3477ac0">4.3.3.1. Rationale</a></li>
-<li><a href="#orga86adec">4.3.3.2. Code</a></li>
+<li><a href="#org2150b5e">4.2.4.1. apertium-tat-bak, apertium-kaz-tat, apertium-chv-tat, apertium-tur-tat, apertium-crh-tur&#x2026;</a></li>
 </ul>
 </li>
-<li><a href="#org5abd635">4.3.4. Problem 404</a>
+</ul>
+</li>
+<li><a href="#orgc5dbd9a">4.3. QA and meta-stuff</a>
 <ul>
-<li><a href="#org0f55fe8">4.3.4.1. Problem 404.a</a></li>
-<li><a href="#org9d6cd3d">4.3.4.2. Problem 404.b</a></li>
-<li><a href="#org7e1e3a3">4.3.4.3. Problem 404.c</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#orgdc1fc91">5. ROADMAP</a></li>
-<li><a href="#orgd0ad1ad">6. NOTES</a>
+<li><a href="#orgbcd2c5e">4.3.1. apertium-quality</a></li>
+<li><a href="#org98cfd5d">4.3.2. apertium-fitnesse</a></li>
+<li><a href="#org85c0b5a">4.3.3. rbmt-as-a-data-structure = a (Racket-based?) programming language with a syntax similar to what is seen on http://fitnesse.selimcan.org/FrontPage.ApertiumTurkic.ApertiumKaz.</a>
 <ul>
-<li><a href="#org7aada3b">6.1. Methods of auditing a monolingual dictionary</a></li>
-<li><a href="#orgfa57e88">6.2. Principles of tagset choice</a></li>
-<li><a href="#org360a5fd">6.3. Minimal monolingual Apertiumpp package</a></li>
+<li><a href="#org8c12c15">4.3.3.1. Rationale</a></li>
+<li><a href="#org46dba27">4.3.3.2. Code</a></li>
 </ul>
 </li>
-<li><a href="#orgd7b4549">7. TODAY</a></li>
-<li><a href="#orgab65bd7">8. ON THE NEXT "META"-WORK DAY</a></li>
-<li><a href="#org5632bc3">9. ON THE NEXT "APERTIUM-TURKIC LINGUISTIC DATA" DAY</a></li>
+<li><a href="#org3f5f50c">4.3.4. Problem 404</a>
+<ul>
+<li><a href="#org7f5a6c4">4.3.4.1. Problem 404.a</a></li>
+<li><a href="#orgec2b054">4.3.4.2. Problem 404.b</a></li>
+<li><a href="#org82cd5d4">4.3.4.3. Problem 404.c</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org6b9a376">5. ROADMAP</a></li>
+<li><a href="#orgabc4931">6. NOTES</a>
+<ul>
+<li><a href="#org7ed4977">6.1. Methods of auditing a monolingual dictionary</a></li>
+<li><a href="#org7761287">6.2. Principles of tagset choice</a></li>
+<li><a href="#org78039e9">6.3. Minimal monolingual Apertiumpp package</a></li>
+<li><a href="#org407cfe3">6.4. What I expect from GSoC stundents working on Turkic-Turkic pairs</a></li>
+</ul>
+</li>
+<li><a href="#orgd783f79">7. TODAY</a></li>
+<li><a href="#org7d7dcac">8. ON THE NEXT "META"-WORK DAY</a></li>
+<li><a href="#org52655e6">9. ON THE NEXT "CONCRETE APERTIUM-TURKIC LINGUISTIC DATA" DAY</a></li>
+<li><a href="#orga4eaf88">10. SOME OTHER DAY</a></li>
 </ul>
 </div>
 </div>
@@ -334,8 +336,8 @@ for the JavaScript code in this tag.
 This page documents research carried over in the Turkic branch of the <a href="https://taruen.github.io/apertiumpp/">Apertiumpp project</a>.
 </p>
 
-<div id="outline-container-orgbe0065c" class="outline-2">
-<h2 id="orgbe0065c"><span class="section-number-2">1</span> OBJECTIVES</h2>
+<div id="outline-container-org7fbfbec" class="outline-2">
+<h2 id="org7fbfbec"><span class="section-number-2">1</span> OBJECTIVES</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Enabling machine translation:
@@ -422,8 +424,8 @@ are considered connected if there is a (<a href="http://wiki.apertium.org/wiki/M
 </div>
 </div>
 
-<div id="outline-container-orgb60d761" class="outline-2">
-<h2 id="orgb60d761"><span class="section-number-2">2</span> RATIONALE</h2>
+<div id="outline-container-orga6bb2e1" class="outline-2">
+<h2 id="orga6bb2e1"><span class="section-number-2">2</span> RATIONALE</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 Applications:
@@ -442,8 +444,8 @@ Applications:
 </div>
 </div>
 
-<div id="outline-container-org79d995d" class="outline-2">
-<h2 id="org79d995d"><span class="section-number-2">3</span> WHAT WAS DONE</h2>
+<div id="outline-container-org5d07616" class="outline-2">
+<h2 id="org5d07616"><span class="section-number-2">3</span> WHAT WAS DONE</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 See <a href="http://wiki.apertium.org/wiki/Turkic_languages">http://wiki.apertium.org/wiki/Turkic_languages</a>.
@@ -451,12 +453,12 @@ See <a href="http://wiki.apertium.org/wiki/Turkic_languages">http://wiki.apertiu
 </div>
 </div>
 
-<div id="outline-container-orgac72eb7" class="outline-2">
-<h2 id="orgac72eb7"><span class="section-number-2">4</span> WORKING ON / NEEDED</h2>
+<div id="outline-container-org754866a" class="outline-2">
+<h2 id="org754866a"><span class="section-number-2">4</span> WORKING ON / NEEDED</h2>
 <div class="outline-text-2" id="text-4">
 </div>
-<div id="outline-container-org749d3c0" class="outline-3">
-<h3 id="org749d3c0"><span class="section-number-3">4.1</span> Resources</h3>
+<div id="outline-container-org2cd755f" class="outline-3">
+<h3 id="org2cd755f"><span class="section-number-3">4.1</span> Resources</h3>
 <div class="outline-text-3" id="text-4-1">
 <ul class="org-ul">
 <li>multilingual dictionary
@@ -474,12 +476,12 @@ See <a href="http://wiki.apertium.org/wiki/Turkic_languages">http://wiki.apertiu
 </ul>
 </div>
 
-<div id="outline-container-orgcd74e1b" class="outline-4">
-<h4 id="orgcd74e1b"><span class="section-number-4">4.1.1</span> Multilingual dictionary</h4>
+<div id="outline-container-org4a6997e" class="outline-4">
+<h4 id="org4a6997e"><span class="section-number-4">4.1.1</span> Multilingual dictionary</h4>
 <div class="outline-text-4" id="text-4-1-1">
 </div>
-<div id="outline-container-orgfa3145b" class="outline-5">
-<h5 id="orgfa3145b"><span class="section-number-5">4.1.1.1</span> RATIONALE</h5>
+<div id="outline-container-org6441490" class="outline-5">
+<h5 id="org6441490"><span class="section-number-5">4.1.1.1</span> RATIONALE</h5>
 <div class="outline-text-5" id="text-4-1-1-1">
 <p>
 \(n\) languages make up \(\sum_{i=1}^{n-1} i\) bilingual machine translators. For 21
@@ -493,8 +495,8 @@ might be feasible.
 </div>
 </div>
 
-<div id="outline-container-orgf095366" class="outline-5">
-<h5 id="orgf095366"><span class="section-number-5">4.1.1.2</span> OBJECTIVES</h5>
+<div id="outline-container-orgad0e1e7" class="outline-5">
+<h5 id="orgad0e1e7"><span class="section-number-5">4.1.1.2</span> OBJECTIVES</h5>
 <div class="outline-text-5" id="text-4-1-1-2">
 <p>
 A multilingual dictionary from which individual monolingual and
@@ -526,7 +528,7 @@ TODO a program which converts Apertium mono- and bidixes into a multidix
 </p>
 
 <p>
-See <a href="#org9c64b9f">1</a> and <a href="#org4e9f0f2">1</a>.
+See <a href="#org73bd7ec">1</a> and <a href="#org2ca68e3">1</a>.
 </p>
 
 <p>
@@ -535,8 +537,8 @@ TODO a program which converts a multidix into Apertium monodixes and bidixes
 </div>
 </div>
 
-<div id="outline-container-org2dc3e0b" class="outline-5">
-<h5 id="org2dc3e0b"><span class="section-number-5">4.1.1.3</span> CONSTRAINTS</h5>
+<div id="outline-container-org0e1816e" class="outline-5">
+<h5 id="org0e1816e"><span class="section-number-5">4.1.1.3</span> CONSTRAINTS</h5>
 <div class="outline-text-5" id="text-4-1-1-3">
 <ul class="org-ul">
 <li>should be writable by monolingual Turkic speakers (speakers of only
@@ -546,8 +548,8 @@ since otherwise the only reliable linkage would be pictures).</li>
 </div>
 </div>
 
-<div id="outline-container-org55ee5cd" class="outline-5">
-<h5 id="org55ee5cd"><span class="section-number-5">4.1.1.4</span> OPTIONS</h5>
+<div id="outline-container-orge5ae461" class="outline-5">
+<h5 id="orge5ae461"><span class="section-number-5">4.1.1.4</span> OPTIONS</h5>
 <div class="outline-text-5" id="text-4-1-1-4">
 <ul class="org-ul">
 <li>pivoting
@@ -617,7 +619,7 @@ workshop on Unsupervised lexical acquisition-Volume 9
 currently apertium-eng-kaz.eng-kaz.dix has roughly
 </p>
 <div class="org-src-container">
-<pre class="src src-sh" id="org103eb5f">grep -c <span style="color: #CC9393;">"&lt;e&gt;"</span> ../apertium-all/apertium-trunk/apertium-eng-kaz/apertium-eng-kaz.eng-kaz.dix
+<pre class="src src-sh" id="org945f7e6">grep -c <span style="color: #CC9393;">"&lt;e&gt;"</span> ../apertium-all/apertium-trunk/apertium-eng-kaz/apertium-eng-kaz.eng-kaz.dix
 </pre>
 </div>
 
@@ -634,8 +636,8 @@ entries in it.
 </ul>
 </div>
 
-<div id="outline-container-org7060b7c" class="outline-6">
-<h6 id="org7060b7c"><span class="section-number-6">4.1.1.4.1</span> Wordnet</h6>
+<div id="outline-container-org715ed00" class="outline-6">
+<h6 id="org715ed00"><span class="section-number-6">4.1.1.4.1</span> Wordnet</h6>
 <div class="outline-text-6" id="text-4-1-1-4-1">
 <ul class="org-ul">
 <li>experiences with translating English Wordnet into another language?
@@ -662,15 +664,15 @@ WordNet using multiple existing WordNets.</li>
 </div>
 </div>
 
-<div id="outline-container-org108b4e4" class="outline-5">
-<h5 id="org108b4e4"><span class="section-number-5">4.1.1.5</span> WHAT WAS DONE</h5>
+<div id="outline-container-org4ad8e33" class="outline-5">
+<h5 id="org4ad8e33"><span class="section-number-5">4.1.1.5</span> WHAT WAS DONE</h5>
 <div class="outline-text-5" id="text-4-1-1-5">
 </div>
-<div id="outline-container-orgf80be51" class="outline-6">
-<h6 id="orgf80be51"><span class="section-number-6">4.1.1.5.1</span> A library for converting two or more Apertium bidixes into a wordgraph</h6>
+<div id="outline-container-org92a9fbd" class="outline-6">
+<h6 id="org92a9fbd"><span class="section-number-6">4.1.1.5.1</span> A library for converting two or more Apertium bidixes into a wordgraph</h6>
 <div class="outline-text-6" id="text-4-1-1-5-1">
 <div class="org-src-container">
-<pre class="src src-python" id="org9c64b9f">
+<pre class="src src-python" id="org73bd7ec">
 <span style="color: #9FC59F;">"""</span>
 <span style="color: #9FC59F;">wordgraph.py</span>
 
@@ -1105,11 +1107,11 @@ WordNet using multiple existing WordNets.</li>
 </div>
 </div>
 
-<div id="outline-container-orgbf977e9" class="outline-6">
-<h6 id="orgbf977e9"><span class="section-number-6">4.1.1.5.2</span> A script for converting English Wordnet leammas into Turkic languages</h6>
+<div id="outline-container-org35c8f55" class="outline-6">
+<h6 id="org35c8f55"><span class="section-number-6">4.1.1.5.2</span> A script for converting English Wordnet leammas into Turkic languages</h6>
 <div class="outline-text-6" id="text-4-1-1-5-2">
 <div class="org-src-container">
-<pre class="src src-python" id="org4e9f0f2">
+<pre class="src src-python" id="org2ca68e3">
 <span style="color: #5F7F5F;">## </span><span style="color: #7F9F7F;">enwordnet2wordnet.py</span>
 <span style="color: #5F7F5F;">##</span>
 <span style="color: #5F7F5F;">## </span><span style="color: #7F9F7F;">A script which walks over the synsets in the English Wordnet and prints</span>
@@ -1294,8 +1296,8 @@ Putting it into action:
 </div>
 </div>
 
-<div id="outline-container-org2609532" class="outline-4">
-<h4 id="org2609532"><span class="section-number-4">4.1.2</span> Parallel corpus</h4>
+<div id="outline-container-org2e72218" class="outline-4">
+<h4 id="org2e72218"><span class="section-number-4">4.1.2</span> Parallel corpus</h4>
 <div class="outline-text-4" id="text-4-1-2">
 <p>
 Conditions:
@@ -1369,12 +1371,12 @@ Also see:
 </div>
 </div>
 
-<div id="outline-container-orgbf09c25" class="outline-3">
-<h3 id="orgbf09c25"><span class="section-number-3">4.2</span> Connecting nodes</h3>
+<div id="outline-container-org3a50a32" class="outline-3">
+<h3 id="org3a50a32"><span class="section-number-3">4.2</span> Connecting nodes</h3>
 <div class="outline-text-3" id="text-4-2">
 </div>
-<div id="outline-container-orgf9fe3a9" class="outline-4">
-<h4 id="orgf9fe3a9"><span class="section-number-4">4.2.1</span> Nodes: Morphological Transducers</h4>
+<div id="outline-container-org02187f5" class="outline-4">
+<h4 id="org02187f5"><span class="section-number-4">4.2.1</span> Nodes: Morphological Transducers</h4>
 <div class="outline-text-4" id="text-4-2-1">
 <p>
 21 is the number of Turkic languages identified on
@@ -1392,8 +1394,8 @@ output of a transducer.
 </div>
 </div>
 
-<div id="outline-container-org952c36c" class="outline-4">
-<h4 id="org952c36c"><span class="section-number-4">4.2.2</span> To English</h4>
+<div id="outline-container-org42c9529" class="outline-4">
+<h4 id="org42c9529"><span class="section-number-4">4.2.2</span> To English</h4>
 <div class="outline-text-4" id="text-4-2-2">
 <p>
 apertium-eng-kaz, apetium-tat-eng&#x2026;
@@ -1401,8 +1403,8 @@ apertium-eng-kaz, apetium-tat-eng&#x2026;
 </div>
 </div>
 
-<div id="outline-container-orge43c36b" class="outline-4">
-<h4 id="orge43c36b"><span class="section-number-4">4.2.3</span> To Russian</h4>
+<div id="outline-container-orgce6751a" class="outline-4">
+<h4 id="orgce6751a"><span class="section-number-4">4.2.3</span> To Russian</h4>
 <div class="outline-text-4" id="text-4-2-3">
 <p>
 apertium-kaz-rus, apertium-tat-rus&#x2026;
@@ -1410,22 +1412,22 @@ apertium-kaz-rus, apertium-tat-rus&#x2026;
 </div>
 </div>
 
-<div id="outline-container-org11f67a4" class="outline-4">
-<h4 id="org11f67a4"><span class="section-number-4">4.2.4</span> Intraturkic</h4>
+<div id="outline-container-org2200ac0" class="outline-4">
+<h4 id="org2200ac0"><span class="section-number-4">4.2.4</span> Intraturkic</h4>
 <div class="outline-text-4" id="text-4-2-4">
 </div>
-<div id="outline-container-orgb53f38b" class="outline-5">
-<h5 id="orgb53f38b"><span class="section-number-5">4.2.4.1</span> apertium-tat-bak, apertium-kaz-tat, apertium-chv-tat, apertium-tur-tat, apertium-crh-tur&#x2026;</h5>
+<div id="outline-container-org2150b5e" class="outline-5">
+<h5 id="org2150b5e"><span class="section-number-5">4.2.4.1</span> apertium-tat-bak, apertium-kaz-tat, apertium-chv-tat, apertium-tur-tat, apertium-crh-tur&#x2026;</h5>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org8712fc1" class="outline-3">
-<h3 id="org8712fc1"><span class="section-number-3">4.3</span> QA and meta-stuff</h3>
+<div id="outline-container-orgc5dbd9a" class="outline-3">
+<h3 id="orgc5dbd9a"><span class="section-number-3">4.3</span> QA and meta-stuff</h3>
 <div class="outline-text-3" id="text-4-3">
 </div>
-<div id="outline-container-orgdceb6e1" class="outline-4">
-<h4 id="orgdceb6e1"><span class="section-number-4">4.3.1</span> apertium-quality</h4>
+<div id="outline-container-orgbcd2c5e" class="outline-4">
+<h4 id="orgbcd2c5e"><span class="section-number-4">4.3.1</span> apertium-quality</h4>
 <div class="outline-text-4" id="text-4-3-1">
 <p>
 &lt;selimcan&gt; In particular, what I missed in aq/yaml tests are directionality
@@ -1436,8 +1438,8 @@ travis/circleci
 </div>
 </div>
 
-<div id="outline-container-org9630fbb" class="outline-4">
-<h4 id="org9630fbb"><span class="section-number-4">4.3.2</span> apertium-fitnesse</h4>
+<div id="outline-container-org98cfd5d" class="outline-4">
+<h4 id="org98cfd5d"><span class="section-number-4">4.3.2</span> apertium-fitnesse</h4>
 <div class="outline-text-4" id="text-4-3-2">
 <p>
 See <a href="https://gitlab.com/selimcan/apertium-fitnesse">https://gitlab.com/selimcan/apertium-fitnesse</a> and
@@ -1446,12 +1448,12 @@ See <a href="https://gitlab.com/selimcan/apertium-fitnesse">https://gitlab.com/s
 </div>
 </div>
 
-<div id="outline-container-orgf8fbb14" class="outline-4">
-<h4 id="orgf8fbb14"><span class="section-number-4">4.3.3</span> rbmt-as-a-data-structure = a (Racket-based?) programming language with a syntax similar to what is seen on <a href="http://fitnesse.selimcan.org/FrontPage.ApertiumTurkic.ApertiumKaz">http://fitnesse.selimcan.org/FrontPage.ApertiumTurkic.ApertiumKaz</a>.</h4>
+<div id="outline-container-org85c0b5a" class="outline-4">
+<h4 id="org85c0b5a"><span class="section-number-4">4.3.3</span> rbmt-as-a-data-structure = a (Racket-based?) programming language with a syntax similar to what is seen on <a href="http://fitnesse.selimcan.org/FrontPage.ApertiumTurkic.ApertiumKaz">http://fitnesse.selimcan.org/FrontPage.ApertiumTurkic.ApertiumKaz</a>.</h4>
 <div class="outline-text-4" id="text-4-3-3">
 </div>
-<div id="outline-container-org3477ac0" class="outline-5">
-<h5 id="org3477ac0"><span class="section-number-5">4.3.3.1</span> Rationale</h5>
+<div id="outline-container-org8c12c15" class="outline-5">
+<h5 id="org8c12c15"><span class="section-number-5">4.3.3.1</span> Rationale</h5>
 <div class="outline-text-5" id="text-4-3-3-1">
 <p>
 Data-driven methods seem to win. The philosophy here is an old and simple one:
@@ -1465,11 +1467,11 @@ given. That is, ideally it has to be a fully automatic process.
 </div>
 </div>
 
-<div id="outline-container-orga86adec" class="outline-5">
-<h5 id="orga86adec"><span class="section-number-5">4.3.3.2</span> Code</h5>
+<div id="outline-container-org46dba27" class="outline-5">
+<h5 id="org46dba27"><span class="section-number-5">4.3.3.2</span> Code</h5>
 <div class="outline-text-5" id="text-4-3-3-2">
 <div class="org-src-container">
-<pre class="src src-python" id="org73fbe86"><span style="color: #5F7F5F;">#</span><span style="color: #7F9F7F;">!/usr/bin/env python3</span>
+<pre class="src src-python" id="orgd89bf49"><span style="color: #5F7F5F;">#</span><span style="color: #7F9F7F;">!/usr/bin/env python3</span>
 
 <span style="color: #9FC59F;">"""</span>
 <span style="color: #9FC59F;">annotate.py: a script for semi-automacally annotating texts *by using* and *for</span>
@@ -1562,8 +1564,8 @@ given. That is, ideally it has to be a fully automatic process.
 </div>
 </div>
 
-<div id="outline-container-org5abd635" class="outline-4">
-<h4 id="org5abd635"><span class="section-number-4">4.3.4</span> Problem 404</h4>
+<div id="outline-container-org3f5f50c" class="outline-4">
+<h4 id="org3f5f50c"><span class="section-number-4">4.3.4</span> Problem 404</h4>
 <div class="outline-text-4" id="text-4-3-4">
 <p>
 Rationale: out-of-vocabulary words lead to not firing transfer rules. Not firing
@@ -1581,8 +1583,8 @@ Possible formulations:
 </p>
 </div>
 
-<div id="outline-container-org0f55fe8" class="outline-5">
-<h5 id="org0f55fe8"><span class="section-number-5">4.3.4.1</span> Problem 404.a</h5>
+<div id="outline-container-org7f5a6c4" class="outline-5">
+<h5 id="org7f5a6c4"><span class="section-number-5">4.3.4.1</span> Problem 404.a</h5>
 <div class="outline-text-5" id="text-4-3-4-1">
 <div class="org-src-container">
 <pre class="src src-text">## INPUT-1:
@@ -1616,7 +1618,7 @@ For example, if we run Tatar Quran through apertium-tat:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-sh" id="orgc47f03e">cat ../../../turkiccorpora/tat.quran.nughmani.txt | <span style="color: #CC9393;">\</span>
+<pre class="src src-sh" id="orga10a004">cat ../../../turkiccorpora/tat.quran.nughmani.txt | <span style="color: #CC9393;">\</span>
 apertium -d ../../apertium-languages/apertium-tat tat-tagger | <span style="color: #CC9393;">\</span>
 grep -oP <span style="color: #CC9393;">"(&lt;[[:alnum:]]+&gt;)*"</span> | sort | uniq | wc -l
 </pre>
@@ -1659,8 +1661,8 @@ Belief propagation?
 </div>
 </div>
 
-<div id="outline-container-org9d6cd3d" class="outline-5">
-<h5 id="org9d6cd3d"><span class="section-number-5">4.3.4.2</span> Problem 404.b</h5>
+<div id="outline-container-orgec2b054" class="outline-5">
+<h5 id="orgec2b054"><span class="section-number-5">4.3.4.2</span> Problem 404.b</h5>
 <div class="outline-text-5" id="text-4-3-4-2">
 <div class="org-src-container">
 <pre class="src src-text">## INPUT-2:
@@ -1688,8 +1690,8 @@ dictionaries.
 </div>
 </div>
 
-<div id="outline-container-org7e1e3a3" class="outline-5">
-<h5 id="org7e1e3a3"><span class="section-number-5">4.3.4.3</span> Problem 404.c</h5>
+<div id="outline-container-org82cd5d4" class="outline-5">
+<h5 id="org82cd5d4"><span class="section-number-5">4.3.4.3</span> Problem 404.c</h5>
 <div class="outline-text-5" id="text-4-3-4-3">
 <div class="org-src-container">
 <pre class="src src-text">## INPUT-3:
@@ -1733,16 +1735,16 @@ Background reading:
 </div>
 </div>
 
-<div id="outline-container-orgdc1fc91" class="outline-2">
-<h2 id="orgdc1fc91"><span class="section-number-2">5</span> ROADMAP</h2>
+<div id="outline-container-org6b9a376" class="outline-2">
+<h2 id="org6b9a376"><span class="section-number-2">5</span> ROADMAP</h2>
 </div>
 
-<div id="outline-container-orgd0ad1ad" class="outline-2">
-<h2 id="orgd0ad1ad"><span class="section-number-2">6</span> NOTES</h2>
+<div id="outline-container-orgabc4931" class="outline-2">
+<h2 id="orgabc4931"><span class="section-number-2">6</span> NOTES</h2>
 <div class="outline-text-2" id="text-6">
 </div>
-<div id="outline-container-org7aada3b" class="outline-3">
-<h3 id="org7aada3b"><span class="section-number-3">6.1</span> Methods of auditing a monolingual dictionary</h3>
+<div id="outline-container-org7ed4977" class="outline-3">
+<h3 id="org7ed4977"><span class="section-number-3">6.1</span> Methods of auditing a monolingual dictionary</h3>
 <div class="outline-text-3" id="text-6-1">
 <ul class="org-ul">
 <li>Take stems contained in it and pass them through the transducer to see whether
@@ -1753,8 +1755,8 @@ which are linked to 2 or more continuation lexicons. :idea:</li>
 </div>
 </div>
 
-<div id="outline-container-orgfa57e88" class="outline-3">
-<h3 id="orgfa57e88"><span class="section-number-3">6.2</span> Principles of tagset choice</h3>
+<div id="outline-container-org7761287" class="outline-3">
+<h3 id="org7761287"><span class="section-number-3">6.2</span> Principles of tagset choice</h3>
 <div class="outline-text-3" id="text-6-2">
 <ul class="org-ul">
 <li>surface form has to be deterministically reconstructuble from lemma + tags /
@@ -1763,8 +1765,8 @@ subreadings</li>
 </div>
 </div>
 
-<div id="outline-container-org360a5fd" class="outline-3">
-<h3 id="org360a5fd"><span class="section-number-3">6.3</span> Minimal monolingual Apertiumpp package</h3>
+<div id="outline-container-org78039e9" class="outline-3">
+<h3 id="org78039e9"><span class="section-number-3">6.3</span> Minimal monolingual Apertiumpp package</h3>
 <div class="outline-text-3" id="text-6-3">
 <ul class="org-ul">
 <li>transducers + disambiguator</li>
@@ -1776,22 +1778,99 @@ subreadings</li>
 </ul>
 </div>
 </div>
+
+<div id="outline-container-org407cfe3" class="outline-3">
+<h3 id="org407cfe3"><span class="section-number-3">6.4</span> What I expect from GSoC stundents working on Turkic-Turkic pairs</h3>
+<div class="outline-text-3" id="text-6-4">
+<ul class="org-ul">
+<li>entry words from the Soviet bilingual dictionaries are correctly analysed and
+translated by Apertium transducers/translators</li>
+<li>a (parallel) tagged corpus for each language created by disambiguating
+corpora using Constraint Grammar rules</li>
+<li>corpus test on Bible AND Wikipedias is clean from @# errors and gives &gt;95%
+coverage</li>
+<li>Common Voice's interface translated into kaa uig uzb (using our own
+translators) and at least 5000 public domain sentences (say: proverbs and
+other folklore) scrapped for these languages</li>
+<li>minimal documentation for the transducers (similar to what is seen in
+apertium-kaz) and translators, along with short notes on the work performed,
+which we'll try to turn into a paper together after gsoc is over</li>
+</ul>
+</div>
+</div>
 </div>
 
-<div id="outline-container-orgd7b4549" class="outline-2">
-<h2 id="orgd7b4549"><span class="section-number-2">7</span> TODAY</h2>
+<div id="outline-container-orgd783f79" class="outline-2">
+<h2 id="orgd783f79"><span class="section-number-2">7</span> TODAY</h2>
 <div class="outline-text-2" id="text-7">
 <ul class="org-ul">
-<li>check at least the first 10000 words from 2005 Explanatory dictionary of Tatar
-and make sure that they are present in apertium-tat and their pos tags in the
-latter are correct</li>
+<li>find and add Bible translations for all languages in this year's GSoC batch
+to data4apertium (see notes on the Bible corpus above):
+<ul class="org-ul">
+<li>fra</li>
+<li>cos</li>
+<li>byv</li>
+<li>fra</li>
+<li>uzb</li>
+<li>kaa</li>
+<li>eng</li>
+<li>lin</li>
+<li>cat</li>
+<li>ita</li>
+<li>por</li>
+<li>tur</li>
+<li>uig</li>
+<li>kaa</li>
+<li>kir</li>
+<li>tat</li>
+<li>uzb</li>
+<li>(kaz)</li>
+</ul></li>
+
+<li>mv data4apertium into a separate taruen/apertiumpp-data repository</li>
+
+<li>for all apertium-l and apertium-x-l and apertium-l-x and other langs in GSoC
+2019, add a circleci script which:
+<ul class="org-ul">
+<li>builds the package</li>
+<li>measures its coverage on New Testament</li>
+<li>checks that it hasn't decreased</li>
+<li>deploys NT|cov| badge somewhere public, <del>say Amazon S3</del>, so that it becomes visible
+on apertium.github.io/status.html and apertium.github.io/turkic.html</li>
+<li>keep in mind the discussion we had on 29.04.2019 on #apertium on (not) using S3</li>
+</ul></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgab65bd7" class="outline-2">
-<h2 id="orgab65bd7"><span class="section-number-2">8</span> ON THE NEXT "META"-WORK DAY</h2>
-<div class="outline-text-2" id="text-8">
+<div id="outline-container-org7d7dcac" class="outline-2">
+<h2 id="org7d7dcac"><span class="section-number-2">8</span> ON THE NEXT "META"-WORK DAY</h2>
+</div>
+
+<div id="outline-container-org52655e6" class="outline-2">
+<h2 id="org52655e6"><span class="section-number-2">9</span> ON THE NEXT "CONCRETE APERTIUM-TURKIC LINGUISTIC DATA" DAY</h2>
+<div class="outline-text-2" id="text-9">
+<ul class="org-ul">
+<li>add 1 vocabulary test (testing SD entry words) to kaa, uzb, tat, kaz, kir,
+uig, tur
+<ul class="org-ul">
+<li>(t 'tat "укытучыларча" ("N1" (("укытучы" '(n pl equ)
+                              ('tur "öğretmenlerce")))))
+or, alternatively, the same thing in yaml</li>
+<li>write expander &amp; tester for this, so that we have to type only the
+initial surface string</li>
+<li>one special mark after a reading in the above test -&gt; a CG rule selecting
+that reading given the surface form gets generated and appended to the end
+of the rlx file (if not already there, of course)</li>
+</ul></li>
+<li>talk to both students and mentors about the workplan</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orga4eaf88" class="outline-2">
+<h2 id="orga4eaf88"><span class="section-number-2">10</span> SOME OTHER DAY</h2>
+<div class="outline-text-2" id="text-10">
 <ul class="org-ul">
 <li>find and add Bible translations in \(l\) for all \(l\) in \(L\) to data4apertium
 (see notes on the Bible corpus above):
@@ -1819,31 +1898,19 @@ latter are correct</li>
 <li>aze</li>
 </ul></li>
 
-<li>for all apertium-l and apertium-x-l and apertium-l-x, add a circleci script which:
-<ul class="org-ul">
-<li>builds the package</li>
-<li>measures its coverage on New Testament</li>
-<li>checks that it hasn't decreased</li>
-<li>deploys NT|cov| badge somewhere public, <del>say Amazon S3</del>, so that it becomes visible
-on apertium.github.io/status.html and apertium.github.io/turkic.html</li>
-<li>keep in mind the discussion we had on 29.04.2019 on #apertium on using S3</li>
-</ul></li>
+<li>add a list of all turkic monolingual packages and translators with a turkic
+on either side, along with Bible|cov| badge to apertium.github.io/turkic.html
+It should resemble <a href="http://wiki.apertium.org/wiki/Turkic_languages">http://wiki.apertium.org/wiki/Turkic_languages</a> (but should
+show information from the latest git revisions).</li>
 
-<li>add a list of all turkic monolingual packages and translators with a turkic on either side, along with Bible|cov| badge
-to apertium.github.io/turkic.html It should resemble <a href="http://wiki.apertium.org/wiki/Turkic_languages">http://wiki.apertium.org/wiki/Turkic_languages</a>
-(but should show information from the latest git revisions).</li>
-
-<li>Hector said he can get chuvash newspaper texts. :email:</li>
+<li>H. said he can get chuvash newspaper texts, that will be useful, but not
+until the end of GSoC. :email:</li>
 </ul>
 </div>
 </div>
-
-<div id="outline-container-org5632bc3" class="outline-2">
-<h2 id="org5632bc3"><span class="section-number-2">9</span> ON THE NEXT "APERTIUM-TURKIC LINGUISTIC DATA" DAY</h2>
-</div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2019-05-04 Sat 00:20</p>
+<p class="date">Created: 2019-05-23 Thu 18:55</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
