@@ -856,8 +856,9 @@ Options:
 + Bible.
   - Currently [[https://github.com/taruen/apertiumpp/tree/master/data4apertium/corpora/bible][we have]] New Testaments in alt, chv, crh, kaa, kaz, kir, kjh,
     krc, kum, nog, sah, tat, tyv, uzb.
-  - TODO scrape ibt.org.ru and gospelgo and add tur, bak, gag, tuk, uig, ota?
-    and aze translations of the Bible/New Testament in the [[http://wiki.apertium.org/wiki/Bible_corpora][standard format]].
+  - TODO scrape ibt.org.ru and gospelgo and add <s>tur, bak, gag, tuk, uig,
+    ota?  and aze</s> availabe translations of the Bible/New Testament in the
+    [[http://wiki.apertium.org/wiki/Bible_corpora][standard format]].
   - TODO if the process did not require any manual correction, get Bible/NT
     translations for all languages / all languages currently present in
     Apertium, otherwise mark this todo as a :GCI: task
@@ -1187,28 +1188,32 @@ Background reading:
 - transducers + disambiguator
 - spellchecker
 - annotated corpus with an interface
-- virtual keyboard
+- a layout (if not existing) and virtual keyboard
 - Common Voice's interface translations
 - sentences for Common Voice
+- apertium-html-tools's localisation
 
 ** What I expect from GSoC stundents working on Turkic-Turkic pairs
 
-- entry words from the Soviet bilingual dictionaries are correctly analysed and
-  translated by Apertium transducers/translators
+- entry words from the Soviet X-Russian bilingual dictionaries are correctly
+  analysed and translated by Apertium transducers/translators
 - a (parallel) tagged corpus for each language created by disambiguating
-  corpora using Constraint Grammar rules
+  selected texts using Constraint Grammar rules
 - corpus test on Bible AND Wikipedias is clean from @# errors and gives >95%
   coverage
-- Common Voice's interface translated into kaa uig uzb (using our own
-  translators) and at least 5000 public domain sentences (say: proverbs and
-  other folklore) scrapped for these languages
+- apertium-html-tools localised into the languages the student worked on
 - minimal documentation for the transducers (similar to what is seen in
   apertium-kaz) and translators, along with short notes on the work performed,
   which we'll try to turn into a paper together after gsoc is over
+- bonus point: Common Voice's interface translated into kaa uig uzb (using our
+  own translators) and at least 5000 public domain sentences (say: proverbs and
+  other folklore) scrapped for these languages
 
-* TODAY
+* TONIGHT
 
-- find and add Bible translations for all languages in this year's GSoC batch
+- scrape bible.com
+
+- find and add NT translations for all languages in this year's GSoC batch
   to data4apertium (see notes on the Bible corpus above):
   - fra
   - cos
@@ -1223,11 +1228,11 @@ Background reading:
   - por
   - tur
   - uig
-  - kaa
-  - kir
-  - tat
-  - uzb
-  - (kaz)
+  - kir there
+  - kaa there
+  - tat there
+  - uzb there
+  - kaz there
 
 - mv data4apertium into a separate taruen/apertiumpp-data repository
 
@@ -1244,8 +1249,8 @@ Background reading:
 
 * ON THE NEXT "CONCRETE APERTIUM-TURKIC LINGUISTIC DATA" DAY
 
-- add 1 vocabulary test (testing SD entry words) to kaa, uzb, tat, kaz, kir,
-  uig, tur
+- add 10 vocabulary tests (testing soviet dictionary entry words) to kaa, uzb,
+  tat, kaz, kir, uig, tur
   - (t 'tat "укытучыларча" ("N1" (("укытучы" '(n pl equ)
                                   ('tur "öğretmenlerce")))))
     or, alternatively, the same thing in yaml
