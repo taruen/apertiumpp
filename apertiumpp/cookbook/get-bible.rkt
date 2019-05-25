@@ -12,7 +12,7 @@
 (define LANGS-PAGE (string-append ROOT "/languages"))
 (define REQUEST-HEADERS
   '("User-agent: Mozilla/5.0 (compatible; Taruenbot/0.1; +http://taruen.com/apertiumpp/)"))
-(define SLEEP 1) ;; second(s) between requests
+(define SLEEP 0) ;; second(s) between requests
 
 (struct verse (id content) #:transparent)
 ;; a Verse is (verse String String)
@@ -25,17 +25,10 @@
 ;; store each translation in the [lang] directory, one verse per line
 (define (main langs)
   (for ([lang langs])
+    (make-directory lang)
     (for ([version (versions lang)])
-      (for ([verse (verses version)])
-        (displayln verse)))))
-
-
-;(define outf (string-append lang "/" (id version) ".csv"))
-
-;      (call-with-output-file outf
-;        (λ (out)
-;          (for ([v (verses version)])
-;            (displayln (string-append (verse-id v) "\t" (verse-content v)))))))))
+      (define outf (string-append lang "/" (id version) ".csv"))
+      (dump-to-file (verses version) outf))))
 
 ;; String -> (listof String)
 ;; given LANGS-PAGE, return language codes for which
@@ -135,3 +128,17 @@
 (module+ test
   (check-equal? (id "https://www.bible.com/versions/1929-bsknt14-inzhil")
                 "1929-bsknt14-inzhil"))
+
+;; (listof Verse) -> Void
+;; output verses to a file
+(define (dump-to-file verses outf)
+  (call-with-output-file outf
+    (λ (out)
+      (for ([v verses])
+        (display
+         (string-append (verse-id v) "\t" (verse-content v) "\n")
+         out)))))
+
+(module+ main
+  (main '("fra" "uzn" "kaa" "eng" "lin" "cat" "ita" "por" "por_pt"
+                "tur" "uig_cyr" "kaa" "tat")))
