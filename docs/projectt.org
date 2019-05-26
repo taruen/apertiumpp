@@ -165,7 +165,9 @@ TODO a program which converts a multidix into Apertium monodixes and bidixes
         about the [[https://kitap.kz/][Universal Dictionary of Kazakh]] (Қазақ тілінің әмбебап
         сөздігі). Read: can we get a permission to use it for making a
         free/open-source morphological analyser for Kazakh (in Apertium) and
-        publish its contents under GPLv3 and/or CC BY-SA license?
+        publish its contents under GPLv3 and/or CC BY-SA license? :waiting:
+        response from A.
+      - TODO same, done, :waiting: response from the Dawgarayev institute
     - +even if there is one, allowing a monolingual Turkic speaker to translate+
       +words into his own language will require translating the *definitions* into+
       +English or Russian, which is a huge amount of work compared to translating+
@@ -1199,40 +1201,38 @@ Background reading:
   analysed and translated by Apertium transducers/translators
 - a (parallel) tagged corpus for each language created by disambiguating
   selected texts using Constraint Grammar rules
-- corpus test on Bible AND Wikipedias is clean from @# errors and gives >95%
+- [[http://wiki.apertium.org/wiki/Corpus_test][corpus test]] on Bible AND Wikipedias is clean from @# errors and gives >95%
   coverage
-- apertium-html-tools localised into the languages the student worked on
+- [[http://wiki.apertium.org/wiki/Apertium-html-tools][apertium-html-tools]] localised into the languages the student worked on
 - minimal documentation for the transducers (similar to what is seen in
-  apertium-kaz) and translators, along with short notes on the work performed,
+  [[https://apertium.github.io/apertium-kaz/][apertium-kaz]]) and translators, along with short notes on the work performed,
   which we'll try to turn into a paper together after gsoc is over
-- bonus point: Common Voice's interface translated into kaa uig uzb (using our
+- bonus point: [[https://voice.mozilla.org/][Common Voice's]] interface translated into kaa uig uzb (using our
   own translators) and at least 5000 public domain sentences (say: proverbs and
   other folklore) scrapped for these languages
 
 * TONIGHT
 
-- scrape bible.com
+- scrape bible.com: running on phoenix server :waiting:
 
 - find and add NT translations for all languages in this year's GSoC batch
   to data4apertium (see notes on the Bible corpus above):
-  - fra
-  - cos
-  - byv
-  - fra
-  - uzb
-  - kaa
-  - eng
-  - lin
-  - cat
-  - ita
-  - por
-  - tur
-  - uig
-  - kir there
+  - fra :waiting: scrapper to finish
+  - cos Not on bible.com, but available [[http://projetbabel.org/bibbia_corsa/index.php][here]] TODO scrap
+  - byv (Medumba. Hmm, only audio on bible.is found yet)
+  - uzb there
+  - kaa there
+  - eng :waiting: scrapper to finish
+  - lin :waiting: scrapper to finish
+  - cat :waiting: scrapper to finish
+  - ita :waiting: scrapper to finish
+  - por :waiting: scrapper to finish
+  - tur :waiting: scrapper to finish
+  - uig :waiting: scrapper to finish
+  - kir there (note: not on bible.com)
   - kaa there
   - tat there
-  - uzb there
-  - kaz there
+  - kaz there (note: not on bible.com, same for krc)
 
 - mv data4apertium into a separate taruen/apertiumpp-data repository
 
@@ -1269,7 +1269,7 @@ Background reading:
   - tat, done
   - kir, done
   - tyv, done
-  - tur, 
+  - tur, :waiting: scrapper to finish
   - chv, done
   - kum, done
   - kaa, done
@@ -1277,20 +1277,22 @@ Background reading:
   - sah, done
   - crh, done
   - krc, done
-  - bak,
+  - bak, :waiting: scrapper to finish
   - nog, done
-  - gag, 
-  - tuk, 
-  - uig, 
+  - gag, TODO scrap from ibt (rather: scrap all available translations from ibt
+    (into a .csv))
+  - tuk, done
+  - uig, :waiting scrapper to finish
   - alt, done
   - kjh, done 
-  - ota, 
-  - aze
+  - ota, TODO find
+  - aze TODO scrap from ibt (cyrillic) and bible.com (arabic)
 
 - add a list of all turkic monolingual packages and translators with a turkic
-  on either side, along with Bible|cov| badge to apertium.github.io/turkic.html
-  It should resemble http://wiki.apertium.org/wiki/Turkic_languages (but should
-  show information from the latest git revisions).
+  on either side, along with Bible|cov| badge and other stats from the
+  stats-service to apertium.github.io/turkic.html It should resemble
+  http://wiki.apertium.org/wiki/Turkic_languages (but should show information
+  from the latest git revisions).
 
 - H. said he can get chuvash newspaper texts, that will be useful, but not
   until the end of GSoC. :email:
