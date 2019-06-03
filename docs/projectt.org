@@ -1211,6 +1211,25 @@ Background reading:
   own translators) and at least 5000 public domain sentences (say: proverbs and
   other folklore) scrapped for these languages
 
+* TODAY
+
+- add 1000 vocabulary tests (testing soviet dictionary/explanatory dictionary
+  entry words) to:
+  - tat
+  - kaz
+  - uzb
+  - kaa
+- and make those tests pass (including translation)
+
+- write expander & tester for this, so that we have to type only the
+  initial surface string
+  
+- one special mark after a reading in the above test -> a CG rule selecting
+  that reading given the surface form gets generated and appended to the end
+  of the rlx file (if not already there, of course)
+
+- talk to both students and mentors about the workplan
+
 * TONIGHT
 
 - scrape bible.com: running on phoenix server :waiting:
@@ -1243,23 +1262,12 @@ Background reading:
   - checks that it hasn't decreased
   - deploys NT|cov| badge somewhere public, +say Amazon S3+, so that it becomes visible
     on apertium.github.io/status.html and apertium.github.io/turkic.html
-  - keep in mind the discussion we had on 29.04.2019 on #apertium on (not) using S3
+  - keep in mind the discussion we had on 29.04.2019 and 09.05.2019 on
+    #apertium on (not) using S3
 
 * ON THE NEXT "META"-WORK DAY
 
 * ON THE NEXT "CONCRETE APERTIUM-TURKIC LINGUISTIC DATA" DAY
-
-- add 10 vocabulary tests (testing soviet dictionary entry words) to kaa, uzb,
-  tat, kaz, kir, uig, tur
-  - (t 'tat "укытучыларча" ("N1" (("укытучы" '(n pl equ)
-                                  ('tur "öğretmenlerce")))))
-    or, alternatively, the same thing in yaml
-  - write expander & tester for this, so that we have to type only the
-    initial surface string
-  - one special mark after a reading in the above test -> a CG rule selecting
-    that reading given the surface form gets generated and appended to the end
-    of the rlx file (if not already there, of course)
-- talk to both students and mentors about the workplan
 
 * SOME OTHER DAY
 
