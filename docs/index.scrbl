@@ -76,7 +76,7 @@ the current Apertium setup:
 
  @item{not possible to re-use components in a programmatic
   way (i.e. without having to copy-paste manually, which
-  sooner or later will lead to out-of-date chunks). Want we
+  sooner or later will lead to out-of-date chunks). What we
   want instead is having a way to say, e.g. something like
   this: @code{from apertium-tat-rus import transfer-rule-x},
   @code{from apertium-symbols import n, v, adj, np}, @code{
@@ -85,11 +85,11 @@ the current Apertium setup:
  @item{?}]
 
 We suppose that most of the problems listed will be due the
-fact that the domain-specific languages used in Apertium
-(and there a handful of them -- one seen in monolingual and
+fact that the domain-specific languages used in Apertium (and
+there are a handful of them -- one seen in monolingual and
 bilingual @code{.dix} files, one seen in @code{chunking},
 @code{ interchunk} and @code{postchunk} transfer rules,
-@code{ lexc}, @code{twol} and others are so-called external
+@code{ lexc}, @code{twol} and others) are so-called external
 DSLs. They are parsed and compiled. When writing in these
 DSLs, you don't have access to a full-fledged programming
 language which would allow you to extend the DSL in question
@@ -100,15 +100,15 @@ to re-use code across monolingual and bilingual packages
 reliably.
 
 To be fair, Apertium was designed for translating between
-closely-related languages. And for that it works sufficiently
+closely-related languages, and for that it works sufficiently
 well.
 
 @section{Desiderata}
 
 @itemlist[
 
- @item{Every Apertium 3.0. program is a valid
-  Apertium 4.0 program.}]
+ @item{Every Apertium program is a valid
+  Apertium++! program.}]
 
 @section{Apertiumpp library}
 

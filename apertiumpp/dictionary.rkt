@@ -201,19 +201,19 @@
   ("WISHLIST ITEM. Parse .lexc file and return a " (racket dictionary) ".")))
 
 
-(define (dictionary2dix d)
+(define (dictionary->dix d)
   "")
 
 (provide
  (proc-doc/names
-  dictionary2dix (dictionary? . -> . string?) (d)
+  dictionary->dix (dictionary? . -> . string?) (d)
   ("WISHLIST ITEM. Convert a " (racket dictionary) " into a .dix file.")))
 
 
-(define (dictionary2lexc d)
+(define (dictionary->lexc d)
   "")
 
 (provide
  (proc-doc/names
-  dictionary2lexc (dictionary? . -> . string?) (d)
+  dictionary->lexc (dictionary? . -> . string?) (d)
   ("WISHLIST ITEM. Convert a " (racket dictionary) " into a .lexc file.")))

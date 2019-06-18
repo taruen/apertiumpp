@@ -34,15 +34,15 @@ the same word twice, possibly with a right and a wrong
 category)</p></li><li><p>rather long compile cycles, translators are not
 extensible programmatically</p></li><li><p>not possible to re-use components in a programmatic
 way (i.e. without having to copy-paste manually, which
-sooner or later will lead to out-of-date chunks). Want we
+sooner or later will lead to out-of-date chunks). What we
 want instead is having a way to say, e.g. something like
 this: <span class="RktSym">from</span><span class="RktMeta"></span><span class="hspace">&nbsp;</span><span class="RktMeta"></span><span class="RktSym">apertium-tat-rus</span><span class="RktMeta"></span><span class="hspace">&nbsp;</span><span class="RktMeta"></span><span class="RktSym">import</span><span class="RktMeta"></span><span class="hspace">&nbsp;</span><span class="RktMeta"></span><span class="RktSym">transfer-rule-x</span><span class="RktMeta"></span>,
 <span class="RktSym">from</span><span class="RktMeta"></span><span class="hspace">&nbsp;</span><span class="RktMeta"></span><span class="RktSym">apertium-symbols</span><span class="RktMeta"></span><span class="hspace">&nbsp;</span><span class="RktMeta"></span><span class="RktSym">import</span><span class="RktMeta"></span><span class="hspace">&nbsp;</span><span class="RktMeta"></span><span class="RktSym">n</span><span class="RktSym">,</span><span class="RktMeta"></span><span class="hspace">&nbsp;</span><span class="RktMeta"></span><span class="RktSym">v</span><span class="RktSym">,</span><span class="RktMeta"></span><span class="hspace">&nbsp;</span><span class="RktMeta"></span><span class="RktSym">adj</span><span class="RktSym">,</span><span class="RktMeta"></span><span class="hspace">&nbsp;</span><span class="RktMeta"></span><span class="RktSym">np</span><span class="RktMeta"></span>, <span class="RktSym">parameterize</span><span class="RktPn">(</span><span class="RktSym">transfer-rule-x</span><span class="RktSym">,</span><span class="RktMeta"></span><span class="hspace">&nbsp;</span><span class="RktMeta"></span><span class="RktSym">lemma=</span><span class="RktVal">"foo"</span><span class="RktPn">)</span><span class="RktMeta"></span> etc.</p></li><li><p>?</p></li></ul><p>We suppose that most of the problems listed will be due the
-fact that the domain-specific languages used in Apertium
-(and there a handful of them &ndash; one seen in monolingual and
+fact that the domain-specific languages used in Apertium (and
+there are a handful of them &ndash; one seen in monolingual and
 bilingual <span class="RktSym">.dix</span><span class="RktMeta"></span> files, one seen in <span class="RktSym">chunking</span><span class="RktMeta"></span>,
 <span class="RktMeta"></span><span class="hspace">&nbsp;</span><span class="RktMeta"></span><span class="RktSym">interchunk</span><span class="RktMeta"></span> and <span class="RktSym">postchunk</span><span class="RktMeta"></span> transfer rules,
-<span class="RktMeta"></span><span class="hspace">&nbsp;</span><span class="RktMeta"></span><span class="RktSym">lexc</span><span class="RktMeta"></span>, <span class="RktSym">twol</span><span class="RktMeta"></span> and others are so-called external
+<span class="RktMeta"></span><span class="hspace">&nbsp;</span><span class="RktMeta"></span><span class="RktSym">lexc</span><span class="RktMeta"></span>, <span class="RktSym">twol</span><span class="RktMeta"></span> and others) are so-called external
 DSLs. They are parsed and compiled. When writing in these
 DSLs, you don&rsquo;t have access to a full-fledged programming
 language which would allow you to extend the DSL in question
@@ -51,9 +51,9 @@ access to useful features of a full-fledged programming
 language like a proper module system, which would allow you
 to re-use code across monolingual and bilingual packages
 reliably.</p><p>To be fair, Apertium was designed for translating between
-closely-related languages. And for that it works sufficiently
-well.</p><h3>2<tt>&nbsp;</tt><a name="(part._.Desiderata)"></a>Desiderata</h3><ul><li><p>Every Apertium 3.0. program is a valid
-Apertium 4.0 program.</p></li></ul><h3>3<tt>&nbsp;</tt><a name="(part._.Apertiumpp_library)"></a>Apertiumpp library</h3><p>At the core of this project is a
+closely-related languages, and for that it works sufficiently
+well.</p><h3>2<tt>&nbsp;</tt><a name="(part._.Desiderata)"></a>Desiderata</h3><ul><li><p>Every Apertium program is a valid
+Apertium++! program.</p></li></ul><h3>3<tt>&nbsp;</tt><a name="(part._.Apertiumpp_library)"></a>Apertiumpp library</h3><p>At the core of this project is a
 <a href="https://racket-lang.org/">Racket</a> library called
 <span style="font-style: italic">apertiumpp</span>. The documentation of the library can be
 found at <a href="./apertiumpp/">https://taruen.github.io/apertiumpp/apertiumpp/</a>.</p><h3>4<tt>&nbsp;</tt><a name="(part._.Tests_data_for_.Apertium_3_0__packages)"></a>Tests/data for Apertium 3.0. packages</h3><p>The <span class="stt">"data4apertium"</span> directory contains tests for
