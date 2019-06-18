@@ -31,7 +31,7 @@ considered its spinoff, with two additions:
 
  @item{for each language, we will maintain a corpus of
   sharable texts, parallel or comparable to corpora for other
-  languges}
+  languages}
 
  @item{machine translators will have a speech recognition &
   speech synthesis front-ends (based on Mozilla's
