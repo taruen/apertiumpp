@@ -1213,15 +1213,9 @@ Background reading:
 
 * TODAY
 
-- min: add 10000 vocabulary tests (testing soviet dictionary/explanatory dictionary
-  entry words) to:
-  - kaz
-  and make those tests pass (max: including a translation into Tatar)
+- represent apertium-uzb.uzb.lexc as a apertiumpp/dictionary and write
+  a function for generating the former from the latter
 
-- 8 poms train a classifer which learns to categorize words from manually
-  categorized words (currently available training data: 2000 uzbek and
-  karakalpak words)
- 
 * TONIGHT
 
 - hang out on IRC for at least 2 poms
@@ -1229,10 +1223,8 @@ Background reading:
 
 * TOMORROW
 
-- min: add 2000 vocabulary tests (testing soviet dictionary/explanatory dictionary
-  entry words) to:
-  - tat
-  and make those tests pass
+- write abstract for turklang 2019
+- start translating kaz, uzb, kaa into tat & checking the latter
 
 * SOME OTHER DAY
 
