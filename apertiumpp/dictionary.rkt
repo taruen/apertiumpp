@@ -2,11 +2,13 @@
 
 ;; A representation of & functions for Apertium's dictionaries
 
-(require scribble/srcdoc
+(require xml xml/path scribble/srcdoc
          (for-doc racket/base scribble/manual))
 
 (module+ test
   (require rackunit))
+
+(permissive-xexprs #t)
 
 
 ;;;;;;;;;;;;
@@ -137,7 +139,7 @@
              @item{@(racket section-attrs) : any additional attributes}])))
 
 
-(struct e (o re lm l r par attrs))
+(struct e (o re lm l r par attrs) #:transparent)
 
 (provide
  (struct*-doc
@@ -147,15 +149,15 @@
      [l string?]
      [r string?]
      [par (or/c #f string?)]
-     [attrs (hash/c symbol? string?)])
+     [attrs (hash/c symbol? any/c)])
   ("interpretation: an entry in a dictionary paradigm or section."
-   @itemlist[@item{@(racket e-o) : usage restriction, either NA (`no analysis',
-              only generate this form) or NG (`no generation', only analyse
+   @itemlist[@item{@(racket e-o) : usage restriction, either NA (`do Not Analyse',
+              only generate this form) or NG (`do Not Generate', only analyse
               this form) or #f (not set)}
              @item{@(racket e-re) : regular expression or #f (not set)}
              @item{@(racket e-lm) : lemma or #f (not set)}
-             @item{@(racket e-l) : left/lower/surface string}
-             @item{@(racket e-r) : right/upper/lexical string}
+             @item{@(racket e-l) : left/upper/lexical string}
+             @item{@(racket e-r) : right/lower/surface string}
              @item{@(racket e-par) : name of the (inflection) paradigm or #f
               (not set)}
              @item{@(racket e-attrs) : any additional attributes}])))
@@ -163,11 +165,6 @@
 
 ;;;;;;;;;;;;
 ;; Functions
-
-
-(require xml xml/path)
-(permissive-xexprs #t)
-
 
 
 ;; Wishlist
