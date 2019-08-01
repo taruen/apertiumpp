@@ -1,6 +1,8 @@
 #lang racket
 
-(define UZB
+(provide UZBLEXC)
+
+(define UZBLEXC
 
 '(
   ("a" "a" CC-PROTIV ("") () ())
