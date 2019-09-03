@@ -9,8 +9,6 @@
   @hyperlink["https://www.apertium.org"]{Apertium project's} rule-based machine
   translators}
 
-@author{Ilnar Salimzianov}
-
 @section{Installation}
 
 Here are insttructions on how to install apertiumpp:
