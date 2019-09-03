@@ -23,7 +23,7 @@ project](https://www.apertium.org), and can be considered its spinoff,
 with two additions:
 
 * for each language, we will maintain a corpus of sharable texts,
-  parallel or comparable to corpora for other languges
+  parallel or comparable to corpora for other languages
 
 * machine translators will have a speech recognition & speech synthesis
   front-ends \(based on Mozilla’s [Common
@@ -54,14 +54,14 @@ setup:
 * there can be and usually there are several entries in a .lexc or .dix
   files with the same left-hand side \(and there is no compile-time
   checks against mistakenly adding the same word twice, possibly with a
-  right and a wrong category
+  right and a wrong category\)
 
 * rather long compile cycles, translators are not extensible
   programmatically
 
 * not possible to re-use components in a programmatic way \(i.e. without
   having to copy-paste manually, which sooner or later will lead to
-  out-of-date chunks\). Want we want instead is having a way to say,
+  out-of-date chunks\). What we want instead is having a way to say,
   e.g. something like this:
   `from` `apertium-tat-rus` `import` `transfer-rule-x`,
   `from` `apertium-symbols` `import` `n,` `v,` `adj,` `np`,
@@ -70,10 +70,10 @@ setup:
 * ?
 
 We suppose that most of the problems listed will be due the fact that
-the domain-specific languages used in Apertium \(and there a handful of
-them – one seen in monolingual and bilingual `.dix` files, one seen in
-`chunking`,  `interchunk` and `postchunk` transfer rules,  `lexc`,
-`twol` and others are so-called external DSLs. They are parsed and
+the domain-specific languages used in Apertium \(and there are a handful
+of them – one seen in monolingual and bilingual `.dix` files, one seen
+in `chunking`,  `interchunk` and `postchunk` transfer rules,  `lexc`,
+`twol` and others\) are so-called external DSLs. They are parsed and
 compiled. When writing in these DSLs, you don’t have access to a
 full-fledged programming language which would allow you to extend the
 DSL in question easily and simplify&automate things. You also don’t have
@@ -81,14 +81,18 @@ access to useful features of a full-fledged programming language like a
 proper module system, which would allow you to re-use code across
 monolingual and bilingual packages reliably.
 
+To be fair, Apertium was designed for translating between
+closely-related languages, and for that it works sufficiently well.
+
 ## 2. Desiderata
 
-* Every Apertium 3.0. program is a valid Apertium 4.0 program.
+* Every Apertium program is a valid Apertium++! program.
 
 ## 3. Apertiumpp library
 
-At the core of this project is a Racket library called _apertiumpp_. The
-documentation of the library can be found at
+At the core of this project is a [Racket](https://racket-lang.org/)
+library called _apertiumpp_. The documentation of the library can be
+found at
 [https://taruen.github.io/apertiumpp/apertiumpp/](./apertiumpp/).
 
 ## 4. Tests/data for Apertium 3.0. packages
