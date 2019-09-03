@@ -16,11 +16,9 @@ This is a project with an aim of:
 * reducing the code which developers have to maintain in a typical
   Apertium 3.0 monolingual or bilingual package.
 
-> Hence two pluses in the name of the project...
-
 The project, in its spirit and aims is similar to the [Apertium
 project](https://www.apertium.org), and can be considered its spinoff,
-with two additions:
+with two additions \(hence two pluses in the name of the project...\):
 
 * for each language, we will maintain a corpus of sharable texts,
   parallel or comparable to corpora for other languages
@@ -92,8 +90,7 @@ closely-related languages, and for that it works sufficiently well.
 
 At the core of this project is a [Racket](https://racket-lang.org/)
 library called _apertiumpp_. The documentation of the library can be
-found at
-[https://taruen.github.io/apertiumpp/apertiumpp/](./apertiumpp/).
+found at [https://taruen.com/apertiumpp/apertiumpp/](./apertiumpp/).
 
 ## 4. Tests/data for Apertium 3.0. packages
 

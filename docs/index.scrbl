@@ -21,11 +21,10 @@ This is a project with an aim of:
  @item{reducing the code which developers have to maintain
   in a typical Apertium 3.0 monolingual or bilingual package.}]
 
-@margin-note{Hence two pluses in the name of the project...}
-
 The project, in its spirit and aims is similar to the
-@hyperlink["https://www.apertium.org"]{Apertium project}, and can be
-considered its spinoff, with two additions:
+@hyperlink["https://www.apertium.org"]{Apertium project}, and can be considered
+its spinoff, with two additions (hence two pluses in the name of the
+project...):
 
 @itemlist[
 
@@ -116,7 +115,7 @@ At the core of this project is a
 @hyperlink["https://racket-lang.org/"]{Racket} library called
 @italic{apertiumpp}. The documentation of the library can be
 found at @hyperlink["./apertiumpp/"]{
- https://taruen.github.io/apertiumpp/apertiumpp/}.
+ https://taruen.com/apertiumpp/apertiumpp/}.
 
 @section{Tests/data for Apertium 3.0. packages}
 
