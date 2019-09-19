@@ -1,6 +1,6 @@
 # apertiumpp-kaz
 
-This repo (`lexicon.rkt` in particular) contains our effort to proofread <a
+This repository (`lexicon.rkt` in particular) contains our effort to proofread <a
 href="https://github.com/apertium/apertium-kaz/">apertium-kaz</a> against the
 15 volume explanatory dictionary of Kazakh (published by <a
 href="https://tbi.kz/ru/">tbi.kz</a>) and solve issue <a
@@ -13,3 +13,7 @@ proof-reading.
 ## Acknowledgements
 
 This work was funded by <a href="https://nu.edu.kz/">Nazarbayev University</a>.
+
+## License
+
+Just like apertium-kaz, the contents of this repo are published under GPL version 3.
