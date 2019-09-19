@@ -1,3 +1,5 @@
+<a href="https://explosion.ai"><img src="https://taruen.com/assets/img/logo.png" width="125" height="125" align="left" /></a>
+
 # apertiumpp-kaz
 
 This repository (`lexicon.rkt` in particular) contains our effort to proofread <a
