@@ -1,6 +1,3 @@
-<a href="https://taruen.com"><img src="https://taruen.com/assets/img/logo.png"
-width="125" height="125" align="right" /></a>
-
 # apertiumpp-kaz
 
 This repo (`lexicon.rkt` in particular) contains our effort to proofread <a
