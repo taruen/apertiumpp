@@ -3,7 +3,7 @@
 This repo (`lexicon.rkt` in particular) contains our effort to proofread <a
 href="https://github.com/apertium/apertium-kaz/">apertium-kaz</a> against the
 15 volume explanatory dictionary of Kazakh (published by <a
-href="https://tbi.kz/ru/">tbi.kz</a> and solve issue <a
+href="https://tbi.kz/ru/">tbi.kz</a>) and solve issue <a
 href="https://github.com/apertium/apertium-kaz/issues/11">#11</a> of
 apertium-kaz as well as to extend it.
 
@@ -12,4 +12,4 @@ proof-reading.
 
 ## Acknowledgements
 
-This work was funded by Nazarbayev University.
+This work was funded by <a href="https://nu.edu.kz/">Nazarbayev University</a>.
