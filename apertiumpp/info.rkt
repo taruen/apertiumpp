@@ -1,6 +1,6 @@
 #lang info
 (define collection "apertiumpp")
-(define deps '("base" "rash"))
+(define deps '("base" "rash" "html-parsing" "brag" "sxml"))
 (define build-deps '("scribble-lib" "racket-doc" "rackunit-lib"))
 (define scribblings '(("scribblings/apertiumpp.scrbl" ())))
 (define pkg-desc "Description Here")
