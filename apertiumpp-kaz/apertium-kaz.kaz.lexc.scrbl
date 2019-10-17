@@ -1998,6 +1998,7 @@ Z:Z GUESS-QUEUE ;
 
 LEXICON Common
 
+PRON-PERS ;
 DemonstrativePronouns ;
 InterrogativePronouns ;
 
