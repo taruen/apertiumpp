@@ -71,7 +71,7 @@ Here's a brief comparison of the two main characteristics of
   (list
     (list "" @bold{Naive coverage before} @bold{Naive coverage after})
     (list @bold{Bibel} "x" "y")
-    (list @bold{Wikipedia} "1 2 3 => avrg. " "94.79 94.57 91.83 => avrg. "))]
+    (list @bold{Wikipedia} "92.38 91.73 89.86  => avrg. " "94.79 94.57 91.83 => avrg. "))]
 
 Here's how @italic{apertiumpp-kaz} is different from @italic{apertium-kaz}.
 
