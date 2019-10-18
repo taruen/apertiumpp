@@ -78,7 +78,7 @@ Here's a brief comparison of the two main characteristics of
   (list
     (list "" @bold{Naive coverage before} @bold{Naive coverage after})
     (list @bold{Bibel} "x" "y")
-    (list @bold{Wikipedia} "92.38 91.73 89.86  => avrg. " "94.79 94.57 91.83 => avrg. "))]
+    (list @bold{Wikipedia} "91.69 91.45 91.22 90.23 => avrg. " "93.82 93.91 93.59 91.86 => avrg. "))]
 
 Here's how @italic{apertiumpp-kaz} is different from @italic{apertium-kaz}.
 
@@ -146,7 +146,8 @@ re-use in tests.
 Commentaries on @bold{why} and @bold{how} these modifications were
 made follow.
 
-@section{Why these paper dictionaries were chosen as a source of new entries?}
+@section{Why these particular paper dictionaries were chosen as a source of new
+entries?}
 
 We have chosen the 15-volume and single-volume explanatory dictionaries of
 Kazakh as a reference because they are:
@@ -266,6 +267,23 @@ A2), thus eliminating A3 and A4 entirely. The only difference between an A1
 adjective and A2 adjective is that the former is actually both an adjective and
 an adverb, and thus can modify both nouns and verbs, while the latter is not is
 used solely as an attribute in a sentence.
+
+@section{Additional markup}
+
+We have said above that entries in @italic{lexicon.rkt} can be wrapped with
+function calls. Here are some examples of that:
+
+@verbatim{
+  (-day '("абажадай" A1 () () ()))
+  (-li '("абажурлы" A2 () () ()))
+  (comp-verb '("абай бол" V-IV () () ()))
+  (refl '("абайлан" V-TV () () ("абайла")))
+  (caus '("абайлат" V-TV () ("абайлату") ("абайла")))
+  (-siz '("абайсыз" A1 () () ()))
+  (caus '("дағдыландыр" V-TV () ("дағдыландырыл") ("дағдылан")))
+  (sim '("даңғойсы" V-IV () () ()))
+  (multi '("даму% ақау" N1 () () ()))
+}
 
 @section{Acknowledgements}
 
