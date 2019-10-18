@@ -171,6 +171,12 @@ anyone's rights.
 
 @section{How stems were added to lexicon.rkt?}
 
+First of all, we copied all common words from
+@italic{apertium-kaz.kaz.lexc}. By common words we mean words which are not
+proper nouns. This includes open-class words (nouns, verbs, adjectives,
+adverbs), but also closed-class or functional words like pronouns, determiners,
+postpositions etc.
+
 With few rare exceptions, entry words contained in the single-volume EDOK2013
 are a superset of those contained in the 15-volume EDOK2011. The size of the
 latter is due example usages and more elaborate explanations.
@@ -181,9 +187,11 @@ Therefore, we proceeded as follows:
 
 @item{extracted text from EDOK2013's pdf file}
 
-@item{converted entries in it into (entry word, rest of the entry) pairs, separated by tabs}
+@item{converted entries in it into (entry word, rest of the entry) pairs,
+separated by tabs}
 
-@item{labeled the first N entry words with the right categories, using @hyperlink["https://github.com/IlnarSelimcan/dot/blob/master/lexikograf.py"]{lexikograf.py}}
+@item{labeled the first N entry words with the right categories, using
+@hyperlink["https://github.com/IlnarSelimcan/dot/blob/master/lexikograf.py"]{lexikograf.py}}
 
 ]
 
@@ -208,9 +216,56 @@ logistic regression) classifier. At each step, the annotation process is backed
 up in ws.pickle file as a WorldState, which is compound data structure
 consisting of the <classifier, labeled entries, unlabeled entries>.
 
-Apparently we labeled 754 entries in this way, after which the number errors
-lexikograf.py made seemed negligible, so that we made it label the rest of the
-entries and added them to our lexicon.
+Apparently we labeled 754 entries in this way, after which the number
+errors lexikograf.py made seemed negligible, so that we made it label
+the rest of the entries and added the entry words to
+@italic{lexikon.rkt}, if such (word, continuation lexicon pairs) were
+not present in it already.
+
+@section{Proof-reading lexicon.rkt}
+
+As described in the previous section, @italic{lexicon.rkt} is a union of
+entries from two sources:
+
+@itemlist[#:style 'ordered
+
+@item{common words of the original @italic{apertium-kaz.kaz.lexc} file, and}
+
+@item{entry words from EDOK2013 (first 757 of which were hand-labeled with
+correct continuation marks, the rest with labels @italic{lexikograf.py}'s
+classifier has assigned to them)}
+
+]
+
+The resulting @italic{lexikograf.rkt} requires manual cheking because:
+
+@itemlist[#:style 'ordered
+
+@item{errors from the original @italic{apertium-kaz.kaz.lexc} got carried over
+(see issue
+@hyperlink["https://github.com/apertium/apertium-kaz/issues/11"]{#11}}
+
+@item{lexikograf.py might have labeled words from EDOK2013 inccorrectly (read:
+they have a wrong continuation lexicon in lexicon.rkt)}
+
+]
+
+For mitigating both errors, we open up both @italic{lexicon.rkt} and EDOK2011,
+and read both in parallel. We proof-read @italic{lexicon.rkt} against EDOK2011,
+and not against EDOK2013, because the explanations of the former are more
+elaborate, and, more importantly, it includes example usage sentences for each
+entry word / sense.
+
+For most of the words in @italic{lexicion.rkt}, reading explanations or
+examples was not necessary, as it was apparent whether their continuation
+classes was correct or not, for some, reading example sentences was crucial.
+Notably, they were helpful for figuring out whether a verb was transitive or
+intransitive, or whether an adjective was A1 or A2. As a side note, we decided
+to restrict the possible continuation classes for adjectives two two (A1 and
+A2), thus eliminating A3 and A4 entirely. The only difference between an A1
+adjective and A2 adjective is that the former is actually both an adjective and
+an adverb, and thus can modify both nouns and verbs, while the latter is not is
+used solely as an attribute in a sentence.
 
 @section{Acknowledgements}
 
