@@ -5,8 +5,6 @@
 [![Documentation](https://img.shields.io/badge/read-docs-blue.svg)](https://taruen.com/apertiumpp/apertiumpp-kaz/)
 [![License](https://img.shields.io/badge/license-GPLv3-green.svg)](https://www.gnu.org/licenses/gpl-3.0.en.html)
 
-Author: Ilnar Salimzianov
-
 [This
 directory](https://github.com/taruen/apertiumpp/tree/master/apertiumpp-kaz)
 contains our effort to proofread
