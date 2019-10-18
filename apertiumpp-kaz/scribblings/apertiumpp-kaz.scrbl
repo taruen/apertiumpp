@@ -258,7 +258,7 @@ entry word / sense.
 
 For most of the words in @italic{lexicion.rkt}, reading explanations or
 examples was not necessary, as it was apparent whether their continuation
-classes was correct or not, for some, reading example sentences was crucial.
+classes were correct or not, for some, reading example sentences was crucial.
 Notably, they were helpful for figuring out whether a verb was transitive or
 intransitive, or whether an adjective was A1 or A2. As a side note, we decided
 to restrict the possible continuation classes for adjectives two two (A1 and

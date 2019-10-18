@@ -1,3 +1,5 @@
+<a href="https://taruen.com"><img src="https://taruen.com/assets/img/logo.png" width="125" height="125" align="left" /></a>
+
 # Apertiumpp-kaz
 
 Ilnar Salimzianov
@@ -243,7 +245,7 @@ sentences for each entry word / sense.
 
 For most of the words in _lexicion.rkt_, reading explanations or
 examples was not necessary, as it was apparent whether their
-continuation classes was correct or not, for some, reading example
+continuation classes were correct or not, for some, reading example
 sentences was crucial. Notably, they were helpful for figuring out
 whether a verb was transitive or intransitive, or whether an adjective
 was A1 or A2. As a side note, we decided to restrict the possible
