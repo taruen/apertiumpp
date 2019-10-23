@@ -34,7 +34,7 @@ In the meantime, we provide  [our own
 version](https://github.com/taruen/apertiumpp/blob/master/apertiumpp-kaz/apertium-kaz.kaz.lexc)
 of _apertium-kaz.kaz.lexc_ as a drop-in  replacement for
 _apertium-kaz_’s file of the same name, as  well a slightly modified
-[Makefile.am](https://github.com/taruen/apertiumpp/blob/master/apertiumpp-kaz/apertium-kaz.kaz.lexc)
+[Makefile.am](https://github.com/taruen/apertiumpp/blob/master/apertiumpp-kaz/Makefile.am)
 for it. To use _apertium-kaz_ with our modifications to it,  you should:
 
 * Install [Apertium

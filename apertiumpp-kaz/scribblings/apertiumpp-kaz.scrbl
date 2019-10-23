@@ -33,7 +33,7 @@ In the meantime, we provide
  own version} of @italic{apertium-kaz.kaz.lexc} as a drop-in
  replacement for @italic{apertium-kaz}'s file of the same name, as
  well a slightly modified
- @hyperlink["https://github.com/taruen/apertiumpp/blob/master/apertiumpp-kaz/apertium-kaz.kaz.lexc"]{Makefile.am}
+ @hyperlink["https://github.com/taruen/apertiumpp/blob/master/apertiumpp-kaz/Makefile.am"]{Makefile.am}
  for it. To use @italic{apertium-kaz} with our modifications to it,
  you should:
 
