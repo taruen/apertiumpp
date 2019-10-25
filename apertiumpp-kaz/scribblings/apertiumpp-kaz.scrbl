@@ -58,7 +58,7 @@ image, you should simply continue with the next step.}
 @hyperlink["https://github.com/taruen/apertiumpp/blob/master/apertiumpp-kaz/apertium-kaz.kaz.lexc"]{that
 we provide}.}
 
-@item{Replace @italic{apertium-kaz/Makefiel.am} file with the file
+@item{Replace @italic{apertium-kaz/Makefile.am} file with the file
 @hyperlink["https://github.com/taruen/apertiumpp/blob/master/apertiumpp-kaz/Makefile.am"]{that
 we provide}.}
 
