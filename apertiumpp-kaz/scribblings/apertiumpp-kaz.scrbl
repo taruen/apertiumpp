@@ -77,8 +77,50 @@ Here's a brief comparison of the two main characteristics of
 @tabular[#:sep @hspace[1] #:style 'boxed
   (list
     (list "" @bold{Naive coverage before} @bold{Naive coverage after})
-    (list @bold{Bibel} "x" "y")
-    (list @bold{Wikipedia} "91.69 91.45 91.22 90.23 => avrg. " "93.82 93.91 93.59 91.86 => avrg. "))]
+    (list @bold{Bible (New Testament)} "96.35" "97.11")
+    (list @bold{Wikipedia} "91.69 91.45 91.22 90.23 => avrg. 91.1475 " "93.82 93.91 93.59 91.86 => avrg. 93.295"))]
+
+@margin-note{Using hfst transducers for measuring coverage is not
+optimal though, due to the old issue of HFST related to vowel harmony at word
+boundaries. @italic{^жылдан бастап/*жылдан бастап$} e.g., appears among
+unrecognized words. That was the reason that in @italic{apertium-kaz} we
+started printing hfst transtucers in ATT format, and recompiling them into
+lttoolbox transducers from that ATT representation.}
+
+@bold{Naive coverage} is defined as the share of words in a running text, for
+which @italic{apertium-kaz} returns at least one analysis. For calculating the
+coverage of Wikipedia, four non-consecutive chunks of approximately 3.3 million
+tokens were selected. The total size of Kazakh Wikipedia as of this writing is
+about 33 million tokens. Bible corpus is often used for calculating coverage or
+other benchmarks since it is a text available in the highest number of
+languages. The coverage was measured using the
+@hyperlink["https://gist.github.com/IlnarSelimcan/87bef975e919836e90865e44935a6bd7#file-hfst-covtest"]{hfst-covtest}
+script.
+
+The rest of unanalysed words seem to be either misspelled words, proper nouns,
+abbreviations or bound affixes for some reason appearing detached in text. It
+is trivial to augment apertium-kaz.kaz.lexc with catch-all regular expressions
+like the following (one for each category like N1 — nouns, ADJ — adjectives,
+V-TV — transitive verbs, NP-TOP — toponyms etc):
+
+@verbatim{<(а | ә | б | в | г | ғ | д | е | ё | ж | з | и | і | й | к | қ | л |
+м | н | ң | о | ө | п | р | с | т | у | ұ | ү | ф | х | һ | ц | ч | ш | щ |
+ь | ы | ъ | э | ю | я)+> N1 ;}
+
+@margin-note{Besides, including such regexes seems to render
+@italic{apertium-kaz} incompilable.}
+
+The above regex will allow analysing all forms of a noun even if it is not in
+apertium-kaz’s lexicon. Let’s take a non-word “баргылларда” as an
+example. Based on its ending, it looks like a noun “баргыл” in plural locative
+form. The above regex will analyse it as such, but it will also return a
+nominative reading (and several other). In short, for such catch-all regexes to
+be useful, a good (statistical) disambiguator is required. The development of a
+disambiguator is scheduled for 2020, so we decided not to add such regular
+expressions in apertium-kaz as of yet.
+
+
+@section{How is @italic{apertiumpp-kaz} different from @italic{apertium-kaz}?}
 
 Here's how @italic{apertiumpp-kaz} is different from @italic{apertium-kaz}.
 
