@@ -99,9 +99,9 @@ script.
 
 The rest of unanalysed words seem to be either misspelled words, proper nouns,
 abbreviations or bound affixes for some reason appearing detached in text. It
-is trivial to augment apertium-kaz.kaz.lexc with catch-all regular expressions
-like the following (one for each category like N1 — nouns, ADJ — adjectives,
-V-TV — transitive verbs, NP-TOP — toponyms etc):
+is trivial to augment @italic{apertium-kaz.kaz.lexc} with catch-all regular
+expressions like the following (one for each category like N1 — nouns, ADJ —
+adjectives, V-TV — transitive verbs, NP-TOP — toponyms etc):
 
 @verbatim{<(а | ә | б | в | г | ғ | д | е | ё | ж | з | и | і | й | к | қ | л |
 м | н | ң | о | ө | п | р | с | т | у | ұ | ү | ф | х | һ | ц | ч | ш | щ |
