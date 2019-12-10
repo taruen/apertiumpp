@@ -173,8 +173,10 @@ Here's how @italic{apertiumpp-kaz} is different from @italic{apertium-kaz}.
 
 ]
 
-Below are four examples of entries, named as E-1, E-2, E-3 and E-4 for easy
-re-use in tests.
+Below are four examples of entries of @italic{apertiumpp-kaz}, named as E-1,
+E-2, E-3 and E-4 here (with the difference that in the actual
+@italic{lexicon.rkt} we use a more concise notation, omitting duplications and
+some of the empty lists '()).
 
 @(racketblock
 
