@@ -288,7 +288,7 @@ The resulting @italic{lexikograf.rkt} requires manual cheking because:
 
 @item{errors from the original @italic{apertium-kaz.kaz.lexc} got carried over
 (see issue
-@hyperlink["https://github.com/apertium/apertium-kaz/issues/11"]{#11}}
+@hyperlink["https://github.com/apertium/apertium-kaz/issues/11"]{#11})}
 
 @item{lexikograf.py might have labeled words from EDOK2013 inccorrectly (read:
 they have a wrong continuation lexicon in lexicon.rkt)}
@@ -306,11 +306,11 @@ examples was not necessary, as it was apparent whether their continuation
 classes were correct or not, for some, reading example sentences was crucial.
 Notably, they were helpful for figuring out whether a verb was transitive or
 intransitive, or whether an adjective was A1 or A2. As a side note, we decided
-to restrict the possible continuation classes for adjectives two two (A1 and
+to restrict the possible continuation classes for adjectives to two (A1 and
 A2), thus eliminating A3 and A4 entirely. The only difference between an A1
 adjective and A2 adjective is that the former is actually both an adjective and
-an adverb, and thus can modify both nouns and verbs, while the latter is not is
-used solely as an attribute in a sentence.
+an adverb, and thus can modify both nouns and verbs, while the latter is not
+and is used solely as an attribute in a sentence.
 
 @section{Additional markup}
 
