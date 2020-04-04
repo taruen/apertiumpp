@@ -59,10 +59,14 @@ the current Apertium setup:
 
 @itemlist[
 
+ @item{bilingual dictinoaries support only one-to-one mappings, which leads to
+ a situation where monolingual dictionaries as a workaround unnecessarily
+ include multiwords}
+ 
  @item{transfer rules are unidirectional, and currently
   there is no way of marking a transfer rule as
   `bidirectional' and get a transfer rule for the opposite
-  direction for free,}
+  direction for free}
 
  @item{there can be and usually there are several entries in
   a .lexc or .dix files with the same left-hand side (and

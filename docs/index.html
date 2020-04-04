@@ -25,10 +25,12 @@ Apertium project (and yet are not sure at all whether such
 re-evaluations will turn out to be wise decisions), we
 decided to make a separate project out of this effort.</p><h3>1<tt>&nbsp;</tt><a name="(part._.What_could_be_improved_in_.Apertium_3_0_)"></a>What could be improved in Apertium 3.0?</h3><p>Apertium is a great project, with quite a few contributors,
 but here is a list of things deemed as less-than-optimal in
-the current Apertium setup:</p><ul><li><p>transfer rules are unidirectional, and currently
+the current Apertium setup:</p><ul><li><p>bilingual dictinoaries support only one-to-one mappings, which leads to
+a situation where monolingual dictionaries as a workaround unnecessarily
+include multiwords</p></li><li><p>transfer rules are unidirectional, and currently
 there is no way of marking a transfer rule as
 &lsquo;bidirectional&rsquo; and get a transfer rule for the opposite
-direction for free,</p></li><li><p>there can be and usually there are several entries in
+direction for free</p></li><li><p>there can be and usually there are several entries in
 a .lexc or .dix files with the same left-hand side (and
 there is no compile-time checks against mistakenly adding
 the same word twice, possibly with a right and a wrong
