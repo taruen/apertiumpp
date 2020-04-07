@@ -9027,8 +9027,8 @@ YouTube:YouTube NP-ORG-LAT ; ! ""
 Нұрсейіт:Нұрсейіт NP-ANT-M ; ! "Nurseyit" (Arabic)
 Нұрсовет:Нұрсовет NP-ANT-M ; ! "Nursovet" (New word)
 Нұрсұлтан:Нұрсұлтан NP-ANT-M ; ! "Nursultan" (Arabic)
-Нұр%-Султан:Нұр%-Султан NP-TOP ; ! "Nursultan city"
-Нұр%-Султан:Нұрсултан NP-TOP ; ! "Nursultan city" ! Dir/LR
+Нұр%-Сұлтан:Нұр%-Сұлтан NP-TOP ; ! "Nursultan city"
+Нұр%-Сұлтан:Нұрсұлтан NP-TOP ; ! "Nursultan city" ! Dir/LR
 Нұрсұлу:Нұрсұлу NP-ANT-F ; ! "Nursulıw" (Arabic)
 Нұртаев:Нұртаев NP-COG-OB ; ! ""
 Нұртай:Нұртай NP-ANT-M ; ! ""
