@@ -1,4 +1,4 @@
-#lang racket
+#lang rash
 
 (provide MONOLINGUAL BILINGUAL)
 
@@ -30,7 +30,7 @@
   '("apertium-incubator/apertium-chv-tat/"
     "apertium-incubator/apertium-chv-tur/"
     "apertium-trunk/apertium-crh-tur/"
-    "apertium-incubator/apertium-eng-kaz/"
+    "apertium-trunk/apertium-eng-kaz/"
     "apertium-incubator/apertium-eo-tr/"
     "apertium-incubator/apertium-fin-kaz/"
     "apertium-incubator/apertium-kaz-kaa/"
