@@ -1,13 +1,11 @@
-BAXTIYOR QAYERDA?
-Baxtiyor va Oygul bog'da. Bugun ob-havo yaxshi, havo juda iliq. Ammo kecha juda sovuq edi! Ular o'ynay olishmadi. Baxtiyor va Oygul o'ynashni yaxshi ko'radila, ular har doim katta hovli oldidagi bog'da birga o'ynashadi.
-Baxtiyor kichkina bola va u olti yoshda. Kichkina qiz uning singlisi u besh yoshda. Baxtiyorni kichkina kuchugi bor, kuchuk ham hozir bog'da. Kuchuk ikkita kichkina bolalar bilan o'ynashni yaxshi ko'radi. Kuchuk hozir juda hursand.
-Oygul kuchukni yaxshi ko'radimi? Yo'q, Oygulda kuchuk yo'q, unda mushuk bor. Ammo, mushuk uyda, mushuk uxlayapti.
-Ularning onasi mushuk bilan uyda, u oynadan Baxtiyor va Oygulning o'ynashini tomosha qilyapti.
-Baxtiyor ulkan daraxt oldiga yugurib bordi, u Oyguldan bekinyapti. Bilasizmi nimaga? Oygul o'tiryapti va u qo'li bilan ko'zini bekityapti. U sanayotgan paytida hech nimani ko'rmayapti. Nimaga u bunday qilyapti? Va Baxtiyor daraxtni yonida nima qilyapti?
-Bu o'yin. Oygul sanashni tugatgandan so'ng u atrofga qaraydi. U Baxtiyorni qidiryapti: U qayerga ketdi? Uni ko'ryapsanmi?
-Oygul Baxtiyor qayerdaligini bilmaydi. U kuchukdan so'rayapti: "Sen Baxtiyorni ko'rdingmi?". Ammo kuchuk gapiraolmaydi albatta! Shuning uchun Oygul savoliga hech qanday javob olmaydi. Odamlar kuchukga gapirishganda hech qachon javob olishmaydi!
-Oygul oyna orqasidagi onasini ko'rdi, uning onasi kulyapti. Oygul uni Baxtiyorni qayerga ketganini ko'rdi deb o'yladi: "Baxtiyor qayerga ketdi!", u aytdi onasiga. "Yo'q Oygul, men ayta olmayman!", onasi javob berdi. U Baxtiyor qayerdaligini bilsada, u aytgisi kelmayapti.
-Oygul bog'dan sekin yuryapti. U haliyam Baxtiyorni qidiryapti. U stul va stolni tagini qaradi, ammo Baxtiyor u yerda emas. U hamma joyni qidirib chiqdi, ammo u Baxtiyorni topa olmadi.
-Keyin u ovozni eshitdi, u ulkan daraxtni yonidan kelayotgandi. U Baxtiyor bo'lishi mumkinmi?Yana o'sha ovoz kelyapti! U diqqat bilan tingladi.Endi u uni yaxshi eshityapti. U Baxtiyor bo'lsa kerak!
-Keyin u kichkina qo'lni ko'rdi va u yaqinlashgan sari uni boshini ham ko'rdi! U kuldi va aytdi: "Men seni topdim!". Ularni ikkalasi ham baxtiyor edi va ular uyga kirishdi, endi ovqatlanish va suv ichishni vaqti keldi!
-
+1	BAXTIYOR QAYERDA?
+2	Baxtiyor va Oygul bog'da. Bugun ob-havo yaxshi, havo juda iliq. Ammo kecha juda sovuq edi! Ular o'ynay olishmadi. Baxtiyor va Oygul o'ynashni yaxshi ko'radilar, ular har doim katta hovli oldidagi bog'da birga o'ynashadi.
+3	Baxtiyor kichkina bola va u olti yoshda. Kichkina qiz uning singlisi, u besh yoshda. Baxtiyorning kichkina kuchugi bor, kuchuk ham hozir bog'da. Kuchuk bu ikki bolakaylar bilan o'ynashni yaxshi ko'radi. Kuchuk hozir juda hursand.
+4	Oygulning ham kuchugi bormi? Yo'q, Oygulda kuchuk yo'q, unda mushuk bor. Ammo, mushuk uyda, mushuk uxlayapti.
+5	Ularning onasi mushuk bilan uyda, u oynadan qaraydi va Baxtiyor bilan Oygulning o'ynayotganini ko'radi. Baxtiyor ulkan eski daraxt oldiga yugurib boradi, u Oyguldan bekinyapti. Bilasizmi nimaga? Oygul o'tiryapti va qo'li bilan ko'zini bekityapti. U hech nimani ko'rolmaydi va u sanayabdi. Nimaga u bunday qiladi? Va Baxtiyor daraxtni yonida nima qilyapti?
+6	Bu o'yin. Oygul sanashni tugatgandan so'ng u atrofga qaraydi. U Baxtiyorni qidiryapti: U qayerga ketdi? Uni ko'rdingizmi?
+7	Oygul Baxtiyor qayerdaligini bilmaydi. U kuchukdan so'raydi: "Sen Baxtiyorni ko'rdingmi?". Ammo kuchuk gapira olmaydi albatta! Shuning uchun Oygul savoliga hech qanday javob olmaydi. Odamlar kuchukga gapirishganda hech qachon javob olishmaydi!
+8	Oygul oyna orqasidagi onasiga qaraydi, uning onasi kulyapti. Oygul uni Baxtiyorni qayerga ketganini ko'rdi deb o'ylaydi: "Uning qayerdaligini ayting!", dedi u onasiga. "Yo'q Oygul, men senga ayta olmayman!", onasi javob beradi. U balkim uning qayerdaligini bilsada, u aytgisi kelmayapti.
+9	Oygul bog'dan sekin yuradi. U haliyam Baxtiyorni topishga harakat qilyapti. U stolning tagini va stullarning tagini qaradi, ammo Baxtiyor u yerda emas. U hamma joyni qidirib chiqdi, ammo u Baxtiyorni topa olmadi.
+10	Keyin u bir ovoz eshitdi, u ulkan eski daraxtni yonidan kelayapdi. U Baxtiyor bo'lishi mumkinmi? Yana ovoz bor! U diqqat bilan tingladi. U qush yoki boshqa hayvon emas. Endi u uni yaxshi eshityapti. U Baxtiyor bo'lsa kerak!
+11	Keyin u kichkina qo'lni ham ko'radi va u yaqinlashganda uning boshini ham ko'radi! U kuladi va aytadi: "Men seni topdim!". Ularni ikkalasi ham baxtiyor va ular uyga kirishdi, endi biron narsa yeyish va suv ichish vaqti!
