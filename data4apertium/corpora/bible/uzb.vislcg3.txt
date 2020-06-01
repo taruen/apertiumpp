@@ -1,0 +1,30 @@
+# text = Matthew I
+"<Matthew>"
+	"Matthew" np ant m nom
+"<I>"
+	"I" num ord
+
+# text = 1. Ibrohim o‘g‘li, Dovud o‘g‘li Iso Masihning nasabnomasi.
+# text[tat] = Ибраһим угълы, Давыт угълы Гайсә Мәсихнең шәҗәрәсе.
+"<1>"
+	"1" num
+"<.>"
+	"." sent
+"<Ibrohim>"
+	"Ibrohim" np ant m nom
+"<o‘g‘li>"
+	"oʻgʻl" n px3sp nom
+"<,>"
+	"," cm
+"<Dovud>"
+	"Dovud" np ant m nom
+"<o‘g‘li>"
+	"oʻgʻl" n px3sp nom
+"<Iso>"
+	"Iso" np ant m nom
+"<Masihning>"
+	"Masih" n gen
+"<nasabnomasi>"
+	"nasabnoma" n px3sp nom
+"<.>"
+	"." sent

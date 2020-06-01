@@ -1,0 +1,35 @@
+# text = Matthew I
+"<Matthew>"
+	"Matthew" np ant m nom
+"<I>"
+	"I" num ord
+
+# text = 1. İbrayımnıń urpaǵı, Dawıttıń urpaǵı İysa Masixtıń shejiresi mınaday:
+# text[tat] = 1. Ибраһимның нәселе, Давытның нәселе Гайсә Мәсихнең шәҗәрәсе менә болай:
+"<1>"
+	"1" num
+"<.>"
+	"." sent
+"<İbrayımnıń>"
+	"İbrayım" np ant m gen
+"<urpaǵı>"
+	"urpaq" n px3sp nom
+"<,>"
+	"," cm
+"<Dawıttıń>"
+	"Dawıttıń" np ant m gen
+"<urpaǵı>"
+	"urpaq" n px3sp nom
+"<İysa>"
+	"İysa" np ant m nom
+"<Masixtıń>"
+	"Masixtıń" Masix n gen
+"<shejiresi>"
+	"shejire" n px3sp nom
+"<mınaday>"
+	"mına" n sim
+	"mına" prn dem sim nom
+		"e" cop p3 sg
+"<:>"
+	":" sent
+
