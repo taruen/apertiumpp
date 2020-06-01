@@ -14,30 +14,22 @@
 	"İbrahim" np ant m nom
 "<oğlu>"
 	"oğul" n px3sp nom
-	"oğul" n px3sp nom
-		"i" cop aor p3 sg
 "<,>"
 	"," cm
 "<Davut>"
 	"Davut" np ant m nom
 "<oğlu>"
-	"oğul" n acc @obj
+	"oğul" n px3sp nom
 "<İsa>"
 	"İsa" np ant m nom
 "<Mesih>"
-	"Mesih" n nom
-"<'>"
-	"'" apos
-"<in>"
-	"in" n attr
+	"Mesih" n gen
 "<soy>"
 	"soy" n nom
 "<kaydı>"
-	"kay" v iv ifi p3 sg
+	"kayd" n px3sp nom
 "<şöyledir>"
 	"şöyle" adv
 		"i" cop aor p3 frm sg
 "<:>"
 	":" sent
-"<.>"
-	"." sent
