@@ -28,3 +28,43 @@
 	"nasabnoma" n px3sp nom
 "<.>"
 	"." sent
+
+# text = 2. Ibrohimdan Is’hoq tug‘ildi. Is’hoqdan Yoqub tug‘ildi. Yoqubdan Yahudo va uning aka-ukalari tug‘ildilar.
+# text[tat] = 2. Ибраһимнан Исхак туды. Исхактан Ягъкуб туды. Ягъкубтан Яһүд һәм аның анай-энеләре тудылар.
+"<2>"
+	"2" num
+"<.>"
+	"." sent
+"<Ibrohimdan>"
+	"Ibrohim" np ant m abl
+"<Ishoq>"
+	"Ishoq" np ant m nom
+"<tug‘ildi>"
+	"tug‘" v iv pass ifi p3 sg
+	"tugʻ" v iv pass ifi p3 sg
+"<.>"
+	"." sent
+"<Is’hoqdan>"
+	"Is’hoq" np ant m abl
+"<Yoqub>"
+	"Yoqub" np ant m nom
+"<tug‘ildi>"
+	"tug‘" v iv pass ifi p3 sg
+	"tugʻ" v iv pass ifi p3 sg
+"<.>"
+	"." sent
+"<Yoqubdan>"
+	"Yoqub" np ant m abl
+"<Yahudo>"
+	"Yahudo" np ant m nom
+"<va>"
+	"va" cnjcoo
+"<uning>"
+	"u" prn pers p3 sg gen
+"<aka-ukalari>"
+	"aka-uka" n pl px3sp nom
+"<tug‘ildilar>"
+	"tug‘" v iv pass ifi p3 pl
+	"tugʻ" v iv pass ifi p3 pl
+"<.>"
+	"." sent

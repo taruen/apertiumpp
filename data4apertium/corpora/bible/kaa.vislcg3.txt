@@ -33,3 +33,37 @@
 "<:>"
 	":" sent
 
+# text = 2. İbrayımnan Isaq tuwıldı. Isaqtan Yaqıp tuwıldı. Yaqıptan Yahuda hám onıń aǵa-inileri tuwıldı.
+# text[tat] = 2. Ибраһимнан Исхак туды. Исхактан Ягъкуб туды. Ягъкубтан Яһүд һәм аның анай-энеләре туды.
+"<2>"
+	"2" num
+"<İbrayımnan>"
+	"İbrayımnan" np ant m abl
+"<Isaq>"
+	"Isaq" np ant m nom
+"<tuwıldı>"
+	"tuw" v tv pass ifi p3 sg
+"<.>"
+	"." sent
+"<Isaqtan>"
+	"Isaqtan" np ant m abl
+"<Yaqıp>"
+	"Yaqıp" np ant m nom
+"<tuwıldı>"
+	"tuw" v tv pass ifi p3 sg
+"<.>"
+	"." sent
+"<Yaqıptan>"
+	"Yaqıptan" np ant m abl
+"<Yahuda>"
+	"Yahuda" np ant m nom
+"<hám>"
+	"hám" cnjcoo
+"<onıń>"
+	"ol" prn pers p3 sg gen
+"<aǵa-inileri>"
+	"aǵa-ini" n pl px3sp nom
+"<tuwıldı>"
+	"tuw" v tv pass ifi p3 pl
+"<.>"
+	"." sent

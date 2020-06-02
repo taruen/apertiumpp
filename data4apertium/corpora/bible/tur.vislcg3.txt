@@ -33,3 +33,37 @@
 		"i" cop aor p3 frm sg
 "<:>"
 	":" sent
+
+# text = İbrahim İshak'ın babasıydı, İshak Yakup'un babasıydı, Yakup Yahuda ve kardeşlerinin babasıydı,
+# text[tat] = Ибраһим Исхакның атасы иде, Исхак Ягъкубның атасы иде, Ягъкуб Яһүд һәм кардәшләренең атасы иде,
+"<İbrahim>"
+	"İbrahim" np ant m nom
+"<İshak'ın>"
+	"İshak" np ant m gen
+"<babasıydı>"
+	"baba" n px3sp nom
+		"i" cop ifi p3 sg
+"<,>"
+	"," cm
+"<İshak>"
+	"İshak" np ant m nom
+"<Yakup'un>"
+	"Yakup" np ant m gen
+"<babasıydı>"
+	"baba" n px3sp nom
+		"i" cop ifi p3 sg
+"<,>"
+	"," cm
+"<Yakup>"
+	"Yakup" np ant m nom
+"<Yahuda>"
+	"Yahuda" np ant m nom
+"<ve>"
+	"ve" cnjcoo
+"<kardeşlerinin>"
+	"kardeş" n pl px3sp gen
+"<babasıydı>"
+	"baba" n px3sp nom
+		"i" cop ifi p3 sg
+"<,>"
+	"," cm
