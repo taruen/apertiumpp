@@ -1,11 +1,11 @@
-AZIZ QAYERDA?
-Aziz bilan Asal bog'da. Bugun ob-havo juda yaxshi, iliq. Lekin kecha juda sovuq bo'ldi. Shu sababli ular tashqarida o'ynay olishmadi. Aziz va Asal o'yashni yaxshi ko'radi, ular har doyim katta uyning oldidagi bog'da birga o'ynashadi.
-Aziz olti yoshli kichkina bola. Qiz uning singlisi, u besh yoshda. Azizning kichkina bir kuchugi bor, hozir u ham bog'da. Kuchuk bolalar bilan o'ynashni yaxshi ko'radi. Kuchugi hozir juda xursand. 
-Asalning chi, kuchugi bormi? Yo'q, Asalning kuchugi yo'q, uning mushugi bor. Lekin mushugi uyda, uxlayabdi.
-Ularning onasi mushugi bilan birga uyda, u derazadan Aziz bilan Asalning oyiniga qarab turibdi. Aziz eski bir daraxtga qarab tez yugurib ketiyabdi, u Asaldan yashiriniyabdi. Nima uchun ekanligini bilasizmi? Asal qo'li bilan ko'zlarini yopib o'tiribdi. U hech narsani ko'rmayabdi, u sanayabdi. Asal nima uchun bunday qilayabdi? Va Aziz daraxt yonida nima qilayabdi?
-Bu o'yin. Asal sanab bo'lganidan keyin atrofiga qaradi. U "Azamat qayerga ketdi? Uni ko'rdingizmi?" deb qidiryabdi. 
-Asal Azizning qayerda ekanligini bilmaydi. Kuchukdan "Azizni ko'rdingmi?" deb so'rayabdi. Lekin, albatta, kuchuk gapira olmaydi. Shuning uchun Asal o'z savoliga javob ola olmadi. Odamlar iyt bilan gaplashganida undan hech qachon javob ola olishmaydi!
-Asal derazadan onasiga qaraydi, onasi jilmayiyabdi. Asal u Azizning qayerga ketganligini biladi dep o'ylayabdi. "Aziz qayerda, ayting!" deb so'raydi. "Yo'q, Asal, ayta olmayman!" - deb onasi javob berdi. U Azizning qayerda ekanligini bilsa ham aytishni xohlamadi.
-Asal bog' ichida sekin yuribdi. U haliyam Azizni topishga harakat qilayabdi. U stol va stullarning tagini qidirib yuribdi, lekin Aziz hech qayerda yo'q. Asal hamma joyni qidirib yuribdi, lekin uni topa olmayabdi.
-Keyin u bir avoz eshitdi, bu avoz eski katta daraxtning ortidan chiqiyabdi. Bu Aziz bo'lishi mumkun. Avoz yana eshitildi! Asal diqqat bilan tinglaydi. Bu qush ham, hayvon ham emas. U avozni yaxshi eshitayabdi. Bu Aziz bo'lishi kerak!
-Keyin u bir kichkina qo'l ko'radi, yaqinroq borganida esa, boshini ham ko'radi. Asal "Men seni toptim!" - deb kuladi. Ular ikkalasi ham hursand bo'lib uyiga keliyabdi, bir narsa yeb, oziroq suv ichadigan vaqt bo'ldi. 
+1	AZIZ QAYERDA?
+2	Aziz bilan Asal bogʻda. Bugun ob-havo juda yaxshi, iliq. Lekin kecha juda sovuq boʻldi. Shu sababli ular tashqarida oʻynay olishmadi. Aziz va Asal oʻyashni yaxshi koʻradi, ular har doim katta uyning oldidagi bogʻda birga oʻynashadi.
+3	Aziz olti yoshli kichkina bola. Qiz uning singlisi, u besh yoshda. Azizning kichkina bir kuchugi bor, hozir u ham bogʻda. Kuchuk bolalar bilan oʻynashni yaxshi koʻradi. Kuchugi hozir juda xursand. 
+4	Asalning chi, kuchugi bormi? Yoʻq, Asalning kuchugi yoʻq, uning mushugi bor. Lekin mushugi uyda, uxlayabdi.
+5	Ularning onasi mushugi bilan birga uyda, u derazadan Aziz bilan Asalning oʻyiniga qarab turibdi. Aziz eski bir daraxtga qarab tez yugurib ketiyabdi, u Asaldan yashiriniyabdi. Nima uchun ekanligini bilasizmi? Asal qoʻli bilan koʻzlarini yopib oʻtiribdi. U hech narsani koʻrmayabdi, u sanayabdi. Asal nima uchun bunday qilayabdi? Va Aziz daraxt yonida nima qilayabdi?
+6	Bu oʻyin. Asal sanab boʻlganidan keyin atrofiga qaradi. U "Aziz qayerga ketdi? Uni koʻrdingizmi?" deb qidiryabdi. 
+7	Asal Azizning qayerda ekanligini bilmaydi. Kuchukdan "Azizni koʻrdingmi?" deb soʻrayabdi. Lekin, albatta, kuchuk gapira olmaydi. Shuning uchun Asal oʻz savoliga javob ola olmadi. Odamlar it bilan gaplashganida undan hech qachon javob ola olishmaydi!
+8	Asal derazadan onasiga qaraydi, onasi jilmayyabdi. Asal u Azizning qayerga ketganligini biladi dep oʻylayabdi. "Aziz qayerda, ayting!" deb soʻraydi. "Yoʻq, Asal, ayta olmayman!" - deb onasi javob berdi. U Azizning qayerda ekanligini bilsa ham aytishni xohlamadi.
+9	Asal bogʻ ichida sekin yuribdi. U haliyam Azizni topishga harakat qilayabdi. U stol va stullarning tagini qidirib yuribdi, lekin Aziz hech qayerda yoʻq. Asal hamma joyni qidirib yuribdi, lekin uni topa olmayabdi.
+10	Keyin u bir ovoz eshitdi, bu avoz eski katta daraxtning ortidan chiqayabdi. Bu Aziz boʻlishi mumkun. Ovoz yana eshitildi! Asal diqqat bilan tinglaydi. Bu qush ham, hayvon ham emas. U ovozni yaxshi eshitayabdi. Bu Aziz boʻlishi kerak!
+11	Keyin u bir kichkina qoʻl koʻradi, yaqinroq borganida esa, boshini ham koʻradi. Asal "Men seni toptim!" - deb kuladi. Ular ikkalasi ham hursand boʻlib uyiga kelayabdi, bir narsa yeb, oziroq suv ichadigan vaqt boʻldi. 
