@@ -9,9 +9,6 @@
   @hyperlink["https://www.apertium.org"]{Apertium project's} rule-based machine
   translators}
 
-@margin-note{Apertiumpp is a work in progess. At this point, no commitment is
-made to maintain the API in its current state.}
-
 @section{Installation}
 
 Here are insttructions on how to install apertiumpp:
