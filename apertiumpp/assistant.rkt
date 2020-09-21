@@ -2,16 +2,13 @@
 
 (require net/url
          csv-reading)
+
 (module+ test
   (require rackunit))
 
 (provide
  iso-639-3-table
  iso-639-3->refname)
-
-
-;;;;;;;;;;;;
-;; CONSTANTS
 
 
 ;; Void -> (List (List String))
@@ -29,17 +26,23 @@
   
   (csv->list next-row))
 
+
 (define ISO-639-3-TABLE (iso-639-3-table))
 
 
-;; String -> String
+;; String -> (or/c String #f)
 ;; given ISO-639-3 code of a language, return its reference name in English
+;; if code is known, #f otherwise
 (define (iso-639-3->refname code)
-  (list-ref
-   (findf (λ (line) (string=? code (first line))) ISO-639-3-TABLE)
-   6))
+  (define entry
+    (findf (λ (line) (string=? code (first line))) ISO-639-3-TABLE))
+  (if entry
+      (list-ref entry 6)
+      #f))
+      
 
 (module+ test
-  (check-equal? (iso-639-3->refname "zkz") "Khazar"))
+  (check-equal? (iso-639-3->refname "zkz") "Khazar")
+  (check-equal? (iso-639-3->refname "made-up-non-existing-code") #f))
 
 
