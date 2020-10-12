@@ -11,7 +11,7 @@
 
 @section{Installation}
 
-Here are insttructions on how to install apertiumpp:
+Here are instructions on how to install apertiumpp:
 
 @itemlist[
  @item{Install the @hyperlink["https://racket-lang.org"]{Racket
@@ -27,6 +27,13 @@ Here are insttructions on how to install apertiumpp:
 Later on, when there are any updates in the Git repository,
 you should run @code{raco setup -p apertiumpp} to compile the
 latest version.
+
+Alternatively, if you don't plan to hack on @tt{apertiumpp} itself, you can
+install @hyperlink["https://racket-lang.org"]{Racket} and then run the
+following command in your terminal:
+
+@verbatim{raco pkg install
+https://github.com/taruen/apertiumpp.git?path=apetiumpp}
 
 @section{Reference}
 
