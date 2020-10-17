@@ -1,5 +1,7 @@
 #lang scribble/manual
 
+@(require scribble/eval)
+
 @title[#:version ""]{Apertium++!, or Apertium 4.0, or making Apertium DSLs internal/embedded}
 
 This is a project with an aim of:
@@ -115,37 +117,53 @@ well.
 
 @section{Apertiumpp library}
 
-At the core of this project is a
-@hyperlink["https://racket-lang.org/"]{Racket} library called
-@italic{apertiumpp}. The documentation of the library can be
+At the core of this project is a @hyperlink["https://racket-lang.org/"]{Racket}
+library called @italic{apertiumpp}. The documentation of the library can be
 found at @hyperlink["./apertiumpp/"]{
- https://taruen.com/apertiumpp/apertiumpp/}.
+https://taruen.com/apertiumpp/apertiumpp/}.
 
 @section{Tests/data for Apertium 3.0. packages}
 
-The @filepath{data4apertium} directory contains tests for
-Apertium's monolingual and bilingual packages. These tests
-are written in the
-@(link "https://racket-lang.org" "Racket") programming
-language using its dialect called
-@(link "https://docs.racket-lang.org/rash/index.html" "Rash").
+@hyperlink["./apertiumpp/"]{apertiumpp} library has an interface to various
+textual data which can be used to test apertium packages. Once @tt{apertiumpp}
+is installed, you should be able to do the following.
 
-You can run @filepath{.rkt} tests in
-@filepath{data4apertium} with the @code{racket foo.rkt} command.
+@(define corpus-eval (make-base-eval))
+@interaction-eval[#:eval corpus-eval
+                  (require rash)]
 
-Before running tests, you should @code{cd} to the Apertium
-linguistic data package you want to test, and run the @code{raco pkg install}
-command while in that directory.
+@verbatim{raco apertiumpp corpus -l <ISO-630-3 code>}
 
-This will tell Racket where the Apertium linguictic package is
-located on your computer.
+run in the terminal will list the corpora we have for the language:
 
-For that to work, Apertium package should have an @filepath{info.rkt}
-file and a @filepath{main.rkt} file with the functionality you want to
-export and test. See @hyperlink["https://github.com/apertium/apertium-kaz"]{apertium-kaz}
-and  @hyperlink["https://github.com/apertium/apertium-kaz-tat"]{apertium-kaz-tat}
+@examples[
+ #:eval corpus-eval
+  (rash "raco apertiumpp corpus -l tat")]
+
+@examples[
+ #:eval corpus-eval
+  (rash "raco apertiumpp corpus -l tat bible.com")]
+
+If full ``path'' is given to a corpus, it will be output to stdout:
+
+@examples[
+ #:eval corpus-eval
+  (display
+    (rash "raco apertiumpp corpus -l tat bible.com 1502-ttrbbl-izge-yazma.csv | head"))]
+
+@section{Turning an Apertium 3.0 package into a Racket package}
+
+For that to work, Apertium package should have an @filepath{info.rkt} file and
+a @filepath{main.rkt} file with the functionality you want to export and
+test. See @hyperlink["https://github.com/apertium/apertium-kaz"]{apertium-kaz}
+and
+@hyperlink["https://github.com/apertium/apertium-kaz-tat"]{apertium-kaz-tat}
 for an example.
- 
+
+To include non-racket files into the resulting racket package, you'll need to
+use the @tt{define-runtime-path} macro, as explained e.g. in
+@hyperlink["https://defn.io/2020/06/28/racket-deployment/"]{this blog post}.
+
 @section{Background reading (for potentional contributors, not users)}
 
 @url{http://www.greghendershott.com/fear-of-macros/}

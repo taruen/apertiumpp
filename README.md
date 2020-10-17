@@ -98,20 +98,54 @@ found at [https://taruen.com/apertiumpp/apertiumpp/](./apertiumpp/).
 
 ## 4. Tests/data for Apertium 3.0. packages
 
-The `"data4apertium"` directory contains tests for Apertium’s
-monolingual and bilingual packages. These tests are written in the
-[Racket](https://racket-lang.org) programming language using its dialect
-called [Rash](https://docs.racket-lang.org/rash/index.html).
+[apertiumpp](./apertiumpp/) library has an interface to various textual
+data which can be used to test apertium packages. Once `apertiumpp` is
+installed, you should be able to do the following.
 
-You can run `".rkt"` tests in `"data4apertium"` with the
-`racket` `foo.rkt` command.
+`raco apertiumpp corpus -l <ISO-630-3 code>`
 
-Before running tests, you should `cd` to the Apertium linguistic data
-package you want to test, and run the `raco` `pkg` `install` command
-while in that directory.
+run in the terminal will list the corpora we have for the language:
 
-This will tell Racket where the Apertium linguictic package is located
-on your computer.
+Example:
+
+```racket
+> (rash "raco apertiumpp corpus -l tat")
+"bible.com"                             
+```
+
+Example:
+
+```racket
+> (rash "raco apertiumpp corpus -l tat bible.com")
+"1502-ttrbbl-izge-yazma.csv"                      
+```
+
+If full “path” is given to a corpus, it will be output to stdout:
+
+Example:
+
+```racket
+> (display                                                              
+    (rash "raco apertiumpp corpus -l tat bible.com                      
+1502-ttrbbl-izge-yazma.csv | head"))                                    
+GEN.1.1	Әүвәл                                                           
+GEN.1.2	Җир йөзе әле сурәтсез, буп-буш – төпсез упкын, караңгылык эченә 
+чумган; Аллаһының рухы-сулышы сулар өстендә гизә иде.                   
+GEN.1.3	Аллаһы:                                                         
+GEN.1.3	– Яктылык булсын! – дип боерды, һәм яктылык булды.              
+GEN.1.4	Аллаһы яктылыкның яхшы булуын күрде һәм аны караңгылыктан аерды.
+GEN.1.5	Яктылыкны «көн» дип, караңгылыкны «төн» дип атады. Кич булды,   
+иртә булды – бер көн кичте.                                             
+GEN.1.6	Аллаһы:                                                         
+GEN.1.6	– Суларның уртасында бер гөмбәз булсын, суларны бер-берсеннән   
+аерсын! – дип боерды.                                                   
+GEN.1.7	Нәкъ шулай булды: Аллаһы гөмбәзне яратты. Гөмбәз астындагы      
+суларны гөмбәз өстендәге сулардан аерды.                                
+GEN.1.8	Аллаһы гөмбәзне «күк» дип атады. Кич булды, иртә булды – икенче 
+көн кичте.                                                              
+```
+
+## 5. Turning an Apertium 3.0 package into a Racket package
 
 For that to work, Apertium package should have an `"info.rkt"` file and
 a `"main.rkt"` file with the functionality you want to export and test.
@@ -119,6 +153,10 @@ See [apertium-kaz](https://github.com/apertium/apertium-kaz) and
 [apertium-kaz-tat](https://github.com/apertium/apertium-kaz-tat) for an
 example.
 
-## 5. Background reading (for potentional contributors, not users)
+To include non-racket files into the resulting racket package, you’ll
+need to use the `define-runtime-path` macro, as explained e.g. in [this
+blog post](https://defn.io/2020/06/28/racket-deployment/).
+
+## 6. Background reading (for potentional contributors, not users)
 
 [http://www.greghendershott.com/fear-of-macros/](http://www.greghendershott.com/fear-of-macros/)

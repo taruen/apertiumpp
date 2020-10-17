@@ -6,3 +6,4 @@
 (define pkg-desc "Description Here")
 (define version "0.0")
 (define pkg-authors '("Ilnar Salimzianov"))
+(define raco-commands '(("apertiumpp" (submod apertiumpp/private/command raco) "issue apertiumpp command" #f)))
