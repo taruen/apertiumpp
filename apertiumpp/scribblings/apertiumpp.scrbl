@@ -33,7 +33,7 @@ install @hyperlink["https://racket-lang.org"]{Racket} and then run the
 following command in your terminal:
 
 @verbatim{raco pkg install
-https://github.com/taruen/apertiumpp.git?path=apetiumpp}
+https://github.com/taruen/apertiumpp.git?path=apertiumpp}
 
 @section{Reference}
 
