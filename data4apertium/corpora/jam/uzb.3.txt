@@ -1,0 +1,10 @@
+Azamat qayerda?
+2 	Azamat va Aygul bog'da. Bugun ob-havo juda yaxshi va iliq. Ammo kecha juda sovuq edi! Shu sababli ular tashqarida o'ynay olmadilar. Azamat va Aygul o'ynashni yaxshi ko'radilar, ular katta uy oldidagi bog'da doimo birga o'ynashadi.
+3 	Azamat - olti yoshli bola.Bu qiz uning singlisi, u besh yoshda. Azamatning kichkina kuchukchasi bor, endi u bog'da. Kuchukcha bolalar bilan o'ynashni yaxshi ko'radi. Kuchukcha hozir judayam xursand.
+4 	Aygulda kuchukcha bormi? Yo'q, Aygulda kuchukcha yo'q, mushuk bor. Ammo mushuk uyda, uxlamoqda.
+5 	Ularning onasi mushugi bilan uyda, Azamat va Aygul oynasini oynadan tomosha qilmoqda. Azamat keksa katta daraxt tomon qattiq yugurmoqda, u shu daraxt ortiga yashirinmoqchi. Bilasizmi nima uchun? Aygul qo'llari bilan ko'zlarini yumadi. U hech narsani ko'rmayapti, hisoblamoqda. Nega u yashirinmoqda? Azamat daraxt yonida nima qilmoqda?
+6 	Bu o'yin. Aygul sanab bo‘lgach, atrofga alangladi. "Azamat qayerga ketdi, uni ko'rdinglarmi?" qidirmoqda.
+7 	Aygul Azamatning qaerdaligini bilmaydi. "Siz Azamatni ko'rdin'izmi?" u so'raydi. Va kuchukcha, albatta, gapira olmaydi. Shunday qilib, Aygul savoliga javob ololmayapti. Odamlar it bilan gaplashganda, ular hech qachon javob ololmaydilar!
+8 	Aygul derazada turgan onasiga qaraydi. Aygul onasining tabassumini(jilmayshini) ko'rib, Azamat qayerga ketganini biladi deb o'ylaydi. "Azamatning qayerdaligini ayting!" deb so'raydi. "Yo'q, Aygul, men ayta olmayman", deydi onasi. U Azamatning qayerdaligini bilar edi, lekin aytshni hohlamadi.
+9 	Aygul bog'da asta-sekin yuribdi. U hali ham Azamatni topishga harakat qilmoqda. U stol va stullar ostiga qarab turibdi, ammo Azamat yo'q. U hamma yoqqa qaraydi, lekin Azamatni topa olmaydi.
+10 	Keyin u keksa katta daraxtning orqasidan tovushni eshitadi. Balki bu Azamatdir? Bu ovoz yana eshitiladi! Aygul uni jimgina tinglaydi. U na hayvon, na qush. U endi tovushni yanada aniqroq eshitishga harakat qiladi. Bu Azamat bo'lishi kerak!
